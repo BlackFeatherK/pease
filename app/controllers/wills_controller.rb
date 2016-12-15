@@ -1,0 +1,3 @@
+class WillsController < ApplicationController
+
+end
