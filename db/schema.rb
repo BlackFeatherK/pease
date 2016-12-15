@@ -10,13 +10,95 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215081551) do
+ActiveRecord::Schema.define(version: 20161215122354) do
 
-  create_table "cars", force: :cascade do |t|
-    t.string   "name"
-    t.string   "plate"
+  create_table "accounts", force: :cascade do |t|
+    t.integer  "will_id"
+    t.string   "bank"
+    t.string   "type"
+    t.string   "heir"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["will_id"], name: "index_accounts_on_will_id"
+  end
+
+  create_table "funerals", force: :cascade do |t|
+    t.integer  "will_id"
+    t.string   "religion"
+    t.string   "format"
+    t.text     "participants"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["will_id"], name: "index_funerals_on_will_id"
+  end
+
+  create_table "insurance_policies", force: :cascade do |t|
+    t.integer  "will_id"
+    t.string   "insurer"
+    t.string   "type"
+    t.integer  "amount"
+    t.string   "heir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["will_id"], name: "index_insurance_policies_on_will_id"
+  end
+
+  create_table "jewelries", force: :cascade do |t|
+    t.integer  "will_id"
+    t.integer  "quantity"
+    t.integer  "amount"
+    t.string   "heir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["will_id"], name: "index_jewelries_on_will_id"
+  end
+
+  create_table "motors", force: :cascade do |t|
+    t.integer  "will_id"
+    t.integer  "quantity"
+    t.integer  "amount"
+    t.string   "heir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["will_id"], name: "index_motors_on_will_id"
+  end
+
+  create_table "pensions", force: :cascade do |t|
+    t.integer  "will_id"
+    t.integer  "amount"
+    t.string   "heir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["will_id"], name: "index_pensions_on_will_id"
+  end
+
+  create_table "private_shares", force: :cascade do |t|
+    t.integer  "will_id"
+    t.string   "company"
+    t.integer  "stock"
+    t.integer  "amount"
+    t.string   "heir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["will_id"], name: "index_private_shares_on_will_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.integer  "will_id"
+    t.string   "address"
+    t.string   "heir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["will_id"], name: "index_properties_on_will_id"
+  end
+
+  create_table "stock_portfolios", force: :cascade do |t|
+    t.integer  "will_id"
+    t.string   "bank"
+    t.string   "heir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["will_id"], name: "index_stock_portfolios_on_will_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,10 +120,8 @@ ActiveRecord::Schema.define(version: 20161215081551) do
 
   create_table "wills", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["car_id"], name: "index_wills_on_car_id"
     t.index ["user_id"], name: "index_wills_on_user_id"
   end
 
