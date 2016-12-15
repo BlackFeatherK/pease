@@ -1,13 +1,13 @@
 class Will < ApplicationRecord
   belongs_to :user , :optional => true
-  has_many :account , :dependent => :destroy
-  has_many :funeral , :dependent => :destroy
-  has_many :insurance_policy , :dependent => :destroy
-  has_many :jewelry , :dependent => :destroy
-  has_many :motor , :dependent => :destroy
-  has_many :pension , :dependent => :destroy
-  has_many :private_share , :dependent => :destroy
-  has_many :property , :dependent => :destroy
-  has_many :stock_portfolio , :dependent => :destroy
+  has_many :accounts , :dependent => :destroy
+  has_many :funerals , :dependent => :destroy
+  has_many :insurance_policies , :dependent => :destroy
+  has_many :jewelries , :dependent => :destroy
+  has_many :motors , :dependent => :destroy
+  has_many :pensions , :dependent => :destroy
+  has_many :private_shares , :dependent => :destroy
+  has_many :properties , :dependent => :destroy
+  has_many :stock_portfolios , :dependent => :destroy
 
 end
