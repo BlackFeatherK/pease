@@ -21,7 +21,7 @@ class Api::StockPortfoliosController < ApplicationController
     if @stock_portfolio
       @stock_portfolio
     else
-      render json: { message: "nill"}
+      render json: { }
     end
   end
 
@@ -35,7 +35,7 @@ class Api::StockPortfoliosController < ApplicationController
 
   def destroy
     @stock_portfolio.destroy
-    render json: { message: "success" }
+    render json: { }
   end
 
 
