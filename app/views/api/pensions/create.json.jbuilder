@@ -1,0 +1,1 @@
+json.partial! 'pension' , :pension => @pension
