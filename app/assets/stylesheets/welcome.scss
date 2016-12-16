@@ -1,25 +1,40 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$border-primary-color: #D0D0D0;
+$main-color: #364860;
+$main-font: PingFangTC-Medium;
+
+h1 {
+	color: $main-color;
+	font-family: $main-font;
+}
+
 .info {
-	
-	#f_written_on_2i {
+	select {
+		-webkit-appearance: none;
+    	appearance: none;
+		text-indent: 5px;
+		background-image:
+		    linear-gradient(45deg, transparent 50%, $border-primary-color 50%),
+		    linear-gradient(135deg, $border-primary-color 50%, transparent 50%);
+		background-position:
+		    calc(100% - 15px) calc(1em + 2px),
+		    calc(100% - 10px) calc(1em + 2px);
+		background-size:
+		    5px 5px,
+		    5px 5px;
+		background-repeat: no-repeat;
+	}
+
+	#f_written_on_2i, #f_written_on_1i, #f_written_on_3i {
+		text-align: center;
 		height: 36px;
 		width: 137px;
-		color: #bbb;
-
+		color: $border-primary-color;
+		margin-left: 10px;
 	}
-	#f_written_on_1i {
-		height: 36px;
-		width: 137px;
-		color: #bbb;
 
-	}
-	#f_written_on_3i {
-		height: 36px;
-		width: 137px;
-		color: #bbb;
-
-	}
 
 }
+
