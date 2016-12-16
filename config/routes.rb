@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         resources :pensions
         resources :private_shares
         resources :properties
-        resources :stock_porfolios
+        resources :stock_portfolios
       end 
       match '*unmatched_route', to: 'base#error_404', via: :all
     end
