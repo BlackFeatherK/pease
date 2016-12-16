@@ -1,11 +1,22 @@
 <div class="container">
 	<h1>個人資料</h1>
 	<%= form_tag({method: :post},{class: "form-group info"}) do %>
-		<%= label_tag(:f, "請問您的姓名") %> <br>
-		<%= text_field_tag(:f, nil, class: "form-control text-center col-md-8", placeholder: "請輸入你的真實姓名")%> <br>
-		<%= label_tag(:f, "請問您的生日") %> <br>
-		<%= date_select("f", "written_on", order: [:month, :day, :year], class: "date") %>
-
+		<div class="col-md-6 form-group">
+			<%= label_tag(:f, "請問您的姓名") %> <br>
+			<%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入你的真實姓名")%>
+		</div>
+		<div class="form-group col-md-8">
+			<%= label_tag(:f, "請問您的生日") %> <br>
+			<%= date_select("f", "written_on", order: [:month, :day, :year], class: "date") %>
+		</div>
+		<div class="form-group col-md-6">
+			<%= label_tag(:f, "請問您的性別") %> <br>
+			<%= radio_button_tag(:age, "Male") %>
+			<%= radio_button_tag(:age, "Female") %>
+		</div>
+		<div class="form-group col-md-8">
+			<%= submit_tag "下一步", class: "submit"%>
+		</div>
 	<% end %>
 
 </div>

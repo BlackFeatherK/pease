@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $border-primary-color: #D0D0D0;
 $main-color: #364860;
+$secondary-color: #F8C957;
 $main-font: PingFangTC-Medium;
 
 h1 {
@@ -11,6 +12,13 @@ h1 {
 }
 
 .info {
+	label {
+		color: $main-color;
+		font-family: $main-font;
+	}
+	input {
+		border: 1px solid #D0D0D0;
+	}
 	select {
 		-webkit-appearance: none;
     	appearance: none;
@@ -31,10 +39,17 @@ h1 {
 		text-align: center;
 		height: 36px;
 		width: 137px;
-		color: $border-primary-color;
+		border: 1px solid #D0D0D0;
 		margin-left: 10px;
 	}
-
-
+	.submit {
+		width: 210px;
+		height: 36px;
+		background-color: $secondary-color;
+		border: none;
+		border-radius: 5px;
+		color: white;
+	}
 }
+
 
