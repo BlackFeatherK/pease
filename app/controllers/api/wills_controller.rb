@@ -1,4 +1,4 @@
-class Api::WillsController < ApplicationController
+class Api::WillsController < Api::BaseController
 
   before_action :find_will
 

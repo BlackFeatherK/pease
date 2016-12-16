@@ -1,9 +1,10 @@
 class Api::BaseController < ApplicationController
 
-  skip_before_action :verify_authenticity_token
-  before_action :enable_cors
+  rescue_from ActiveRecord::RecordNotFound, with: :respond_record_not_found
+
   before_action :default_format_json
-  before_action :client_auth
+  # before_action :client_auth
+  skip_before_action :verify_authenticity_token
 
   def error_404
     respond_error messages: "/#{params[:unmatched_route]} not found" , status: 404
@@ -12,7 +13,7 @@ class Api::BaseController < ApplicationController
   protected
 
   def default_format_json
-    request.format = "json" if request.format.to_s =="text/html"
+    request.format = "json" if request.format.to_s == "text/html"
   end
 
   def repond_record_not_found(e)

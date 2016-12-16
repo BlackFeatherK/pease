@@ -1,4 +1,4 @@
-class Api::PropertiesController < ApplicationController
+class Api::PropertiesController < Api::BaseController
 
   skip_before_action :verify_authenticity_token
   before_action :find_will

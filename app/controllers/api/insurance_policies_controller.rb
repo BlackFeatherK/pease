@@ -1,4 +1,4 @@
-class Api::InsurancePoliciesController < ApplicationController
+class Api::InsurancePoliciesController < Api::BaseController
 
   skip_before_action :verify_authenticity_token
   before_action :find_will

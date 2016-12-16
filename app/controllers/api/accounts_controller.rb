@@ -1,6 +1,5 @@
-class Api::AccountsController < ApplicationController
+class Api::AccountsController < Api::BaseController
 
-  skip_before_action :verify_authenticity_token
   before_action :find_will
   before_action :find_account , :except => [:index , :create]
 
