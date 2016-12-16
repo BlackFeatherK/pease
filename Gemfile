@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'kaminari'
+gem 'rack-cors', :require => 'rack/cors'
 
 
 group :development, :test do

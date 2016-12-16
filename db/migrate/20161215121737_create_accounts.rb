@@ -3,7 +3,7 @@ class CreateAccounts < ActiveRecord::Migration[5.0]
     create_table :accounts do |t|
       t.integer :will_id , :index => true
       t.string :bank
-      t.string :type
+      t.string :account_type
       t.string :heir
       t.timestamps
     end

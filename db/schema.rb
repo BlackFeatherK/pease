@@ -15,17 +15,17 @@ ActiveRecord::Schema.define(version: 20161215122354) do
   create_table "accounts", force: :cascade do |t|
     t.integer  "will_id"
     t.string   "bank"
-    t.string   "type"
+    t.string   "account_type"
     t.string   "heir"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["will_id"], name: "index_accounts_on_will_id"
   end
 
   create_table "funerals", force: :cascade do |t|
     t.integer  "will_id"
     t.string   "religion"
-    t.string   "format"
+    t.string   "arrangement"
     t.text     "participants"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(version: 20161215122354) do
   create_table "insurance_policies", force: :cascade do |t|
     t.integer  "will_id"
     t.string   "insurer"
-    t.string   "type"
+    t.string   "policy_type"
     t.integer  "amount"
     t.string   "heir"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["will_id"], name: "index_insurance_policies_on_will_id"
   end
 

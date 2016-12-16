@@ -1,0 +1,1 @@
+json.partial! 'insurance_policy' , :insurance_policy => @insurance_policy

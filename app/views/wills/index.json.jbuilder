@@ -1,1 +1,0 @@
-json.will @will.to_json
