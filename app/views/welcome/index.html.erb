@@ -7,12 +7,19 @@
 		</div>
 		<div class="form-group col-md-8">
 			<%= label_tag(:f, "請問您的生日") %> <br>
-			<%= date_select("f", "written_on", order: [:month, :day, :year], class: "date") %>
+			<%= date_select(:f, "written_on", order: [:month, :day, :year], class: "date") %>
 		</div>
 		<div class="form-group col-md-6">
 			<%= label_tag(:f, "請問您的性別") %> <br>
-			<%= radio_button_tag(:age, "Male") %>
-			<%= radio_button_tag(:age, "Female") %>
+
+			<label class= "gender-button">
+				<%= radio_button_tag(:gender, "Male") %>
+			</label>
+
+			<label class= "gender-button-female">
+				<%= radio_button_tag(:gender, "Female") %>
+			</label>
+
 		</div>
 		<div class="form-group col-md-8">
 			<%= submit_tag "下一步", class: "submit"%>
@@ -20,3 +27,10 @@
 	<% end %>
 
 </div>
+
+<script>
+	
+	$('.gender-button').click(function() {
+
+	});
+</script>

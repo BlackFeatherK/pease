@@ -17,7 +17,7 @@ h1 {
 		font-family: $main-font;
 	}
 	input {
-		border: 1px solid #D0D0D0;
+		border: 1px solid $border-primary-color;
 	}
 	select {
 		-webkit-appearance: none;
@@ -39,9 +39,40 @@ h1 {
 		text-align: center;
 		height: 36px;
 		width: 137px;
-		border: 1px solid #D0D0D0;
+		border: 1px solid $border-primary-color;
 		margin-left: 10px;
 	}
+	
+	.gender-button {
+		width: 211px;
+		height: 137px;
+		border-radius: 5px;
+		border: 1px solid $border-primary-color;
+		position: relative;
+		// input {
+		// 	visibility: hidden;
+		// }
+		background: image-url("default_male.png") no-repeat;
+		background-position: center;
+	}
+
+	.gender-button-female {
+		width: 211px;
+		height: 137px;
+		border-radius: 5px;
+		border: 1px solid $border-primary-color;
+		position: relative;
+		background: image-url("default_female.png") no-repeat;
+		background-position: center;
+	}
+
+	.selected-male {
+		background: image-url("hover_male.png") no-repeat;
+		background-position: center;
+	}
+
+
+
 	.submit {
 		width: 210px;
 		height: 36px;
