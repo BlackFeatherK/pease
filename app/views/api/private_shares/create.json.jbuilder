@@ -1,1 +1,1 @@
-json.partial! 'private_share' , :private_share => @private_share
+json.partial! 'private_share' , :private_share => @will_name

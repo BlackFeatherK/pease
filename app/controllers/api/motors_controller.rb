@@ -5,37 +5,23 @@ class Api::MotorsController < Api::BaseController
   before_action :find_motor , :except => [:index , :create]
 
   def index
-    @motors = @will.motors
+    controller_index(controller_name)
   end
 
   def create
-    @motor = @will.motors.build( params_motor )
-    if @motor.save
-      @motor
-    else
-      fail Api::Except , @motor.errors.full_messages
-    end
+    controller_create( controller_name , params_account)
   end
 
   def show
-    if @motor
-      @motor
-    else
-      render json: { message: "nill"}
-    end
+    controller_show( controller_name , params[:id] )
   end
 
   def update
-    if @motor.update( params_motor )
-      @motor
-    else 
-      fail Api::Except , @motor.errors.full_messages
-    end
+    controller_update( controller_name , params[:id] , params_account )
   end
 
   def destroy
-    @motor.destroy
-    render json: { message: "success" }
+    controller_destroy( controller_name , params[:id] )
   end
 
 

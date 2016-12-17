@@ -1,1 +1,1 @@
-json.partial! 'motor' , :motor => @motor
+json.partial! 'motor' , :motor => @will_name

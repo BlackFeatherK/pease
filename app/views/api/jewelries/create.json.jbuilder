@@ -1,1 +1,1 @@
-json.partial! 'jewelry' , :jewelry => @jewelry
+json.partial! 'jewelry' , :jewelry => @will_name

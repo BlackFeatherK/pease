@@ -1,1 +1,1 @@
-json.partial! 'pension' , :pension => @pension
+json.partial! 'pension' , :pension => @will_name

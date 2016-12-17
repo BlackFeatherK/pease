@@ -5,37 +5,23 @@ class Api::PrivateSharesController < Api::BaseController
   before_action :find_private_share , :except => [:index , :create]
 
   def index
-    @private_shares = @will.private_shares
+    controller_index(controller_name)
   end
 
   def create
-    @private_share = @will.private_shares.build( params_private_share )
-    if @private_share.save
-      @private_share
-    else
-      fail Api::Except , @private_share.errors.full_messages
-    end
+    controller_create( controller_name , params_account)
   end
 
   def show
-    if @private_share
-      @private_share
-    else
-      render json: { message: "nill"}
-    end
+    controller_show( controller_name , params[:id] )
   end
 
   def update
-    if @private_share.update( params_private_share )
-      @private_share
-    else 
-      fail Api::Except , @private_share.errors.full_messages
-    end
+    controller_update( controller_name , params[:id] , params_account )
   end
 
   def destroy
-    @private_share.destroy
-    render json: { message: "success" }
+    controller_destroy( controller_name , params[:id] )
   end
 
 

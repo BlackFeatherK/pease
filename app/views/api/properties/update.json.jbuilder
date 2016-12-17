@@ -1,1 +1,1 @@
-json.partial! 'property' , :property => @property
+json.partial! 'property' , :property => @will_name

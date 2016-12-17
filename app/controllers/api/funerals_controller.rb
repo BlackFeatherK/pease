@@ -5,37 +5,23 @@ class Api::FuneralsController < Api::BaseController
   before_action :find_funeral , :except => [:index , :create]
 
   def index
-    @funerals = @will.funerals
+    controller_index(controller_name)
   end
 
   def create
-    @funeral = @will.funerals.build( params_funeral )
-    if @funeral.save
-      @funeral
-    else
-      fail Api::Except , @funeral.errors.full_messages
-    end
+    controller_create( controller_name , params_account)
   end
 
   def show
-    if @funeral
-      @funeral
-    else
-      render json: { message: "nill" }
-    end
+    controller_show( controller_name , params[:id] )
   end
 
   def update
-    if @funeral.update( params_funeral )
-      @funeral
-    else 
-      fail Api::Except , @funeral.errors.full_messages
-    end
+    controller_update( controller_name , params[:id] , params_account )
   end
 
   def destroy
-    @funeral.destroy
-    render json: { message: "success" }
+    controller_destroy( controller_name , params[:id] )
   end
 
 

@@ -5,37 +5,23 @@ class Api::StockPortfoliosController < Api::BaseController
   before_action :find_stock_portfolio , :except => [:index , :create]
 
   def index
-    @stock_portfolios = @will.stock_portfolios
+    controller_index(controller_name)
   end
 
   def create
-    @stock_portfolio = @will.stock_portfolios.build( params_stock_portfolio )
-    if @stock_portfolio.save
-      @stock_portfolio
-    else
-      fail Api::Except , @stock_portfolio.errors.full_messages
-    end
+    controller_create( controller_name , params_account)
   end
 
   def show
-    if @stock_portfolio
-      @stock_portfolio
-    else
-      render json: { }
-    end
+    controller_show( controller_name , params[:id] )
   end
 
   def update
-    if @stock_portfolio.update( params_stock_portfolio )
-      @stock_portfolio
-    else 
-      fail Api::Except , @stock_portfolio.errors.full_messages
-    end
+    controller_update( controller_name , params[:id] , params_account )
   end
 
   def destroy
-    @stock_portfolio.destroy
-    render json: { }
+    controller_destroy( controller_name , params[:id] )
   end
 
 

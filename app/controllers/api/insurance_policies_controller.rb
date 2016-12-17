@@ -5,37 +5,23 @@ class Api::InsurancePoliciesController < Api::BaseController
   before_action :find_insurance_policy , :except => [:index , :create]
 
   def index
-    @insurance_policies = @will.insurance_policies
+    controller_index(controller_name)
   end
 
   def create
-    @insurance_policy = @will.insurance_policies.build( params_insurance_policy )
-    if @insurance_policy.save
-      @insurance_policy
-    else
-      fail Api::Except , @insurance_policy.errors.full_messages
-    end
+    controller_create( controller_name , params_account)
   end
 
   def show
-    if @insurance_policy
-      @insurance_policy
-    else
-      render json: { message: "nill"}
-    end
+    controller_show( controller_name , params[:id] )
   end
 
   def update
-    if @insurance_policy.update( params_insurance_policy )
-      @insurance_policy
-    else 
-      fail Api::Except , @insurance_policy.errors.full_messages
-    end
+    controller_update( controller_name , params[:id] , params_account )
   end
 
   def destroy
-    @insurance_policy.destroy
-    render json: { message: "success" }
+    controller_destroy( controller_name , params[:id] )
   end
 
 

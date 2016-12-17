@@ -5,37 +5,23 @@ class Api::JewelriesController < Api::BaseController
   before_action :find_jewelry , :except => [:index , :create]
 
   def index
-    @jewelries = @will.jewelries
+    controller_index(controller_name)
   end
 
   def create
-    @jewelry = @will.jewelries.build( params_jewelry )
-    if @jewelry.save
-      @jewelry
-    else
-      fail Api::Except , @jewelry.errors.full_messages
-    end
+    controller_create( controller_name , params_account)
   end
 
   def show
-    if @jewelry
-      @jewelry
-    else
-      render json: { message: "nill"}
-    end
+    controller_show( controller_name , params[:id] )
   end
 
   def update
-    if @jewelry.update( params_jewelry )
-      @jewelry
-    else 
-      fail Api::Except , @jewelry.errors.full_messages
-    end
+    controller_update( controller_name , params[:id] , params_account )
   end
 
   def destroy
-    @jewelry.destroy
-    render json: { message: "success" }
+    controller_destroy( controller_name , params[:id] )
   end
 
 

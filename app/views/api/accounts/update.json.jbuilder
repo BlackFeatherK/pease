@@ -1,1 +1,1 @@
- json.partial! 'account' , :account => @account
+ json.partial! 'account' , :account => @will_name

@@ -4,37 +4,23 @@ class Api::AccountsController < Api::BaseController
   before_action :find_account , :except => [:index , :create]
 
   def index
-    @accounts = @will.accounts
+    controller_index(controller_name)
   end
 
   def create
-    @account = @will.accounts.build( params_account )
-    if @account.save
-      @account
-    else
-      fail Api::Except , @account.errors.full_messages
-    end
+    controller_create( controller_name , params_account)
   end
 
   def show
-    if @account
-      @account
-    else
-      render json: { message: "nill" }
-    end
+    controller_show( controller_name , params[:id] )
   end
 
   def update
-    if @account.update( params_account )
-      @account
-    else 
-      fail Api::Except , @account.errors.full_messages
-    end
+    controller_update( controller_name , params[:id] , params_account )
   end
 
   def destroy
-    @account.destroy
-    render json: { message: "success" }
+    controller_destroy( controller_name , params[:id] )
   end
 
 

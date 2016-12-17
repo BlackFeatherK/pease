@@ -5,37 +5,23 @@ class Api::PropertiesController < Api::BaseController
   before_action :find_property , :except => [:index , :create]
 
   def index
-    @properties = @will.properties
+    controller_index(controller_name)
   end
 
   def create
-    @property = @will.properties.build( params_property )
-    if @property.save
-      @property
-    else
-      fail Api::Except , @property.errors.full_messages
-    end
+    controller_create( controller_name , params_account)
   end
 
   def show
-    if @property
-      @property
-    else
-      render json: { message: "nill"}
-    end
+    controller_show( controller_name , params[:id] )
   end
 
   def update
-    if @property.update( params_property )
-      @property
-    else 
-      fail Api::Except , @property.errors.full_messages
-    end
+    controller_update( controller_name , params[:id] , params_account )
   end
 
   def destroy
-    @property.destroy
-    render json: { message: "success" }
+    controller_destroy( controller_name , params[:id] )
   end
 
 

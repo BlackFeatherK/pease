@@ -19,16 +19,16 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :wills do
-    resources :accounts
-    resources :funerals
-    resources :insurance_policies
-    resources :jewelries
-    resources :motors
-    resources :pensions
-    resources :private_shares
-    resources :properties
-    resources :stock_porfolios
-  end 
+  # resources :wills do
+  #   resources :accounts
+  #   resources :funerals
+  #   resources :insurance_policies
+  #   resources :jewelries
+  #   resources :motors
+  #   resources :pensions
+  #   resources :private_shares
+  #   resources :properties
+  #   resources :stock_porfolios
+  # end 
 
 end

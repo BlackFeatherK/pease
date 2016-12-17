@@ -5,37 +5,23 @@ class Api::PensionsController < Api::BaseController
   before_action :find_pension , :except => [:index , :create]
 
   def index
-    @pensions = @will.pensions
+    controller_index(controller_name)
   end
 
   def create
-    @pension = @will.pensions.build( params_pension )
-    if @pension.save
-      @pension
-    else
-      fail Api::Except , @pension.errors.full_messages
-    end
+    controller_create( controller_name , params_account)
   end
 
   def show
-    if @pension
-      @pension
-    else
-      render json: { message: "nill"}
-    end
+    controller_show( controller_name , params[:id] )
   end
 
   def update
-    if @pension.update( params_pension )
-      @pension
-    else 
-      fail Api::Except , @pension.errors.full_messages
-    end
+    controller_update( controller_name , params[:id] , params_account )
   end
 
   def destroy
-    @pension.destroy
-    render json: { message: "success" }
+    controller_destroy( controller_name , params[:id] )
   end
 
 
