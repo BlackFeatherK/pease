@@ -1,0 +1,1 @@
+json.partial! 'jewelry' , :jewelry => @will_name

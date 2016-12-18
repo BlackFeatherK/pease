@@ -1,0 +1,1 @@
+json.partial! 'private_share' , :private_share => @will_name

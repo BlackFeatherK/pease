@@ -1,0 +1,1 @@
+json.partial! 'funeral' , funeral: @will_name
