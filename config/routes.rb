@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  namespace :api, path: '' do
-    constraints(host: 'api.localhost') do
+  namespace :api do
+    # constraints(host: 'api.localhost') do
       resources :wills do
         resources :accounts
         resources :funerals
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
         resources :stock_portfolios
       end 
       match '*unmatched_route', to: 'base#error_404', via: :all
-    end
+    # end
   end
 
   # resources :wills do
