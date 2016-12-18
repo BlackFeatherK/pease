@@ -14,10 +14,16 @@
 
 			<label class= "gender-button">
 				<%= radio_button_tag(:gender, "Male") %>
+				<label class="male-label" for="gender_Male">
+					<div class="gender-type">男生</div>
+				</label>
 			</label>
 
-			<label class= "gender-button-female">
+			<label class= "gender-button">
 				<%= radio_button_tag(:gender, "Female") %>
+				<label class="female-label" for="gender_Female">
+					<div class="gender-type">女生</div>	
+				</label>
 			</label>
 
 		</div>
@@ -29,8 +35,14 @@
 </div>
 
 <script>
-	
-	$('.gender-button').click(function() {
 
-	});
+
+	// $('.gender-button-female').click(function(){
+	// 	if ($(this).hasClass("collapsed-female")){
+	// 		$(this).addClass("selected-female").removeClass("collapsed-female");
+	// 		$('.gender-button-male').addClass("collapsed-male").removeClass("selected-male")
+	// 	}
+	// });
+
+	$('')
 </script>
