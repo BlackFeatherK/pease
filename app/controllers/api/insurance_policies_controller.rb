@@ -1,6 +1,5 @@
 class Api::InsurancePoliciesController < Api::BaseController
 
-  skip_before_action :verify_authenticity_token
   before_action :find_will
   before_action :find_insurance_policy , :except => [:index , :create]
 
