@@ -1,0 +1,45 @@
+<div class="container text-center" id="<%= controller_name %>">
+	<div id="<%= action_name %>">
+		<div class="title">
+			<h1>設計生命畢業禮</h1>
+		</div>
+		<%= form_for @funeral, url: will_funerals_path, html: {class: "text-center"} do |f| %>
+			<div class="form-group funeral">
+				<%= label_tag(:f, "請問您的姓名") %> <br>
+					<%= f.select(:religion, {}, class: "col-md-6") do%>
+					<%= options_for_select([["家人選擇", 1], ["佛教", 2], ["道教", 3], ["天主教", 4], ["基督教", 5]]) %>
+				<% end %>
+			</div>
+			<div class="clearfix"></div>
+			<div class="form-group col-md-12 col-centered">
+				<%= label_tag(:preference, "你想要舉行喪禮、告別儀式嗎？")%> <br>
+				<div class="preference-button col-md-2">
+					<%= f.radio_button :preference, "yes"%>
+					<label for="funeral_preference_yes" class="preference-yes">
+						<div class="description">想要</div>
+					</label>
+				</div>
+				<div class="preference-button col-md-2">
+					<%= f.radio_button :preference, "no"%>
+					<label for="funeral_preference_no" class="preference-no">
+						<div class="description">不想要</div>
+					</label>
+				</div>
+				<div class="preference-button col-md-2">
+					<%= f.radio_button :preference, "family"%>
+					<label for="funeral_preference_family" class="preference-family">
+						<div class="description">家人決定</div>
+					</label>
+				</div>
+			</div>
+			
+
+		<% end %>
+	</div>
+</div>
+
+<script>
+	$('#funeral_preference_no').click(function(){
+		console.log('abc');
+	})
+</script>

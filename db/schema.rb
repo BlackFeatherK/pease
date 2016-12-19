@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20161219065332) do
   create_table "funerals", force: :cascade do |t|
     t.integer  "will_id"
     t.string   "religion"
+    t.string   "preference"
     t.string   "burial_arrangement"
     t.string   "body_arrangement"
     t.text     "participants"

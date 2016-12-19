@@ -1,3 +1,85 @@
 // Place all the styles related to the funerals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$border-primary-color: #D0D0D0;
+$main-color: #364860;
+$secondary-color: #F8C957;
+$main-font: PingFangTC-Medium;
+#funerals {
+	#show {
+			label {
+				color: $main-color;
+				font-family: $main-font;
+			}
+			select#funeral_religion {
+				width: 200px;
+				height: 36px;
+				-webkit-appearance: none;
+		    	appearance: none;
+				text-indent: 5px;
+				background-image:
+				    linear-gradient(45deg, transparent 50%, $border-primary-color 50%),
+				    linear-gradient(135deg, $border-primary-color 50%, transparent 50%);
+				background-position:
+				    calc(100% - 15px) calc(1em + 2px),
+				    calc(100% - 10px) calc(1em + 2px);
+				background-size:
+				    5px 5px,
+				    5px 5px;
+				background-repeat: no-repeat;
+			}
+			.preference-button {
+				input {
+					visibility: hidden;
+				}
+
+				label {
+					width: 150px;
+					height: 137px;
+					border-radius: 5px;
+					border: 1px solid $border-primary-color;
+					position: relative;
+					background-position: 50% 40%;
+					.description {
+						position: absolute;
+						top: 75%;
+						left: 30%;
+						color: $main-color;
+					}
+				}
+
+				label.preference-yes {
+					background:url("default_ok.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				label.preference-no {
+					background:url("default_no.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				label.preference-family {
+					background:url("default_family.png") no-repeat;
+					background-position: 50% 40%;
+				}
+
+				// Hover effect 
+				input[type=radio]:checked + label {
+					border: 1px solid $secondary-color;
+				}
+				input[type=radio]:checked + label.preference-yes {
+					background:url("hover_ok.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				input[type=radio]:checked + label.preference-no {
+					background:url("hover_no.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				input[type=radio]:checked + label.preference-family {
+					background:url("hover_family.png") no-repeat;
+					background-position: 50% 40%;
+				}
+			}
+		
+
+		
+	}
+}

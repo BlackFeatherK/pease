@@ -51,7 +51,7 @@ h1 {
 			background:url("hover_male.png") no-repeat;
 			background-position: 50% 40%;
 	}
-		input[type=radio]:checked + label.female-label {
+		input[type=radio]:checked + label {
 			background:url("hover_female.png") no-repeat;
 			background-position: 50% 40%;
 		}
