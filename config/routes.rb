@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'welcome/index'
-  post 'welcome/index'
+  resources :welcome
 
 
-  namespace :api do
+  # namespace :api do
     # constraints(host: 'api.localhost') do
       resources :wills do
         resources :accounts
@@ -20,7 +19,7 @@ Rails.application.routes.draw do
       end 
       match '*unmatched_route', to: 'base#error_404', via: :all
     # end
-  end
+  # end
 
   # resources :wills do
   #   resources :accounts
