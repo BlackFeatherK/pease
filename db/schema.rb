@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20161219065332) do
     t.string   "preference"
     t.string   "burial_arrangement"
     t.string   "body_arrangement"
-    t.text     "participants"
+    t.text     "other_arrangement"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.index ["will_id"], name: "index_funerals_on_will_id"

@@ -6,7 +6,7 @@ class CreateFunerals < ActiveRecord::Migration[5.0]
       t.string :preference
       t.string :burial_arrangement
       t.string :body_arrangement
-      t.text :participants
+      t.text :other_arrangement
       t.timestamps
     end
   end
