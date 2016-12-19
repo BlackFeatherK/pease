@@ -219,7 +219,15 @@ $main-font: PingFangTC-Medium;
 						background-position: 50% 40%;
 					}
 			}
-
+			.other {
+				input {
+					border: 1px solid $border-primary-color;
+					width: 100%;
+					height: 2em;
+					text-align: center;
+					border-radius: 5px;
+				}
+			}
 			.funeral-service-description {
 				width: 100%;
 				height: 5%;
