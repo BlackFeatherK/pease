@@ -24,10 +24,8 @@ ActiveRecord::Schema.define(version: 20161219065332) do
 
   create_table "funeral_services", force: :cascade do |t|
     t.string   "name"
-    t.integer  "funeral_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["funeral_id"], name: "index_funeral_services_on_funeral_id"
   end
 
   create_table "funerals", force: :cascade do |t|
