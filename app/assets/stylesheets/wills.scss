@@ -30,7 +30,7 @@ $secondary-color: #F8C957;
       position: absolute;
     }
     
-    .choose{
+    .choose {
       height: 200px;
       border: 1px solid $border-primary-color;
       border-radius: 5px;
@@ -57,13 +57,16 @@ $secondary-color: #F8C957;
       bottom: 10%;
       transform: translateX(-50%);
       position: absolute;
+      color: $border-primary-color;
     }
 
     input[type=radio]:checked + label.default-ok {
       background:url("hover_ok.png") no-repeat;
       background-position: 50% 40%;
-      color: $secondary-color;
-      border-color: $secondary-color;
+      
+      .choose-type {
+        color: $secondary-color;
+      }
     }
 
     .default-no {
@@ -82,25 +85,37 @@ $secondary-color: #F8C957;
     input[type=radio]:checked + label.default-no {
       background:url("hover_no.png") no-repeat;
       background-position: 50% 40%;
-      color: $secondary-color;
-      border-color: $secondary-color;
+
+      .choose-type {
+        color: $secondary-color;
+      }
     }
 
   }
 
   .wish {
 
+    p {
+      font-size: 20px;
+    }
+
     input {
       visibility: hidden;
       position: absolute;
     }
+
     .text{
       padding: 10px;
     }
+
     .wishs{
       height: 160px;
       border: 1px solid $border-primary-color;
       border-radius: 5px;
+      color: $border-primary-color;
+      &:hover{
+        border: 1px solid #F8C957;
+      }
     }
 
     .wish-type {
@@ -121,10 +136,23 @@ $secondary-color: #F8C957;
       background-position: 50% 40%;
     }
 
+    input[type=radio]:checked + label.property {
+      background:url("hover_house.png") no-repeat;
+      background-position: 50% 40%;
+      color: $secondary-color;
+    }
+
+
     .stock {
       background: image-url("default_stock.png") no-repeat;
       background-position: 50% 40%;
       color: $border-primary-color;
+    }
+
+    input[type=radio]:checked + label.stock {
+      background:url("hover_stock.png") no-repeat;
+      background-position: 50% 40%;
+      color: $secondary-color;
     }
 
     .account {
@@ -133,10 +161,22 @@ $secondary-color: #F8C957;
       color: $border-primary-color;
     }
 
+    input[type=radio]:checked + label.account {
+      background:url("hover_money.png") no-repeat;
+      background-position: 50% 40%;
+      color: $secondary-color;
+    }
+
     .motor {
       background: image-url("default_car.png") no-repeat;
       background-position: 50% 40%;
       color: $border-primary-color;
+    }
+
+    input[type=radio]:checked + label.motor {
+      background:url("hover_car.png") no-repeat;
+      background-position: 50% 40%;
+      color: $secondary-color;
     }
 
     .jewelry {
@@ -145,10 +185,22 @@ $secondary-color: #F8C957;
       color: $border-primary-color;
     }
 
+    input[type=radio]:checked + label.jewelry {
+      background:url("hover_jewelry.png") no-repeat;
+      background-position: 50% 40%;
+      color: $secondary-color;
+    }
+
     .other {
       background: image-url("default_other.png") no-repeat;
       background-position: 50% 40%;
       color: $border-primary-color;
+    }
+
+    input[type=radio]:checked + label.other {
+      background:url("hover_other.png") no-repeat;
+      background-position: 50% 40%;
+      color: $secondary-color;
     }
 
   }
