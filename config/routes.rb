@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'welcome/index'
 
 
-  namespace :api do
+  # namespace :api do
     # constraints(host: 'api.localhost') do
       resources :wills do
         resources :accounts
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       end 
       match '*unmatched_route', to: 'base#error_404', via: :all
     # end
-  end
+  # end
 
   # resources :wills do
   #   resources :accounts
