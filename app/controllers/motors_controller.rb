@@ -1,0 +1,2 @@
+class MotorsController < ApplicationController
+end

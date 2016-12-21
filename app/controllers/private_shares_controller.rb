@@ -1,0 +1,2 @@
+class PrivateSharesController < ApplicationController
+end

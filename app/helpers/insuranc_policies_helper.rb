@@ -1,0 +1,2 @@
+module InsurancPoliciesHelper
+end
