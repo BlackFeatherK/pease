@@ -4,7 +4,7 @@
       <h2>個人資產</h2>
       <p>請問您有特別要留下的實體資產給特定的人嗎？</p>
       <div class="container2">
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-6">
             <div class="choose">
             <%= radio_button_tag(:choose, "ok") %>
             <label class="default-ok" for="choose_ok">
@@ -12,7 +12,7 @@
             </label>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6">
           <div class="choose">
             <%= radio_button_tag(:choose, "no") %>
             <label class="default-no" for="choose_no">
@@ -29,7 +29,7 @@
   <div class="wish container text-center unprint">
     <p>請問您想要留下什麼實體資產？</p>
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-2 col-sm-4">
         <div class="wishs">
           <%= radio_button_tag(:wish, "property") %>
           <label class="asset property" for="wish_property">
@@ -37,7 +37,7 @@
           </label>
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-sm-4">
         <div class="wishs">
           <%= radio_button_tag(:wish, "stock") %>
           <label class="asset stock" for="wish_stock">
@@ -45,7 +45,7 @@
           </label>
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-sm-4">
         <div class="wishs">
           <%= radio_button_tag(:wish, "account") %>
           <label class="asset account" for="wish_account">
@@ -53,7 +53,7 @@
           </label>
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-sm-4">
         <div class="wishs">
           <%= radio_button_tag(:wish, "motor") %>
           <label class="asset motor" for="wish_motor">
@@ -61,7 +61,7 @@
           </label>
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-sm-4">
         <div class="wishs">
           <%= radio_button_tag(:wish, "jewelry") %>
           <label class="asset jewelry" for="wish_jewelry">
@@ -69,7 +69,7 @@
           </label>
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-sm-4">
         <div class="wishs">
           <%= radio_button_tag(:wish, "other") %>
           <label class="asset other" for="wish_other">
@@ -94,12 +94,12 @@
               <%= label_tag(:f, "描述") %> <br>
               <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請描述特徵或地址")%>
             </div>
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 form-select">
               <%= label_tag(:f, "資產指定給誰") %> <br>
-              <div class="col-md-3">
+              <div class="col-md-3 col-sm-3">
                 <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
               </div>
-              <div class="col-md-9">
+              <div class="col-md-9 col-sm-9">
                 <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
               </div>
             </div>
@@ -119,7 +119,7 @@
               <%= label_tag(:f, "哪一家銀行/證券商") %> <br>
               <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入銀行/證券商")%>
             </div>
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 form-select">
               <%= label_tag(:f, "資產指定給誰") %> <br>
               <div class="col-md-3">
                 <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
@@ -148,7 +148,7 @@
               <%= label_tag(:f, "戶口類型") %> <br>
               <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入戶口類型")%>
             </div>
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 form-select">
               <%= label_tag(:f, "資產指定給誰") %> <br>
               <div class="col-md-3">
                 <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
@@ -177,7 +177,7 @@
               <%= label_tag(:f, "描述") %> <br>
               <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請描述廠牌或特徵")%>
             </div>
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 form-select">
               <%= label_tag(:f, "資產指定給誰") %> <br>
               <div class="col-md-3">
                 <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
@@ -206,7 +206,7 @@
               <%= label_tag(:f, "描述") %> <br>
               <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請描述")%>
             </div>
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 form-select">
               <%= label_tag(:f, "資產指定給誰") %> <br>
               <div class="col-md-3">
                 <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
@@ -235,7 +235,7 @@
               <%= label_tag(:f, "描述") %> <br>
               <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請描述")%>
             </div>
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 form-select">
               <%= label_tag(:f, "資產指定給誰") %> <br>
               <div class="col-md-3">
                 <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
@@ -259,39 +259,3 @@
 </div>
 
 
-
-<script>
-  $('#choose_ok').click(function(){
-    $('.wish').removeClass('unprint');
-    $('.wish').addClass('print');
-  });
-  $('#choose_no').click(function(){
-    $('.wish').removeClass('print');
-    $('.wish').addClass('unprint');
-  });
-  $('#wish_stock').click(function(){
-    $('.wish-select').addClass('unprint');
-    $('.wish-stock').removeClass('unprint');
-
-  });
-  $('#wish_property').click(function(){
-    $('.wish-select').addClass('unprint');
-    $('.wish-property').removeClass('unprint');
-  });
-  $('#wish_account').click(function(){
-    $('.wish-select').addClass('unprint');
-    $('.wish-account').removeClass('unprint');
-  });
-  $('#wish_motor').click(function(){
-    $('.wish-select').addClass('unprint');
-    $('.wish-motor').removeClass('unprint');
-  });
-  $('#wish_jewelry').click(function(){
-    $('.wish-select').addClass('unprint');
-    $('.wish-jewelry').removeClass('unprint');
-  });
-  $('#wish_other').click(function(){
-    $('.wish-select').addClass('unprint');
-    $('.wish-other').removeClass('unprint');
-  });
-</script>
