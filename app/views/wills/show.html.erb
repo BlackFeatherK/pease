@@ -3,21 +3,22 @@
     <div class="row">
       <h2>個人資產</h2>
       <p>請問您有特別要留下的實體資產給特定的人嗎？</p>
-      <div class="col-md-2"></div>
-        <div class="col-md-4">
-          <div class="choose">
-          <%= radio_button_tag(:choose, "ok") %>
-          <label class="default-ok" for="choose_ok">
-            <div class="choose-type">有</div>
-          </label>
+      <div class="container2">
+          <div class="col-md-6">
+            <div class="choose">
+            <%= radio_button_tag(:choose, "ok") %>
+            <label class="default-ok" for="choose_ok">
+              <div class="choose-type">有</div>
+            </label>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="choose">
-          <%= radio_button_tag(:choose, "no") %>
-          <label class="default-no" for="choose_no">
-             <div class="choose-type">沒有</div>
-          </label>
+        <div class="col-md-6">
+          <div class="choose">
+            <%= radio_button_tag(:choose, "no") %>
+            <label class="default-no" for="choose_no">
+               <div class="choose-type">沒有</div>
+            </label>
+          </div>
         </div>
       </div>
     </div>
@@ -25,7 +26,7 @@
 
 
 
-  <div class="wish container text-center">
+  <div class="wish container text-center unprint">
     <p>請問您想要留下什麼實體資產？</p>
     <div class="row">
       <div class="col-md-2">
@@ -78,4 +79,219 @@
       </div>
     </div>
   </div>
+
+
+  <div class="wish-input">
+    <div class="container">
+      <div class="container2">
+        <div class="wish-select wish-property unprint">
+          <%= form_tag({method: :post},{class: "form-group wish-form"}) do %>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "估計市值") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "哪一家銀行/證券商")%>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "描述") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請描述特徵或地址")%>
+            </div>
+            <div class="form-group col-md-12">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3">
+                <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+            <div class="form-group col-md-12">
+              <%= submit_tag "下一步", class: "submit"%>
+            </div>
+          <% end %>
+        </div>
+          
+
+        <div class="wish-select wish-stock unprint">
+          <%= form_tag({method: :post},{class: "form-group wish-form"}) do %>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "哪一家銀行/證券商") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入銀行/證券商")%>
+            </div>
+            <div class="form-group col-md-12">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3">
+                <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+            <div class="form-group col-md-12">
+              <%= submit_tag "下一步", class: "submit"%>
+            </div>
+          <% end %>
+        </div>
+          
+
+        <div class="wish-select wish-account unprint">
+          <%= form_tag({method: :post},{class: "form-group wish-form"}) do %>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "哪一家銀行") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入銀行名稱")%>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "戶口類型") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入戶口類型")%>
+            </div>
+            <div class="form-group col-md-12">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3">
+                <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+            <div class="form-group col-md-12">
+              <%= submit_tag "下一步", class: "submit"%>
+            </div>
+          <% end %>
+        </div>
+          
+
+        <div class="wish-select wish-motor unprint">
+          <%= form_tag({method: :post},{class: "form-group wish-form"}) do %>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "估計市值") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入估計市值")%>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "描述") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請描述廠牌或特徵")%>
+            </div>
+            <div class="form-group col-md-12">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3">
+                <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+            <div class="form-group col-md-12">
+              <%= submit_tag "下一步", class: "submit"%>
+            </div>
+          <% end %>
+        </div>
+          
+
+        <div class="wish-select wish-jewelry unprint">
+          <%= form_tag({method: :post},{class: "form-group wish-form"}) do %>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "估計市值") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入估計市值")%>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "描述") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請描述")%>
+            </div>
+            <div class="form-group col-md-12">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3">
+                <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+            <div class="form-group col-md-12">
+              <%= submit_tag "下一步", class: "submit"%>
+            </div>
+          <% end %>
+        </div>
+          
+
+        <div class="wish-select wish-other unprint">
+          <%= form_tag({method: :post},{class: "form-group wish-form"}) do %>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "估計市值") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入估計市值")%>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "描述") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請描述")%>
+            </div>
+            <div class="form-group col-md-12">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3">
+                <%= select_tag "credit_card", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+            <div class="form-group col-md-12">
+              <%= submit_tag "下一步", class: "submit"%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+
+
+<script>
+  $('#choose_ok').click(function(){
+    $('.wish').removeClass('unprint');
+    $('.wish').addClass('print');
+  });
+  $('#choose_no').click(function(){
+    $('.wish').removeClass('print');
+    $('.wish').addClass('unprint');
+  });
+  $('#wish_stock').click(function(){
+    $('.wish-select').addClass('unprint');
+    $('.wish-stock').removeClass('unprint');
+
+  });
+  $('#wish_property').click(function(){
+    $('.wish-select').addClass('unprint');
+    $('.wish-property').removeClass('unprint');
+  });
+  $('#wish_account').click(function(){
+    $('.wish-select').addClass('unprint');
+    $('.wish-account').removeClass('unprint');
+  });
+  $('#wish_motor').click(function(){
+    $('.wish-select').addClass('unprint');
+    $('.wish-motor').removeClass('unprint');
+  });
+  $('#wish_jewelry').click(function(){
+    $('.wish-select').addClass('unprint');
+    $('.wish-jewelry').removeClass('unprint');
+  });
+  $('#wish_other').click(function(){
+    $('.wish-select').addClass('unprint');
+    $('.wish-other').removeClass('unprint');
+  });
+</script>
