@@ -4,13 +4,6 @@
 			<h1>設計生命畢業禮</h1>
 		</div>
 		<%= form_for @funeral, url: will_funerals_path, html: {class: "text-center"} do |f| %>
-			<div class="form-group funeral">
-				<%= label_tag(:f, "請問您的姓名") %> <br>
-					<%= f.select(:religion, {}, class: "col-md-6") do%>
-					<%= options_for_select([["家人選擇", 1], ["佛教", 2], ["道教", 3], ["天主教", 4], ["基督教", 5]]) %>
-				<% end %>
-			</div>
-			<div class="clearfix"></div>
 			<div class="form-group col-md-12 col-centered">
 				<%= label_tag(:preference, "你想要舉行喪禮、告別儀式嗎？")%> <br>
 				<div class="preference-button col-md-4">
@@ -31,25 +24,36 @@
 						<div class="description">家人決定</div>
 					</label>
 				</div>
+			</div>
+
+
+
+			<div class="form-group funeral-religion">
+				<%= label_tag(:f, "你想要採用何種宗教信仰的方式？") %> <br>
+					<%= f.select(:religion, {}, class: "col-md-6") do%>
+					<%= options_for_select([["家人選擇", 1], ["佛教", 2], ["道教", 3], ["天主教", 4], ["基督教", 5]]) %>
+				<% end %>
+			</div>
+			<div class="clearfix"></div>
+		
 
 				<div class="clearfix"></div>
 				<div class="service form-group">
 					<h3>你想要哪些類型的服務？</h3> 
 					<p>(可複選)</p>
-					<%= f.collection_check_boxes(:funeral_service_ids, FuneralService.all, :id, :name) do |c| %>			
-						<%= c.check_box %>
-						<%= c.label %>
-					<% end %>
+					<%= f.collection_check_boxes(:funeral_service_ids, FuneralService.all, :id, :name)%>			
 				</div>
 
 				<div class="funeral-service-description">
-					墓園服務，無論是選擇土葬或火化，最後的歸宿不是在墓園裡，就是在寶塔內（自然葬者除外），通常除了考量環境景觀、地理風水與價格外，能否給予恆久地、清靜地安心長眠，也是最為關心的問題。
+					<p>墓園服務，無論是選擇土葬或火化，最後的歸宿不是在墓園裡，就是在寶塔內（自然葬者除外），通常除了考量環境景觀、地理風水與價格外，能否給予恆久地、清靜地安心長眠，也是最為關心的問題。</p>
 				</div>
 				<div class="funeral-service-description">
-					禮儀服務在殯儀館舉行，將身體存放在棺材中，用來紀念您的過往。協助執行喪葬禮儀一切瑣事，步上人生最後一段旅程。
+					<p>禮儀服務在殯儀館舉行，將身體存放在棺材中，用來紀念您的過往。協助執行喪葬禮儀一切瑣事，步上人生最後一段旅程。
+					</p>
 				</div>
 				<div class="funeral-service-description">
-					追思禮儀，基督教在出殯當天由牧師主持安息禮拜，主要是唱聖詩、祈禱、讀經和證道，最後在親友的追思與致哀後出殯，儀式簡單肅穆。 
+					<p>追思禮儀，基督教在出殯當天由牧師主持安息禮拜，主要是唱聖詩、祈禱、讀經和證道，最後在親友的追思與致哀後出殯，儀式簡單肅穆。 
+					</p>
 				</div>
 
 				<div class="body-arrangement form-group">
@@ -96,7 +100,6 @@
 					<h3>其他葬禮方式</h3>
 					<%= f.text_field :other_arrangement, placeholder: "請寫下你想要的方式"%>
 				</div>
-			</div>
 			
 			<%= f.submit class: "submit" %>
 
@@ -105,7 +108,13 @@
 </div>
 
 <script>
-	$('#funeral_preference_no').click(function(){
-		console.log('abc');
+	$('#funeral_preference_no, #funeral_preference_family').click(function(){
+		var attribute_button = $('.funeral-religion, .service input:checked, .funeral-service-description input:checked, .burial-arrangement input:checked, .body-arrangement input:checked, .other')
+
+		$('.funeral-religion, .service, .funeral-service-description, .burial-arrangement, .body-arrangement, .other').hide();
+		attribute_button.removeAttr('checked');
+	});
+	$('#funeral_preference_yes').click(function(){
+		$('.service, .funeral-service-description, .burial-arrangement, .body-arrangement, .other').show();
 	})
 </script>
