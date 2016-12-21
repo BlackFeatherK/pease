@@ -107,6 +107,10 @@ $secondary-color: #F8C957;
 
   }
 
+  .edit_will {
+
+  }
+
   .wish {
 
     margin-bottom: 30px;
@@ -228,8 +232,6 @@ $secondary-color: #F8C957;
 
   .wish-input {
 
-    .wish-form {
-
       input {
         height: 40px;
         margin-bottom: 10px;
@@ -237,6 +239,7 @@ $secondary-color: #F8C957;
 
       label {
         margin-bottom: 10px;
+        font-size: 16px;
       }
 
       .form-select {
@@ -268,8 +271,8 @@ $secondary-color: #F8C957;
           padding-right: 0;
         }
 
-      }
-
+      } 
+      
       .wish-btn {
         margin-top: 30px;
         padding: 8px 100px;
@@ -284,13 +287,12 @@ $secondary-color: #F8C957;
 
       .submit {
         width: 100%;
+        height: 40px;
         background-color: $secondary-color;
         border: none;
         border-radius: 5px;
         color: white;
       }
-      
-    }
 
   }
     

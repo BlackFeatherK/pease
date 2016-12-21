@@ -1,0 +1,210 @@
+<div class="wish container text-center unprint">
+  <%= form_for will do |f| %>
+    <p>請問您想要留下什麼實體資產？</p>
+    <div class="row">
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "property") %>
+          <label class="asset property" for="wish_property">
+            <div class="wish-type">房產</div> 
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "stock") %>
+          <label class="asset stock" for="wish_stock">
+            <div class="wish-type">股票帳號</div> 
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "account") %>
+          <label class="asset account" for="wish_account">
+            <div class="wish-type">銀行現金</div>
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "motor") %>
+          <label class="asset motor" for="wish_motor">
+            <div class="wish-type">汽車/機車</div>
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "jewelry") %>
+          <label class="asset jewelry" for="wish_jewelry">
+            <div class="wish-type">珠寶/首飾</div>
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "other") %>
+          <label class="asset other" for="wish_other">
+            <div class="wish-type">其他</div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wish-input">
+    <div class="container">
+      <div class="container2">
+        <div class="wish-select wish-property unprint">
+          <%= f.fields_for @will.properties.build do |property| %>
+            <div class="col-md-12 form-group">
+              <%= property.label "估計市值" %>
+              <%= property.text_field :address , :class => 'form-control text-center' , placeholder: "請輸入估計市值" %>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= property.label "描述" %>
+              <%= property.text_field :address , :class => 'form-control text-center', placeholder: "請描述特徵或地址" %>
+            </div>
+            <div class="form-group col-md-12 form-select">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3 col-sm-3">
+                <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9 col-sm-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+          <% end %>
+        </div>
+
+
+        <div class="wish-select wish-stock unprint">
+          <%= f.fields_for @will.stock_portfolios.build do |stock_portfolio| %>
+            <div class="col-md-12 form-group">
+              <%= stock_portfolio.label "估計市值" %>
+              <%= stock_portfolio.text_field :bank , :class => 'form-control text-center' , placeholder: "哪一家銀行/證券商" %>
+            </div>
+            <div class="form-group col-md-12 form-select">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3 col-sm-3">
+                <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9 col-sm-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+          <% end %>
+        </div>
+
+
+        <div class="wish-select wish-account unprint">
+          <%= f.fields_for @will.accounts.build do |account| %>
+            <div class="col-md-12 form-group">
+              <%= account.label "估計市值" %>
+              <%= account.text_field :bank , :class => 'form-control text-center' , placeholder: "哪一家銀行" %>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= account.label "戶口類型" %>
+              <%= account.text_field :account_type , :class => 'form-control text-center', placeholder: "請輸入戶口類型" %>
+            </div>
+            <div class="form-group col-md-12 form-select">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3 col-sm-3">
+                <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9 col-sm-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+          <% end %>
+        </div>
+
+        
+        <div class="wish-select wish-motor unprint">
+          <%= f.fields_for @will.motors.build do |motor| %>
+            <div class="col-md-12 form-group">
+              <%= motor.label "估計市值" %>
+              <%= motor.text_field :quantity , :class => 'form-control text-center' , placeholder: "請輸入估計市值" %>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= motor.label "描述" %>
+              <%= motor.text_field :amount , :class => 'form-control text-center', placeholder: "請描述廠牌或特徵" %>
+            </div>
+            <div class="form-group col-md-12 form-select">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3 col-sm-3">
+                <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9 col-sm-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+          <% end %>
+        </div>
+      
+        <div class="wish-select wish-jewelry unprint">
+          <%= f.fields_for @will.jewelries.build do |jewelry| %>
+            <div class="col-md-12 form-group">
+              <%= jewelry.label "估計市值" %>
+              <%= jewelry.text_field :quantity , :class => 'form-control text-center' , placeholder: "請輸入估計市值" %>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= jewelry.label "描述" %>
+              <%= jewelry.text_field :amount , :class => 'form-control text-center', placeholder: "請描述種類或特徵" %>
+            </div>
+            <div class="form-group col-md-12 form-select">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3 col-sm-3">
+                <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9 col-sm-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="wish-select wish-other unprint">
+          <%= form_tag({method: :post},{class: "form-group wish-form"}) do %>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "估計市值") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入估計市值")%>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= label_tag(:f, "描述") %> <br>
+              <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請描述")%>
+            </div>
+            <div class="form-group col-md-12 form-select">
+              <%= label_tag(:f, "資產指定給誰") %> <br>
+              <div class="col-md-3">
+                <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+              </div>
+              <div class="col-md-9">
+                <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+              </div>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

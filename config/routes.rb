@@ -17,6 +17,11 @@ Rails.application.routes.draw do
         resources :private_shares
         resources :properties
         resources :stock_portfolios
+        
+        collection do 
+          get :new_form
+        end
+
       end 
 
       resources :users

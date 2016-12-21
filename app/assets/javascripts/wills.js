@@ -1,11 +1,13 @@
 $('#choose_ok').click(function(){
   $('.wish').removeClass('unprint');
   $('.wish-select').addClass('unprint');
+  $('.wish-new').removeClass('unprint');
 });
 
 $('#choose_no').click(function(){
   $('.wish').addClass('unprint');
   $('.wish-select').addClass('unprint');
+  $('.wish-new').addClass('unprint');
 });
 
 $('#wish_stock').click(function(){
@@ -37,3 +39,6 @@ $('#wish_other').click(function(){
   $('.wish-select').addClass('unprint');
   $('.wish-other').removeClass('unprint');
 });
+
+
+

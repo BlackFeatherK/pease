@@ -1,0 +1,8 @@
+<%= form_for @will do |f| %>
+
+  var wish_form = '<%= j render :partial => "wills_form" , :locals => {:f => f} %>'
+  console.log('I log to the browser’s console');  
+
+    $('.edit_will').append(wish_form); 
+
+<% end %>
