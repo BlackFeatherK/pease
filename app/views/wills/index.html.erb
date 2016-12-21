@@ -1,0 +1,142 @@
+<div class="write text-center">
+  <h2>嗨！<%= @user.email%></h2>
+  <h2>提早立遺囑，是件健康且負責任的事</h2>
+</div>
+
+<div class="user">
+  <div class="container">
+    <div class="user_avatar">
+      <%= image_tag("Circled User Male_000000_100.png", :alt => "" , :class => "circle") %>
+    </div>
+    
+    <div class="user_name">
+      <h3><%= @user.email %></h3>
+    </div>
+
+    <div class="user_bar">
+      <ul class="list-inline">
+        <li>
+          <a href="">遺囑規劃<%= image_tag("completed_ok.png", :alt => "" , :class => "completed circle") %></a>
+        </li>
+        <li>
+          <%= image_tag("Iconsmind-Outline-Arrow-Right.png", :alt => "" , :class => "arrow-right" ) %>
+            
+        </li>
+        <li>
+          <a href="">編輯遺囑內容<%= image_tag("completed_ok.png", :alt => "" , :class => "completed circle" ) %></a>
+        </li>
+        <li class="right">
+          <%= button_to users_path , :class => "btn btn-default notarization" do %>
+            <%= image_tag("Preview Pane_000000_100.png", :alt => "" , :class => "preview" ) %> 公證遺囑
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="user-list">
+  <div class="container">
+    <div class="user-list-bar">
+      <div class="list">總  覽<span class="glyphicon glyphicon-triangle-bottom"></span></div>
+      <div class="list">數位資產<span class="glyphicon glyphicon-triangle-bottom"></span></div>
+      <div class="list">遺產規劃<span class="glyphicon glyphicon-triangle-bottom"></span></div>
+      <div class="list">葬禮安排<span class="glyphicon glyphicon-triangle-bottom"></span></div>
+      <div class="list">法律金融<span class="glyphicon glyphicon-triangle-bottom"></span></div>
+      <div class="list">健康醫療<span class="glyphicon glyphicon-triangle-bottom"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="user-arrangement">
+  <div class="container text-center">
+    <div class="row">
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+      <div class="choose col-md-3 col-sm-12">
+        <div class="choose-btn">
+          <%= image_tag("icons.png", :alt => "" , :class => "preview" ) %>
+          <p>寵物</p>
+          <div class="choose-focus"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

@@ -1,0 +1,107 @@
+<div id="slider">
+  <%= form_for @topic , :url => "" do |f| %>
+    <p class="glyphicon glyphicon-chevron-right control_next"></p>
+    <p class="glyphicon glyphicon-chevron-left control_prev"></p>
+    <ul>
+      <li>
+        <div class="form-group">
+          <label class="question">{{message1}}</label>
+        </div>
+        <div class="form-group btn">
+           <label class="question-btn"><%= f.radio_button :questionA , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
+          <label class="question-btn"><%= f.radio_button :questionA , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
+        </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <label class="question">{{message2}}</label>
+        </div>
+        <div class="form-group btn">
+           <label class="question-btn"><%= f.radio_button :questionB , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
+          <label class="question-btn"><%= f.radio_button :questionB , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
+        </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <label class="question">{{message[2]}}</label>
+        </div>
+        <div class="form-group btn">
+           <label class="question-btn"><%= f.radio_button :questionC , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
+          <label class="question-btn"><%= f.radio_button :questionC , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
+        </div>
+      </li>
+      <li>
+         <div class="form-group">
+          <label class="question">{{message[3]}}</label>
+        </div>
+        <div class="form-group btn">
+           <label class="question-btn"><%= f.radio_button :questionD , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
+          <label class="question-btn"><%= f.radio_button :questionD , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
+        </div>
+      </li>
+    </ul> 
+  <% end %> 
+</div>
+
+
+
+
+<script>
+  jQuery(document).ready(function ($) {
+  
+  var slideCount = $('#slider ul li').length;
+  var slideWidth = $('#slider ul li').width();
+  var slideHeight = $('#slider ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#slider').css({ width: slideWidth, height: slideHeight });
+  
+  $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('p.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('p.control_next').click(function () {
+        moveRight();
+    });
+
+    $('input[type=radio]').click(function(){
+        moveRight();
+    });
+
+  });  
+
+
+
+  var question = new Vue({
+    el : 'li' ,
+    data : {
+      message1 : "It is important to me to not be a burden to my loved ones. fdsfdsfdsfdfddfdfdsdsfds",
+      message2 : "I would not want to be kept in a vegetative state forever.",
+      message3 : "Losing my ability to communicate would make life not worth living.",
+      message4 : "I would be okay with being fed through a tube to prolong my life."
+    }
+  })  
+
+</script>

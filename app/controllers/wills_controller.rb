@@ -1,6 +1,6 @@
 class WillsController < ApplicationController
 
-  def show
-
+  def index
+    @user = User.first
   end
 end

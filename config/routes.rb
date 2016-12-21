@@ -18,6 +18,8 @@ Rails.application.routes.draw do
         resources :properties
         resources :stock_portfolios
       end 
+
+      resources :users
       match '*unmatched_route', to: 'base#error_404', via: :all
     # end
   # end
