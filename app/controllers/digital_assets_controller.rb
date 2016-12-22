@@ -1,0 +1,3 @@
+class DigitalAssetsController < ApplicationController
+	
+end
