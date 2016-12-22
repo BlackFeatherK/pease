@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
   def controller_update( controller_name , params_id , params )
     find_will_name( controller_name , params_id )
     @will_name.update( params )
+    @will_name
   end
 
   def controller_destroy( controller_name , params_id )

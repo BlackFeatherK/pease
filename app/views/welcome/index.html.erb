@@ -1,6 +1,6 @@
 <div class="container">
 	<h1>個人資料</h1>
-	<%= form_tag({method: :post},{class: "form-group info"}) do %>
+	<%= form_tag({method: :key => "value", post},{class: "form-group info"}) do %>
 		<div class="col-md-6 form-group">
 			<%= label_tag(:f, "請問您的姓名") %> <br>
 			<%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入你的真實姓名")%>

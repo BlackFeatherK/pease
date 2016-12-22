@@ -9,9 +9,6 @@ class PropertiesController < ApplicationController
 
   def create
     @property = controller_create( controller_name , params_property)
-    respond_to do |format|
-      format.js
-    end
   end
 
   def show
@@ -24,10 +21,6 @@ class PropertiesController < ApplicationController
 
   def destroy
     @property = controller_destroy( controller_name , params[:id] )
-    @property.destroy
-    respond_to do |format|
-      format.js
-    end
   end
 
 

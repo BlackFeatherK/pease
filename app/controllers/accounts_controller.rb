@@ -9,9 +9,6 @@ class AccountsController < ApplicationController
 
   def create
     @account = controller_create( controller_name , params_account)
-    respond_to do |format|
-      format.js
-    end
   end
 
   def show
@@ -24,9 +21,6 @@ class AccountsController < ApplicationController
 
   def destroy
     @account = controller_destroy( controller_name , params[:id] )
-    respond_to do |format|
-      format.js
-    end
   end
 
 

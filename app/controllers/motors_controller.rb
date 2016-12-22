@@ -9,9 +9,6 @@ class MotorsController < ApplicationController
 
   def create
     @motor = controller_create( controller_name , params_motor)
-    respond_to do |format|
-      format.js
-    end
   end
 
   def show
@@ -24,9 +21,6 @@ class MotorsController < ApplicationController
 
   def destroy
     @motor = controller_destroy( controller_name , params[:id] )
-    respond_to do |format|
-      format.js
-    end
   end
 
 

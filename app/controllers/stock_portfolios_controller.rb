@@ -9,9 +9,6 @@ class StockPortfoliosController < ApplicationController
 
   def create
     @stock_portfolio = controller_create( controller_name , params_stock_portfolio)
-    respond_to do |format|
-      format.js
-    end
   end
 
   def show
@@ -24,9 +21,6 @@ class StockPortfoliosController < ApplicationController
 
   def destroy
     @stock_portfolio = controller_destroy( controller_name , params[:id] )
-    respond_to do |format|
-      format.js
-    end
   end
 
 

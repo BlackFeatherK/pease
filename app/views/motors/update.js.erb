@@ -1,0 +1,5 @@
+$('#edit_motor_<%= @motor.id %>').remove();
+
+var motor = '<%= j render :partial => "motor" %>' 
+$('input[type=text]').val('');
+$('.wish-motor').append(motor);

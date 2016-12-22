@@ -9,9 +9,6 @@ class JewelriesController < ApplicationController
 
   def create
     @jewelry = controller_create( controller_name , params_jewelry)
-    respond_to do |format|
-      format.js
-    end
   end
 
   def show
@@ -24,9 +21,6 @@ class JewelriesController < ApplicationController
 
   def destroy
     @jewelry = controller_destroy( controller_name , params[:id] )
-    respond_to do |format|
-      format.js
-    end
   end
 
 
