@@ -1,61 +1,3 @@
-<div class="wish container text-center unprint">
-  <%= form_for will do |f| %>
-    <p>請問您想要留下什麼實體資產？</p>
-    <div class="row">
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "property") %>
-          <label class="asset property" for="wish_property">
-            <div class="wish-type">房產</div> 
-          </label>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "stock") %>
-          <label class="asset stock" for="wish_stock">
-            <div class="wish-type">股票帳號</div> 
-          </label>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "account") %>
-          <label class="asset account" for="wish_account">
-            <div class="wish-type">銀行現金</div>
-          </label>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "motor") %>
-          <label class="asset motor" for="wish_motor">
-            <div class="wish-type">汽車/機車</div>
-          </label>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "jewelry") %>
-          <label class="asset jewelry" for="wish_jewelry">
-            <div class="wish-type">珠寶/首飾</div>
-          </label>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "other") %>
-          <label class="asset other" for="wish_other">
-            <div class="wish-type">其他</div>
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="wish-input">
-    <div class="container">
-      <div class="container2">
         <div class="wish-select wish-property unprint">
           <%= f.fields_for @will.properties.build do |property| %>
             <div class="col-md-12 form-group">
@@ -204,7 +146,6 @@
             </div>
           <% end %>
         </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+        <div class="form-group col-md-12">
+            <%= f.submit "新增", class: "submit"%>
+        </div>

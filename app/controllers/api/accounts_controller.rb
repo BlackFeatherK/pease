@@ -5,6 +5,7 @@ class Api::AccountsController < Api::BaseController
 
   def index
     controller_index(controller_name)
+    @account = @will.accounts.build
   end
 
   def create

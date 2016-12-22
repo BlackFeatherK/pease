@@ -24,17 +24,92 @@
     </div>
   </div>
 
+  <div class="wish container text-center unprint">
+    <p>請問您想要留下什麼實體資產？</p>
+    <div class="row">
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "property") %>
+          <label class="asset property" for="wish_property">
+            <div class="wish-type">房產</div> 
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "stock") %>
+          <label class="asset stock" for="wish_stock">
+            <div class="wish-type">股票帳號</div> 
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "account") %>
+          <label class="asset account" for="wish_account">
+            <div class="wish-type">銀行現金</div>
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "motor") %>
+          <label class="asset motor" for="wish_motor">
+            <div class="wish-type">汽車/機車</div>
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "jewelry") %>
+          <label class="asset jewelry" for="wish_jewelry">
+            <div class="wish-type">珠寶/首飾</div>
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="wishs">
+          <%= radio_button_tag(:wish, "other") %>
+          <label class="asset other" for="wish_other">
+            <div class="wish-type">其他</div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  
-    <%= render :partial => 'wills_form' , :locals => {:will => @will} %>
-    <div class="form-group col-md-12 text-center">
-      <%= link_to new_form_wills_path , :remote => true do %>
-        <label class="border-radius wish-btn wish-new unprint"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
-      <% end %>
+  <div class="wish-input">
+    <div class="container">
+      <div class="container2">
+
+        <div class="wish-select wish-property unprint">
+          <%= render :partial => 'properties/property' %>
+        </div>
+
+        <div class="wish-select wish-stock unprint">
+          <%= render :partial => 'stock_portfolios/stock_portfolio' %>
+        </div>
+
+        <div class="wish-select wish-account unprint">
+          <%= render :partial => 'accounts/account' %>
+        </div>
+
+        <div class="wish-select wish-motor unprint">
+          <%= render :partial => 'motors/motor' %>
+        </div>
+
+        <div class="wish-select wish-jewelry unprint">
+          <%= render :partial => 'jewelries/jewelry' %>
+        </div>
+
+        <div class="wish-select wish-other unprint">
+          <%= render :partial => 'motors/motor' %>
+        </div>
+
+      </div>
     </div>
-    <div class="form-group col-md-12">
-      <%= submit_tag "送出", class: "submit"%>
-    </div>
+  </div>
+    
 </div>
 
 

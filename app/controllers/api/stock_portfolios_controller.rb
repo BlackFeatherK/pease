@@ -8,7 +8,7 @@ class Api::StockPortfoliosController < Api::BaseController
   end
 
   def create
-    controller_create( controller_name , params_account)
+    controller_create( controller_name , params_stock_portfolio)
   end
 
   def show
@@ -16,7 +16,7 @@ class Api::StockPortfoliosController < Api::BaseController
   end
 
   def update
-    controller_update( controller_name , params[:id] , params_account )
+    controller_update( controller_name , params[:id] , params_stock_portfolio )
   end
 
   def destroy
