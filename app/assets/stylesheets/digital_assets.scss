@@ -6,7 +6,7 @@ $main-color: #364860;
 $secondary-color: #F8C957;
 $main-font: PingFangTC-Medium;
 
-.form-button {
+.yes-no-button {
 	width: 211px;
 	height: 137px;
 	border-radius: 5px;
@@ -16,6 +16,7 @@ $main-font: PingFangTC-Medium;
 }
 
 #digital_assets{
+	width: 500px;
 	.yes-no-question{
 		input {
 			visibility: hidden;
@@ -23,7 +24,7 @@ $main-font: PingFangTC-Medium;
 		}
 
 		label {
-			@extend .form-button;
+			@extend .yes-no-button;
 			.description {
 				position: absolute;
 				top: 75%;
@@ -55,4 +56,17 @@ $main-font: PingFangTC-Medium;
 		}
 
 	}
+
+	//textboxes
+	.other {
+		input {
+			text-align: center;
+			height: 36px;
+			width: 90%;
+			border: 1px solid $border-primary-color;
+			border-radius: 5px;
+
+		}
+	}
+
 }
