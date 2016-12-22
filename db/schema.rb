@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219065332) do
+ActiveRecord::Schema.define(version: 20161222055826) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "will_id"
@@ -20,6 +20,31 @@ ActiveRecord::Schema.define(version: 20161219065332) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["will_id"], name: "index_accounts_on_will_id"
+  end
+
+  create_table "digtial_assets", force: :cascade do |t|
+    t.integer  "will_id"
+    t.boolean  "facebook_account"
+    t.string   "facebook_account_treatment"
+    t.boolean  "google_account"
+    t.string   "google_account_treatment"
+    t.string   "google_account_content"
+    t.string   "google_account_id"
+    t.string   "google_account_password"
+    t.string   "heir"
+    t.string   "heir_email"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["will_id"], name: "index_digtial_assets_on_will_id"
+  end
+
+  create_table "funeral_service_options", force: :cascade do |t|
+    t.integer  "funeral_id"
+    t.integer  "funeral_service_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["funeral_id"], name: "index_funeral_service_options_on_funeral_id"
+    t.index ["funeral_service_id"], name: "index_funeral_service_options_on_funeral_service_id"
   end
 
   create_table "funeral_services", force: :cascade do |t|

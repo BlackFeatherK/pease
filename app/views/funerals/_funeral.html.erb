@@ -1,0 +1,110 @@
+
+			<div class="form-group col-md-12 col-centered">
+				<%= label_tag(:preference, "你想要舉行喪禮、告別儀式嗎？")%> <br>
+
+				<div class="preference-button col-md-4">
+					<%= f.radio_button :preference, "yes"%>
+					<label for="funeral_preference_yes" class="preference-yes">
+						<div class="description">想要</div>
+					</label>
+				</div>
+				<div class="preference-button col-md-4">
+					<%= f.radio_button :preference, "no"%>
+					<label for="funeral_preference_no" class="preference-no">
+						<div class="description">不想要</div>
+					</label>
+				</div>
+				<div class="preference-button col-md-4">
+					<%= f.radio_button :preference, "family"%>
+					<label for="funeral_preference_family" class="preference-family">
+						<div class="description">家人決定</div>
+					</label>
+				</div>
+			</div>
+
+
+
+			<div class="form-group funeral-religion">
+				<%= label_tag(:religion, "你想要採用何種宗教信仰的方式？") %> <br>
+				<%= f.select(:religion, [["家人選擇", '1'], ["佛教", '2'], ["道教", '3'], ["天主教", '4'], ["基督教", '5']] ) %>
+			</div>
+			<div class="clearfix"></div>
+		
+
+				<div class="clearfix"></div>
+				<div class="service form-group">
+					<h3>你想要哪些類型的服務？</h3> 
+					<p>(可複選)</p>
+					<%= f.collection_check_boxes(:funeral_service_ids, FuneralService.all, :id, :name)%>			
+				</div>
+
+				<div class="funeral-service-description">
+					<p>墓園服務，無論是選擇土葬或火化，最後的歸宿不是在墓園裡，就是在寶塔內（自然葬者除外），通常除了考量環境景觀、地理風水與價格外，能否給予恆久地、清靜地安心長眠，也是最為關心的問題。</p>
+				</div>
+				<div class="funeral-service-description">
+					<p>禮儀服務在殯儀館舉行，將身體存放在棺材中，用來紀念您的過往。協助執行喪葬禮儀一切瑣事，步上人生最後一段旅程。
+					</p>
+				</div>
+				<div class="funeral-service-description">
+					<p>追思禮儀，基督教在出殯當天由牧師主持安息禮拜，主要是唱聖詩、祈禱、讀經和證道，最後在親友的追思與致哀後出殯，儀式簡單肅穆。 
+					</p>
+				</div>
+
+				<div class="body-arrangement form-group">
+					<h3>你想如何安置身體？</h3> 
+						<%= f.radio_button :body_arrangement, "fire"%>
+						<label for="funeral_body_arrangement_fire" class="preference-1">
+							<div class="description">火化</div>
+						</label>
+						<%= f.radio_button :body_arrangement, "burial"%>
+						<label for="funeral_body_arrangement_burial" class="preference-2">
+							<div class="description">土葬</div>
+						</label>
+						<%= f.radio_button :body_arrangement, "donation"%>
+						<label for="funeral_body_arrangement_donation" class="preference-3">
+							<div class="description">捐贈研究用</div>
+						</label>
+						<%= f.radio_button :body_arrangement, "family"%>
+						<label for="funeral_body_arrangement_family" class="preference-4">
+							<div class="description">家人決定</div>
+						</label>
+				</div>
+
+				<div class="burial-arrangement form-group">
+					<h3>你想長眠於何處？</h3> 
+						<%= f.radio_button :burial_arrangement, "tree"%>
+						<label for="funeral_burial_arrangement_tree" class="preference-1">
+							<div class="description">樹</div>
+						</label>
+						<%= f.radio_button :burial_arrangement, "sea"%>
+						<label for="funeral_burial_arrangement_sea" class="preference-2">
+							<div class="description">海</div>
+						</label>
+						<%= f.radio_button :burial_arrangement, "cemetery"%>
+						<label for="funeral_burial_arrangement_cemetery" class="preference-3">
+							<div class="description">靈骨塔/墓園</div>
+						</label>
+						<%= f.radio_button :burial_arrangement, "family"%>
+						<label for="funeral_burial_arrangement_family" class="preference-4">
+							<div class="description">家人決定</div>
+						</label>
+				</div>
+
+				<div class="form-group other">
+					<h3>其他葬禮方式</h3>
+					<%= f.text_field :other_arrangement, placeholder: "請寫下你想要的方式"%>
+				</div>
+			
+			
+
+<script>
+	$('#funeral_preference_no, #funeral_preference_family').click(function(){
+		var attribute_button = $('.funeral-religion, .service input:checked, .funeral-service-description input:checked, .burial-arrangement input:checked, .body-arrangement input:checked, .other')
+
+		$('.funeral-religion, .service, .funeral-service-description, .burial-arrangement, .body-arrangement, .other').hide();
+		attribute_button.removeAttr('checked');
+	});
+	$('#funeral_preference_yes').click(function(){
+		$('.service, .funeral-service-description, .burial-arrangement, .body-arrangement, .other').show();
+	})
+</script>

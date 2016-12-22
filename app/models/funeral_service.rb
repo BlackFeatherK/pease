@@ -1,3 +1,4 @@
 class FuneralService < ApplicationRecord
-	belongs_to :funeral, optional: true;
+	has_many :funeral_service_options
+	has_many :funerals, through: :funeral_service_options
 end

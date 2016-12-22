@@ -16,6 +16,7 @@ Rails.application.routes.draw do
         resources :private_shares
         resources :properties
         resources :stock_portfolios
+        resources :digital_assets
       end 
       match '*unmatched_route', to: 'base#error_404', via: :all
     # end
