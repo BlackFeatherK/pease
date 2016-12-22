@@ -1,3 +1,58 @@
 // Place all the styles related to the digital_assets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$border-primary-color: #D0D0D0;
+$main-color: #364860;
+$secondary-color: #F8C957;
+$main-font: PingFangTC-Medium;
+
+.form-button {
+	width: 211px;
+	height: 137px;
+	border-radius: 5px;
+	border: 1px solid $border-primary-color;
+	position: relative;
+	background-position: 50% 40%;
+}
+
+#digital_assets{
+	.yes-no-question{
+		input {
+			visibility: hidden;
+			display: none;
+		}
+
+		label {
+			@extend .form-button;
+			.description {
+				position: absolute;
+				top: 75%;
+				left: 30%;
+				color: $main-color;
+			}
+		}
+		label.preference-yes {
+			background:url("default_ok.png") no-repeat;
+			background-position: 50% 40%;
+		}
+		label.preference-no {
+			background:url("default_no.png") no-repeat;
+			background-position: 50% 40%;
+		}
+
+
+		// Hover effect 
+		input[type=radio]:checked + label {
+			border: 1px solid $secondary-color;
+		}
+		input[type=radio]:checked + label.preference-yes {
+			background:url("hover_ok.png") no-repeat;
+			background-position: 50% 40%;
+		}
+		input[type=radio]:checked + label.preference-no {
+			background:url("hover_no.png") no-repeat;
+			background-position: 50% 40%;
+		}
+
+	}
+}

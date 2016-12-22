@@ -1,7 +1,7 @@
-class CreateDigtialAssets < ActiveRecord::Migration[5.0]
+class CreateDigitalAssets < ActiveRecord::Migration[5.0]
   def change
-    create_table :digtial_assets do |t|
-		t.integer :will_id, index: true
+    create_table :digital_assets do |t|
+    	t.integer :will_id, index: true
 		t.boolean :facebook_account
 		t.string :facebook_account_treatment
 		t.boolean :google_account
@@ -12,8 +12,7 @@ class CreateDigtialAssets < ActiveRecord::Migration[5.0]
 
 		t.string :heir
 		t.string :heir_email
-
-		t.timestamps
+      t.timestamps
     end
   end
 end

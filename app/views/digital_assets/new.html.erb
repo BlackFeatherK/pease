@@ -1,0 +1,8 @@
+<div class="container text-center" id="<%= controller_name %>">
+	<div class="title">
+		<h1>數位帳號</h1>
+	</div>
+	<%= form_for @digital_asset, url: new_will_digital_asset_path do |f| %>
+		<%= render partial: 'digital_asset', :locals => {:f => f} %>
+	<% end  %>
+</div>

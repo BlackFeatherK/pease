@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161222055826) do
+ActiveRecord::Schema.define(version: 20161222110658) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "will_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20161222055826) do
     t.index ["will_id"], name: "index_accounts_on_will_id"
   end
 
-  create_table "digtial_assets", force: :cascade do |t|
+  create_table "digital_assets", force: :cascade do |t|
     t.integer  "will_id"
     t.boolean  "facebook_account"
     t.string   "facebook_account_treatment"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20161222055826) do
     t.string   "heir_email"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["will_id"], name: "index_digtial_assets_on_will_id"
+    t.index ["will_id"], name: "index_digital_assets_on_will_id"
   end
 
   create_table "funeral_service_options", force: :cascade do |t|
