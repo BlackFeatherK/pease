@@ -13,20 +13,20 @@
 	</div>
 
 	<div class="form-group facebook-treatment">
-			<h4>請問你想在離開人世後，如何處置你的臉書帳號 </h4> <br>
+		<h4>請問你想在離開人世後，如何處置你的臉書帳號 </h4> <br>
 
-			<%= f.radio_button :facebook_account_treatment, "memorial"%>
-			<label for="digital_asset_facebook_account_treatment_memorial" class="preference-yes">
-				<div class="description">紀念帳號</div>
-			</label>
-			<%= f.radio_button :facebook_account_treatment, "delete"%>
-			<label for="digital_asset_facebook_account_treatment_delete" class="preference-no">
-				<div class="description">刪除帳號</div>
-			</label>
-			<%= f.radio_button :facebook_account_treatment, "nil"%>
-			<label for="digital_asset_facebook_account_treatment_nil" class="preference-family">
-				<div class="description">不做任何設定</div>
-			</label>
+		<%= f.radio_button :facebook_account_treatment, "memorial"%>
+		<label for="digital_asset_facebook_account_treatment_memorial" class="preference-yes">
+			<div class="description">紀念帳號</div>
+		</label>
+		<%= f.radio_button :facebook_account_treatment, "delete"%>
+		<label for="digital_asset_facebook_account_treatment_delete" class="preference-no">
+			<div class="description">刪除帳號</div>
+		</label>
+		<%= f.radio_button :facebook_account_treatment, "nil"%>
+		<label for="digital_asset_facebook_account_treatment_nil" class="preference-family">
+			<div class="description">不做任何設定</div>
+		</label>
 	</div>
 	
 	<div class="form-group yes-no-question">
@@ -85,7 +85,7 @@
 		<%= f.password_field :google_account_password, placeholder: "請輸入登入的帳號密碼"%>
 	</div>
 
-	<div class="form-group funeral-religion">
+	<div class="form-group heir-options">
 		<h4>服務內容指定給誰</h4>
 		<%= f.select(:heir, [["配偶", '1'], ["子女", '2'], ["親戚", '3'], ["朋友", '4'], ["其他", '5']] ) %>
 		<%= f.text_field :heir, placeholder: "請輸入接受人的姓名"%>
