@@ -90,6 +90,7 @@
           <% end %>
         </div>
 
+
         <div class="wish-select wish-stock unprint">
           <%= render :partial => 'stock_portfolios/stock_portfolio' , :locals => {:stock_portfolio => @stock_portfolio} %>
 
@@ -97,6 +98,7 @@
             <% render :partial => 'stock_portfolios/stock_portfolio' , :locals => {:stock_portfolio => stock_portfolio} %>
           <% end %>
         </div>
+
 
         <div class="wish-select wish-account unprint">
           <%= render :partial => 'accounts/account' , :locals => {:account => @account} %>
@@ -106,6 +108,7 @@
           <% end %>
         </div>
 
+
         <div class="wish-select wish-motor unprint">
           <%= render :partial => 'motors/motor' , :locals => {:motor => @motor} %>
 
@@ -114,6 +117,7 @@
           <% end %>
         </div>
 
+
         <div class="wish-select wish-jewelry unprint">
           <%= render :partial => 'jewelries/jewelry' , :locals => {:jewelry => @jewelry} %>
 
@@ -121,6 +125,7 @@
             <%= render :partial => 'jewelries/jewelry' , :locals => {:jewelry => jewelry} %>
           <% end %>
         </div>
+        
 
         <div class="wish-select wish-other unprint">
           <%= render :partial => 'motors/motor' , :locals => {:motor => @motor} %>
@@ -133,7 +138,8 @@
       </div>
     </div>
   </div>
-    
+
+     
 </div>
 
 

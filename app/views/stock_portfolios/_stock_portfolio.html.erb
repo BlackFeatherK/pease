@@ -25,7 +25,6 @@
     </div>
   <% end %>
 <% else %>
-  
   <%= form_for stock_portfolio , :url => will_stock_portfolio_path(@will , stock_portfolio) , :method => :patch , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "哪一家銀行/證券商" %>
@@ -50,3 +49,4 @@
     </div>
   <% end %>
 <% end %>
+
