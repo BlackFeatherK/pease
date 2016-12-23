@@ -1,5 +1,5 @@
-<% if @motor.new_record? %>
-  <%= form_for @motor , :url => will_motors_path(@will , @motor) , :remote => true do |f| %>
+<% if motor.new_record? %>
+  <%= form_for motor , :url => will_motors_path(@will , motor) , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "描述" %>
       <%= f.text_field :quantity , :class => 'form-control text-center' , placeholder: "請描述和車牌" %>
@@ -12,20 +12,13 @@
       <div class="col-md-9 col-sm-9">
         <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
       </div>
-    </div>
-    <div class="col-md-12 form-group text-center">
-      <% unless @motor.new_record? %>
-        <%= link_to will_motor_path(@will , @motor) , :remote => true  , :method => :delete do %>
-          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
-        <% end %>
-      <% end%>
     </div>
     <div class="col-md-12 form-group">
       <%= f.submit :class => "submit" %>
     </div>
   <% end %>
 <% else %>
-  <%= form_for @motor , :url => will_motor_path(@will , @motor) , :method => :patch , :remote => true do |f| %>
+  <%= form_for motor , :url => will_motor_path(@will , motor) , :method => :patch , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "描述" %>
       <%= f.text_field :quantity , :class => 'form-control text-center' , placeholder: "請描述和車牌" %>
@@ -40,10 +33,8 @@
       </div>
     </div>
     <div class="col-md-12 form-group text-center">
-      <% unless @motor.new_record? %>
-        <%= link_to will_motor_path(@will , @motor) , :remote => true  , :method => :delete do %>
-          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
-        <% end %>
+      <%= link_to will_motor_path(@will , motor) , :remote => true  , :method => :delete do %>
+        <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
       <% end%>
     </div>
     <div class="col-md-12 form-group">

@@ -30,7 +30,7 @@ Rails.application.routes.draw do
         resources :stock_portfolios
         
         collection do 
-          get :new_form
+          get :new_heir
         end
 
       end 

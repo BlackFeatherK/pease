@@ -4,8 +4,8 @@
       <h2>個人資產</h2>
       <p>請問您有特別要留下的實體資產給特定的人嗎？</p>
       <div class="container2">
-          <div class="col-md-6 col-sm-6">
-            <div class="choose">
+        <div class="col-md-6 col-sm-6">
+          <div class="choose">
             <%= radio_button_tag(:choose, "ok") %>
             <label class="default-ok" for="choose_ok">
               <div class="choose-type">有</div>
@@ -83,27 +83,51 @@
       <div class="container2">
 
         <div class="wish-select wish-property unprint">
-          <%= render :partial => 'properties/property' %>
+          <%= render :partial => 'properties/property' , :locals => {:property => @property} %>
+          
+          <% @properties.each do |property| %>
+            <%= render :partial => 'properties/property' , :locals => {:property => property} %>
+          <% end %>
         </div>
 
         <div class="wish-select wish-stock unprint">
-          <%= render :partial => 'stock_portfolios/stock_portfolio' %>
+          <%= render :partial => 'stock_portfolios/stock_portfolio' , :locals => {:stock_portfolio => @stock_portfolio} %>
+
+          <% @stock_portfolios.each do |stock_portfolio| %>
+            <% render :partial => 'stock_portfolios/stock_portfolio' , :locals => {:stock_portfolio => stock_portfolio} %>
+          <% end %>
         </div>
 
         <div class="wish-select wish-account unprint">
-          <%= render :partial => 'accounts/account' %>
+          <%= render :partial => 'accounts/account' , :locals => {:account => @account} %>
+
+          <% @accounts.each do |account| %>
+            <%= render :partial => 'accounts/account' , :locals => {:account => account} %>
+          <% end %>
         </div>
 
         <div class="wish-select wish-motor unprint">
-          <%= render :partial => 'motors/motor' %>
+          <%= render :partial => 'motors/motor' , :locals => {:motor => @motor} %>
+
+          <% @motors.each do |motor| %>
+            <%= render :partial => 'motors/motor' , :locals => {:motor => motor} %>
+          <% end %>
         </div>
 
         <div class="wish-select wish-jewelry unprint">
-          <%= render :partial => 'jewelries/jewelry' %>
+          <%= render :partial => 'jewelries/jewelry' , :locals => {:jewelry => @jewelry} %>
+
+          <% @jewelries.each do |jewelry| %>
+            <%= render :partial => 'jewelries/jewelry' , :locals => {:jewelry => jewelry} %>
+          <% end %>
         </div>
 
         <div class="wish-select wish-other unprint">
-          <%= render :partial => 'motors/motor' %>
+          <%= render :partial => 'motors/motor' , :locals => {:motor => @motor} %>
+
+          <% @motors.each do |motor| %>
+            <%= render :partial => 'motors/motor' , :locals => {:motor => motor} %>
+          <% end %>
         </div>
 
       </div>

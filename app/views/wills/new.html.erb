@@ -1,7 +1,0 @@
-<%= form_for @will do |f| %>
-  <% 3.times do %>
-    <%= f.field_for @will_accounts.build do |account| %>
-      <%= account.text_field :bank %>
-    <% end %>
-  <% end %>
-<% end %>

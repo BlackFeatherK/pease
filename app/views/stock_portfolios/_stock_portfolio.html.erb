@@ -1,5 +1,5 @@
-<% if @stock_portfolio.new_record? %>
-  <%= form_for @stock_portfolio , :url => will_stock_portfolios_path(@will , @stock_portfolio) , :remote => true do |f| %>
+<% if stock_portfolio.new_record? %>
+  <%= form_for stock_portfolio , :url => will_stock_portfolios_path(@will , stock_portfolio) , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "哪一家銀行/證券商" %>
       <%= f.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行/證券商" %>
@@ -26,7 +26,7 @@
   <% end %>
 <% else %>
   
-  <%= form_for @stock_portfolio , :url => will_stock_portfolio_path(@will , @stock_portfolio) , :method => :patch , :remote => true do |f| %>
+  <%= form_for stock_portfolio , :url => will_stock_portfolio_path(@will , stock_portfolio) , :method => :patch , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "哪一家銀行/證券商" %>
       <%= f.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行/證券商" %>
@@ -41,11 +41,9 @@
       </div>
     </div>
     <div class="col-md-12 form-group text-center">
-      <% unless @stock_portfolio.new_record? %>
-        <%= link_to will_stock_portfolio_path(@will , @stock_portfolio) , :remote => true  , :method => :delete do %>
-          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
-        <% end %>
-      <% end%>
+      <%= link_to will_stock_portfolio_path(@will , stock_portfolio) , :remote => true  , :method => :delete do %>
+        <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
+      <% end %>
     </div>
     <div class="col-md-12 form-group">
       <%= f.submit :class => "submit" %>

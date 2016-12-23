@@ -1,5 +1,5 @@
 $('#edit_property_<%= @property.id %>').remove();
 
-var property = '<%= j render :partial => "property" %>' 
+var property = '<%= j render :partial => "property" , :locals => {:property => @property} %>' 
 $('input[type=text]').val('');
 $('.wish-property').append(property);

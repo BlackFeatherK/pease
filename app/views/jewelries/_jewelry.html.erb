@@ -1,5 +1,5 @@
-<% if @jewelry.new_record? %>
-  <%= form_for @jewelry , :url => will_jewelries_path(@will , @jewelry) , :remote => true do |f| %>
+<% if jewelry.new_record? %>
+  <%= form_for jewelry , :url => will_jewelries_path(@will , jewelry) , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "描述" %>
       <%= f.text_field :amount , :class => 'form-control text-center' , placeholder: "請描述種類或特徵" %>
@@ -12,20 +12,13 @@
       <div class="col-md-9 col-sm-9">
         <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
       </div>
-    </div>
-    <div class="col-md-12 form-group text-center">
-      <% unless @jewelry.new_record? %>
-        <%= link_to will_jewelry_path(@will , @jewelry) , :remote => true  , :method => :delete do %>
-          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
-        <% end %>
-      <% end%>
     </div>
     <div class="col-md-12 form-group">
       <%= f.submit :class => "submit" %>
     </div>
   <% end %>
 <% else %>
-  <%= form_for @jewelry , :url => will_jewelry_path(@will , @jewelry) , :method => :patch , :remote => true do |f| %>
+  <%= form_for jewelry , :url => will_jewelry_path(@will , jewelry) , :method => :patch , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "描述" %>
       <%= f.text_field :amount , :class => 'form-control text-center' , placeholder: "請描述種類或特徵" %>
@@ -40,11 +33,9 @@
       </div>
     </div>
     <div class="col-md-12 form-group text-center">
-      <% unless @jewelry.new_record? %>
-        <%= link_to will_jewelry_path(@will , @jewelry) , :remote => true  , :method => :delete do %>
-          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
-        <% end %>
-      <% end%>
+      <%= link_to will_jewelry_path(@will , jewelry) , :remote => true  , :method => :delete do %>
+        <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
+      <% end %>
     </div>
     <div class="col-md-12 form-group">
       <%= f.submit :class => "submit" %>

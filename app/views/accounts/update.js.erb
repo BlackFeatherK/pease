@@ -1,5 +1,5 @@
 $('#edit_account_<%= @account.id %>').remove();
 
-var account = '<%= j render :partial => "account" %>' 
+var account = '<%= j render :partial => "account" , :locals => {:account => @account} %>' 
 $('input[type=text]').val('');
 $('.wish-account').append(account);

@@ -1,5 +1,5 @@
-<% if @property.new_record? %>
-  <%= form_for @property , :url => will_properties_path(@will , @property) , :remote => true do |f| %>
+<% if property.new_record? %>
+  <%= form_for property , :url => will_properties_path(@will , property) , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "描述" %>
       <%= f.text_field :heir , :class => 'form-control text-center' , placeholder: "請描述特徵或地址" %>
@@ -18,7 +18,7 @@
     </div>
   <% end %>
 <% else %>
-  <%= form_for @property , :url => will_property_path(@will , @property) , :method => :patch  , :remote => true do |f| %>
+  <%= form_for property , :url => will_property_path(@will , property) , :method => :patch  , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "描述" %>
       <%= f.text_field :heir , :class => 'form-control text-center' , placeholder: "請描述特徵或地址" %>
@@ -33,11 +33,9 @@
       </div>
     </div>
     <div class="col-md-12 form-group text-center">
-      <% unless @property.new_record? %>
-        <%= link_to will_property_path(@will , @property) , :method => :delete , :remote => true do %>
-          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
-        <% end %>
-      <% end%>
+      <%= link_to will_property_path(@will , property) , :method => :delete , :remote => true do %>
+        <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
+      <% end %>
     </div>
     <div class="col-md-12 form-group">
       <%= f.submit :class => "submit" %>
