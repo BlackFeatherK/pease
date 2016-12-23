@@ -36,7 +36,7 @@ class JewelriesController < ApplicationController
   end
 
   def params_jewelry
-    params.require(:jewelry).permit(:quantity , :amount , :heir)
+    params.require(:jewelry).permit(:description)
   end
 
 end

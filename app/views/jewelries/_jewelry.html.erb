@@ -2,15 +2,15 @@
   <%= form_for jewelry , :url => will_jewelries_path(@will , jewelry) , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "描述" %>
-      <%= f.text_field :amount , :class => 'form-control text-center' , placeholder: "請描述種類或特徵" %>
+      <%= f.text_field :description , :class => 'form-control text-center' , placeholder: "請描述種類或特徵" %>
     </div>
     <div class="form-group col-md-12 form-select">
-      <%= label_tag(:f, "資產指定給誰") %> <br>
+      <%= label_tag('account[heir]', "資產指定給誰") %> <br>
       <div class="col-md-3 col-sm-3">
-        <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+        <%= select_tag 'heir[heir_type]', options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
       </div>
       <div class="col-md-9 col-sm-9">
-        <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+        <%= text_field_tag('heir[name]', nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>
       </div>
     </div>
     <div class="col-md-12 form-group">
@@ -21,15 +21,15 @@
   <%= form_for jewelry , :url => will_jewelry_path(@will , jewelry) , :method => :patch , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "描述" %>
-      <%= f.text_field :amount , :class => 'form-control text-center' , placeholder: "請描述種類或特徵" %>
+      <%= f.text_field :description , :class => 'form-control text-center' , placeholder: "請描述種類或特徵" %>
     </div>
     <div class="form-group col-md-12 form-select">
-      <%= label_tag(:f, "資產指定給誰") %> <br>
+      <%= label_tag('account[heir]', "資產指定給誰") %> <br>
       <div class="col-md-3 col-sm-3">
-        <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+        <%= select_tag 'heir[heir_type]', options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
       </div>
       <div class="col-md-9 col-sm-9">
-        <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>  
+        <%= text_field_tag('heir[name]', nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>
       </div>
     </div>
     <div class="col-md-12 form-group text-center">
