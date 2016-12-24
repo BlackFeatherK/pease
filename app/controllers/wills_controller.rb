@@ -23,6 +23,6 @@ class WillsController < ApplicationController
   end
 
   def new_heir
-    
+    @f = params['f'] 
   end
 end

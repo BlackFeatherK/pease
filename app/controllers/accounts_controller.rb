@@ -9,8 +9,6 @@ class AccountsController < ApplicationController
 
   def create
     @account = controller_create( controller_name , params_account)
-    @account.heirs.create(params_heir)
-    byebug
   end
 
   def show
@@ -38,11 +36,12 @@ class AccountsController < ApplicationController
   end
 
   def params_account
-    params.require(:account).permit(:bank , :account_type)
+    params.require(:account).permit(:bank , :account_type , :heirs_attributes => [:id, :heir_type , :name , :proportion])
   end
 
   def params_heir
     params.require(:account)['heir'].permit(:heir_type , :name , :proportion)
+    # params.require(:account).permit(:heirs_attributes => [:heir_type , :name , :proportion])
   end
   
 end
