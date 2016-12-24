@@ -1,28 +1,28 @@
 <% if will_name.new_record? %>
-  <%= f.fields_for(:heirs , Heir.new)  do |f| %>
+  <%= f.fields_for(:heirs , Heir.new)  do |heir| %>
     <div class="form-heir-select">
       <div class="col-md-3 col-sm-3">
-        <%= f.select(:heir_type, [[ "家屬", "家屬" ], [ "配偶", "配偶" ], [ "朋友" , "朋友" ]]) %>
+        <%= heir.select(:heir_type, [[ "家屬", "家屬" ], [ "配偶", "配偶" ], [ "朋友" , "朋友" ]]) %>
       </div>
       <div class="col-md-6 col-sm-6">
-        <%= f.text_field :name , :class => "form-control text-center", placeholder: "請輸入接受人的姓名" %>
+        <%= heir.text_field :name , :class => "form-control text-center", placeholder: "請輸入接受人的姓名" %>
       </div>
       <div class="col-md-3 col-sm-3">
-        <%= f.text_field :proportion , :class => "form-control text-center", placeholder: "輸入分配比例" %>
+        <%= heir.text_field :proportion , :class => "form-control text-center", placeholder: "輸入分配比例" %>
       </div>  
     </div>
   <% end %>
 <% else %>
-  <%= f.fields_for :heirs do |f| %>
+  <%= f.fields_for :heirs do |heir| %>
     <div class="form-heir-select">
       <div class="col-md-3 col-sm-3">
-        <%= f.select(:heir_type, [[ "家屬", "家屬" ], [ "配偶", "配偶" ], [ "朋友" , "朋友" ]]) %>
+        <%= heir.select(:heir_type, [[ "家屬", "家屬" ], [ "配偶", "配偶" ], [ "朋友" , "朋友" ]]) %>
       </div>
       <div class="col-md-6 col-sm-6">
-        <%= f.text_field :name , :class => "form-control text-center", placeholder: "請輸入接受人的姓名" %>
+        <%= heir.text_field :name , :class => "form-control text-center", placeholder: "請輸入接受人的姓名" %>
       </div>
       <div class="col-md-3 col-sm-3">
-        <%= f.text_field :proportion , :class => "form-control text-center", placeholder: "輸入分配比例" %>
+        <%= heir.text_field :proportion , :class => "form-control text-center", placeholder: "輸入分配比例" %>
       </div>  
     </div>
   <% end %>

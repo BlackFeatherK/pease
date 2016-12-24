@@ -10,6 +10,33 @@
 
   <body>
 
+  <div id="header">
+    <div class="container">
+      <div id="logo">
+        <h1>Pease</h1>
+      </div>
+    
+      <nav>
+        <ul class="list-inline" class="text-capitalize">
+          <li><a href="">生命規劃</a></li>
+          <li><a href="">預覽遺囑</a></li>
+          <li><a href="">個人總覽</a></li>
+          <li><a href="">合作夥伴</a></li>
+          <li><%= image_tag("AppointmentReminders000000100.png", :alt => "") %></li>
+          <li>
+            <% if current_user %>
+                <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
+                <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
+            <% else %>
+                <li><%= link_to('註冊', new_registration_path(:user)) %></li>
+                <li><%= link_to('登入', new_session_path(:user)) %></li>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
   <div class="container">
     <% if flash[:notice].present? %>
       <div class="alert alert-success" role="alert">

@@ -2,4 +2,54 @@
 @import "bootstrap";
 @import "wills";
 @import "wills_index";
-@import "welcome"
+@import "welcome";
+
+
+
+#logo {
+  float: left;
+}
+
+#logo h1 {
+  color: white;
+  margin: 20px 0;
+}
+
+
+#header {
+  z-index: 999;
+  background-color: #283441;
+  margin-bottom: -50px;
+  position: fixed;
+  width: 100%;
+  color: #fff;
+  opacity: 0.85;
+}
+
+#header .container {
+  position: relative;
+}
+
+#header nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+#header ul {
+  margin: 0;
+}
+
+#header a {
+  padding: 30px 10px;
+}
+
+#header li {
+  line-height: 75px ;
+  border-bottom: 3px solid transparent; 
+}
+
+#header li:hover{
+    border-bottom: 3px #F8C957 solid; 
+}

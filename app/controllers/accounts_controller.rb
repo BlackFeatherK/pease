@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
 
-  before_action :find_will
-  before_action :find_account , :except => [:index , :create]
+  # before_action :find_will
+  # before_action :find_account , :except => [:index , :create]
 
   def index
     @accounts = controller_index(controller_name)
@@ -16,7 +16,12 @@ class AccountsController < ApplicationController
   end
 
   def update
-    @account = controller_update( controller_name , params[:id] , params_account )
+    if controller_update( controller_name , params[:id] , params_account )
+      find_account
+    else
+      find_account
+    end
+    
   end
 
   def destroy
@@ -32,16 +37,11 @@ class AccountsController < ApplicationController
   end
 
   def find_account
-    @account = @will.accounts.find_by_id(params[:id])
+    @account = @will.accounts.find(params[:id])
   end
 
   def params_account
     params.require(:account).permit(:bank , :account_type , :heirs_attributes => [:id, :heir_type , :name , :proportion])
-  end
-
-  def params_heir
-    params.require(:account)['heir'].permit(:heir_type , :name , :proportion)
-    # params.require(:account).permit(:heirs_attributes => [:heir_type , :name , :proportion])
   end
   
 end
