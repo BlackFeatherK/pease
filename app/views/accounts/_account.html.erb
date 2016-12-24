@@ -10,8 +10,8 @@
     </div>
     <div class="form-group col-md-12 form-heir">
       <%= label_tag "資產指定給誰" %> <br>
-      <%= f.fields_for(:heirs , Heir.new)  do |ff| %>
-        <%= render :partial => 'wills/heir' , :locals => {:will_name => account , :f => ff} %>
+      <%= f.fields_for(:heirs , Heir.new)  do |heir| %>
+        <%= render :partial => 'wills/heir' , :locals => {:will_name => account , :f => heir} %>
       <% end %>
     </div>
     <div class="col-md-12 form-group text-center">
