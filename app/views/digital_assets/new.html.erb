@@ -2,7 +2,9 @@
 	<div class="title">
 		<h1>數位帳號</h1>
 	</div>
-	<%= form_for @digital_asset, url: new_will_digital_asset_path do |f| %>
+	<%= form_for @digital_asset, url: will_digital_assets_path do |f| %>
 		<%= render partial: 'digital_asset', :locals => {:f => f} %>
+		<%= f.submit class: "" %>
 	<% end  %>
 </div>
+

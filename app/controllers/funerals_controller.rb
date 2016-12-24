@@ -1,6 +1,6 @@
 class FuneralsController < ApplicationController
 	before_action :find_will
-	before_action :find_funeral, only: [:edit, :show] 
+	before_action :find_funeral, only: [:edit, :show, :update] 
 	
 	def show
 
@@ -16,13 +16,19 @@ class FuneralsController < ApplicationController
 			redirect_to welcome_index_path
 			flash[:notice] = 'successful'
 		else 
-			render "show"
+			render "new"
 			flash[:alert] = "Fail"	
 		end
 	end
 
 	def update
-
+		if @funeral.update(funeral_params)
+			redirect_to welcome_index_path
+			flash[:notice] = 'successful'
+		else 
+			render "show"
+			flash[:alert] = "Fail"	
+		end
 	end
 
 	private
@@ -31,7 +37,7 @@ class FuneralsController < ApplicationController
 	end
 
 	def funeral_params
-		params.require(:funeral).permit(:preference, :body_arrangement, :burial_arrangement, :funeral_service_ids => [])
+		params.require(:funeral).permit(:preference, :religion, :body_arrangement, :other_arrangement, :burial_arrangement, :funeral_service_ids => [])
 	end
 
 	def find_funeral
