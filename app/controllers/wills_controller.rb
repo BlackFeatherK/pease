@@ -13,7 +13,7 @@ class WillsController < ApplicationController
     @stock_portfolio = current_will.stock_portfolios.build
     @stock_portfolios = current_will.stock_portfolios.where.not(:id => nil)
     @account = current_will.accounts.build
-    @accounts = current_will.accounts.where.not(:id => nil)
+    @accounts = current_will.accounts
     @motor = current_will.motors.build
     @motors = current_will.motors.where.not(:id => nil)
     @jewelry = current_will.jewelries.build
@@ -27,4 +27,13 @@ class WillsController < ApplicationController
   def new_heir
     @f = params['f'] 
   end
+
+  def words
+    
+  end
+
+  def vedio
+
+  end
+
 end

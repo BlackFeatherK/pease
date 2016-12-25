@@ -8,7 +8,13 @@ class AccountsController < ApplicationController
   end
 
   def create
-    @account = controller_create( controller_name , params_account)
+    @account = Account.new(params_account)
+    @account.will_id = current_will.id
+    if @account.save
+      @account
+    else
+
+    end
   end
 
   def show
