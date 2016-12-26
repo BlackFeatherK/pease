@@ -1,0 +1,4 @@
+var account = '<%= j render :partial => "account" , :locals => {:account => @account} %>';
+$('new_account :input[type=text]').val('');
+$('#edit_account_<%= @account.id %>').before(account);
+$('#edit_account_<%= @account.id %>').next().remove();

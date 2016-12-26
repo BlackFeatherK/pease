@@ -107,6 +107,10 @@ $secondary-color: #F8C957;
 
   }
 
+  .edit_will {
+
+  }
+
   .wish {
 
     margin-bottom: 30px;
@@ -228,18 +232,24 @@ $secondary-color: #F8C957;
 
   .wish-input {
 
-    .wish-form {
-
       input {
         height: 40px;
         margin-bottom: 10px;
       }
 
-      label {
-        margin-bottom: 10px;
+      .wish-btn {
+        padding: 8px 100px;
+        color: #6C7C89;
+        border-color: $secondary-color;
+        cursor: pointer;
+
+        span {
+          margin-right: 10px;
+          color: #6C7C89;
+        }
       }
 
-      .form-select {
+      .form-heir {
 
         select {
           width: 100%;
@@ -261,39 +271,148 @@ $secondary-color: #F8C957;
         }
 
         .col-md-3 {
-          padding-left: 0;
+          padding: 0;
         }
 
         .col-md-9 {
           padding-right: 0;
         }
 
-      }
+        .wish-heir-btn {
+          
+          span {
+            color: $secondary-color;
+          }
 
-      .wish-btn {
-        margin-top: 30px;
-        padding: 8px 100px;
-        color: $default-color;
-        border-color: $secondary-color;
-
-        span {
-          margin-right: 10px;
-          color: $secondary-color;
         }
-      }
+      
+      } 
+      
+      
 
       .submit {
         width: 100%;
+        height: 40px;
         background-color: $secondary-color;
         border: none;
         border-radius: 5px;
         color: white;
+        margin: 15px 0;
       }
-      
-    }
 
   }
     
+}
 
+
+.words {
+  margin-top: -55px;
+  background-color: #F9F9F9;
+
+  .title {
+  
+    h3 {
+      margin-top: 60px;
+      color: #63717D;
+    }
+
+    p {
+      color: $border-primary-color;
+      font-size: 20px;
+    }
+    
+  }
+  
+  .words_image {
+    background: image-url("writing-with-a-graphic-pen-picjumbo-com.png") no-repeat;
+    background-size: cover;
+    background-position: 50% 70%;
+    padding: 100px 0;
+
+    p {
+      font-size: 20px;
+      color: white;  
+      margin-bottom: 20px;
+    }
+
+    label {
+      padding: 5px 30px;
+      color: #4B5254;
+      background-color: #F7C14D;
+      border-color: #F7C14D;
+    }
+
+  }
+
+  h3 {
+    margin: 50px 0 25px 0;
+    font-weight: bold;
+    color: #63717D;
+  }
+
+  .people_image_paragraph {
+
+    .person {
+      
+      margin-bottom: 20px;
+    }
+
+    .border-radius {
+      background-color: #fff;
+      border-color: border-primary-color;
+      width: 80%;
+      height: 80%;
+      margin: 0 auto;
+      margin-bottom: 100px;
+
+      p {
+        padding: 20px;
+      }
+    }
+  }
+
+  #myModal {
+
+    margin-top: 10%;
+
+    .modal-body {
+      img {
+        width: 10rem;
+        height: 10rem;
+      }
+        
+    }
+    
+    .modal-footer {
+      border-color: white;
+
+      .modal-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+        padding: 5px;
+        width: 80%;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        color: white;
+        text-shadow: none;
+        opacity: 1;
+        margin-bottom: 15px;
+        }
+        
+        .close {
+          background-color: #61717E;
+        }
+
+        .save {
+          background-color: $secondary-color;
+          color: #61717E;
+        }
+      }
+    }
+  }   
 }
 

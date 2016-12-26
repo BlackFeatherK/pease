@@ -40,6 +40,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'kaminari'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'nested_form_fields'
 
 
 group :development, :test do

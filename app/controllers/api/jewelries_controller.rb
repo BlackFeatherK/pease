@@ -1,6 +1,5 @@
 class Api::JewelriesController < Api::BaseController
 
-
   before_action :find_will
   before_action :find_jewelry , :except => [:index , :create]
 
@@ -9,7 +8,7 @@ class Api::JewelriesController < Api::BaseController
   end
 
   def create
-    controller_create( controller_name , params_account)
+    controller_create( controller_name , params_jewelry)
   end
 
   def show
@@ -17,7 +16,7 @@ class Api::JewelriesController < Api::BaseController
   end
 
   def update
-    controller_update( controller_name , params[:id] , params_account )
+    controller_update( controller_name , params[:id] , params_jewelry )
   end
 
   def destroy

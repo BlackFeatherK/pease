@@ -1,0 +1,45 @@
+
+<% if account.new_record? %>
+  <%= form_for account , :url => will_accounts_path(@will) , :remote => true  do |f| %>
+    <div class="col-md-12 form-group">
+      <%= f.label "哪一家銀行" %>
+      <%= f.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
+    </div>
+    <div class="col-md-12 form-group">
+      <%= f.label "戶口類型" %>
+      <%= f.text_field :account_type , :class => 'form-control text-center' , placeholder: "請輸入戶口類型" %>
+    </div>
+    <div class="form-group col-md-12 form-heir">
+      <%= label_tag "資產指定給誰" %> <br>
+      <%= render :partial => 'wills/heir' , :locals => {:f => f} %>
+    </div>
+    <div class="col-md-12 form-group">
+      <%= f.submit :class => "submit" %>
+    </div>
+  <% end %>
+  <% else %>
+    <%= form_for @account , :url => will_account_path(current_will.id , @account) , :method => :patch , :remote => true do |f| %>
+    <div class="col-md-12 form-group">
+      <%= f.label "哪一家銀行" %>
+      <%= f.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
+    </div>
+    <div class="col-md-12 form-group">
+      <%= f.label "戶口類型" %>
+      <%= f.text_field :account_type , :class => 'form-control text-center' , placeholder: "請輸入戶口類型" %>
+    </div>
+
+    <div class="form-group col-md-12 form-heir">
+      <%= label_tag "資產指定給誰" %> <br>
+      <%= render :partial => 'wills/heir' , :locals => {:f => f} %>
+    </div>
+    <div class="col-md-12 form-group text-center">
+      <%= link_to will_account_path(@will , account) , :remote => true  , :method => :delete do %>
+        <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
+      <% end %>
+    </div>
+    <div class="col-md-12 form-group">
+      <%= f.submit :class => "submit" %>
+    </div>
+  <% end %>
+<% end %>
+  

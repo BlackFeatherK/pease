@@ -4,9 +4,20 @@ Rails.application.routes.draw do
   get 'welcome/index'
   post 'welcome/index'
 
+  # namespace :api do
+  #   resources :accounts
+  #   resources :funerals
+  #   resources :insurance_policies
+  #   resources :jewelries
+  #   resources :motors
+  #   resources :pensions
+  #   resources :private_shares
+  #   resources :properties
+  #   resources :stock_portfolios
+  # end
 
   # namespace :api do
-    # constraints(host: 'api.localhost') do
+    # constraints do
       resources :wills do
         resources :accounts
         resources :funerals
@@ -17,6 +28,13 @@ Rails.application.routes.draw do
         resources :private_shares
         resources :properties
         resources :stock_portfolios
+        
+        collection do 
+          get :new_heir
+          get :words
+          get :video
+        end
+
       end 
 
       resources :users

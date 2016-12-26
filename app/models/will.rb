@@ -10,4 +10,14 @@ class Will < ApplicationRecord
   has_many :properties , :dependent => :destroy
   has_many :stock_portfolios , :dependent => :destroy
 
+  accepts_nested_attributes_for :accounts
+  accepts_nested_attributes_for :funerals
+  accepts_nested_attributes_for :insurance_policies
+  accepts_nested_attributes_for :jewelries
+  accepts_nested_attributes_for :motors
+  accepts_nested_attributes_for :pensions
+  accepts_nested_attributes_for :private_shares
+  accepts_nested_attributes_for :properties
+  accepts_nested_attributes_for :stock_portfolios
+
 end

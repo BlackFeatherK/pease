@@ -1,0 +1,74 @@
+<div class="<%= action_name %>">
+  <div class="container">
+    <div class="title text-center">
+      <h3>人生總有終結的一天，我們最希望讓你決定後人如何紀念你</h3>
+      <p>（在你離開人世後，我們會將這份禮物送給你最重要的人）</p>
+    </div>
+    
+
+    <div class="words_image border-radius text-center">
+      <div class="image_paragraph">
+        <p>是否有那麼一個人，你想在最後的最後，好好跟他道別？</p>
+        <label class="btn btn-warning" data-toggle="modal" data-target="#myModal">新增一段送給誰的話</label>
+
+      </div>
+    </div>
+
+    <h3 class="text-center">看看他們都說了些什麼？</h3>
+    <div class="people_image_paragraph">
+      <div class="col-md-4">
+        <div class="text-center person">
+          <%= image_tag("Circled_User_Male_000000_100.png", :alt => "" , :class => 'img-circle'  ) %>
+        </div>
+        <div class="border-radius">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde vel reprehenderit ullam eligendi distinctio optio est, rerum cumque quam magnam expedita dignissimos nobis facilis tenetur repellat ipsam pariatur, dolor sit!</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="text-center person">
+          <%= image_tag("Circled_User_Male_000000_100.png", :alt => "" , :class => 'img-circle' ) %>
+        </div>
+        <div class="border-radius">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde vel reprehenderit ullam eligendi distinctio optio est, rerum cumque quam magnam expedita dignissimos nobis facilis tenetur repellat ipsam pariatur, dolor sit!</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="text-center person">
+          <%= image_tag("Circled_User_Male_000000_100.png", :alt => "" , :class => 'img-circle' ) %>
+        </div>
+        <div class="border-radius">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde vel reprehenderit ullam eligendi distinctio optio est, rerum cumque quam magnam expedita dignissimos nobis facilis tenetur repellat ipsam pariatur, dolor sit!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <%= image_tag("hover_money.png", :alt => "" , :class => 'img-circle'  ) %>
+          <h4>送給愛的人們一段話</h4>
+          <p>請安心留下你想對某個人說的話，我們會在適合的時間點幫你送他</p> 
+        </div>
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 modal-btn">
+              <button type="button" class="border-radius close" data-dismiss="modal">暫緩</button>
+            </div>
+            <div class="col-md-6 col-sm-12 modal-btn">
+              <button type="button" class="border-radius save">立即開始</button>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  

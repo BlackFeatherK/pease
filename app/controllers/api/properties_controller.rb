@@ -8,7 +8,7 @@ class Api::PropertiesController < Api::BaseController
   end
 
   def create
-    controller_create( controller_name , params_account)
+    controller_create( controller_name , params_property)
   end
 
   def show
@@ -16,7 +16,7 @@ class Api::PropertiesController < Api::BaseController
   end
 
   def update
-    controller_update( controller_name , params[:id] , params_account )
+    controller_update( controller_name , params[:id] , params_property )
   end
 
   def destroy

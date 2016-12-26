@@ -5,10 +5,91 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
+    <%= javascript_include_tag "application" %>
+
+
+    <script src="https://cdn.WebRTC-Experiment.com/MediaStreamRecorder.js"></script>
+
+    <!-- for Edige/FF/Chrome/Opera/etc. getUserMedia support -->
+    <script src="https://cdn.WebRTC-Experiment.com/gumadapter.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://cdn.webrtc-experiment.com/style.css"> -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="author" type="text/html" href="https://plus.google.com/+MuazKhan">
+    <meta name="author" content="Muaz Khan">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
   </head>
 
   <body>
+
+  <div id="header">
+    <div class="container">
+      <div id="logo">
+        <h1>Pease</h1>
+      </div>
+    
+      <nav>
+        <ul class="list-inline" class="text-capitalize">
+          <li><a href="">生命規劃</a></li>
+          <li><a href="">預覽遺囑</a></li>
+          <li><a href="">個人總覽</a></li>
+          <li><a href="">合作夥伴</a></li>
+          <li><%= image_tag("AppointmentReminders000000100.png", :alt => "") %></li>
+          <li>
+            <% if current_user %>
+                <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
+                <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
+            <% else %>
+                <li><%= link_to('註冊', new_registration_path(:user)) %></li>
+                <li><%= link_to('登入', new_session_path(:user)) %></li>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="write text-center">
+  <h2>嗨！<%= @will.id%></h2>
+  <h2>提早立遺囑，是件健康且負責任的事</h2>
+</div>
+
+<div class="user">
+  <div class="container">
+    <div class="user_avatar">
+      <%= image_tag("Circled_User_Male_000000_100.png", :alt => "" , :class => "circle") %>
+    </div>
+    
+    <div class="user_name">
+      <h3><%= @will.id %></h3>
+    </div>
+
+    <div class="user_bar">
+      <ul class="list-inline">
+        <li>
+          <a href="">遺囑規劃<%= image_tag("completed_ok.png", :alt => "" , :class => "completed circle") %></a>
+        </li>
+        <li>
+          <%= image_tag("Iconsmind-Outline-Arrow-Right.png", :alt => "" , :class => "arrow-right" ) %>
+            
+        </li>
+        <li>
+          <a href="">編輯遺囑內容<%= image_tag("completed_ok.png", :alt => "" , :class => "completed circle" ) %></a>
+        </li>
+        <li class="right">
+          <%= button_to users_path , :class => "btn btn-default notarization" do %>
+            <%= image_tag("Preview Pane_000000_100.png", :alt => "" , :class => "preview" ) %> 公證遺囑
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
   <div class="container">
     <% if flash[:notice].present? %>
