@@ -3,7 +3,6 @@ class CreateStockPortfolios < ActiveRecord::Migration[5.0]
     create_table :stock_portfolios do |t|
       t.integer :will_id , :index => true
       t.string :bank
-      t.string :heir
       t.timestamps
     end
   end

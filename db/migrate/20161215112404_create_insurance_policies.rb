@@ -5,7 +5,6 @@ class CreateInsurancePolicies < ActiveRecord::Migration[5.0]
       t.string :insurer
       t.string :policy_type
       t.integer :amount
-      t.string :heir
       t.timestamps
     end
   end

@@ -1,16 +1,20 @@
 <% if @property.new_record? %>
   <%= form_for @property , :url => will_properties_path(@will , @property) , :remote => true do |f| %>
     <div class="col-md-12 form-group">
-      <%= f.label "描述" %>
-      <%= f.text_field :heir , :class => 'form-control text-center' , placeholder: "請描述特徵或地址" %>
+      <%= f.label "建物建號" %>
+      <%= f.text_field :number , :class => 'form-control text-center' , placeholder: "請輸入建號" %>
+    </div>
+    <div class="col-md-12 form-group">
+      <%= f.label "房屋地址" %>
+      <%= f.text_field :address , :class => 'form-control text-center' , placeholder: "請輸入地址" %>
     </div>
     <div class="form-group col-md-12 form-select">
-      <%= label_tag(:f, "資產指定給誰") %> <br>
+      <%= label_tag('account[heir]', "資產指定給誰") %> <br>
       <div class="col-md-3 col-sm-3">
-        <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+        <%= select_tag 'heir[heir_type]', options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
       </div>
       <div class="col-md-9 col-sm-9">
-        <%= f.text_field :heir , :class => 'form-control text-center' , placeholder: "請輸入接受人的姓名" %>
+        <%= text_field_tag('heir[name]', nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>
       </div>
     </div>
     <div class="col-md-12 form-group">
@@ -20,16 +24,20 @@
 <% else %>
   <%= form_for @property , :url => will_property_path(@will , @property) , :method => :patch  , :remote => true do |f| %>
     <div class="col-md-12 form-group">
-      <%= f.label "描述" %>
-      <%= f.text_field :heir , :class => 'form-control text-center' , placeholder: "請描述特徵或地址" %>
+      <%= f.label "建物建號" %>
+      <%= f.text_field :number , :class => 'form-control text-center' , placeholder: "請輸入建號" %>
+    </div>
+    <div class="col-md-12 form-group">
+      <%= f.label "房屋地址" %>
+      <%= f.text_field :address , :class => 'form-control text-center' , placeholder: "請輸入地址" %>
     </div>
     <div class="form-group col-md-12 form-select">
-      <%= label_tag(:f, "資產指定給誰") %> <br>
+      <%= label_tag('account[heir]', "資產指定給誰") %> <br>
       <div class="col-md-3 col-sm-3">
-        <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
+        <%= select_tag 'heir[heir_type]', options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
       </div>
       <div class="col-md-9 col-sm-9">
-        <%= f.text_field :heir , :class => 'form-control text-center' , placeholder: "請輸入接受人的姓名" %>
+        <%= text_field_tag('heir[name]', nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>
       </div>
     </div>
     <div class="col-md-12 form-group text-center">

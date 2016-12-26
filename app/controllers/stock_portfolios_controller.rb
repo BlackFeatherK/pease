@@ -36,7 +36,7 @@ class StockPortfoliosController < ApplicationController
   end
 
   def params_stock_portfolio
-    params.require(:stock_portfolio).permit( :bank , :heir )
+    params.require(:stock_portfolio).permit( :bank)
   end
 
 end

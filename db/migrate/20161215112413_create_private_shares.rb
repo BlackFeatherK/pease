@@ -5,7 +5,6 @@ class CreatePrivateShares < ActiveRecord::Migration[5.0]
       t.string :company
       t.integer :stock
       t.integer :amount
-      t.string :heir
       t.timestamps
     end
   end

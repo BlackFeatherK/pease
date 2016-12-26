@@ -36,7 +36,7 @@ class MotorsController < ApplicationController
   end
 
   def params_motor
-    params.require(:motor).permit(:quantity , :amount , :heir)
+    params.require(:motor).permit(:number)
   end
 
 end
