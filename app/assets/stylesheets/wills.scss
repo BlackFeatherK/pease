@@ -297,6 +297,67 @@ $secondary-color: #F8C957;
 
   }
     
+}
 
+
+.words {
+  margin-top: -55px;
+  
+  background-color: #F9F9F9;
+
+  .title {
+  
+    h3 {
+      margin-top: 60px;
+      color: #63717D;
+    }
+
+    p {
+      color: $border-primary-color;
+    }
+    
+  }
+  
+  .words_image {
+    background: image-url("writing-with-a-graphic-pen-picjumbo-com.png") no-repeat;
+    background-size: cover;
+    background-position: 50% 70%;
+    padding: 50px 0;
+
+    p {
+      color: white;  
+    }
+
+    label {
+      padding: 5px 30px;
+      color: #63717D;
+    }
+  }
+
+  h3 {
+    margin: 50px 0 25px 0;
+    color: #63717D;
+  }
+
+  .people_image_paragraph {
+
+    .person {
+      
+      margin-bottom: 20px;
+    }
+
+    .border-radius {
+      background-color: #fff;
+      border-color: border-primary-color;
+      width: 80%;
+      height: 80%;
+      margin: 0 auto;
+      margin-bottom: 100px;
+
+      p {
+        padding: 20px;
+      }
+    }
+  }
 }
 
