@@ -7,7 +7,7 @@ class WillsController < ApplicationController
   def show 
     @will = current_will
     @property = current_will.properties.build
-    @properties = current_will.properties.where.not(:id => nil)
+    @properties = current_will.properties.where.not(:id => nil )
     @stock_portfolio = current_will.stock_portfolios.build
     @stock_portfolios = current_will.stock_portfolios.where.not(:id => nil)
     @account = current_will.accounts.build

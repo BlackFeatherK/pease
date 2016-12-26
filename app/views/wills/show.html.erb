@@ -81,59 +81,88 @@
   <div class="wish-input">
     <div class="container">
       <div class="container2">
-
         <div class="wish-select wish-property unprint">
-          <%= render :partial => 'properties/property' , :locals => {:property => @property} %>
-          
+
+          <%= form_for @property , :url => will_properties_path(@will) , :remote => true do |f| %>
+            <%= render :partial => 'properties/property' , :locals => {:f => f} %>
+          <% end %>
+
           <% @properties.each do |property| %>
-            <%= render :partial => 'properties/property' , :locals => {:property => property} %>
+            <%= form_for property , :url => will_property_path(@will , property) , :method => :patch  , :remote => true do |f| %>
+              <% render :partial => 'properties/property' , :locals => {:f => f} %>
+            <% end %>
           <% end %>
         </div>
+
 
         <div class="wish-select wish-stock unprint">
-          <%= render :partial => 'stock_portfolios/stock_portfolio' , :locals => {:stock_portfolio => @stock_portfolio} %>
+
+          <%= form_for @stock_portfolio , :url => will_stock_portfolios_path(@will) , :remote => true do |f| %>
+            <%= render :partial => 'stock_portfolios/stock_portfolio' , :locals => {:f => f} %>
+          <% end %>
 
           <% @stock_portfolios.each do |stock_portfolio| %>
-            <% render :partial => 'stock_portfolios/stock_portfolio' , :locals => {:stock_portfolio => stock_portfolio} %>
+            <%= form_for stock_portfolio , :url => will_stock_portfolio_path(@will , stock_portfolio) , :method => :patch , :remote => true do |f| %>
+              <%= render :partial => 'stock_portfolios/stock_portfolio' , :locals => {:f => f} %>
+            <% end %>
           <% end %>
         </div>
+
 
         <div class="wish-select wish-account unprint">
-          <%= render :partial => 'accounts/account' , :locals => {:account => @account} %>
+          <%= form_for @account , :url => will_accounts_path(@will) , :remote => true do |f| %>
+            <% render :partial => 'accounts/account' , :locals => {:f => f} %>
+          <% end %>
 
           <% @accounts.each do |account| %>
-            <%= render :partial => 'accounts/account' , :locals => {:account => account} %>
+            <%= form_for account , :url => will_account_path(@will , account) , :method => :patch , :remote => true do |f| %>
+              <%= render :partial => 'accounts/account' , :locals => {:f => f} %>
+            <% end %>
           <% end %>
         </div>
+
 
         <div class="wish-select wish-motor unprint">
-          <%= render :partial => 'motors/motor' , :locals => {:motor => @motor} %>
+          <%= form_for @motor , :url => will_motors_path(@will) , :remote => true do |f| %>
+            <%= render :partial => 'motors/motor' , :locals => {:f => f} %>
+          <% end %>
 
           <% @motors.each do |motor| %>
-            <%= render :partial => 'motors/motor' , :locals => {:motor => motor} %>
+            <%= form_for motor , :url => will_motor_path(@will , motor) , :method => :patch , :remote => true do |f| %>
+              <%= render :partial => 'motors/motor' , :locals => {:f => f} %>
+            <% end %>
           <% end %>
         </div>
+
 
         <div class="wish-select wish-jewelry unprint">
-          <%= render :partial => 'jewelries/jewelry' , :locals => {:jewelry => @jewelry} %>
+          <%= form_for @jewelry , :url => will_jewelries_path(@will) , :method => :patch , :remote => true do |f| %>
+            <%= render :partial => 'jewelries/jewelry' , :locals => {:f => f} %>
+          <% end %>
 
           <% @jewelries.each do |jewelry| %>
-            <%= render :partial => 'jewelries/jewelry' , :locals => {:jewelry => jewelry} %>
+            <%= form_for jewelry , :url => will_jewelry_path(@will , jewelry) , :method => :patch , :remote => true do |f| %>
+              <%= render :partial => 'jewelries/jewelry' , :locals => {:f => f} %>
+            <% end %>
           <% end %>
         </div>
+        
 
         <div class="wish-select wish-other unprint">
-          <%= render :partial => 'motors/motor' , :locals => {:motor => @motor} %>
+          <%= form_for @motor , :url => will_motors_path(@will) , :remote => true do |f| %>
+            <%= render :partial => 'motors/motor' , :locals => {:f => f} %>
+          <% end %>
 
           <% @motors.each do |motor| %>
-            <%= render :partial => 'motors/motor' , :locals => {:motor => motor} %>
+            <%= form_for motor , :url => will_motor_path(@will , motor) , :method => :patch , :remote => true do |f| %>
+              <%= render :partial => 'motors/motor' , :locals => {:f => f} %>
+            <% end %>
           <% end %>
         </div>
-
+        
       </div>
     </div>
   </div>
-    
 </div>
 
 

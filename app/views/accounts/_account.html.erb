@@ -1,5 +1,5 @@
-<% if account.new_record? %>
-  <%= form_for account , :url => will_accounts_path(@will) , :remote => true do |f| %>
+<% if @account.new_record? %>
+  <%= form_for @account , :url => will_accounts_path(@will , @account) , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "哪一家銀行" %>
       <%= f.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
@@ -14,15 +14,22 @@
         <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
       </div>
       <div class="col-md-9 col-sm-9">
-        <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入你的真實姓名")%>
+        <%= f.text_field :heir , :class => 'form-control text-center' , placeholder: "請輸入接受人的姓名" %> 
       </div>
+    </div>
+    <div class="col-md-12 form-group text-center">
+      <% unless @account.new_record? %>
+        <%= link_to will_account_path(@will , @account) , :remote => true  , :method => :delete do %>
+          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
+        <% end %>
+      <% end%>
     </div>
     <div class="col-md-12 form-group">
       <%= f.submit :class => "submit" %>
     </div>
   <% end %>
-<% else %>
-  <%= form_for account , :url => will_account_path(current_will.id , account) , :method => :patch , :remote => true do |f| %>
+  <% else %>
+    <%= form_for @account , :url => will_account_path(current_will.id , @account) , :method => :patch , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "哪一家銀行" %>
       <%= f.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
@@ -37,18 +44,19 @@
         <%= select_tag "heir", options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
       </div>
       <div class="col-md-9 col-sm-9">
-        <%= text_field_tag(:f, nil, class: "form-control text-center", placeholder: "請輸入你的真實姓名")%>
+        <%= f.text_field :heir , :class => 'form-control text-center' , placeholder: "請輸入接受人的姓名" %> 
       </div>
     </div>
     <div class="col-md-12 form-group text-center">
-      <%= link_to will_account_path(@will , account) , :remote => true  , :method => :delete do %>
-        <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
-      <% end %>
+      <% unless @account.new_record? %>
+        <%= link_to will_account_path(@will , @account) , :remote => true  , :method => :delete do %>
+          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
+        <% end %>
+      <% end%>
     </div>
     <div class="col-md-12 form-group">
       <%= f.submit :class => "submit" %>
     </div>
   <% end %>
 <% end %>
-
   
