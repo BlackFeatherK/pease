@@ -82,17 +82,15 @@
   <div class="wish-input">
     <div class="container">
       <div class="container2">
+        
         <div class="wish-select wish-account unprint">
-          <%= form_for @account , :url => will_accounts_path(@will) , :remote => true do |f| %>
-            <% render :partial => 'accounts/account' , :locals => {:f => f} %>
-          <% end %>
+          <%= render :partial => 'accounts/account' , :locals => {:account => @account} %>
 
           <% @accounts.each do |account| %>
-            <%= form_for account , :url => will_account_path(@will , account) , :method => :patch , :remote => true do |f| %>
-              <%= render :partial => 'accounts/account' , :locals => {:f => f} %>
-            <% end %>
+            <%= render :partial => 'accounts/account' , :locals => {:account => account} %>
           <% end %>
         </div>
+
       </div>
     </div>
   </div>

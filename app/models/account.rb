@@ -3,4 +3,7 @@ class Account < ApplicationRecord
   has_many :heirs , :dependent => :destroy
   
   accepts_nested_attributes_for :heirs, reject_if: :all_blank, allow_destroy: true
+
+  validates :bank , presence: true
+
 end

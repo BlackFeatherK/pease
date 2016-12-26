@@ -4,7 +4,6 @@ class CreateAccounts < ActiveRecord::Migration[5.0]
       t.integer :will_id , :index => true
       t.string :bank
       t.string :account_type
-      t.text :heir , :array => true
       t.timestamps
     end
   end

@@ -13,15 +13,22 @@ class WillsController < ApplicationController
     @stock_portfolio = current_will.stock_portfolios.build
     @stock_portfolios = current_will.stock_portfolios.where.not(:id => nil)
     @account = current_will.accounts.build
-    @accounts = current_will.accounts
+    @accounts = current_will.accounts.where.not(:id => nil)
     @motor = current_will.motors.build
     @motors = current_will.motors.where.not(:id => nil)
     @jewelry = current_will.jewelries.build
     @jewelries = current_will.jewelries.where.not(:id => nil)
   end
 
-  def update 
+  def edit
+    @will = current_will
+    @will.accounts.build.heirs.build
+  end
 
+  def update 
+    @will = current_will
+    @will.update(params_will)
+    redirect_to edit_will_path(@will)
   end
 
   def new_heir
@@ -34,6 +41,13 @@ class WillsController < ApplicationController
 
   def vedio
 
+  end
+
+
+  private
+
+  def params_will
+    params.require(:will).permit(:accounts_attributes => [:bank , :account_type , :heirs_attributes => [:heir_type , :name , :proportion]])
   end
 
 end

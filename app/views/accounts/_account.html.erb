@@ -1,4 +1,3 @@
-
 <% if account.new_record? %>
   <%= form_for account , :url => will_accounts_path(@will) , :remote => true  do |f| %>
     <div class="col-md-12 form-group">
@@ -17,8 +16,8 @@
       <%= f.submit :class => "submit" %>
     </div>
   <% end %>
-  <% else %>
-    <%= form_for @account , :url => will_account_path(current_will.id , @account) , :method => :patch , :remote => true do |f| %>
+<% else %>
+  <%= form_for account , :url => will_account_path(current_will.id , account) , :method => :patch , :remote => true do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "哪一家銀行" %>
       <%= f.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
@@ -42,4 +41,3 @@
     </div>
   <% end %>
 <% end %>
-  

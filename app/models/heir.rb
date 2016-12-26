@@ -11,4 +11,6 @@ class Heir < ApplicationRecord
   belongs_to :pension , :optional => true
   belongs_to :private_share , :optional => true
 
+  # validates :name , :heir_type , :proportion , presence: true
+
 end
