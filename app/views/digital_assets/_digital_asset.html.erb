@@ -1,0 +1,119 @@
+<div class="form-group">
+	<div class="form-group yes-no-question">
+		<h3>你是否擁有Facebook帳號？</h3> <br>
+
+		<%= f.radio_button :facebook_account, true%>
+		<label for="digital_asset_facebook_account_true" class="preference-yes">
+			<div class="description">有</div>
+		</label>
+		<%= f.radio_button :facebook_account, false%>
+		<label for="digital_asset_facebook_account_false" class="preference-no">
+			<div class="description">沒有</div>
+		</label>
+	</div>
+
+	<div class="form-group facebook-treatment">
+		<h4>請問你想在離開人世後，如何處置你的臉書帳號 </h4> <br>
+
+		<%= f.radio_button :facebook_account_treatment, "memorial"%>
+		<label for="digital_asset_facebook_account_treatment_memorial" class="preference-yes">
+			<div class="description">紀念帳號</div>
+		</label>
+		<%= f.radio_button :facebook_account_treatment, "delete"%>
+		<label for="digital_asset_facebook_account_treatment_delete" class="preference-no">
+			<div class="description">刪除帳號</div>
+		</label>
+		<%= f.radio_button :facebook_account_treatment, "nil"%>
+		<label for="digital_asset_facebook_account_treatment_nil" class="preference-family">
+			<div class="description">不做任何設定</div>
+		</label>
+	</div>
+	
+	<div class="form-group yes-no-question">
+		<h4>你是否擁有任何Google的帳號服務</h4>
+		<br>
+		<%= f.radio_button :google_account, true%>
+		<label for="digital_asset_google_account_true" class="preference-yes">
+			<div class="description">有</div>
+		</label>
+		<%= f.radio_button :google_account, false%>
+		<label for="digital_asset_google_account_false" class="preference-no">
+			<div class="description">沒有</div>
+		</label>
+	</div>
+
+	<div class="google-account">
+		<div class="form-group yes-no-question">
+			<h4>請問你想在離開人世後，如何處置你的Google帳號</h4>
+			<p>(參考 https://goo.gl/pCBZvz)</p> 
+
+			<%= f.radio_button :google_account_treatment, "share"%>
+			<label for="digital_asset_google_account_treatment_share" class="preference-yes">
+				<div class="description">分享資料給信任的人</div>
+			</label>
+			<%= f.radio_button :google_account_treatment, "delete"%>
+			<label for="digital_asset_google_account_treatment_delete" class="preference-no">
+				<div class="description">刪除帳戶</div>
+			</label>
+		</div>
+
+		<div class="form-group yes-no-question">
+			<h4>你希望在離開人世後，留下線上服務內的資料給人</h4>
+			<br>	
+			<%= f.radio_button :google_account_content, "transfer" %>
+			<label for="digital_asset_google_account_content_transfer" class="preference-yes">
+				<div class="description">想要</div>
+			</label>
+			<%= f.radio_button :google_account_content, "no-transfer"%>
+			<label for="digital_asset_google_account_content_no-transfer" class="preference-no">
+				<div class="description">不想要</div>
+			</label>
+		</div>
+
+		<div class="form-group other">
+			<h4>留下什麼線上服務？</h4>
+			<%= f.text_field :google_account_content, placeholder: "例如：Gmail信箱"%>
+		</div>
+
+		<div class="form-group other">
+			<h4>登入帳號（加密保護）</h4>
+			<%= f.text_field :google_account_id, placeholder: "請輸入登入的帳號資料"%>
+		</div>
+
+		<div class="form-group other">
+			<h4>登入密碼（加密保護）</h4>
+			<%= f.password_field :google_account_password, placeholder: "請輸入登入的帳號密碼"%>
+		</div>
+
+		<div class="form-group heir-options">
+			<h4>服務內容指定給誰</h4>
+			<%= f.select(:heir, [["配偶", '1'], ["子女", '2'], ["親戚", '3'], ["朋友", '4'], ["其他", '5']] ) %>
+			<%= f.text_field :heir, placeholder: "請輸入接受人的姓名"%>
+		</div>
+
+		<div class="form-group other">
+			<h4>接受人的連絡信箱）</h4>
+			<%= f.text_field :heir_email, placeholder: "請輸入接受人常用的連絡信箱"%>
+		</div>
+	</div>
+
+</div>
+
+<script>
+	$('#digital_asset_facebook_account_false').click(function(){
+		$('.facebook-treatment').hide();
+	});
+
+	$('#digital_asset_facebook_account_true').click(function(){
+		$('.facebook-treatment').show();
+	});
+
+	$('#digital_asset_google_account_false').click(function(){
+		$('.google-account').hide();
+	})
+
+	$('#digital_asset_google_account_true').click(function() {
+		$('.google-account').show();
+	});
+
+</script>

@@ -1,20 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'welcome/index'
-  post 'welcome/index'
-
-  # namespace :api do
-  #   resources :accounts
-  #   resources :funerals
-  #   resources :insurance_policies
-  #   resources :jewelries
-  #   resources :motors
-  #   resources :pensions
-  #   resources :private_shares
-  #   resources :properties
-  #   resources :stock_portfolios
-  # end
+  resources :welcome
 
   # namespace :api do
     # constraints do
@@ -28,13 +15,7 @@ Rails.application.routes.draw do
         resources :private_shares
         resources :properties
         resources :stock_portfolios
-        
-        collection do 
-          get :new_heir
-          get :words
-          get :video
-        end
-
+        resources :digital_assets
       end 
 
       resources :users

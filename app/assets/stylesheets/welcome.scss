@@ -6,12 +6,16 @@ $main-color: #364860;
 $secondary-color: #F8C957;
 $main-font: PingFangTC-Medium;
 
-h1 {
+h1, h2, h3, h4, h5 {
 	color: $main-color;
 	font-family: $main-font;
 }
 
+
+
 .info {
+	width: 500px;
+
 	label {
 		color: $main-color;
 		font-family: $main-font;
@@ -35,7 +39,7 @@ h1 {
 		background-repeat: no-repeat;
 	}
 
-	#f_written_on_2i, #f_written_on_1i, #f_written_on_3i {
+	#user_birthday_2i, #user_birthday_3i, #user_birthday_1i {
 		text-align: center;
 		height: 36px;
 		width: 137px;
@@ -51,7 +55,7 @@ h1 {
 			background:url("hover_male.png") no-repeat;
 			background-position: 50% 40%;
 	}
-		input[type=radio]:checked + label.female-label {
+		input[type=radio]:checked + label {
 			background:url("hover_female.png") no-repeat;
 			background-position: 50% 40%;
 		}
@@ -62,6 +66,10 @@ h1 {
 			color: $main-color;
 		}
 	}
+
+	input[type=radio]:checked + label {
+					border: 1px solid $secondary-color;
+				}
 
 	label.male-label {
 		width: 211px;
@@ -82,11 +90,6 @@ h1 {
 		background: image-url("default_female.png") no-repeat;
 		background-position: 50% 40%;
 	}
-
-
-
-
-
 	.submit {
 		width: 210px;
 		height: 36px;

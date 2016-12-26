@@ -1,3 +1,258 @@
 // Place all the styles related to the funerals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$border-primary-color: #D0D0D0;
+$main-color: #364860;
+$secondary-color: #F8C957;
+$main-font: PingFangTC-Medium;
+
+.form-button {
+	width: 107px;
+	height: 107px;
+	border-radius: 5px;
+	border: 1px solid $border-primary-color;
+	position: relative;
+	background-position: 50% 40%;
+}
+
+
+#funerals {
+			width: 500px;
+			label {
+				color: $main-color;
+				font-family: $main-font;
+			}
+			select#funeral_religion {
+				width: 200px;
+				height: 36px;
+				-webkit-appearance: none;
+		    	appearance: none;
+				text-indent: 5px;
+				background-image:
+				    linear-gradient(45deg, transparent 50%, $border-primary-color 50%),
+				    linear-gradient(135deg, $border-primary-color 50%, transparent 50%);
+				background-position:
+				    calc(100% - 15px) calc(1em + 2px),
+				    calc(100% - 10px) calc(1em + 2px);
+				background-size:
+				    5px 5px,
+				    5px 5px;
+				background-repeat: no-repeat;
+			}
+
+			.preference-button {
+				input {
+					visibility: hidden;
+					display: none;
+				}
+
+				label {
+					@extend .form-button;
+					.description {
+						position: absolute;
+						top: 75%;
+						left: 30%;
+						color: $main-color;
+					}
+				}
+				label.preference-yes {
+					background:url("default_ok.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				label.preference-no {
+					background:url("default_no.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				label.preference-family {
+					background:url("default_family.png") no-repeat;
+					background-position: 50% 40%;
+				}
+
+				// Hover effect 
+				input[type=radio]:checked + label {
+					border: 1px solid $secondary-color;
+				}
+				input[type=radio]:checked + label.preference-yes {
+					background:url("hover_ok.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				input[type=radio]:checked + label.preference-no {
+					background:url("hover_no.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				input[type=radio]:checked + label.preference-family {
+					background:url("hover_family.png") no-repeat;
+					background-position: 50% 40%;
+				}
+			}
+			// Funeral services button 
+			.service {
+				label {
+					@extend .form-button;
+				}
+				input {
+					display: none;
+				}
+				label[for="funeral_funeral_service_ids_1"] {
+					background:url("default_cemetery.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				label[for="funeral_funeral_service_ids_2"] {
+					background:url("default_funeral.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				label[for="funeral_funeral_service_ids_3"] {
+					background:url("default_memorial.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				// Hover effect 
+				input[type=checkbox]:checked + label {
+					border: 1px solid $secondary-color;
+				}
+				input[type=checkbox]:checked + label[for="funeral_funeral_service_ids_1"] {
+					background:url("hover_cemetery.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				input[type=checkbox]:checked + label[for="funeral_funeral_service_ids_2"] {
+					background:url("hover_funeral.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				input[type=checkbox]:checked + label[for="funeral_funeral_service_ids_3"] {
+					background:url("hover_memorial.png") no-repeat;
+					background-position: 50% 40%;
+				}
+			}
+
+			// Body arrangement
+			.body-arrangement {
+				label {
+					@extend .form-button;
+				}
+				input {
+					display: none;
+				}
+
+				label.preference-1 {
+					background:url("default_cremation.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				label.preference-2 {
+					background:url("default_ground_burial.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				label.preference-3 {
+					background:url("default_science.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				label.preference-4 {
+					background:url("default_family.png") no-repeat;
+					background-position: 50% 40%;
+				}
+
+
+				// Hover effect 
+				input[type=radio]:checked + label {
+					border: 1px solid $secondary-color;
+				}
+				input[type=radio]:checked + label.preference-1 {
+					background:url("hover_cremation.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				input[type=radio]:checked + label.preference-2 {
+					background:url("hover_ground_burial.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				input[type=radio]:checked + label.preference-3 {
+					background:url("hover_science.png") no-repeat;
+					background-position: 50% 40%;
+				}
+				input[type=radio]:checked + label.preference-4 {
+					background:url("hover_family.png") no-repeat;
+					background-position: 50% 40%;
+				}
+			}
+
+			// Burial arrangement
+			.burial-arrangement {
+				label {
+						@extend .form-button;
+					}
+					input {
+						display: none;
+					}
+
+					label.preference-1 {
+						background:url("default_tree.png") no-repeat;
+						background-position: 50% 40%;
+					}
+					label.preference-2 {
+						background:url("default_sea.png") no-repeat;
+						background-position: 50% 40%;
+					}
+					label.preference-3 {
+						background:url("default_tombstone.png") no-repeat;
+						background-position: 50% 40%;
+					}
+					label.preference-4 {
+						background:url("default_family.png") no-repeat;
+						background-position: 50% 40%;
+					}
+
+
+					// Hover effect 
+					input[type=radio]:checked + label {
+						border: 1px solid $secondary-color;
+					}
+					input[type=radio]:checked + label.preference-1 {
+						background:url("hover_tree.png") no-repeat;
+						background-position: 50% 40%;
+					}
+					input[type=radio]:checked + label.preference-2 {
+						background:url("hover_sea.png") no-repeat;
+						background-position: 50% 40%;
+					}
+					input[type=radio]:checked + label.preference-3 {
+						background:url("hover_tombstone.png") no-repeat;
+						background-position: 50% 40%;
+					}
+					input[type=radio]:checked + label.preference-4 {
+						background:url("hover_family.png") no-repeat;
+						background-position: 50% 40%;
+					}
+			}
+			.other {
+				input {
+					border: 1px solid $border-primary-color;
+					width: 100%;
+					height: 2em;
+					text-align: center;
+					border-radius: 5px;
+				}
+			}
+			.funeral-service-description {
+				width: 100%;
+				height: 74px;
+				font-family: PingFangTC-Regular;
+				font-size: 12px;
+				color: #6C7C89;
+				letter-spacing: 0;
+				background: #F2F2F2;
+				border-radius: 5px;	
+				text-align: left;	
+				margin-top: 5px;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+			}
+			.submit {
+				width: 210px;
+				height: 36px;
+				background-color: $secondary-color;
+				border: none;
+				border-radius: 5px;
+				color: white;
+			}
+		
+	
+}
