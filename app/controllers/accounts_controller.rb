@@ -10,6 +10,7 @@ class AccountsController < ApplicationController
   def create
     @account = controller_create( controller_name , params_account)
     @account.heirs.create(params_heir)
+    byebug
   end
 
   def show
