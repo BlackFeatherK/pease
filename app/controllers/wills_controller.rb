@@ -8,16 +8,17 @@ class WillsController < ApplicationController
 
   def show 
     @will = current_will
-    @property = current_will.properties.build
-    @properties = current_will.properties.where.not(:id => nil )
-    @stock_portfolio = current_will.stock_portfolios.build
-    @stock_portfolios = current_will.stock_portfolios.where.not(:id => nil)
-    @account = current_will.accounts.build
-    @accounts = current_will.accounts.where.not(:id => nil)
-    @motor = current_will.motors.build
-    @motors = current_will.motors.where.not(:id => nil)
-    @jewelry = current_will.jewelries.build
-    @jewelries = current_will.jewelries.where.not(:id => nil)
+    @will.accounts.build.heirs.build
+    # @property = current_will.properties.build
+    # @properties = current_will.properties.where.not(:id => nil )
+    # @stock_portfolio = current_will.stock_portfolios.build
+    # @stock_portfolios = current_will.stock_portfolios.where.not(:id => nil)
+    # @account = current_will.accounts.build
+    # @accounts = current_will.accounts.where.not(:id => nil)
+    # @motor = current_will.motors.build
+    # @motors = current_will.motors.where.not(:id => nil)
+    # @jewelry = current_will.jewelries.build
+    # @jewelries = current_will.jewelries.where.not(:id => nil)
   end
 
   def edit
@@ -28,7 +29,7 @@ class WillsController < ApplicationController
   def update 
     @will = current_will
     @will.update(params_will)
-    redirect_to edit_will_path(@will)
+    redirect_to will_path(@will)
   end
 
   def new_heir
@@ -39,7 +40,7 @@ class WillsController < ApplicationController
     
   end
 
-  def vedio
+  def video
 
   end
 
@@ -47,7 +48,7 @@ class WillsController < ApplicationController
   private
 
   def params_will
-    params.require(:will).permit(:accounts_attributes => [:bank , :account_type , :heirs_attributes => [:heir_type , :name , :proportion]])
+    params.require(:will).permit(:accounts_attributes => [ :id , :bank , :account_type , :_destroy , :heirs_attributes => [ :id , :heir_type , :name , :proportion]])
   end
 
 end

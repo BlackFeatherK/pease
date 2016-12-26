@@ -16,6 +16,10 @@ Rails.application.routes.draw do
         resources :properties
         resources :stock_portfolios
         resources :digital_assets
+
+        collection do 
+          get :video
+        end
       end 
 
       resources :users

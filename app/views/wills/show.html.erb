@@ -84,13 +84,31 @@
       <div class="container2">
         
         <div class="wish-select wish-account unprint">
-          <%= render :partial => 'accounts/account' , :locals => {:account => @account} %>
-
-          <% @accounts.each do |account| %>
-            <%= render :partial => 'accounts/account' , :locals => {:account => account} %>
+          <%= form_for @will , :url => will_path(@will) , :method => :patch do |f| %>
+            <%= f.nested_fields_for :accounts do |account| %>
+              <div class="col-md-12 form-group">
+                <%= account.label "哪一家銀行" %>
+                <%= account.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
+              </div>
+              <div class="col-md-12 form-group">
+                <%= account.label "戶口類型" %>
+                <%= account.text_field :account_type , :class => 'form-control text-center' , placeholder: "請輸入戶口類型" %>
+              </div>
+              <div class="form-group col-md-12 form-heir">
+                <%= label_tag "資產指定給誰" %> <br>
+                <%= render :partial => 'wills/heir' , :locals => {:f => account} %>
+              </div>
+              <div class="col-md-12 form-group text-center">
+                <%= account.check_box :_destroy do  %>
+                  <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
+                <% end %>
+              </div>
+            <% end %>
+            <div class="col-md-12 form-group">
+                <%= f.submit :class => "submit" %>
+              </div>
           <% end %>
         </div>
-
       </div>
     </div>
   </div>
