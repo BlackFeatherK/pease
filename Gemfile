@@ -40,6 +40,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'kaminari'
 gem 'rack-cors', :require => 'rack/cors'
+gem "cocoon"
 
 
 group :development, :test do
