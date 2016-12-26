@@ -302,7 +302,6 @@ $secondary-color: #F8C957;
 
 .words {
   margin-top: -55px;
-  
   background-color: #F9F9F9;
 
   .title {
@@ -314,6 +313,7 @@ $secondary-color: #F8C957;
 
     p {
       color: $border-primary-color;
+      font-size: 20px;
     }
     
   }
@@ -322,20 +322,26 @@ $secondary-color: #F8C957;
     background: image-url("writing-with-a-graphic-pen-picjumbo-com.png") no-repeat;
     background-size: cover;
     background-position: 50% 70%;
-    padding: 50px 0;
+    padding: 100px 0;
 
     p {
+      font-size: 20px;
       color: white;  
+      margin-bottom: 20px;
     }
 
     label {
       padding: 5px 30px;
-      color: #63717D;
+      color: #4B5254;
+      background-color: #F7C14D;
+      border-color: #F7C14D;
     }
+
   }
 
   h3 {
     margin: 50px 0 25px 0;
+    font-weight: bold;
     color: #63717D;
   }
 
@@ -359,5 +365,56 @@ $secondary-color: #F8C957;
       }
     }
   }
+
+  #myModal {
+
+    margin-top: 10%;
+
+    .modal-body {
+      img {
+        width: 10rem;
+        height: 10rem;
+      }
+        
+    }
+    
+    .modal-footer {
+      border-color: white;
+
+      .modal-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+        padding: 5px;
+        width: 80%;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        color: white;
+        text-shadow: none;
+        opacity: 1;
+        margin-bottom: 15px;
+      }
+      
+      .close {
+        background-color: #61717E;
+      }
+
+      .save {
+        background-color: $secondary-color;
+        color: #61717E;
+      }
+
+      }
+
+      
+
+    }
+  }
+
+    
+
 }
 
