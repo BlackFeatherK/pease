@@ -32,8 +32,20 @@ class WillsController < ApplicationController
     
   end
 
-  def vedio
+  def video
 
+  end
+
+  def preview
+    @will = current_will
+    @user = current_will.user
+    if @user.gender == "Male"
+      @gender = "男性"
+    else
+      @gender = "女性"
+    end
+
+    @properties =  current_will.properties
   end
 
 end

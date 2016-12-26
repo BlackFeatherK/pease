@@ -16,9 +16,16 @@ Rails.application.routes.draw do
         resources :properties
         resources :stock_portfolios
         resources :digital_assets
+        collection do
+          get :preview
+          get :video
+        end
       end 
 
-      resources :users
+      resources :users do
+        get :slider
+
+      end
       match '*unmatched_route', to: 'base#error_404', via: :all
     # end
   # end

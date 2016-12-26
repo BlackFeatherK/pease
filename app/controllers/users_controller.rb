@@ -1,18 +1,23 @@
 class UsersController < ApplicationController
 
-	before_action :find_user
+	before_action :find_user, except: [:slider]
 	def show
 
 	end
 
 	def update
 		if @user.update(params_user)
-			redirect_to welcome_index_path
+			flash[:notice] = "Success"
+			redirect_to wills_path
 		else
 			render "show"
 			flash[:alert] = "Not updated"
 		end
 
+	end
+
+	def slider
+		# @topic
 	end
 
 	private
