@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215122354) do
+ActiveRecord::Schema.define(version: 20161224131725) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "will_id"
@@ -22,13 +22,46 @@ ActiveRecord::Schema.define(version: 20161215122354) do
     t.index ["will_id"], name: "index_accounts_on_will_id"
   end
 
+  create_table "digital_assets", force: :cascade do |t|
+    t.integer  "will_id"
+    t.boolean  "facebook_account"
+    t.string   "facebook_account_treatment"
+    t.boolean  "google_account"
+    t.string   "google_account_treatment"
+    t.string   "google_account_content"
+    t.string   "google_account_id"
+    t.string   "google_account_password"
+    t.string   "heir"
+    t.string   "heir_email"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["will_id"], name: "index_digital_assets_on_will_id"
+  end
+
+  create_table "funeral_service_options", force: :cascade do |t|
+    t.integer  "funeral_id"
+    t.integer  "funeral_service_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["funeral_id"], name: "index_funeral_service_options_on_funeral_id"
+    t.index ["funeral_service_id"], name: "index_funeral_service_options_on_funeral_service_id"
+  end
+
+  create_table "funeral_services", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "funerals", force: :cascade do |t|
     t.integer  "will_id"
     t.string   "religion"
-    t.string   "arrangement"
-    t.text     "participants"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "preference"
+    t.string   "burial_arrangement"
+    t.string   "body_arrangement"
+    t.text     "other_arrangement"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.index ["will_id"], name: "index_funerals_on_will_id"
   end
 
@@ -114,6 +147,9 @@ ActiveRecord::Schema.define(version: 20161215122354) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.date     "birthday"
+    t.string   "gender"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

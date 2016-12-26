@@ -1,0 +1,10 @@
+<div class="container text-center" id="<%= controller_name %>">
+		<div class="title">
+			<h1>數位帳號</h1>
+		</div>
+		<%= form_for @digital_asset, url: will_digital_asset_path(@will, @digital_asset), method: :patch, html: {class: "text-center"} do |f| %>
+			<%= render :partial => 'digital_asset', :locals => {:f => f}  %>
+			<%= f.submit class: "submit" %>
+		<% end %>
+	</div>
+</div>
