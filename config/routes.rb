@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :welcome
 
-
+  resources :users
+  
   # namespace :api do
     # constraints(host: 'api.localhost') do
       resources :wills do

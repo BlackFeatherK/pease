@@ -14,6 +14,8 @@ h1, h2, h3, h4, h5 {
 
 
 .info {
+	width: 500px;
+
 	label {
 		color: $main-color;
 		font-family: $main-font;
@@ -37,7 +39,7 @@ h1, h2, h3, h4, h5 {
 		background-repeat: no-repeat;
 	}
 
-	#f_written_on_2i, #f_written_on_1i, #f_written_on_3i {
+	#user_birthday_2i, #user_birthday_3i, #user_birthday_1i {
 		text-align: center;
 		height: 36px;
 		width: 137px;
@@ -64,6 +66,10 @@ h1, h2, h3, h4, h5 {
 			color: $main-color;
 		}
 	}
+
+	input[type=radio]:checked + label {
+					border: 1px solid $secondary-color;
+				}
 
 	label.male-label {
 		width: 211px;
