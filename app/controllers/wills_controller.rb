@@ -37,7 +37,7 @@ class WillsController < ApplicationController
   end
 
   def preview
-    @will = current_will
+    @will = current_user.will
     @user = current_will.user
     if @user.gender == "Male"
       @gender = "男性"
@@ -45,7 +45,11 @@ class WillsController < ApplicationController
       @gender = "女性"
     end
 
-    @properties =  current_will.properties
+    @properties =  @will.properties
+    @motors = @will.motors
+    @accounts = @will.accounts
+    @stock_portfolios = @will.stock_portfolios
+    @jewelries = @will.jewelries
   end
 
 end

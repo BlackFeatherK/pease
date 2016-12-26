@@ -8,28 +8,79 @@
 	<h4>
 		不動產部分
 	</h4>
-	<% @properties.each do |property| %>
-		<p>
-			本人遺產中，位於 <%= property.address %>, 由 <%= property.heirs.name %> 繼承
-		</p>
+	<% if @properties.present? %>
+		<% @properties.each do |property| %>
+			<p style="text-align: left">
+				本人遺產中，位於 <%= property.address %>, 由 <% property.heirs.each do |heir| %>
+					<%= heir.heir_type %><%= heir.name %>
+				<% end %>
+				繼承
+			</p>
+		<% end %>
+	<% end %>
+
+	<% if @motors.present? %>
+		<% @motors.each do |motor| %>
+			<p>
+				本人遺產中，位於 <%= motor.quantity %>, 由 <%= motor.heirs.name %> 繼承
+			</p>
+		<% end %>
+	<% end %>
+
+	<% if @jewelries.present? %>
+		<% @jewelries.each do |jewelery| %>
+			<p>
+				本人遺產中，位於 <%= jewelery.quantity %>, 由 <%= jewelery.heirs.name %> 繼承
+			</p>
+		<% end %>
 	<% end %>
 
 	<h4>動產部分</h4>
-	<p>
-		
-		本人名下的其他遺產於扣除所有遺贈、稅捐、 喪葬和規費後，全由繼承人平均繼承。
-		此遺囑可由本人以書面撤回。
-	</p>
-	<p>
+	<% if @stock_portfolios.present? %>
+		<% @stock_portfolios.each do |stock| %>
+			<p>
+				本人遺產中，位於 <%= stock.bank %>, 由 <%= stock.heirs.name %> 繼承
+			</p>
+		<% end %>
+	<% end %>
 
-		本遺囑一式一份，由本人保管一份，其餘0份由遺囑執行人000保管，並據以辦理繼承相關事項。
-	</p>
-	<p>
-		立遺囑人: ¬¬¬¬¬¬[xx]
-		立遺囑人簽署： 
-		中華民國00年0月0日
+	<% if @accounts.present? %>
+		<% @accounts.each do |account| %>
+			<p>
+				本人遺產中，於 <%= account.bank %>銀行／證券行 的 <%= account.account_type %>帳號, 由 <%= account.heirs.name %> 繼承
+			</p>
+		<% end %>
+	<% end %>
 
-		※其他交代：器官捐贈、保險箱、遺囑存放處、身後奉獻、是否委託律師。
 
-	</p>
+
+	<div class="funeral">
+		<h4>葬禮部分</h4>
+		<p>
+			
+		</p>
+	</div>
+	
+	<div class="sample">
+		<p>	
+			本人名下的其他遺產於扣除所有遺贈、稅捐、 喪葬和規費後，全由繼承人平均繼承。
+			此遺囑可由本人以書面撤回。
+		</p>
+		<p>
+			本遺囑一式一份，由本人保管一份，其餘0份由遺囑執行人000保管，並據以辦理繼承相關事項。
+		</p>
+	</div>
+	<div class="signature" style="text-align: left">
+		<p>
+			立遺囑人: <%= @user.name %>
+		</p>
+		<p>
+			立遺囑人簽署： 
+		</p>
+		<p>
+			中華民國00年0月0日
+
+			※其他交代：器官捐贈、保險箱、遺囑存放處、身後奉獻、是否委託律師。
+		</p>
+	</div>
 </div>
