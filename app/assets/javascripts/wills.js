@@ -41,11 +41,6 @@ $(document).ready(function(){
     $('.wish-other').removeClass('unprint');
   });
 
-  $('.form-heir-btn').click(function(){
-    var heir = $(this).parents('form').children().children('.form-heir-select').html();
-    console.log(heir);
-    $(this).parents('form').children('.form-heir').append(heir);
-  });
 });
   
 

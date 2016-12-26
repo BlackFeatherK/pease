@@ -237,9 +237,16 @@ $secondary-color: #F8C957;
         margin-bottom: 10px;
       }
 
-      label {
-        margin-bottom: 10px;
-        font-size: 16px;
+      .wish-btn {
+        padding: 8px 100px;
+        color: #6C7C89;
+        border-color: $secondary-color;
+        cursor: pointer;
+
+        span {
+          margin-right: 10px;
+          color: #6C7C89;
+        }
       }
 
       .form-heir {
@@ -271,20 +278,17 @@ $secondary-color: #F8C957;
           padding-right: 0;
         }
 
+        .wish-heir-btn {
+          
+          span {
+            color: $secondary-color;
+          }
+
+        }
+      
       } 
       
-      .wish-btn {
-        margin-top: 30px;
-        padding: 8px 100px;
-        color: $default-color;
-        border-color: $secondary-color;
-        cursor: pointer;
-
-        span {
-          margin-right: 10px;
-          color: $secondary-color;
-        }
-      }
+      
 
       .submit {
         width: 100%;
@@ -293,6 +297,7 @@ $secondary-color: #F8C957;
         border: none;
         border-radius: 5px;
         color: white;
+        margin: 15px 0;
       }
 
   }
@@ -396,25 +401,18 @@ $secondary-color: #F8C957;
         text-shadow: none;
         opacity: 1;
         margin-bottom: 15px;
-      }
-      
-      .close {
-        background-color: #61717E;
-      }
+        }
+        
+        .close {
+          background-color: #61717E;
+        }
 
-      .save {
-        background-color: $secondary-color;
-        color: #61717E;
+        .save {
+          background-color: $secondary-color;
+          color: #61717E;
+        }
       }
-
-      }
-
-      
-
     }
-  }
-
-    
-
+  }   
 }
 

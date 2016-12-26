@@ -1,5 +1,5 @@
 <% if account.new_record? %>
-  <%= form_for account , :url => will_accounts_path(@will)  do |f| %>
+  <%= form_for account , :url => will_accounts_path(@will) , :remote => true  do |f| %>
     <div class="col-md-12 form-group">
       <%= f.label "哪一家銀行" %>
       <%= f.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
@@ -10,12 +10,7 @@
     </div>
     <div class="form-group col-md-12 form-heir">
       <%= label_tag "資產指定給誰" %> <br>
-      <%= f.fields_for(:heirs , Heir.new)  do |heir| %>
-        <%= render :partial => 'wills/heir' , :locals => {:will_name => account , :f => heir} %>
-      <% end %>
-    </div>
-    <div class="col-md-12 form-group text-center">
-      <label class="border-radius wish-btn form-heir-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+      <%= render :partial => 'wills/heir' , :locals => {:f => f} %>
     </div>
     <div class="col-md-12 form-group">
       <%= f.submit :class => "submit" %>
@@ -33,12 +28,8 @@
     </div>
 
     <div class="form-group col-md-12 form-heir">
-        <%= render :partial => 'wills/heir' , :locals => {:will_name => account , :f => f} %>
-    </div>
-    <div class="col-md-12 form-group text-center">
-      <%= link_to new_heir_wills_path(:obj => f) , :remote => true  , :method => :delete do %>
-        <label class="border-radius wish-btn form-heir-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
-      <% end %>
+      <%= label_tag "資產指定給誰" %> <br>
+      <%= render :partial => 'wills/heir' , :locals => {:f => f} %>
     </div>
     <div class="col-md-12 form-group text-center">
       <%= link_to will_account_path(@will , account) , :remote => true  , :method => :delete do %>
