@@ -1,4 +1,4 @@
-<%= f.fields_for :heirs do |heir| %>
+<%= f.nested_fields_for :heirs do |heir| %>
   <div class="form-heir-select">
     <div class="col-md-3 col-sm-3">
       <%= heir.select(:heir_type, [[ "家屬", "家屬" ], [ "配偶", "配偶" ], [ "朋友" , "朋友" ]]) %>
@@ -11,3 +11,13 @@
     </div>  
   </div>
 <% end %>
+
+<div class="col-md-12 text-center wish-heir-btn">
+  <%= f.add_nested_fields_link :heirs , :class => "btn" do %>
+    <label class="border-radius wish-btn"><span class="glyphicon glyphicon-plus"></span>新增接受人</label>
+  <% end %>
+</div>
+
+
+
+  
