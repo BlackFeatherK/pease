@@ -26,7 +26,7 @@ Rails.application.routes.draw do
       end 
 
       resources :users do
-
+        
         member do 
           get :slider
           get :suggestion
