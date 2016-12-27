@@ -1,9 +1,9 @@
-var properties = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'properties/property'} %>";
-var stock_portfolios = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'stock_portfolios/stock_portfolio'} %>";
-var accounts = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'accounts/account'} %>";
-var motors = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'motors/motor'} %>";
-var jewelries = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'jewelries/jewelry'} %>";
-var others = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'others/other'} %>";
+var properties = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'properties/property' , :table => 'properties'} %>";
+var stock_portfolios = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'stock_portfolios/stock_portfolio' , :table => 'stock_portfolios'} %>";
+var accounts = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'accounts/account' , :table => 'accounts'} %>";
+var motors = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'motors/motor' , :table => 'motors'} %>";
+var jewelries = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'jewelries/jewelry' , :table => 'jewelries'} %>";
+var others = "<%= j render :partial => 'will' , :locals => {:will => @will , :path => 'others/other' , :table => 'others'} %>";
 
 $('.wish-property').html('');
 $('.wish-stock').html('');
