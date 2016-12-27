@@ -10,8 +10,6 @@ class CreateDigitalAssets < ActiveRecord::Migration[5.0]
 		t.string :google_account_id
 		t.string :google_account_password
 
-		t.string :heir
-		t.string :heir_email
       t.timestamps
     end
   end
