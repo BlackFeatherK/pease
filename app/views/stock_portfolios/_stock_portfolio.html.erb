@@ -1,53 +1,16 @@
-<% if @stock_portfolio.new_record? %>
-  <%= form_for @stock_portfolio , :url => will_stock_portfolios_path(@will , @stock_portfolio) , :remote => true do |f| %>
-    <div class="col-md-12 form-group">
-      <%= f.label "哪一家銀行/證券商" %>
-      <%= f.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行/證券商" %>
-    </div>
-    <div class="form-group col-md-12 form-select">
-      <%= label_tag('account[heir]', "資產指定給誰") %> <br>
-      <div class="col-md-3 col-sm-3">
-        <%= select_tag 'heir[heir_type]', options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
-      </div>
-      <div class="col-md-9 col-sm-9">
-        <%= text_field_tag('heir[name]', nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>
-      </div>
-    </div>
-    <div class="col-md-12 form-group text-center">
-      <% unless @stock_portfolio.new_record? %>
-        <%= link_to will_stock_portfolio_path(@will , @stock_portfolio) , :remote => true  , :method => :delete do %>
-          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
-        <% end %>
-      <% end%>
-    </div>
-    <div class="col-md-12 form-group">
-      <%= f.submit :class => "submit" %>
-    </div>
-  <% end %>
-<% else %>
-  <%= form_for @stock_portfolio , :url => will_stock_portfolio_path(@will , @stock_portfolio) , :method => :patch , :remote => true do |f| %>
-    <div class="col-md-12 form-group">
-      <%= f.label "哪一家銀行/證券商" %>
-      <%= f.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行/證券商" %>
-    </div>
-    <div class="form-group col-md-12 form-select">
-      <%= label_tag('account[heir]', "資產指定給誰") %> <br>
-      <div class="col-md-3 col-sm-3">
-        <%= select_tag 'heir[heir_type]', options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
-      </div>
-      <div class="col-md-9 col-sm-9">
-        <%= text_field_tag('heir[name]', nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>
-      </div>
-    </div>
-    <div class="col-md-12 form-group text-center">
-      <% unless @stock_portfolio.new_record? %>
-        <%= link_to will_stock_portfolio_path(@will , @stock_portfolio) , :remote => true  , :method => :delete do %>
-          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
-        <% end %>
-      <% end%>
-    </div>
-    <div class="col-md-12 form-group">
-      <%= f.submit :class => "submit" %>
-    </div>
-  <% end %>
+<%= f.nested_fields_for :stock_portfolios do |stock_portfolio| %>
+  <div class="col-md-12 form-group">
+    <%= stock_portfolio.label "哪一家銀行" %>
+    <%= stock_portfolio.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
+  </div>
+  <div class="form-group col-md-12 form-heir">
+    <%= label_tag "資產指定給誰" %> <br>
+    <%= render :partial => 'heirs/heir' , :locals => {:f => stock_portfolio} %>
+  </div>
+  <div class="col-md-12 form-group text-center">
+    <%= stock_portfolio.check_box :_destroy %> <br>
+    <%= stock_portfolio.label :_destroy , :class => 'border-radius wish-btn' do %>
+      <span class="glyphicon glyphicon-minus"></span>移除此資產
+    <% end %>
+  </div>
 <% end %>

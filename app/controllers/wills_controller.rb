@@ -8,7 +8,13 @@ class WillsController < ApplicationController
 
   def show 
     @will = current_will
+    @will.properties.build.heirs.build
+    @will.stock_portfolios.build.heirs.build
     @will.accounts.build.heirs.build
+    @will.motors.build.heirs.build
+    @will.jewelries.build.heirs.build
+    @will.others.build.heirs.build
+
     # @property = current_will.properties.build
     # @properties = current_will.properties.where.not(:id => nil )
     # @stock_portfolio = current_will.stock_portfolios.build
@@ -48,7 +54,13 @@ class WillsController < ApplicationController
   private
 
   def params_will
-    params.require(:will).permit(:accounts_attributes => [ :id , :bank , :account_type , :_destroy , :heirs_attributes => [ :id , :heir_type , :name , :proportion]])
+    params.require(:will).permit(:properties_attributes => [ :id , :number , :address , :_destroy , :heirs_attributes => [ :id , :heir_type , :name , :proportion]],
+                                 :stock_portfolios_attributes => [ :id , :bank , :_destroy , :heirs_attributes => [ :id , :heir_type , :name , :proportion]],
+                                 :accounts_attributes => [ :id , :bank , :account_type , :_destroy , :heirs_attributes => [ :id , :heir_type , :name , :proportion]],
+                                 :motors_attributes => [ :id , :number , :_destroy , :heirs_attributes => [ :id , :heir_type , :name , :proportion]],
+                                 :jewelries_attributes => [ :id , :description , :_destroy , :heirs_attributes => [ :id , :heir_type , :name , :proportion]],
+                                 :others_attributes => [ :id , :description , :_destroy , :heirs_attributes => [ :id , :heir_type , :name , :proportion]],
+                                )
   end
 
 end
