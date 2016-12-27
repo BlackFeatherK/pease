@@ -2,7 +2,7 @@ module WillsHelper
 	def funeral_preference_text(funeral)
 		case funeral.preference 
 		when "yes"
-		"本人乃虔誠的#{funeral.religion}教徒，因此希望所有的儀式均跟從本人的宗教習俗盡行" 
+		"本人乃虔誠的#{funeral.religion}教徒，因此希望所有的儀式均跟從本人的宗教習俗進行" 
 		when "no"
 		 '本人不希望進行任何形式的葬禮／追思會.'
 		when "family"
