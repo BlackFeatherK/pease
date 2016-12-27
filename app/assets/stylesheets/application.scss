@@ -26,35 +26,49 @@
   width: 100%;
   color: #fff;
   opacity: 0.85;
+
+
+  .container {
+    position: relative;
+  }
+
+  nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  a {
+    padding: 30px 10px;
+  }
+
+  li {
+    line-height: 75px ;
+    border-bottom: 3px solid transparent; 
+  }
+
+  li:hover{
+      border-bottom: 3px #F8C957 solid; 
+  }
+
 }
 
-#header .container {
-  position: relative;
-}
+.write { 
+  padding:156px 0;
+  background-image: url('writing-with-a-graphic-pen-picjumbo-com.png');   /*  背景用圖片的基本設定  */
+  background-size: cover;                                        /*  背景圖展開成block的大小 */ 
+  background-position: 50% 70%;                                   
+  background-repeat: no-repeat; 
+  width :100%;
 
-#header nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
+  h2 {
+    color: white;
+  }
 }
-
-#header ul {
-  margin: 0;
-}
-
-#header a {
-  padding: 30px 10px;
-}
-
-#header li {
-  line-height: 75px ;
-  border-bottom: 3px solid transparent; 
-}
-
-#header li:hover{
-    border-bottom: 3px #F8C957 solid; 
-}
-
 
 

@@ -1,54 +1,20 @@
-<% if @property.new_record? %>
-  <%= form_for @property , :url => will_properties_path(@will , @property) , :remote => true do |f| %>
-    <div class="col-md-12 form-group">
-      <%= f.label "建物建號" %>
-      <%= f.text_field :number , :class => 'form-control text-center' , placeholder: "請輸入建號" %>
-    </div>
-    <div class="col-md-12 form-group">
-      <%= f.label "房屋地址" %>
-      <%= f.text_field :address , :class => 'form-control text-center' , placeholder: "請輸入地址" %>
-    </div>
-    <div class="form-group col-md-12 form-select">
-      <%= label_tag('account[heir]', "資產指定給誰") %> <br>
-      <div class="col-md-3 col-sm-3">
-        <%= select_tag 'heir[heir_type]', options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
-      </div>
-      <div class="col-md-9 col-sm-9">
-        <%= text_field_tag('heir[name]', nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>
-      </div>
-    </div>
-    <div class="col-md-12 form-group">
-      <%= f.submit :class => "submit" %>
-    </div>
-  <% end %>
-<% else %>
-  <%= form_for @property , :url => will_property_path(@will , @property) , :method => :patch  , :remote => true do |f| %>
-    <div class="col-md-12 form-group">
-      <%= f.label "建物建號" %>
-      <%= f.text_field :number , :class => 'form-control text-center' , placeholder: "請輸入建號" %>
-    </div>
-    <div class="col-md-12 form-group">
-      <%= f.label "房屋地址" %>
-      <%= f.text_field :address , :class => 'form-control text-center' , placeholder: "請輸入地址" %>
-    </div>
-    <div class="form-group col-md-12 form-select">
-      <%= label_tag('account[heir]', "資產指定給誰") %> <br>
-      <div class="col-md-3 col-sm-3">
-        <%= select_tag 'heir[heir_type]', options_for_select([ "家屬", "配偶", "朋友" ], "家屬") %>
-      </div>
-      <div class="col-md-9 col-sm-9">
-        <%= text_field_tag('heir[name]', nil, class: "form-control text-center", placeholder: "請輸入接受人的姓名")%>
-      </div>
-    </div>
-    <div class="col-md-12 form-group text-center">
-      <% unless @property.new_record? %>
-        <%= link_to will_property_path(@will , @property) , :method => :delete , :remote => true do %>
-          <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
-        <% end %>
-      <% end%>
-    </div>
-    <div class="col-md-12 form-group">
-      <%= f.submit :class => "submit" %>
-    </div>
-  <% end %>
+<%= f.nested_fields_for :properties do |property| %>
+  <div class="col-md-12 form-group">
+    <%= property.label "哪一家銀行" %>
+    <%= property.text_field :number , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
+  </div>
+  <div class="col-md-12 form-group">
+    <%= property.label "戶口類型" %>
+    <%= property.text_field :address , :class => 'form-control text-center' , placeholder: "請輸入戶口類型" %>
+  </div>
+  <div class="form-group col-md-12 form-heir">
+    <%= label_tag "資產指定給誰" %> <br>
+    <%= render :partial => 'heirs/heir' , :locals => {:f => property} %>
+  </div>
+  <div class="col-md-12 form-group text-center">
+    <%= property.check_box :_destroy %> <br>
+    <%= property.label :_destroy , :class => 'border-radius wish-btn' do %>
+      <span class="glyphicon glyphicon-minus"></span>移除此資產
+    <% end %>
+  </div>
 <% end %>

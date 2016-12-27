@@ -12,4 +12,7 @@ class Heir < ApplicationRecord
   belongs_to :private_share , :optional => true
   
   delegate :name, :heir_type, :to => :property, :prefix => true, :allow_nil => true
+
+  # validates :name , :heir_type , :proportion , presence: true
+
 end

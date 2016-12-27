@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(version: 20161224131725) do
     t.string   "google_account_content"
     t.string   "google_account_id"
     t.string   "google_account_password"
+<<<<<<< HEAD
+=======
+    t.string   "heir"
+    t.string   "heir_email"
+>>>>>>> 2d40c6a24e6500e3cd192da1fc82404b90da241f
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["will_id"], name: "index_digital_assets_on_will_id"
@@ -65,7 +70,10 @@ ActiveRecord::Schema.define(version: 20161224131725) do
   create_table "heirs", force: :cascade do |t|
     t.string   "heir_type"
     t.string   "name"
+<<<<<<< HEAD
     t.string   "email"
+=======
+>>>>>>> 2d40c6a24e6500e3cd192da1fc82404b90da241f
     t.integer  "proportion"
     t.integer  "account_id"
     t.integer  "jewelry_id"
@@ -73,7 +81,10 @@ ActiveRecord::Schema.define(version: 20161224131725) do
     t.integer  "other_id"
     t.integer  "property_id"
     t.integer  "stock_portfolio_id"
+<<<<<<< HEAD
     t.integer  "digital_asset_id"
+=======
+>>>>>>> 2d40c6a24e6500e3cd192da1fc82404b90da241f
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
@@ -163,11 +174,14 @@ ActiveRecord::Schema.define(version: 20161224131725) do
     t.string   "name"
     t.date     "birthday"
     t.string   "gender"
+<<<<<<< HEAD
     t.boolean  "tangible_asset"
     t.boolean  "intangible_asset"
     t.boolean  "personal_item"
     t.boolean  "afterlife_service"
     t.boolean  "digital"
+=======
+>>>>>>> 2d40c6a24e6500e3cd192da1fc82404b90da241f
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

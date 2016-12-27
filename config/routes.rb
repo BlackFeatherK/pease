@@ -18,6 +18,8 @@ Rails.application.routes.draw do
         resources :digital_assets
         member do
           get :preview
+
+        collection do 
           get :video
         end
       end 

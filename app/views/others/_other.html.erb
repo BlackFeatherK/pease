@@ -1,0 +1,16 @@
+<%= f.nested_fields_for :others do |other| %>
+  <div class="col-md-12 form-group">
+    <%= other.label "哪一家銀行" %>
+    <%= other.text_field :description , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
+  </div>
+  <div class="form-group col-md-12 form-heir">
+    <%= label_tag "資產指定給誰" %> <br>
+    <%= render :partial => 'heirs/heir' , :locals => {:f => other} %>
+  </div>
+  <div class="col-md-12 form-group text-center">
+    <%= other.check_box :_destroy %> <br>
+    <%= other.label :_destroy , :class => 'border-radius wish-btn' do %>
+      <span class="glyphicon glyphicon-minus"></span>移除此資產
+    <% end %>
+  </div>
+<% end %>

@@ -10,15 +10,17 @@ class Will < ApplicationRecord
   has_many :properties , :dependent => :destroy
   has_many :stock_portfolios , :dependent => :destroy
   has_many :digital_assets, :dependent => :destroy
+  has_many :others , :dependent => :destroy
 
-  accepts_nested_attributes_for :accounts
+  accepts_nested_attributes_for :accounts , reject_if: proc { |attributes| attributes['bank'].blank? }, allow_destroy: true
   accepts_nested_attributes_for :funerals
   accepts_nested_attributes_for :insurance_policies
-  accepts_nested_attributes_for :jewelries
-  accepts_nested_attributes_for :motors
+  accepts_nested_attributes_for :jewelries , reject_if: proc { |attributes| attributes['description'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :motors , reject_if: proc { |attributes| attributes['number'].blank? }, allow_destroy: true
   accepts_nested_attributes_for :pensions
   accepts_nested_attributes_for :private_shares
-  accepts_nested_attributes_for :properties
-  accepts_nested_attributes_for :stock_portfolios
+  accepts_nested_attributes_for :properties , reject_if: proc { |attributes| attributes['number'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :stock_portfolios , reject_if: proc { |attributes| attributes['bank'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :others , reject_if: proc { |attributes| attributes['description'].blank? }, allow_destroy: true
 
 end
