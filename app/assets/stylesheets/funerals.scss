@@ -19,7 +19,8 @@ $main-font: PingFangTC-Medium;
 
 #funerals {
 			width: 500px;
-			label {
+	#new, #show {
+		label {
 				color: $main-color;
 				font-family: $main-font;
 			}
@@ -254,5 +255,6 @@ $main-font: PingFangTC-Medium;
 				color: white;
 			}
 		
+	}
 	
 }

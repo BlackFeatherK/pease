@@ -27,7 +27,6 @@ Rails.application.routes.draw do
 
       resources :users do
         get :slider
-
       end
       match '*unmatched_route', to: 'base#error_404', via: :all
     # end

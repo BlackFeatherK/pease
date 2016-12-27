@@ -14,7 +14,7 @@ class FuneralsController < ApplicationController
 	def create
 		@funeral = @will.funerals.build(funeral_params)
 		if @funeral.save
-			redirect_to welcome_index_path
+			redirect_to wills_path
 			flash[:notice] = 'successful'
 		else 
 			render "new"
@@ -24,7 +24,7 @@ class FuneralsController < ApplicationController
 
 	def update
 		if @funeral.update(funeral_params)
-			redirect_to welcome_index_path
+			redirect_to wills_path
 			flash[:notice] = 'successful'
 		else 
 			render "show"

@@ -28,6 +28,23 @@ class WillsController < ApplicationController
   def video
   end
 
+  def preview
+    @will = current_will
+    @user = current_user
+    if @user.gender == "Male"
+      @gender = "男性"
+    else
+      @gender = "女性"
+    end
+
+    @properties =  @will.properties
+    @motors = @will.motors
+    @accounts = @will.accounts
+    @stock_portfolios = @will.stock_portfolios
+    @jewelries = @will.jewelries
+    @funeral = @will.funerals.first
+  end
+
   private
 
   def params_will
@@ -40,20 +57,6 @@ class WillsController < ApplicationController
                                 )
   end
 
-  def preview
-    @will = current_user.will
-    @user = current_will.user
-    if @user.gender == "Male"
-      @gender = "男性"
-    else
-      @gender = "女性"
-    end
-
-    @properties =  @will.properties
-    @motors = @will.motors
-    @accounts = @will.accounts
-    @stock_portfolios = @will.stock_portfolios
-    @jewelries = @will.jewelries
-  end
+ 
 
 end

@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-
 	before_action :find_user, except: [:slider]
 	def show
 
 	end
 
 	def update
+		@user.will.create
 		if @user.update(params_user)
 			flash[:notice] = "Success"
 			redirect_to wills_path

@@ -2,8 +2,6 @@
 <div class="container2 text-center ">
 	<p>
 		本人 <%= @user.name %>, <%= @gender %>, 民國<%= @user.birthday%>生, 身分證號碼 [xxxx]， 茲依民國民法相關要求，特此遺囑如下
-
-
 	</p>
 	<h4>
 		不動產部分
@@ -57,7 +55,13 @@
 	<div class="funeral">
 		<h4>葬禮部分</h4>
 		<p>
-			
+		  <%= funeral_preference_text(@funeral) %>
+		</p>
+		<p>
+			<%= body_arrangement_preference(@funeral)%>
+		</p>
+		<p>
+			<%= burial_site(@funeral) %>
 		</p>
 	</div>
 	
