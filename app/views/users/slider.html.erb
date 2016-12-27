@@ -1,45 +1,57 @@
 <div id="slider">
-  <%= form_for @topic , :url => "" do |f| %>
-    <p class="glyphicon glyphicon-chevron-right control_next"></p>
-    <p class="glyphicon glyphicon-chevron-left control_prev"></p>
+  <%= form_for @user , :url => save_slider_user_path(@user) do |f| %>
     <ul>
       <li>
-        <div class="form-group">
-          <label class="question">{{message1}}</label>
+        <div class="form-group question-words">
+          <label class="question"><p>您有不動資產嗎？</p></label>
         </div>
         <div class="form-group btn">
-           <label class="question-btn"><%= f.radio_button :questionA , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
-          <label class="question-btn"><%= f.radio_button :questionA , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
+           <label class="question-btn"><%= f.radio_button :tangible_asset , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
+          <label class="question-btn"><%= f.radio_button :tangible_asset , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
         </div>
+        <div class="clearfix"></div>
       </li>
       <li>
-        <div class="form-group">
-          <label class="question">{{message2}}</label>
+        <div class="form-group question-words">
+          <label class="question"><p>您有無形資產嗎？</p></label>
         </div>
         <div class="form-group btn">
-           <label class="question-btn"><%= f.radio_button :questionB , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
-          <label class="question-btn"><%= f.radio_button :questionB , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
+           <label class="question-btn"><%= f.radio_button :intangible_asset , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
+          <label class="question-btn"><%= f.radio_button :intangible_asset , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
         </div>
+        <div class="clearfix"></div>
       </li>
       <li>
-        <div class="form-group">
-          <label class="question">{{message[2]}}</label>
+        <div class="form-group question-words">
+          <label class="question"><p>您有個人物品嗎？</p></label>
         </div>
         <div class="form-group btn">
-           <label class="question-btn"><%= f.radio_button :questionC , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
-          <label class="question-btn"><%= f.radio_button :questionC , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
+           <label class="question-btn"><%= f.radio_button :personal_item , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
+          <label class="question-btn"><%= f.radio_button :personal_item , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
         </div>
+        <div class="clearfix"></div>
       </li>
       <li>
-         <div class="form-group">
-          <label class="question">{{message[3]}}</label>
+         <div class="form-group question-words">
+          <label class="question"><p>希望自己安排自己的葬禮嗎？</p></label>
         </div>
         <div class="form-group btn">
-           <label class="question-btn"><%= f.radio_button :questionD , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
-          <label class="question-btn"><%= f.radio_button :questionD , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
+           <label class="question-btn"><%= f.radio_button :afterlife_service , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
+          <label class="question-btn"><%= f.radio_button :afterlife_service , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
+        </div>
+        <div class="clearfix"></div>
+      </li>
+      <li>
+         <div class="form-group question-words">
+          <label class="question"><p>您有數位資產嗎？</p></label>
+        </div>
+        <div class="form-group btn">
+           <label class="question-btn"><%= f.radio_button :digital , 'false' %><span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"><br>不是</span></label>
+          <label class="question-btn"><%= f.radio_button :digital , 'true' %><span class="glyphicon glyphicon-ok" aria-hidden="true" style="cursor:pointer"><br>是</span></label>
         </div>
       </li>
     </ul> 
+    <%= f.submit %>
   <% end %> 
 </div>
 
@@ -90,18 +102,16 @@
         moveRight();
     });
 
+    $('#user_digital_true').click(function(){
+      $('input[type=submit]').click();
+    });
+
+    $('#user_digital_false').click(function(){
+      $('input[type=submit]').click();
+    });
+
   });  
 
 
-
-  var question = new Vue({
-    el : 'li' ,
-    data : {
-      message1 : "It is important to me to not be a burden to my loved ones. fdsfdsfdsfdfddfdfdsdsfds",
-      message2 : "I would not want to be kept in a vegetative state forever.",
-      message3 : "Losing my ability to communicate would make life not worth living.",
-      message4 : "I would be okay with being fed through a tube to prolong my life."
-    }
-  })  
 
 </script>

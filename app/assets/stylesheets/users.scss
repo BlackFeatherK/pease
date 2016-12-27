@@ -1,3 +1,38 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$border-primary-color: #D0D0D0;
+$default-color: #8D8D8D;
+$main-color: #364860;
+$secondary-color: #F8C957;
+
+#users {
+
+  #suggestion {
+    margin-top: -55px;
+    padding: 30px 0;
+    background-color: #F9F9F9;
+
+    .container {
+      border: 1px solid #fff;
+      border-radius: 5px;
+      background-color: #fff;
+
+      h3 {
+        margin: 60px 0;
+      }
+
+      p {
+        font-size: 16px;
+        color: $main-color;
+      }
+
+      .btn-default {
+        margin: 20px 0 60px 0;
+        padding: 10px 60px;
+        background-color: $main-color;
+        color: white;
+      }
+
+    }
+    
+  }
+
+}

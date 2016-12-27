@@ -1,0 +1,24 @@
+<div id="<%= controller_name %>">
+  <div id="<%= action_name %>">
+    <div class="container text-center">
+      <h3>嗨！歡迎<%= current_user.email %>第一次使用Pease！</h3>
+      <p>以下推薦符合你需求的問題卡，讓我們立即開始完成一份有效力的遺囑吧！</p>
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <div class="col-md-3">
+          
+        </div>
+        <div class="col-md-3">
+          
+        </div>
+        <div class="col-md-3">
+          
+        </div>
+      </div>
+      <%= link_to '返回問題卡總覽' , wills_path , :class => 'btn btn-default' %>
+    </div>
+  </div>
+</div>
+  
