@@ -1,0 +1,9 @@
+<%= form_for will , :url => will_path(will) , :method => :patch , :remote => true do |f| %>
+  <%= render :partial => 'accounts/account' , :locals => {:f => f} %>
+  <div class="col-md-12 form-group text-center wish-submit">
+    <%= f.add_nested_fields_link :accounts do %>
+      <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
+    <% end %>
+    <%= f.submit '儲存' , :class => "submit" %>
+  </div>
+<% end %>

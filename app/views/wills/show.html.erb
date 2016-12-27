@@ -82,36 +82,8 @@
   <div class="wish-input">
     <div class="container">
       <div class="container2">
-        
         <div class="wish-select wish-account unprint">
-          <%= form_for @will , :url => will_path(@will) , :method => :patch , :remote => true do |f| %>
-            <%= f.nested_fields_for :accounts do |account| %>
-              <div class="col-md-12 form-group">
-                <%= account.label "哪一家銀行" %>
-                <%= account.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
-              </div>
-              <div class="col-md-12 form-group">
-                <%= account.label "戶口類型" %>
-                <%= account.text_field :account_type , :class => 'form-control text-center' , placeholder: "請輸入戶口類型" %>
-              </div>
-              <div class="form-group col-md-12 form-heir">
-                <%= label_tag "資產指定給誰" %> <br>
-                <%= render :partial => 'wills/heir' , :locals => {:f => account} %>
-              </div>
-              <div class="col-md-12 form-group text-center">
-                <%= account.check_box :_destroy %> <br>
-                <%= account.label :_destroy , :class => 'border-radius wish-btn' do %>
-                  <span class="glyphicon glyphicon-minus"></span>移除此資產
-                <% end %>
-              </div>
-            <% end %>
-            <div class="col-md-12 form-group text-center wish-submit">
-              <%= f.add_nested_fields_link :accounts do %>
-                <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
-              <% end %>
-              <%= f.submit '儲存' , :class => "submit" %>
-            </div>
-          <% end %>
+          <%= render :partial => 'will' , :locals => {:will => @will} %>
         </div>
       </div>
     </div>
