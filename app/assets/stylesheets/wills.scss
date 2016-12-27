@@ -233,15 +233,27 @@ $secondary-color: #F8C957;
         margin-bottom: 10px;
       }
 
+      input[type=checkbox] {
+        display: none;
+      }
+
       .wish-btn {
         padding: 8px 100px;
         color: #6C7C89;
-        border-color: $secondary-color;
+        border-color: #6C7C89;
         cursor: pointer;
 
         span {
           margin-right: 10px;
           color: #6C7C89;
+        }
+      }
+
+      .wish-new {
+        border-color: $secondary-color;
+
+        span {
+          color: $secondary-color;
         }
       }
 
@@ -275,6 +287,8 @@ $secondary-color: #F8C957;
         }
 
         .wish-heir-btn {
+          margin-top: 20px;
+          margin-bottom: -30px;
           
           span {
             color: $secondary-color;
@@ -282,18 +296,21 @@ $secondary-color: #F8C957;
 
         }
       
-      } 
-      
-      
+      }
 
-      .submit {
-        width: 100%;
-        height: 40px;
-        background-color: $secondary-color;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        margin: 15px 0;
+      .wish-submit {
+        margin-top: 30px;
+
+        .submit {
+          width: 100%;
+          height: 40px;
+          background-color: $secondary-color;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          margin: 15px 0;
+          font-weight: bold;
+        }
       }
 
   }

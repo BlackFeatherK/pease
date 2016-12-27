@@ -84,7 +84,7 @@
       <div class="container2">
         
         <div class="wish-select wish-account unprint">
-          <%= form_for @will , :url => will_path(@will) , :method => :patch do |f| %>
+          <%= form_for @will , :url => will_path(@will) , :method => :patch , :remote => true do |f| %>
             <%= f.nested_fields_for :accounts do |account| %>
               <div class="col-md-12 form-group">
                 <%= account.label "哪一家銀行" %>
@@ -99,14 +99,18 @@
                 <%= render :partial => 'wills/heir' , :locals => {:f => account} %>
               </div>
               <div class="col-md-12 form-group text-center">
-                <%= account.check_box :_destroy do  %>
-                  <label class="border-radius wish-btn"><span class="glyphicon glyphicon-minus"></span>移除此資產</label>
+                <%= account.check_box :_destroy %> <br>
+                <%= account.label :_destroy , :class => 'border-radius wish-btn' do %>
+                  <span class="glyphicon glyphicon-minus"></span>移除此資產
                 <% end %>
               </div>
             <% end %>
-            <div class="col-md-12 form-group">
-                <%= f.submit :class => "submit" %>
-              </div>
+            <div class="col-md-12 form-group text-center wish-submit">
+              <%= f.add_nested_fields_link :accounts do %>
+                <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
+              <% end %>
+              <%= f.submit '儲存' , :class => "submit" %>
+            </div>
           <% end %>
         </div>
       </div>
@@ -115,3 +119,8 @@
 </div>
 
 
+<script>
+  $('input[type=checkbox]').click(function(){
+    $('input[type=submit').click();
+  });
+</script>

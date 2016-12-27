@@ -1,16 +1,10 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-
 <article>
   <div class="container text-center">
     <div class="github-stargazers"></div>
 
     <section class="experiment" style="padding: 5px;">
-      <label for="time-interval">Time Interval (milliseconds):</label>
-      <input type="text" id="time-interval" value="60000">
+      <!-- <label for="time-interval">Time Interval (milliseconds):</label>
+      <input type="text" id="time-interval" value="60000"> -->
 
       <br>
       <br> recorderType:
@@ -24,6 +18,15 @@
       <br>
       <br>
 
+      <label for="video-width">Video Width:</label>
+      <input type="text" id="video-width" value="1280">
+
+      <label for="video-height">Video Height:</label>
+      <input type="text" id="video-height" value="720">
+
+      <br>
+      <br>
+
       <button id="start-recording" class="btn btn-primary">Start</button>
       <button id="stop-recording" class="btn btn-primary" disabled>Stop</button>
 
@@ -32,14 +35,7 @@
 
       <button id="save-recording" class="btn btn-primary" disabled>Save</button>
 
-      <br>
-      <br>
-
-      <label for="video-width">Video Width:</label>
-      <input type="text" id="video-width" value="320">
-
-      <label for="video-height">Video Height:</label>
-      <input type="text" id="video-height" value="240">
+      
     </section>
 
     <section class="experiment">
@@ -119,7 +115,7 @@
           videosContainer.appendChild(a);
           videosContainer.appendChild(document.createElement('hr'));
       };
-      var timeInterval = document.querySelector('#time-interval').value;
+      var timeInterval = 600000;
       if (timeInterval) timeInterval = parseInt(timeInterval);
       else timeInterval = 5 * 1000;
       // get blob after specific time interval
