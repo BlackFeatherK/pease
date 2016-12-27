@@ -41,6 +41,10 @@ $(document).ready(function(){
     $('.wish-other').removeClass('unprint');
   });
 
+  $(document).on("click", "input[type=checkbox]", function () {
+    $(this).closest('fieldset').hide(); 
+   });
+
 });
   
 

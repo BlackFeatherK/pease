@@ -1,4 +1,4 @@
-<%= form_for will , :url => will_path(will) , :method => :patch , :remote => true do |f| %>
+<%= form_for will , :url => will_path(will) , :method => :patch , :remote => true , data: { turbolinks: 'false' } do |f| %>
   <%= render :partial => path , :locals => {:f => f} %>
   <div class="col-md-12 form-group text-center wish-submit">
     <%= f.add_nested_fields_link table do %>
@@ -7,3 +7,4 @@
     <%= f.submit '儲存' , :class => "submit" %>
   </div>
 <% end %>
+
