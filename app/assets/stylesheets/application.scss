@@ -46,7 +46,13 @@
   }
 
   a {
+    color: #fff;
     padding: 30px 10px;
+  }
+
+  a:hover {                 
+    color: #ECB031;    
+    text-decoration: none;        
   }
 
   li {

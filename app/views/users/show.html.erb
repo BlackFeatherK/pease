@@ -1,5 +1,5 @@
 <div class="container2">
-	<%= form_for @user, url: user_path, method: :patch, html: {class: "form-group info "} do |f| %>
+	<%= form_for @user, url: user_path(@user), method: :patch, html: {class: "form-group info "} do |f| %>
 		<h1>個人資料</h1>
 
 		<div class="form-group">

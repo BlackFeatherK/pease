@@ -53,7 +53,7 @@
     </div>
   </div>
   <div class="write text-center">
-    <h2>嗨！<%= @will.id%></h2>
+    <h2>嗨！<%= @will.try(:id) %></h2>
     <h2>提早立遺囑，是件健康且負責任的事</h2>
   </div>
 
@@ -66,7 +66,7 @@
     </div>
     
     <div class="user_name">
-      <h3><%= @will.id %></h3>
+      <h3>&nbsp;<%= @will.try(:id) %></h3>
     </div>
 
     <div class="user_bar">
@@ -87,20 +87,7 @@
   </div>
 </div>
 
-  <div class="container">
-    <% if flash[:notice].present? %>
-      <div class="alert alert-success" role="alert">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-
-
-    <% if flash[:alert].present? %>
-      <div class="alert alert-danger" role="alert">
-        <%= flash[:alert] %>
-      </div> 
-    <% end %>
-  </div>
+  
 
     <%= yield %>
   </body>
