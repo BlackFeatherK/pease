@@ -10,6 +10,11 @@
 @import "users";
 
 
+$border-primary-color: #D0D0D0;
+$default-color: #8D8D8D;
+$main-color: #364860;
+$secondary-color: #F8C957;
+
 
 #logo {
   float: left;
@@ -23,7 +28,7 @@
 
 #header {
   z-index: 999;
-  background-color: #283441;
+  background-color: $main-color;
   margin-bottom: -50px;
   position: fixed;
   width: 100%;
@@ -73,5 +78,72 @@
     color: white;
   }
 }
+
+.user_bar {
+  position: relative;
+
+  ul {
+        display:table-row;
+        margin: 0px;
+
+        li {
+          display: table-cell;
+          height: 50px;
+          list-style-type: none;
+          vertical-align: middle;
+
+          a {
+            display: table-cell;
+            vertical-align: middle;
+            height:50px;
+            color: #000;
+        }
+
+        img {
+          width: 32px;
+        }
+
+        .arrow-right {
+        height: 40px;
+      }
+
+        .completed {
+        float: right;
+        width: 22px;
+        background-color: #CFCFCF;
+        margin-left: 15px;
+      }
+
+      .notarization {
+        background-color: $main-color;
+        color: #fff;
+        padding: 8px 70px;
+        float: right;
+        margin-top: 5px;
+      }
+
+      .preview {
+        width: 24px;
+        background-color: #6C7C89;
+      }
+      }
+
+      .right {
+      position: absolute;
+      right: 0;
+    }
+
+    button:hover {
+      color: #F8C957;
+    }
+
+      li:hover {
+        a {
+          color: #F8C957;
+        }
+      }  
+    } 
+}
+
 
 
