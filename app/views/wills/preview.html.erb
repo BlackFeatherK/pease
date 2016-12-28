@@ -8,9 +8,11 @@
 
 				本人 <%= @user.name %>, <%= @gender %>, 民國<%= @user.birthday%>生, 身分證號碼 [xxxx]， 茲依民國民法相關要求，特此遺囑如下
 			</p>
-			<h4>
-				不動產部分
-			</h4>
+			<% if @properties.present? || @jewelries.present? || @motors.present?%>	
+				<h4>
+					不動產部分
+				</h4>
+			<%end%>
 			<% if @properties.present? %>
 				<% @properties.each do |property| %>
 					<p>
