@@ -435,6 +435,17 @@ $secondary-color: #F8C957;
     p {
       text-align: left;
     }
+    .pdf {
+      width: 100px;
+      height: 40px;
+      background-color: $secondary-color;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      margin: 15px 0;
+      font-weight: bold;
+    }
   }
 }
+
 

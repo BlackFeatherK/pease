@@ -1,5 +1,6 @@
 <div id="<%= controller_name %>">
 	<div id="<%= action_name %>">
+			
 		<div class="container2 text-center ">
 			<p>
 				本人 <%= @user.name %>, <%= @gender %>, 民國<%= @user.birthday%>生, 身分證號碼 [xxxx]， 茲依民國民法相關要求，特此遺囑如下
@@ -106,6 +107,10 @@
 					※其他交代：器官捐贈、保險箱、遺囑存放處、身後奉獻、是否委託律師。
 				</p>
 			</div>
+
 		</div>
+			<div class="pdf text-center">
+				<%= link_to "下載預覽遺囑", preview_will_path(format: "pdf"), id: "pdf" %>
+			</div>
 	</div>
 </div>
