@@ -62,6 +62,7 @@ class WillsController < ApplicationController
     @stock_portfolios = @will.stock_portfolios
     @jewelries = @will.jewelries
     @funeral = @will.funerals.first
+    @medical = @will.medicals.first 
   end
 
  
