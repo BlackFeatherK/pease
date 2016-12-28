@@ -26,70 +26,102 @@
 
   <body>
 
-  <div id="header">
-    <div class="container">
-      <div id="logo">
-        <h1>Pease</h1>
-      </div>
-    
-      <nav>
-        <ul class="list-inline" class="text-capitalize">
-          <li><a href="">生命規劃</a></li>
-          <li><a href="">預覽遺囑</a></li>
-          <li><a href="">個人總覽</a></li>
-          <li><a href="">合作夥伴</a></li>
-          <li><%= image_tag("AppointmentReminders000000100.png", :alt => "") %></li>
-          <li>
-            <% if current_user %>
-                <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
-                <li><%# link_to('修改密碼', edit_registration_path(:user)) %></li>
+    <div id="header">
+      <div class="container">
+        <div id="logo">
+          <h1>Pease</h1>
+        </div>
+      
+        <nav>
+          <ul class="list-inline" class="text-capitalize">
+            <% if current_user.try(:will) %>
+              <li><a href="">生命規劃</a></li>
+              <li><%= link_to "預覽遺囑", preview_will_path(current_user.will.id)%></li>
+              <li><a href="">個人總覽</a></li>
+              <li><a href="">合作夥伴</a></li>
+              <li><%= image_tag("AppointmentReminders000000100.png", :alt => "") %></li>
+              <li>
+                <% if current_user %>
+                    <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
+                    <li><%# link_to('修改密碼', edit_registration_path(:user)) %></li>
+                <% else %>
+                    <li><%= link_to('註冊', new_registration_path(:user)) %></li>
+                    <li><%= link_to('登入', new_session_path(:user)) %></li>
+                <% end %>
+              </li>
             <% else %>
-                <li><%= link_to('註冊', new_registration_path(:user)) %></li>
-                <li><%= link_to('登入', new_session_path(:user)) %></li>
+              <li><a href="">生命規劃</a></li>
+              <li><a href="">預覽遺囑</a></li>
+              <li><a href="">個人總覽</a></li>
+              <li><a href="">合作夥伴</a></li>
+              <li><%= image_tag("AppointmentReminders000000100.png", :alt => "") %></li>
+              <li>
+                <% if current_user %>
+                    <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
+                    <li><%# link_to('修改密碼', edit_registration_path(:user)) %></li>
+                <% else %>
+                    <li><%= link_to('註冊', new_registration_path(:user)) %></li>
+                    <li><%= link_to('登入', new_session_path(:user)) %></li>
+                <% end %>
+              </li>
             <% end %>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-
-  <div class="write text-center">
-    <h2>嗨！<%= current_user.try(:name) %></h2>
-    <h2>提早立遺囑，是件健康且負責任的事</h2>
-  </div>
-
-<div class="user">
-  <div class="container">
-    <div class="user_avatar">
-      <%= image_tag("Circled_User_Male_000000_100.png", :alt => "" , :class => "circle") %>
-    </div>
-    
-    <div class="user_name">
-      <h3>&nbsp;<%= current_user.try(:name) %></h3>
+          </ul>
+        </nav>
+      </div>
     </div>
 
-    <div class="user_bar">
-      <ul class="list-inline">
-        <li>
-          <a href=""><span class='glyphicon glyphicon-user'></span>個人資料</a>
-        </li>
-        <li>
-          <%= link_to wills_path do %>
-            <span class='glyphicon glyphicon-book'></span>推薦問題項目<span class="badge">4</span>
-          <% end %>
-        </li>
-        <li class="right">
-          <%= button_to users_path , :class => "btn btn-default notarization" do %>
-            <%= image_tag("Preview Pane_000000_100.png", :alt => "" , :class => "preview" ) %> 公證遺囑
-          <% end %>
-        </li>
-      </ul>
+    <div class="write text-center">
+      <h2>嗨！<%= current_user.try(:name) %></h2>
+      <h2>提早立遺囑，是件健康且負責任的事</h2>
     </div>
-  </div>
-</div>
 
-  
+    <div class="user">
+      <div class="container">
+        <div class="user_avatar">
+          <%= image_tag("Circled_User_Male_000000_100.png", :alt => "" , :class => "circle") %>
+        </div>
+        
+        <div class="user_name">
+          <h3>&nbsp;<%= current_user.try(:name) %></h3>
+        </div>
+
+        <div class="user_bar">
+          <ul class="list-inline">
+            <% if current_user.try(:will) %>
+              <li>
+                <a href=""><span class='glyphicon glyphicon-user'></span>個人資料</a>
+              </li>
+              <li>
+                <%= link_to suggestion_user_path(current_user) do %>
+                  <span class='glyphicon glyphicon-book'></span>推薦問題項目<span class="badge">4</span>
+                <% end %>
+              </li>
+              <li class="right">
+                <%= button_to users_path , :class => "btn btn-default notarization" do %>
+                  <%= image_tag("Preview Pane_000000_100.png", :alt => "" , :class => "preview" ) %> 公證遺囑
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                <a href=""><span class='glyphicon glyphicon-user'></span>個人資料</a>
+              </li>
+              <li>
+                <a href="">
+                  <span class='glyphicon glyphicon-book'></span>推薦問題項目<span class="badge">4</span>
+                </a>
+              </li>
+              <li class="right">
+                <%= button_to users_path , :class => "btn btn-default notarization" do %>
+                  <%= image_tag("Preview Pane_000000_100.png", :alt => "" , :class => "preview" ) %> 公證遺囑
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <%= yield %>
+
   </body>
 </html>
