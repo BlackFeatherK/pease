@@ -64,10 +64,11 @@ $secondary-color: #F8C957;
   li {
     line-height: 75px ;
     border-bottom: 3px solid transparent; 
+    cursor: pointer;
   }
 
   li:hover{
-      border-bottom: 3px #F8C957 solid; 
+    border-bottom: 3px #F8C957 solid; 
   }
 
 }

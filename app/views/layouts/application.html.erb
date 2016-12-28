@@ -42,7 +42,7 @@
           <li>
             <% if current_user %>
                 <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
-                <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
+                <li><%# link_to('修改密碼', edit_registration_path(:user)) %></li>
             <% else %>
                 <li><%= link_to('註冊', new_registration_path(:user)) %></li>
                 <li><%= link_to('登入', new_session_path(:user)) %></li>
@@ -74,7 +74,9 @@
           <a href=""><span class='glyphicon glyphicon-user'></span>個人資料</a>
         </li>
         <li>
-          <a href=""><span class='glyphicon glyphicon-book'></span>推薦問題項目<span class="badge">4</span></a>
+          <%= link_to wills_path do %>
+            <span class='glyphicon glyphicon-book'></span>推薦問題項目<span class="badge">4</span>
+          <% end %>
         </li>
         <li class="right">
           <%= button_to users_path , :class => "btn btn-default notarization" do %>
