@@ -12,7 +12,7 @@
 
 $border-primary-color: #D0D0D0;
 $default-color: #8D8D8D;
-$main-color: #364860;
+$main-color: #6C7C89;
 $secondary-color: #F8C957;
 
 
@@ -28,7 +28,7 @@ $secondary-color: #F8C957;
 
 #header {
   z-index: 999;
-  background-color: $main-color;
+  background-color: #364860;
   margin-bottom: -50px;
   position: fixed;
   width: 100%;
@@ -52,7 +52,13 @@ $secondary-color: #F8C957;
   }
 
   a {
+    color: #fff;
     padding: 30px 10px;
+  }
+
+  a:hover {                 
+    color: #ECB031;    
+    text-decoration: none;        
   }
 
   li {
@@ -83,31 +89,43 @@ $secondary-color: #F8C957;
   position: relative;
 
   ul {
-        display:table-row;
-        margin: 0px;
+    display:table-row;
+    margin: 0px;
 
-        li {
-          display: table-cell;
-          height: 50px;
-          list-style-type: none;
-          vertical-align: middle;
+    li {
+      display: table-cell;
+      height: 50px;
+      list-style-type: none;
+      vertical-align: middle;
+      font-size: 16px;
 
-          a {
-            display: table-cell;
-            vertical-align: middle;
-            height:50px;
-            color: #000;
+      a {
+        display: table-cell;
+        vertical-align: middle;
+        height:50px;
+        color: #8D8D8D;
+        padding-right: 20px;
+
+        span {
+          padding-right: 10px;
         }
 
-        img {
-          width: 32px;
+        span.badge {
+          margin-left: 5px;
+          padding: 3px 13px;
+          background-color: $secondary-color;
         }
+      }
 
-        .arrow-right {
+      img {
+        width: 32px;
+      }
+
+      .arrow-right {
         height: 40px;
       }
 
-        .completed {
+      .completed {
         float: right;
         width: 22px;
         background-color: #CFCFCF;
@@ -126,9 +144,9 @@ $secondary-color: #F8C957;
         width: 24px;
         background-color: #6C7C89;
       }
-      }
+    }
 
-      .right {
+    .right {
       position: absolute;
       right: 0;
     }
@@ -137,20 +155,12 @@ $secondary-color: #F8C957;
       color: #F8C957;
     }
 
-      li:hover {
-        a {
-          color: #F8C957;
-        }
-      }  
-    } 
+    li:hover {
+      a {
+        color: #F8C957;
+      }
+    }  
+  } 
 }
-
-
-// @media print{
-//   #header, .write, .user {
-//     display: none;
-//   }
-// }
-
 
 

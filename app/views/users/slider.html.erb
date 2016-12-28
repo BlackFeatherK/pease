@@ -1,5 +1,5 @@
 <div id="slider">
-  <%= form_for @user , :url => save_slider_user_path(@user) do |f| %>
+  <%= form_for @user , :url => save_slider_user_path(@user) , :method => :post do |f| %>
     <ul>
       <li>
         <div class="form-group question-words">
