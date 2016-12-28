@@ -1,7 +1,7 @@
 <%= f.nested_fields_for :jewelries do |jewelry| %>
   <div class="col-md-12 form-group">
-    <%= jewelry.label "哪一家銀行" %>
-    <%= jewelry.text_field :description , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
+    <%= jewelry.label "描述" %>
+    <%= jewelry.text_field :description , :class => 'form-control text-center' , placeholder: "請描述種類或特徵" %>
   </div>
   <div class="form-group col-md-12 form-heir">
     <%= label_tag "資產指定給誰" %> <br>
