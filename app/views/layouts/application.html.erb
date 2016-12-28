@@ -54,7 +54,7 @@
   </div>
 
   <div class="write text-center">
-    <h2>嗨！<%= @will.try(:id) %></h2>
+    <h2>嗨！<%= current_user.try(:name) %></h2>
     <h2>提早立遺囑，是件健康且負責任的事</h2>
   </div>
 
@@ -65,7 +65,7 @@
     </div>
     
     <div class="user_name">
-      <h3>&nbsp;<%= @will.try(:id) %></h3>
+      <h3>&nbsp;<%= current_user.try(:name) %></h3>
     </div>
 
     <div class="user_bar">
