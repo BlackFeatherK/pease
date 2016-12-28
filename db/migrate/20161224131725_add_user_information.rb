@@ -8,5 +8,6 @@ class AddUserInformation < ActiveRecord::Migration[5.0]
     add_column :users, :personal_item , :boolean
     add_column :users, :afterlife_service , :boolean
     add_column :users, :digital , :boolean
+    add_column :users, :medical , :boolean
   end
 end

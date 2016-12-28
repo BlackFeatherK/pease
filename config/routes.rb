@@ -31,7 +31,7 @@ Rails.application.routes.draw do
         member do 
           get :slider
           get :suggestion
-          patch :save_slider
+          post :save_slider
         end
       end
       # match '*unmatched_route', to: 'base#error_404', via: :all
