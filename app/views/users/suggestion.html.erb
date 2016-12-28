@@ -6,28 +6,28 @@
       <div class="cards row">
         <div class="col-md-3">
           <div class="afterlife_service">
-            <%= button_to wills_path , :class => 'btn' do %>
+            <%= button_to new_will_funeral_path(current_user.will.id), method: :get, :class => 'btn' do %>
               <label>身後事安排</label>
             <% end %>
           </div>
         </div>
         <div class="col-md-3">
           <div class="medical">
-            <%= button_to wills_path , :class => 'btn' do %>
+            <%= button_to new_will_medical_path(current_user.will.id), method: :get , :class => 'btn' do %>
               <label>安寧緩和醫療</label>
             <% end %>
           </div>
         </div>
         <div class="col-md-3">
           <div class="tangible_asset">
-            <%= button_to wills_path , :class => 'btn' do %>
+            <%= button_to will_path(current_user.will.id), method: :get , :class => 'btn' do %>
               <label>我的有形資產</label>
             <% end %>
           </div>
         </div>
         <div class="col-md-3">
           <div class="digital">
-            <%= button_to wills_path , :class => 'btn' do %>
+            <%= button_to new_will_digital_asset_path(current_user.will.id), method: :get , :class => 'btn' do %>
               <label>數位帳號</label>
             <% end %>
           </div>

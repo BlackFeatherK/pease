@@ -100,6 +100,7 @@
         <div class="wish-select wish-other unprint">
           <%= render :partial => 'will' , :locals => {:will => @will , :path => 'others/other' , :table => 'others'} %>
         </div>
+        <%= button_to '下一頁' , suggestion_user_path(current_user) , :method => :get , :class => 'back' %>
       </div>
     </div>
   </div>

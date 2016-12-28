@@ -8,13 +8,13 @@ class FuneralsController < ApplicationController
 	end
 
 	def new
-		@funeral = current_will.funerals.build
+		@funeral = @will.funerals.build
 	end
 
 	def create
 		@funeral = @will.funerals.build(funeral_params)
 		if @funeral.save
-			redirect_to wills_path
+			redirect_to suggestion_user_path(current_user)
 			flash[:notice] = 'successful'
 		else 
 			render "new"
@@ -34,7 +34,7 @@ class FuneralsController < ApplicationController
 
 	private
 	def find_will 
-		@will = current_will
+		@will = current_user.will
 	end
 
 	def funeral_params
@@ -42,6 +42,6 @@ class FuneralsController < ApplicationController
 	end
 
 	def find_funeral
-		@funeral = current_will.funerals.find(params[:id])
+		@funeral = @will.funerals.find(params[:id])
 	end
 end

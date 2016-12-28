@@ -20,7 +20,10 @@
 	<% if @motors.present? %>
 		<% @motors.each do |motor| %>
 			<p>
-				本人遺產中，位於 <%= motor.quantity %>, 由 <%= motor.heirs.name %> 繼承
+				本人遺產中，位於 <%= motor.number %>, 由 由 <% motor.heirs.each do |heir| %>
+					<%= heir.heir_type %><%= heir.name %> 繼承
+				<% end %>
+
 			</p>
 		<% end %>
 	<% end %>
@@ -28,7 +31,10 @@
 	<% if @jewelries.present? %>
 		<% @jewelries.each do |jewelery| %>
 			<p>
-				本人遺產中，位於 <%= jewelery.quantity %>, 由 <%= jewelery.heirs.name %> 繼承
+				本人遺產中，位於 <%= jewelery.description %>, 由 由 <% jewelery.heirs.each do |heir| %>
+					<%= heir.heir_type %><%= heir.name %> 繼承
+				<% end %>
+
 			</p>
 		<% end %>
 	<% end %>
@@ -37,7 +43,10 @@
 	<% if @stock_portfolios.present? %>
 		<% @stock_portfolios.each do |stock| %>
 			<p>
-				本人遺產中，位於 <%= stock.bank %>, 由 <%= stock.heirs.name %> 繼承
+				本人遺產中，位於 <%= stock.bank %>, 由 由 <% stock.heirs.each do |heir| %>
+					<%= heir.heir_type %><%= heir.name %> 繼承
+			<% end %>
+
 			</p>
 		<% end %>
 	<% end %>
@@ -45,7 +54,10 @@
 	<% if @accounts.present? %>
 		<% @accounts.each do |account| %>
 			<p>
-				本人遺產中，於 <%= account.bank %>銀行／證券行 的 <%= account.account_type %>帳號, 由 <%= account.heirs.name %> 繼承
+				本人遺產中，於 <%= account.bank %>銀行／證券行 的 <%= account.account_type %>帳號, 由 由 <% account.heirs.each do |heir| %>
+					<%= heir.heir_type %><%= heir.name %>繼承
+				<% end %>
+
 			</p>
 		<% end %>
 	<% end %>

@@ -10,7 +10,7 @@ class MedicalsController < ApplicationController
 	def create
 		@medical = @will.medicals.build(params_medical)
 		if @medical.save
-			redirect_to wills_path
+			redirect_to suggestion_user_path(current_user)
 			flash[:notice] = "Successful"
 		else
 			flash[:alert] = "Failure"
@@ -33,7 +33,7 @@ class MedicalsController < ApplicationController
 
 	private
 	def find_will 
-		@will = current_will
+		@will = current_user.will
 	end
 
 	def params_medical
@@ -41,7 +41,7 @@ class MedicalsController < ApplicationController
 	end
 
 	def find_medical
-		@medical = current_will.medicals.find(params[:id])
+		@medical = @will.medicals.find(params[:id])
 	end
 
 

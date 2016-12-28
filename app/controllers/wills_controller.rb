@@ -14,7 +14,7 @@ class WillsController < ApplicationController
                            {:jewelries => [:heirs]},
                            {:others => [:heirs]}
                            )
-    @will = @wills.find(current_will.id)
+    @will = @wills.find(current_user.will.id)
     @will.properties.build.heirs.build
     @will.stock_portfolios.build.heirs.build
     @will.accounts.build.heirs.build
@@ -31,7 +31,7 @@ class WillsController < ApplicationController
                            {:jewelries => [:heirs]},
                            {:others => [:heirs]}
                            )
-    @will = @wills.find(current_will.id)
+    @will = @wills.find(current_user.will.id)
     @will.update(params_will)
     @will.properties.build.heirs.build
     @will.stock_portfolios.build.heirs.build
@@ -48,7 +48,7 @@ class WillsController < ApplicationController
   end
 
   def preview
-    @will = current_will
+    @will = current_user.will
     @user = current_user
     if @user.gender == "Male"
       @gender = "男性"
