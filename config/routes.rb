@@ -16,6 +16,7 @@ Rails.application.routes.draw do
         resources :properties
         resources :stock_portfolios
         resources :digital_assets
+        resources :medicals
         member do
           get :preview
         end

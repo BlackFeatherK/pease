@@ -64,6 +64,7 @@ class WillsController < ApplicationController
     @funeral = @will.funerals.first
   end
 
+ 
 
   private
 

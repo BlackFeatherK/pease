@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		@user.will.create
+		@user.create_will
 		if @user.update(params_user)
 			@user.create_will
 			flash[:notice] = "Success"

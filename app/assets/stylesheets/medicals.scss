@@ -1,0 +1,50 @@
+// Place all the styles related to the medicals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.yes-no-button {
+	width: 211px;
+	height: 137px;
+	border-radius: 5px;
+	border: 1px solid $border-primary-color;
+	position: relative;
+	background-position: 50% 40%;
+}
+
+#medicals{
+	width: 500px;
+	.yes-no-question{
+		input {
+			visibility: hidden;
+			display: none;
+		}
+
+		label {
+			@extend .yes-no-button;
+			.description {
+				@extend .text-center-button
+			}
+		}
+		label.preference-yes {
+			background:url("default_ok.png") no-repeat;
+			background-position: 50% 40%;
+		}
+		label.preference-no {
+			background:url("default_no.png") no-repeat;
+			background-position: 50% 40%;
+		}
+
+		// Hover effect 
+		input[type=radio]:checked + label {
+			border: 1px solid $secondary-color;
+		}
+		input[type=radio]:checked + label.preference-yes {
+			background:url("hover_ok.png") no-repeat;
+			background-position: 50% 40%;
+		}
+		input[type=radio]:checked + label.preference-no {
+			background:url("hover_no.png") no-repeat;
+			background-position: 50% 40%;
+		}
+	}
+}
