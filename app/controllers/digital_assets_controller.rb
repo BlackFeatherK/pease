@@ -8,7 +8,7 @@ class DigitalAssetsController < ApplicationController
 	def create
 		@digital_asset = current_will.digital_assets.build(param_digital_asset)
 		if @digital_asset.save
-			redirect_to welcome_index_path
+			redirect_to wills_path
 			flash[:notice] = "Digital Assets saved"
 		else
 			render 'new'
@@ -22,7 +22,7 @@ class DigitalAssetsController < ApplicationController
 	def update
 		if @digital_asset.update(param_digital_asset)
 			flash[:notice] = "Successful update"
-			redirect_to welcome_index_path
+			redirect_to wills_path
 		else
 			flash[:alert] = "Update fails"
 			render "show"

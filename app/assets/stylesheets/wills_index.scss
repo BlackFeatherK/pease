@@ -38,6 +38,24 @@
 
 //user/show/X
 
+.user {
+  position: relative;
+  top: -55px;
+  border-bottom: 1px #EEEEEE solid;
+  
+  h3 {
+    color: #fff;
+    text-shadow: 2px #000;
+  }
+
+  img {
+    float: left;
+    background-color: #fff;
+    margin-right :20px;
+    padding: 2px;
+  }
+}
+
 .user-list-bar {
 
   border-bottom: 2px #F2F2F2 solid;

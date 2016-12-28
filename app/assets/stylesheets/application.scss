@@ -6,8 +6,14 @@
 @import "funerals";
 @import "digital_assets";
 @import "slider";
+@import "medicals";
 @import "users";
 
+
+$border-primary-color: #D0D0D0;
+$default-color: #8D8D8D;
+$main-color: #364860;
+$secondary-color: #F8C957;
 
 
 #logo {
@@ -22,7 +28,7 @@
 
 #header {
   z-index: 999;
-  background-color: #283441;
+  background-color: $main-color;
   margin-bottom: -50px;
   position: fixed;
   width: 100%;
@@ -79,24 +85,6 @@
   }
 }
 
-.user {
-  position: relative;
-  top: -55px;
-  border-bottom: 1px #EEEEEE solid;
-  
-  h3 {
-    color: #fff;
-    text-shadow: 2px #000;
-  }
-
-  img {
-    float: left;
-    background-color: #fff;
-    margin-right :20px;
-    padding: 2px;
-  }
-}
-
 .user_bar {
   position: relative;
 
@@ -109,24 +97,12 @@
       height: 50px;
       list-style-type: none;
       vertical-align: middle;
-      padding-right: 30px;
 
       a {
         display: table-cell;
         vertical-align: middle;
         height:50px;
-        color: #8D8D8D;
-        font-size: 16px;
-
-        span {
-          padding-right: 10px;
-        }
-
-        span.badge {
-          margin-left: 10px;
-          padding: 5px 13px;
-          background-color: #F8C957;
-        }
+        color: #000;
       }
 
       img {
@@ -145,7 +121,7 @@
       }
 
       .notarization {
-        background-color: #6C7C89;
+        background-color: $main-color;
         color: #fff;
         padding: 8px 70px;
         float: right;
@@ -167,12 +143,11 @@
       color: #F8C957;
     }
 
-      li:hover {
-        a {
-          color: #F8C957;
-        }
-      }  
-    } 
+    li:hover {
+      a {
+        color: #F8C957;
+      }
+    }  
+  } 
 }
-
 

@@ -16,7 +16,7 @@ $secondary-color: #F8C957;
       background-color: #fff;
 
       h3 {
-        margin: 60px 0;
+        margin: 60px 0 30px 0;
       }
 
       p {
@@ -29,6 +29,10 @@ $secondary-color: #F8C957;
         padding: 10px 60px;
         background-color: $main-color;
         color: white;
+      }
+
+      a:hover {
+        color: $secondary-color;
       }
 
     }

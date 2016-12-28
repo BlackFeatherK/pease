@@ -1,0 +1,9 @@
+<div class="container text-center" id="<%= controller_name %>">
+	<div class="title">
+		<h1>安寧緩和醫療</h1>
+	</div>
+	<%= form_for @medical, url: will_medical_path(@will, @medical), method: :patch do |f| %>
+		<%= render partial: 'medical', :locals => {:f => f} %>
+		<%= f.submit class: "" %>
+	<% end  %>
+</div>
