@@ -35,9 +35,9 @@
         <nav>
           <ul class="list-inline" class="text-capitalize">
             <% if current_user.try(:will) %>
-              <li><a href="">生命規劃</a></li>
-              <li><%= link_to "預覽遺囑", preview_will_path(current_user.will.id)%></li>
-              <li><a href="">個人總覽</a></li>
+              <li><a href="">預立遺囑</a></li>
+              <li><%= link_to "預立遺言", preview_will_path(current_user.will.id)%></li>
+              <li><a href="">預約律師</a></li>
               <li><a href="">合作夥伴</a></li>
               <li><%= image_tag("AppointmentReminders000000100.png", :alt => "") %></li>
               <li>
