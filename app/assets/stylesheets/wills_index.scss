@@ -135,6 +135,28 @@
       height: 100%;
       border: 1px #F2F2F2 solid;
       border-radius: 5px;
+      
+    }
+
+    .choose-focus-alternative {
+      @extend .choose-focus;
+      background: rgba(204, 204, 204, 0.4);
+      .circle {
+        right: 0;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 3px solid white;
+        position: absolute;
+        .already-finish {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-width: 80%;
+          max-height: 80%;
+      }
+      }
     }
 
     .choose-focus:hover {

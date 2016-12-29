@@ -15,10 +15,19 @@
   <div class="container text-center">
     <div class="row">
       <div class="choose col-md-3 col-sm-12">
+        
         <div class="choose-btn">
           <%= image_tag("icon_tangible_assets.png", :alt => "" , :class => "preview" ) %>
           <p>我的有形資產</p>
-          <div class="choose-focus"></div>
+          <div class="choose-focus"> 
+          </div>
+          <% if @user.will.properties.present? %>
+              <div class="choose-focus-alternative"> 
+                <div class="circle">
+                  <%= image_tag("hover_ok_white.png", :alt => "" , :class => "already-finish" ) %>
+                </div>
+              </div>
+          <% end %> 
         </div>
       </div>
       <div class="choose col-md-3 col-sm-12">
@@ -68,6 +77,13 @@
           <%= image_tag("icon_transfer_digital.png", :alt => "" , :class => "preview" ) %>
           <p>數位資產轉讓</p>
           <div class="choose-focus"></div>
+          <% if @user.will.digital_assets.present? %>
+              <div class="choose-focus-alternative"> 
+                <div class="circle">
+                  <%= image_tag("hover_ok_white.png", :alt => "" , :class => "already-finish" ) %>
+                </div>
+              </div>
+          <% end %> 
         </div>
       </div>
       <div class="choose col-md-3 col-sm-12">
@@ -75,6 +91,13 @@
           <%= image_tag("icon_funeral.png", :alt => "" , :class => "preview" ) %>
           <p>身後事安排</p>
           <div class="choose-focus"></div>
+          <% if @user.will.funerals.present? %>
+              <div class="choose-focus-alternative"> 
+                <div class="circle">
+                  <%= image_tag("hover_ok_white.png", :alt => "" , :class => "already-finish" ) %>
+                </div>
+              </div>
+          <% end %> 
         </div>
       </div>
       <div class="choose col-md-3 col-sm-12">
@@ -110,6 +133,13 @@
           <%= image_tag("icon_treatment.png", :alt => "" , :class => "preview" ) %>
           <p>安寧緩和醫療</p>
           <div class="choose-focus"></div>
+          <% if @user.will.medicals.present? %>
+              <div class="choose-focus-alternative"> 
+                <div class="circle">
+                  <%= image_tag("hover_ok_white.png", :alt => "" , :class => "already-finish" ) %>
+                </div>
+              </div>
+          <% end %> 
         </div>
       </div>
       <div class="choose col-md-3 col-sm-12">
