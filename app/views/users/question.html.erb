@@ -1,0 +1,120 @@
+<div id="<%= controller_name %>">
+  <div id="<%= action_name %>">
+    <div class="five_question container2 text-center">
+      <%= form_for @user , :url => save_slider_user_path(@user) , :method => :post do |f| %>
+        <h2>請問</h2>
+        <div class="row tangible_asset">
+          <p>您有不動資產嗎？</p>
+          <div class="container2">
+            <div class="col-md-6 col-sm-6">
+              <div class="choose">
+                <%= f.radio_button :tangible_asset , 'true' %>
+                <label class="user_tangible_asset_true" for="user_tangible_asset_true">
+                  <div class="choose-type">有</div>
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="choose">
+                <%= f.radio_button :tangible_asset , 'false' %>
+                <label class="user_tangible_asset_false" for="user_tangible_asset_false">
+                   <div class="choose-type">沒有</div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row intangible_asset">
+          <p>您有無形資產嗎？</p>
+          <div class="container2">
+            <div class="col-md-6 col-sm-6">
+              <div class="choose">
+                <%= f.radio_button :intangible_asset , 'true' %>
+                <label class="user_intangible_asset_true" for="user_intangible_asset_true">
+                  <div class="choose-type">有</div>
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="choose">
+                <%= f.radio_button :intangible_asset , 'false' %>
+                <label class="user_intangible_asset_false" for="user_intangible_asset_false">
+                   <div class="choose-type">沒有</div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row personal_item">
+          <p>您有個人物品嗎？</p>
+          <div class="container2">
+            <div class="col-md-6 col-sm-6">
+              <div class="choose">
+                <%= f.radio_button :personal_item , 'true' %>
+                <label class="user_personal_item_true" for="user_personal_item_true">
+                  <div class="choose-type">有</div>
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="choose">
+                <%= f.radio_button :personal_item , 'false' %>
+                <label class="user_personal_item_false" for="user_personal_item_false">
+                   <div class="choose-type">沒有</div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row afterlife_service">
+          <p>希望自己安排自己的葬禮嗎？</p>
+          <div class="container2">
+            <div class="col-md-6 col-sm-6">
+              <div class="choose">
+                <%= f.radio_button :afterlife_service , 'true' %>
+                <label class="user_afterlife_service_true" for="user_afterlife_service_true">
+                  <div class="choose-type">有</div>
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="choose">
+                <%= f.radio_button :afterlife_service , 'false' %>
+                <label class="user_afterlife_service_false" for="user_afterlife_service_false">
+                   <div class="choose-type">沒有</div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row digital">
+          <p>您有數位資產嗎？</p>
+          <div class="container2">
+            <div class="col-md-6 col-sm-6">
+              <div class="choose">
+                <%= f.radio_button :digital , 'true' %>
+                <label class="user_digital_true" for="user_digital_true">
+                  <div class="choose-type">有</div>
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="choose">
+                <%= f.radio_button :digital , 'false' %>
+                <label class="user_digital_false" for="user_digital_false">
+                   <div class="choose-type">沒有</div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= f.submit '下一步' , :class => 'submit question-submit' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+    

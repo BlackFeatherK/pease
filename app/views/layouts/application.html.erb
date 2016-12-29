@@ -93,7 +93,7 @@
               </li>
               <li>
                 <%= link_to suggestion_user_path(current_user) do %>
-                  <span class='glyphicon glyphicon-book'></span>推薦問題項目<span class="badge">4</span>
+                  <span class='glyphicon glyphicon-book'></span>推薦問題項目<span class="badge"><%= user_questions() %></span>
                 <% end %>
               </li>
               <li class="right">

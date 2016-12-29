@@ -31,6 +31,7 @@ Rails.application.routes.draw do
         member do 
           get :slider
           get :suggestion
+          get :question
           post :save_slider
         end
       end

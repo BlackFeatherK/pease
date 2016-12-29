@@ -86,82 +86,87 @@ $secondary-color: #F8C957;
   }
 }
 
-.user_bar {
-  position: relative;
+.user {
 
-  ul {
-    display:table-row;
-    margin: 0px;
+  .user_bar {
+    position: relative;
 
-    li {
-      display: table-cell;
-      height: 50px;
-      list-style-type: none;
-      vertical-align: middle;
-      font-size: 16px;
+    ul {
+      display:table-row;
+      margin: 0px;
 
-      a {
+      li {
         display: table-cell;
+        height: 50px;
+        list-style-type: none;
         vertical-align: middle;
-        height:50px;
-        color: #8D8D8D;
-        padding-right: 20px;
+        font-size: 16px;
 
-        span {
-          padding-right: 10px;
+        a {
+          display: table-cell;
+          vertical-align: middle;
+          height:50px;
+          color: #8D8D8D;
+          padding-right: 20px;
+
+          span {
+            padding-right: 10px;
+          }
+
+          span.badge {
+            margin-left: 5px;
+            padding: 3px 13px;
+            background-color: $secondary-color;
+          }
         }
 
-        span.badge {
-          margin-left: 5px;
-          padding: 3px 13px;
-          background-color: $secondary-color;
+        img {
+          width: 32px;
+        }
+
+        .arrow-right {
+          height: 40px;
+        }
+
+        .completed {
+          float: right;
+          width: 22px;
+          background-color: #CFCFCF;
+          margin-left: 15px;
+        }
+
+        .notarization {
+          background-color: $main-color;
+          color: #fff;
+          padding: 8px 70px;
+          float: right;
+          margin-top: 5px;
+        }
+
+        .preview {
+          width: 24px;
+          background-color: #6C7C89;
         }
       }
 
-      img {
-        width: 32px;
+      .right {
+        position: absolute;
+        right: 0;
       }
 
-      .arrow-right {
-        height: 40px;
-      }
-
-      .completed {
-        float: right;
-        width: 22px;
-        background-color: #CFCFCF;
-        margin-left: 15px;
-      }
-
-      .notarization {
-        background-color: $main-color;
-        color: #fff;
-        padding: 8px 70px;
-        float: right;
-        margin-top: 5px;
-      }
-
-      .preview {
-        width: 24px;
-        background-color: #6C7C89;
-      }
-    }
-
-    .right {
-      position: absolute;
-      right: 0;
-    }
-
-    button:hover {
-      color: #F8C957;
-    }
-
-    li:hover {
-      a {
+      button:hover {
         color: #F8C957;
       }
-    }  
-  } 
+
+      li:hover {
+        a {
+          color: #F8C957;
+        }
+      }  
+    } 
+  }
 }
+
+  
 
 
