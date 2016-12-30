@@ -77,6 +77,7 @@
   document.querySelector('#save-recording').onclick = function() {
       this.disabled = true;
       mediaRecorder.save();
+
       // alert('Drop WebM file on Chrome or Firefox. Both can play entire file. VLC player or other players may not work.');
   };
   var mediaRecorder;
@@ -114,6 +115,21 @@
           a.href = URL.createObjectURL(blob);
           videosContainer.appendChild(a);
           videosContainer.appendChild(document.createElement('hr'));
+
+          var fileType = 'video'; // or "audio"
+          var fileName = 'ABCDEF.webm';  // or "wav" or "ogg"
+
+          var formData = new FormData();
+          formData.append(fileType + '-filename', fileName);
+          formData.append(fileType + '-blob', blob);
+          console.log(formData);
+
+          $.ajax({
+            url: "http://localhost:3000/api/users",
+            method: "post",
+            data: formData,
+            success: function(data) { console.log(data) }
+          });
       };
       var timeInterval = 600000;
       if (timeInterval) timeInterval = parseInt(timeInterval);

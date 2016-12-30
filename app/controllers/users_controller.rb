@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 	def slider
 	end
 
-	def save_slider
+	def save_question
 		if @user.update(params_user)
 			flash[:notice] = "Success"
 			redirect_to suggestion_user_path
@@ -53,6 +53,6 @@ class UsersController < ApplicationController
 	end
 
 	def params_user
-		params.require(:user).permit(:gender, :birthday, :name, :tangible_asset, :intangible_asset, :personal_item, :afterlife_service, :digital)
+		params.require(:user).permit(:gender, :birthday, :name, :tangible_asset, :intangible_asset, :personal_item, :afterlife_service, :digital , :audio)
 	end
 end

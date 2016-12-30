@@ -1,10 +1,10 @@
 <div id="<%= controller_name %>">
   <div id="<%= action_name %>">
     <div class="five_question container2 text-center">
-      <%= form_for @user , :url => save_slider_user_path(@user) , :method => :post do |f| %>
-        <h2>請問</h2>
+      <%= form_for @user , :url => save_question_user_path(@user) , :method => :post do |f| %>
+        <h2>個人資料</h2>
         <div class="row tangible_asset">
-          <p>您有不動資產嗎？</p>
+          <p>我擁有實體現金、車子或不動產等...有形資產</p>
           <div class="container2">
             <div class="col-md-6 col-sm-6">
               <div class="choose">
@@ -25,7 +25,7 @@
           </div>
         </div>
         <div class="row intangible_asset">
-          <p>您有無形資產嗎？</p>
+          <p>我目前持有公司的股份、智慧財產項目</p>
           <div class="container2">
             <div class="col-md-6 col-sm-6">
               <div class="choose">
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="row personal_item">
-          <p>您有個人物品嗎？</p>
+          <p>我擁有一些特殊收藏或物品，希望可以事先指定要送給誰</p>
           <div class="container2">
             <div class="col-md-6 col-sm-6">
               <div class="choose">
@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="row afterlife_service">
-          <p>希望自己安排自己的葬禮嗎？</p>
+          <p>我希望在離開人世後，能辦一場屬於我自己風格的告別式</p>
           <div class="container2">
             <div class="col-md-6 col-sm-6">
               <div class="choose">
@@ -88,7 +88,7 @@
           </div>
         </div>
         <div class="row digital">
-          <p>您有數位資產嗎？</p>
+          <p>我希望可以事先決定所有網路服務的帳號、資料要如何處理</p>
           <div class="container2">
             <div class="col-md-6 col-sm-6">
               <div class="choose">
