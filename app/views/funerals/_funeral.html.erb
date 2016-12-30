@@ -1,20 +1,19 @@
 
-			<div class="form-group col-md-12 col-centered">
-				<%= label_tag(:preference, "你想要舉行喪禮、告別儀式嗎？")%> <br>
-
-				<div class="preference-button col-md-4">
+			<div class="form-group">
+				<h3>你想要舉行喪禮、告別儀式嗎？</h3> <br>
+				<div class="preference-button">
 					<%= f.radio_button :preference, "yes"%>
 					<label for="funeral_preference_yes" class="preference-yes">
 						<div class="description">想要</div>
 					</label>
 				</div>
-				<div class="preference-button col-md-4">
+				<div class="preference-button">
 					<%= f.radio_button :preference, "no"%>
 					<label for="funeral_preference_no" class="preference-no">
 						<div class="description">不想要</div>
 					</label>
 				</div>
-				<div class="preference-button col-md-4">
+				<div class="preference-button">
 					<%= f.radio_button :preference, "family"%>
 					<label for="funeral_preference_family" class="preference-family">
 						<div class="description">家人決定</div>
@@ -25,7 +24,7 @@
 
 
 			<div class="form-group funeral-religion">
-				<%= f.label(:religion, "你想要採用何種宗教信仰的方式？") %> <br>
+				<h3>你想要採用何種宗教信仰的方式？</h3> <br>
 				<%= f.select(:religion, [["家人選擇", '家人選擇'], ["佛教", '佛教'], ["道教", '道教'], ["天主教", '天主教'], ["基督教", '基督教']] )  %>
 			</div>
 			<div class="clearfix"></div>
