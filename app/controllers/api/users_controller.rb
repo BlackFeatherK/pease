@@ -7,7 +7,16 @@ class Api::UsersController < Api::BaseController
 
   def update
     @user = User.find(params[:id])
-    @user.update(params.require(:user).permit(:name))
+    @user.update(params_user)
+  end
+
+
+  private
+
+  def params_user
+    params.require(:user).permit(:audio)
   end
 
 end
+
+

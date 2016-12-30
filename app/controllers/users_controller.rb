@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 	def update
 		if @user.update(params_user)
 			@user.create_will
-			redirect_to slider_user_path
+			redirect_to question_user_path
 		else
 			render "show"
 			flash[:alert] = "Not updated"
