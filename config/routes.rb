@@ -32,13 +32,14 @@ Rails.application.routes.draw do
           # get :slider
           get :suggestion
           get :question
+          post :save_audio
           post :save_question
         end
       end
 
-      namespace :api do 
-        resources :users
-      end
+      # namespace :api do 
+      #   resources :users
+      # end
       # match '*unmatched_route', to: 'base#error_404', via: :all
 
 end

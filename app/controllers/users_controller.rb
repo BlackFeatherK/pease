@@ -17,6 +17,11 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def save_audio
+		@user = User.find(params[:id])
+    @user.update(params.require(:user).permit(:audio))
+	end
+
 	def slider
 	end
 
