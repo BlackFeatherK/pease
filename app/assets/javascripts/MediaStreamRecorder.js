@@ -508,7 +508,6 @@ function invokeSaveAsDialog(file, fileName) {
     hyperlink.download = fileFullName;
 
 
-
     if (!!navigator.mozGetUserMedia) {
         hyperlink.onclick = function() {
             (document.body || document.documentElement).removeChild(hyperlink);
