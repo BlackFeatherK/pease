@@ -45,6 +45,7 @@ class WillsController < ApplicationController
   end
 
   def video
+    
   end
 
   def preview

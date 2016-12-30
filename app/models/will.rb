@@ -12,9 +12,10 @@ class Will < ApplicationRecord
   has_many :digital_assets, :dependent => :destroy
   has_many :medicals, :dependent => :destroy
   has_many :others , :dependent => :destroy
+  has_many :last_words, :dependent => :destroy 
 
   accepts_nested_attributes_for :accounts , reject_if: proc { |attributes| attributes['bank'].blank? }, allow_destroy: true
-  accepts_nested_attributes_for :funerals
+  accepts_nested_attributes_for :funerals, reject_if: proc {|attributes| attributes["preference"].blank? }, allow_destroy: true
   accepts_nested_attributes_for :insurance_policies
   accepts_nested_attributes_for :jewelries , reject_if: proc { |attributes| attributes['description'].blank? }, allow_destroy: true
   accepts_nested_attributes_for :motors , reject_if: proc { |attributes| attributes['number'].blank? }, allow_destroy: true
