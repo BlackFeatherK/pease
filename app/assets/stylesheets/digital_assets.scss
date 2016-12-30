@@ -6,14 +6,21 @@ $main-color: #364860;
 $secondary-color: #F8C957;
 $main-font: PingFangTC-Medium;
 $font-color: #8D8D8D;
+.background {
+    background-color: #F9F9F9;
+	width: 100%;
+	margin-top: -55px;
+	padding-top: 20px;
+}
 
 .yes-no-button {
 	width: 211px;
-	height: 137px;
+	height: 190px;
 	border-radius: 5px;
 	border: 1px solid $border-primary-color;
 	position: relative;
 	background-position: 50% 40%;
+	margin-right: 20px;
 }
 
 .text-center-button {
@@ -22,6 +29,8 @@ $font-color: #8D8D8D;
 	left: 50%;
 	transform: translateX(-50%);
 	color: $main-color;
+	font-size: 1.3em;
+	width: 90%;
 }
 
 .yes-no-family-button {
@@ -30,7 +39,15 @@ $font-color: #8D8D8D;
 }
 
 #digital_assets{
-	width: 500px;
+	width: 900px;
+	background: #FFFFFF;
+	border: 1px solid #F2F2F2;
+	border-radius: 5px;
+	padding-bottom: 100px;
+
+	h3, h4{
+		font-size: 1.7em;
+	}
 	.yes-no-question{
 		input {
 			visibility: hidden;
@@ -147,5 +164,13 @@ $font-color: #8D8D8D;
 			border: 1px solid $border-primary-color;
 			border-radius: 5px;
 		}
+	}
+	.submit {
+				width: 210px;
+				height: 36px;
+				background-color: $secondary-color;
+				border: none;
+				border-radius: 5px;
+				color: white;
 	}
 }
