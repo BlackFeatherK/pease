@@ -2,10 +2,10 @@ class Api::BaseController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :respond_record_not_found
 
-  before_action :find_will , :except => :error_404
+  # before_action :find_will , :except => :error_404
   before_action :default_format_json
   # before_action :client_auth
-  skip_before_action :verify_authenticity_token
+
 
 
   def controller_index( controller_name )

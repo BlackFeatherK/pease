@@ -503,8 +503,10 @@ function invokeSaveAsDialog(file, fileName) {
 
     var hyperlink = document.createElement('a');
     hyperlink.href = URL.createObjectURL(file);
+    hyperlink.text = fileFullName
     hyperlink.target = '_blank';
     hyperlink.download = fileFullName;
+
 
     if (!!navigator.mozGetUserMedia) {
         hyperlink.onclick = function() {

@@ -52,3 +52,11 @@ class ApplicationController < ActionController::Base
   # end
 
 end
+
+
+# $.ajax({
+#   url: "http://localhost:3000/wills",
+#   method: "get",
+#   success: function(data) { console.log(data) }
+# })
+

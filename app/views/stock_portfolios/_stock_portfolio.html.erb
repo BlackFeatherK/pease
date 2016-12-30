@@ -1,7 +1,7 @@
 <%= f.nested_fields_for :stock_portfolios do |stock_portfolio| %>
   <div class="col-md-12 form-group">
-    <%= stock_portfolio.label "哪一家銀行" %>
-    <%= stock_portfolio.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
+    <%= stock_portfolio.label "哪一家銀行/證券商" %>
+    <%= stock_portfolio.text_field :bank , :class => 'form-control text-center' , placeholder: "請輸入銀行/證券商名稱" %>
   </div>
   <div class="form-group col-md-12 form-heir">
     <%= label_tag "資產指定給誰" %> <br>

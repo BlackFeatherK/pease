@@ -42,6 +42,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'nested_form_fields'
+gem "paperclip", "~> 5.0.0"
 
 
 group :development, :test do

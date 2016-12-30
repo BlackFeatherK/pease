@@ -1,0 +1,20 @@
+<div class="wish-select wish-property unprint">
+  <%= render :partial => 'will' , :locals => {:will => @will , :path => 'properties/property' , :table => 'properties'} %>
+</div>
+<div class="wish-select wish-stock unprint">
+  <%= render :partial => 'will' , :locals => {:will => @will , :path => 'stock_portfolios/stock_portfolio' , :table => 'stock_portfolios'} %>
+</div>
+<div class="wish-select wish-account unprint">
+  <%= render :partial => 'will' , :locals => {:will => @will , :path => 'accounts/account' , :table => 'accounts'} %>
+</div>
+<div class="wish-select wish-motor unprint">
+  <%= render :partial => 'will' , :locals => {:will => @will , :path => 'motors/motor' , :table => 'motors'} %>
+</div>
+<div class="wish-select wish-jewelry unprint">
+  <%= render :partial => 'will' , :locals => {:will => @will , :path => 'jewelries/jewelry' , :table => 'jewelries'} %>
+</div>
+<div class="wish-select wish-other unprint">
+  <%= render :partial => 'will' , :locals => {:will => @will , :path => 'others/other' , :table => 'others'} %>
+</div>
+<%= button_to '下一頁' , suggestion_user_path(current_user) , :method => :get , :class => 'back' %>
+</div>

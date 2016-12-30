@@ -1,37 +1,45 @@
 <div id="<%= controller_name %>">
   <div id="<%= action_name %>">
     <div class="container text-center">
-      <h3>嗨！歡迎<%= current_user.email %>第一次使用Pease！</h3>
+      <h3>嗨！歡迎    <%= current_user.name %>    第一次使用Pease！</h3>
       <p>以下推薦符合你需求的問題卡，讓我們立即開始完成一份有效力的遺囑吧！</p>
       <div class="cards row">
-        <div class="col-md-3">
-          <div class="afterlife_service">
-            <%= button_to new_will_funeral_path(current_user.will.id), method: :get, :class => 'btn' do %>
-              <label>身後事安排</label>
-            <% end %>
+        <% unless @funeral %>
+          <div class="col-md-3">
+            <div class="afterlife_services">
+              <%= button_to new_will_funeral_path(current_user.will.id), method: :get, :class => 'btn' do %>
+                <label>身後事安排</label>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <div class="col-md-3">
-          <div class="medical">
-            <%= button_to new_will_medical_path(current_user.will.id), method: :get , :class => 'btn' do %>
-              <label>安寧緩和醫療</label>
-            <% end %>
+        <% end %>
+        <% unless @medical %>
+          <div class="col-md-3">
+            <div class="medicals">
+              <%= button_to new_will_medical_path(current_user.will.id), method: :get , :class => 'btn' do %>
+                <label>安寧緩和醫療</label>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <div class="col-md-3">
-          <div class="tangible_asset">
-            <%= button_to will_path(current_user.will.id), method: :get , :class => 'btn' do %>
-              <label>我的有形資產</label>
-            <% end %>
+        <% end %>
+        <% unless @tangible_asset %>
+          <div class="col-md-3">
+            <div class="tangible_assets">
+              <%= button_to will_path(current_user.will.id), method: :get , :class => 'btn' do %>
+                <label>我的有形資產</label>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <div class="col-md-3">
-          <div class="digital">
-            <%= button_to new_will_digital_asset_path(current_user.will.id), method: :get , :class => 'btn' do %>
-              <label>數位帳號</label>
-            <% end %>
+        <% end %>
+        <% unless @digital_asset %>
+          <div class="col-md-3">
+            <div class="digitals">
+              <%= button_to new_will_digital_asset_path(current_user.will.id), method: :get , :class => 'btn' do %>
+                <label>數位帳號</label>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
       <%= link_to '返回問題卡總覽' , wills_path , :class => 'btn btn-default' %>
     </div>

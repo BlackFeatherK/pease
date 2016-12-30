@@ -28,10 +28,15 @@
 			</label>
 
 		</div>
+
+		<%= f.file_field :audio %>
 		<div class="form-group">
 			<%= f.submit "下一步", class: "submit"%>
 		</div>
 	<% end %>
+	<video controls autoplay name="media">
+		<source src="<%= @user.audio %>" type="video/webm">
+	</video>
 
 </div>
 

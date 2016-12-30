@@ -43,105 +43,123 @@
 </section>
 </div>
 <script>
-    function captureUserMedia(mediaConstraints, successCallback, errorCallback) {
-        navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
-    }
-    var mediaConstraints = {
-        audio: !IsOpera && !IsEdge, // record both audio/video in Firefox/Chrome
-        video: true
-    };
-    document.querySelector('#start-recording').onclick = function() {
-        this.disabled = true;
-        captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
-    };
-    document.querySelector('#stop-recording').onclick = function() {
-        this.disabled = true;
-        mediaRecorder.stop();
-        mediaRecorder.stream.stop();
-        document.querySelector('#pause-recording').disabled = true;
-        document.querySelector('#start-recording').disabled = false;
-    };
-    document.querySelector('#pause-recording').onclick = function() {
-        this.disabled = true;
-        mediaRecorder.pause();
-        document.querySelector('#resume-recording').disabled = false;
-    };
-    document.querySelector('#resume-recording').onclick = function() {
-        this.disabled = true;
-        mediaRecorder.resume();
-        document.querySelector('#pause-recording').disabled = false;
-    };
-    document.querySelector('#save-recording').onclick = function() {
-        this.disabled = true;
-        mediaRecorder.save();
-        // alert('Drop WebM file on Chrome or Firefox. Both can play entire file. VLC player or other players may not work.');
-    };
-    var mediaRecorder;
-    function onMediaSuccess(stream) {
-        var video = document.createElement('video');
-        var videoWidth = document.getElementById('video-width').value || 320;
-        var videoHeight = document.getElementById('video-height').value || 240;
-        video = mergeProps(video, {
-            controls: true,
-            muted: true,
-            width: videoWidth,
-            height: videoHeight,
-            src: URL.createObjectURL(stream)
-        });
-        video.play();
-        videosContainer.appendChild(video);
-        videosContainer.appendChild(document.createElement('hr'));
-        mediaRecorder = new MediaStreamRecorder(stream);
-        mediaRecorder.stream = stream;
-        var recorderType = document.getElementById('video-recorderType').value;
-        if (recorderType === 'MediaRecorder API') {
-            mediaRecorder.recorderType = MediaRecorderWrapper;
-        }
-        if (recorderType === 'WebP encoding into WebM') {
-            mediaRecorder.recorderType = WhammyRecorder;
-        }
-        // don't force any mimeType; use above "recorderType" instead.
-        // mediaRecorder.mimeType = 'video/webm'; // video/webm or video/mp4
-        mediaRecorder.videoWidth = videoWidth;
-        mediaRecorder.videoHeight = videoHeight;
-        mediaRecorder.ondataavailable = function(blob) {
-            var a = document.createElement('a');
-            a.target = '_blank';
-            a.innerHTML = 'Open Recorded Video No. ' + (index++) + ' (Size: ' + bytesToSize(blob.size) + ') Time Length: ' + getTimeLength(timeInterval);
-            a.href = URL.createObjectURL(blob);
-            videosContainer.appendChild(a);
-            videosContainer.appendChild(document.createElement('hr'));
-        };
-        var timeInterval = document.querySelector('#time-interval').value;
-        if (timeInterval) timeInterval = parseInt(timeInterval);
-        else timeInterval = 5 * 1000;
-        // get blob after specific time interval
-        mediaRecorder.start(timeInterval);
-        document.querySelector('#stop-recording').disabled = false;
-        document.querySelector('#pause-recording').disabled = false;
-        document.querySelector('#save-recording').disabled = false;
-    }
-    function onMediaError(e) {
-        console.error('media error', e);
-    }
-    var videosContainer = document.getElementById('videos-container');
-    var index = 1;
-    // below function via: http://goo.gl/B3ae8c
-    function bytesToSize(bytes) {
-        var k = 1000;
-        var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-        if (bytes === 0) return '0 Bytes';
-        var i = parseInt(Math.floor(Math.log(bytes) / Math.log(k)), 10);
-        return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
-    }
-    // below function via: http://goo.gl/6QNDcI
-    function getTimeLength(milliseconds) {
-        var data = new Date(milliseconds);
-        return data.getUTCHours() + " hours, " + data.getUTCMinutes() + " minutes and " + data.getUTCSeconds() + " second(s)";
-    }
-    window.onbeforeunload = function() {
-        document.querySelector('#start-recording').disabled = false;
-    };
+
+  function captureUserMedia(mediaConstraints, successCallback, errorCallback) {
+      navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
+  }
+  var mediaConstraints = {
+      audio: !IsOpera && !IsEdge, // record both audio/video in Firefox/Chrome
+      video: true
+  };
+  document.querySelector('#start-recording').onclick = function() {
+      this.disabled = true;
+      captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
+  };
+  document.querySelector('#stop-recording').onclick = function() {
+      this.disabled = true;
+      mediaRecorder.stop();
+      mediaRecorder.stream.stop();
+      document.querySelector('#pause-recording').disabled = true;
+      document.querySelector('#start-recording').disabled = false;
+  };
+  document.querySelector('#pause-recording').onclick = function() {
+      this.disabled = true;
+      mediaRecorder.pause();
+      document.querySelector('#resume-recording').disabled = false;
+  };
+  document.querySelector('#resume-recording').onclick = function() {
+      this.disabled = true;
+      mediaRecorder.resume();
+      document.querySelector('#pause-recording').disabled = false;
+  };
+  document.querySelector('#save-recording').onclick = function() {
+      this.disabled = true;
+      // mediaRecorder.stream.stop() = function(blob) {
+      //   var formData = new FormData();
+
+      //   formData.append('user[audio]' , blob);
+
+      //   var request = new XMLHttpRequest();
+      //   request.open('PATCH' , 'http://localhost:3000/api/users/<%= current_user.id %>')
+      //   request.send(formData);
+      // console.log(mediaRecorder.blobs[0]);
+      // };
+      mediaRecorder.save();
+
+
+      // alert('Drop WebM file on Chrome or Firefox. Both can play entire file. VLC player or other players may not work.');
+  };
+  var mediaRecorder;
+  function onMediaSuccess(stream) {
+      var video = document.createElement('video');
+      var videoWidth = document.getElementById('video-width').value || 320;
+      var videoHeight = document.getElementById('video-height').value || 240;
+      video = mergeProps(video, {
+          controls: true,
+          muted: true,
+          width: videoWidth,
+          height: videoHeight,
+          src: URL.createObjectURL(stream)
+      });
+      video.play();
+      videosContainer.appendChild(video);
+      videosContainer.appendChild(document.createElement('hr'));
+      mediaRecorder = new MediaStreamRecorder(stream);
+      mediaRecorder.stream = stream;
+      var recorderType = document.getElementById('video-recorderType').value;
+      if (recorderType === 'MediaRecorder API') {
+          mediaRecorder.recorderType = MediaRecorderWrapper;
+      }
+      if (recorderType === 'WebP encoding into WebM') {
+          mediaRecorder.recorderType = WhammyRecorder;
+      }
+      // don't force any mimeType; use above "recorderType" instead.
+      // mediaRecorder.mimeType = 'video/webm'; // video/webm or video/mp4
+      mediaRecorder.videoWidth = videoWidth;
+      mediaRecorder.videoHeight = videoHeight;
+      mediaRecorder.ondataavailable = function(blob) {
+          var a = document.createElement('a');
+          a.target = '_blank';
+          a.innerHTML = 'Open Recorded Video No. ' + (index++) + ' (Size: ' + bytesToSize(blob.size) + ') Time Length: ' + getTimeLength(timeInterval);
+          a.href = URL.createObjectURL(blob);
+          videosContainer.appendChild(a);
+          videosContainer.appendChild(document.createElement('hr'));
+
+      };
+      mediaRecorder.send = function(blob) {
+
+      };
+
+      var timeInterval = 600000;
+      if (timeInterval) timeInterval = parseInt(timeInterval);
+      else timeInterval = 5 * 1000;
+      // get blob after specific time interval
+      mediaRecorder.start(timeInterval);
+      document.querySelector('#stop-recording').disabled = false;
+      document.querySelector('#pause-recording').disabled = false;
+      document.querySelector('#save-recording').disabled = false;
+  }
+  function onMediaError(e) {
+      console.error('media error', e);
+  }
+  var videosContainer = document.getElementById('videos-container');
+  var index = 1;
+  // below function via: http://goo.gl/B3ae8c
+  function bytesToSize(bytes) {
+      var k = 1000;
+      var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+      if (bytes === 0) return '0 Bytes';
+      var i = parseInt(Math.floor(Math.log(bytes) / Math.log(k)), 10);
+      return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
+  }
+  // below function via: http://goo.gl/6QNDcI
+  function getTimeLength(milliseconds) {
+      var data = new Date(milliseconds);
+      return data.getUTCHours() + " hours, " + data.getUTCMinutes() + " minutes and " + data.getUTCSeconds() + " second(s)";
+  }
+  window.onbeforeunload = function() {
+      document.querySelector('#start-recording').disabled = false;
+  };
 </script>
 
        

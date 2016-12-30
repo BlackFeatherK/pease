@@ -1,107 +1,149 @@
-<div id="<%= action_name%>">
-  <div class="person container text-center">
-    <div class="row">
-      <h2>個人資產</h2>
-      <p>請問您有特別要留下的實體資產給特定的人嗎？</p>
-      <div class="container2">
-        <div class="col-md-6 col-sm-6">
-          <div class="choose">
-            <%= radio_button_tag(:choose, "ok") %>
-            <label class="default-ok" for="choose_ok">
-              <div class="choose-type">有</div>
+<div id="<%= controller_name %>">
+  <div id="<%= action_name%>">
+    <div class="person container text-center">
+      <div class="row">
+        <h2>個人資產</h2>
+        <p>請問您有特別要留下的實體資產給特定的人嗎？</p>
+        <div class="container2">
+          <div class="col-md-6 col-sm-6">
+            <div class="choose">
+              <%= radio_button_tag(:choose, "ok") %>
+              <label class="default-ok" for="choose_ok">
+                <div class="choose-type">有</div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="choose">
+              <%= radio_button_tag(:choose, "no") %>
+              <label class="default-no" for="choose_no">
+                 <div class="choose-type">沒有</div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="wish container text-center">
+      <p>請問您想要留下什麼實體資產？</p>
+      <div class="row">
+        <div class="col-md-2 col-sm-4">
+          <div class="wishs">
+            <%= radio_button_tag(:wish, "property") %>
+            <label class="asset property" for="wish_property">
+              <div class="wish-type">房產</div> 
             </label>
           </div>
         </div>
-        <div class="col-md-6 col-sm-6">
-          <div class="choose">
-            <%= radio_button_tag(:choose, "no") %>
-            <label class="default-no" for="choose_no">
-               <div class="choose-type">沒有</div>
+        <div class="col-md-2 col-sm-4">
+          <div class="wishs">
+            <%= radio_button_tag(:wish, "stock") %>
+            <label class="asset stock" for="wish_stock">
+              <div class="wish-type">股票帳號</div> 
+            </label>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4">
+          <div class="wishs">
+            <%= radio_button_tag(:wish, "account") %>
+            <label class="asset account" for="wish_account">
+              <div class="wish-type">銀行現金</div>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4">
+          <div class="wishs">
+            <%= radio_button_tag(:wish, "motor") %>
+            <label class="asset motor" for="wish_motor">
+              <div class="wish-type">汽車/機車</div>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4">
+          <div class="wishs">
+            <%= radio_button_tag(:wish, "jewelry") %>
+            <label class="asset jewelry" for="wish_jewelry">
+              <div class="wish-type">珠寶/首飾</div>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4">
+          <div class="wishs">
+            <%= radio_button_tag(:wish, "other") %>
+            <label class="asset other" for="wish_other">
+              <div class="wish-type">其他</div>
             </label>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
 
-  <div class="wish container text-center unprint">
-    <p>請問您想要留下什麼實體資產？</p>
-    <div class="row">
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "property") %>
-          <label class="asset property" for="wish_property">
-            <div class="wish-type">房產</div> 
-          </label>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "stock") %>
-          <label class="asset stock" for="wish_stock">
-            <div class="wish-type">股票帳號</div> 
-          </label>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "account") %>
-          <label class="asset account" for="wish_account">
-            <div class="wish-type">銀行現金</div>
-          </label>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "motor") %>
-          <label class="asset motor" for="wish_motor">
-            <div class="wish-type">汽車/機車</div>
-          </label>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "jewelry") %>
-          <label class="asset jewelry" for="wish_jewelry">
-            <div class="wish-type">珠寶/首飾</div>
-          </label>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <div class="wishs">
-          <%= radio_button_tag(:wish, "other") %>
-          <label class="asset other" for="wish_other">
-            <div class="wish-type">其他</div>
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="wish-input">
-    <div class="container">
-      <div class="container2">
-        <div class="wish-select wish-property unprint">
-          <%= render :partial => 'will' , :locals => {:will => @will , :path => 'properties/property' , :table => 'properties'} %>
-        </div>
-        <div class="wish-select wish-stock unprint">
-          <%= render :partial => 'will' , :locals => {:will => @will , :path => 'stock_portfolios/stock_portfolio' , :table => 'stock_portfolios'} %>
-        </div>
-        <div class="wish-select wish-account unprint">
-          <%= render :partial => 'will' , :locals => {:will => @will , :path => 'accounts/account' , :table => 'accounts'} %>
-        </div>
-        <div class="wish-select wish-motor unprint">
-          <%= render :partial => 'will' , :locals => {:will => @will , :path => 'motors/motor' , :table => 'motors'} %>
-        </div>
-        <div class="wish-select wish-jewelry unprint">
-          <%= render :partial => 'will' , :locals => {:will => @will , :path => 'jewelries/jewelry' , :table => 'jewelries'} %>
-        </div>
-        <div class="wish-select wish-other unprint">
-          <%= render :partial => 'will' , :locals => {:will => @will , :path => 'others/other' , :table => 'others'} %>
-        </div>
-        <%= button_to '下一頁' , suggestion_user_path(current_user) , :method => :get , :class => 'back' %>
+    <div class="wish-input">
+      <div class="container">
+        <div class="container2">
+          <%= form_for @will , :url => will_path(@will) , :method => :patch , :remote => true , data: { turbolinks: 'false' } do |f| %>
+            <div class="wish-select wish-property">
+              <%= render :partial => 'properties/property' , :locals => {:f => f} %>
+              <div class="col-md-12 form-group text-center wish-submit">
+                <%= f.add_nested_fields_link :properties do %>
+                  <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
+                <% end %>
+              </div>
+            </div>
+            <div class="wish-select wish-stock">
+              <%= render :partial => 'stock_portfolios/stock_portfolio' , :locals => {:f => f} %>
+              <div class="col-md-12 form-group text-center wish-submit">
+                <%= f.add_nested_fields_link :stock_portfolios do %>
+                  <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
+                <% end %>
+              </div>
+            </div>
+            <div class="wish-select wish-account">
+              <%= render :partial => 'accounts/account' , :locals => {:f => f} %>
+              <div class="col-md-12 form-group text-center wish-submit">
+                <%= f.add_nested_fields_link :accounts do %>
+                  <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
+                <% end %>
+              </div>
+            </div>
+            <div class="wish-select wish-motor">
+              <%= render :partial => 'motors/motor' , :locals => {:f => f} %>
+              <div class="col-md-12 form-group text-center wish-submit">
+                <%= f.add_nested_fields_link :motors do %>
+                  <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
+                <% end %>
+              </div>
+            </div>
+            <div class="wish-select wish-jewelry">
+              <%= render :partial => 'jewelries/jewelry' , :locals => {:f => f} %>
+              <div class="col-md-12 form-group text-center wish-submit">
+                <%= f.add_nested_fields_link :jewelries do %>
+                  <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
+                <% end %>
+              </div>
+            </div>
+            <div class="wish-select wish-other">
+              <%= render :partial => 'others/other' , :locals => {:f => f} %>
+              <div class="col-md-12 form-group text-center wish-submit">
+                <%= f.add_nested_fields_link :others do %>
+                  <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
+                <% end %>
+              </div>
+            </div>
+            <div class="next">
+              <div class="col-md-6">
+                <%= button_to '上一步' , suggestion_user_path(current_user) , :method => :get , :class => 'back' %>
+              </div>
+              <div class="col-md-6">
+                <%= f.submit '下一步' , :class => "submit" %>
+              </div> 
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+  
