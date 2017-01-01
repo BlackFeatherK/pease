@@ -9,7 +9,7 @@ class Will < ApplicationRecord
   has_many :private_shares , :dependent => :destroy
   has_many :properties , :dependent => :destroy
   has_many :stock_portfolios , :dependent => :destroy
-  has_many :digital_assets, :dependent => :destroy
+  has_one :digital_asset, :dependent => :destroy
   has_many :medicals, :dependent => :destroy
   has_many :others , :dependent => :destroy
 
