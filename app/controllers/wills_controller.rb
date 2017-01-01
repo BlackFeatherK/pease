@@ -69,6 +69,13 @@ class WillsController < ApplicationController
     @jewelries = @will.jewelries
     @funeral = @will.funerals.first
     @medical = @will.medicals.first 
+
+    respond_to do |format|
+      format.html
+      format.pdf do 
+        render pdf:"wills/preview"
+      end
+    end
   end
 
  
