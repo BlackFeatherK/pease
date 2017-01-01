@@ -40,19 +40,6 @@ class WillsController < ApplicationController
   def words
   end
 
-  def audio 
-    @audio = @will.audios.build   
-  end
-
-  def save_audio
-    @audio = @will.audios.build(params.require(:audio).permit(:video))
-    if @audio.save
-      redirect_to words_will_path(@will)
-    else
-
-    end 
-  end
-
   def preview
     @will = current_user.will
     @user = current_user

@@ -16,4 +16,5 @@
 //= require nested_form_fields
 //= require bootstrap-sprockets
 //= require wills
+//= require audios
 //= require_tree .

@@ -1,10 +1,14 @@
 #audios {
+  background-color: #F9F9F9;
+
   #new {
     padding-top: 40px;
     padding-bottom: 100px;
 
     .container {
       background-color: #fff;
+      padding-bottom: 40px;
+      border-radius: 5px;
     }
 
     .submit {
@@ -54,7 +58,7 @@
         .audio_heir_true {
           width: 100%;
           height: 100%;
-          background-image: url("default_ok.png");
+          background-image: url("default_male.png");
           background-repeat:  no-repeat;
           background-position: 50% 40%;
           color: $default-color;
@@ -72,7 +76,7 @@
         }
 
         input[type=radio]:checked + label.audio_heir_true {
-          background:url("hover_ok.png") no-repeat;
+          background:url("hover_male.png") no-repeat;
           background-position: 50% 40%;
 
           .choose-type {
@@ -83,14 +87,14 @@
         .audio_heir_false {
           width: 100%;
           height: 100%;
-          background-image: url("default_no.png");
+          background-image: url("default_big_family.png");
           background-repeat:  no-repeat;
           background-position: 50% 40%;
           color: $default-color;
         }
 
         input[type=radio]:checked + label.audio_heir_false {
-          background:url("hover_no.png") no-repeat;
+          background:url("hover_big_family.png") no-repeat;
           background-position: 50% 40%;
 
           .choose-type {
@@ -136,11 +140,12 @@
           }
         }
 
-        .default-ok {
+        .audio-video {
           width: 100%;
           height: 100%;
-          background-image: url("default_ok.png");
+          background-image: url("default_record.png");
           background-repeat:  no-repeat;
+          background-size: 40%;
           background-position: 50% 40%;
           color: $default-color;
           border-color: $border-primary-color;
@@ -156,8 +161,9 @@
           color: $default-color;
         }
 
-        input[type=radio]:checked + label.default-ok {
-          background:url("hover_ok.png") no-repeat;
+        input[type=radio]:checked + label.audio-video {
+          background:url("hover_record.png") no-repeat;
+          background-size: 40%;
           background-position: 50% 40%;
 
           .choose-type {
@@ -165,11 +171,12 @@
           }
         }
 
-        .default-no {
+        .audio-message {
           width: 100%;
           height: 100%;
-          background-image: url("default_no.png");
+          background-image: url("default_message.png");
           background-repeat:  no-repeat;
+          background-size: 40%;
           background-position: 50% 40%;
           color: $default-color;
         }
@@ -178,8 +185,9 @@
           border-color: $secondary-color;
         }
 
-        input[type=radio]:checked + label.default-no {
-          background:url("hover_no.png") no-repeat;
+        input[type=radio]:checked + label.audio-message {
+          background:url("hover_message.png") no-repeat;
+          background-size: 40%;
           background-position: 50% 40%;
 
           .choose-type {

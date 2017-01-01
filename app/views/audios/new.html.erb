@@ -1,123 +1,134 @@
 <div id="<%= controller_name %>">
   <div id="<%= action_name %>">
     <div class="container">
-          <%= form_for @audio , :url => will_audio_path(@will , @audio) , :method => :patch do |f| %>
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
+      <%= form_for @audio , :url => will_audio_path(@will , @audio) , :method => :patch do |f| %>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
 
-            <div class="word-for">
-              <h2>送給愛的人們一段話</h2>
-              <p>你想留給誰最後一段話？</p>
-              <div class="row people">
-                <div class="col-md-6 col-sm-6">
-                  <div class="choose">
-                    <%= f.radio_button :heir , true %>
-                    <label class="audio_heir_true" for="audio_heir_true">
-                      <div class="choose-type">有</div>
-                    </label>
+              <div class="word-for">
+                <h2>送給愛的人們一段話</h2>
+                <p>你想留給誰最後一段話？</p>
+                <div class="row people">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="choose">
+                      <%= f.radio_button :heir , true %>
+                      <label class="audio_heir_true" for="audio_heir_true">
+                        <div class="choose-type">某個人</div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="choose">
+                      <%= f.radio_button :heir , false %>
+                      <label class="audio_heir_false" for="audio_heir_false">
+                         <div class="choose-type">所有人</div>
+                      </label>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="choose">
-                    <%= f.radio_button :heir , false %>
-                    <label class="audio_heir_false" for="audio_heir_false">
-                       <div class="choose-type">沒有</div>
-                    </label>
+
+                <div class="audio-person">
+                  <div class="form-group">
+                    <%= f.label '姓名' %>
+                    <%= f.text_field :name , :class => 'form-control text-center' , placeholder: "請輸入您想留的人名字" %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.label '連絡信箱' %>
+                    <%= f.email_field :email , :class => 'form-control text-center' , placeholder: "請輸入對方常用的信箱" %>
                   </div>
                 </div>
-              </div>
-
-              <div class="person">
-                <div class="form-group">
-                  <%= f.label '姓名' %>
-                  <%= f.text_field :name , :class => 'form-control text-center' , placeholder: "請輸入您想留的人名字" %>
-                </div>
-                <div class="form-group">
-                  <%= f.label '連絡信箱' %>
-                  <%= f.text_field :email , :class => 'form-control text-center' , placeholder: "請輸入對方常用的信箱" %>
-                </div>
-              </div>
 
 
-              <div class="row audio-choose">
-                <p>你想留給他們什麼內容呢？</p>
-                <div class="col-md-6 col-sm-6">
-                  <div class="choose">
-                    <%= radio_button_tag(:choose, "ok") %>
-                    <label class="default-ok" for="choose_ok">
-                      <div class="choose-type">錄音</div>
-                    </label>
+                <div class="row audio-choose">
+                  <p>你想留給他們什麼內容呢？</p>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="choose">
+                      <%= radio_button_tag(:choose, "ok") %>
+                      <label class="audio-video" for="choose_ok">
+                        <div class="choose-type">錄音</div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="choose">
+                      <%= radio_button_tag(:choose, "no") %>
+                      <label class="audio-message" for="choose_no">
+                         <div class="choose-type">信件內容</div>
+                      </label>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="choose">
-                    <%= radio_button_tag(:choose, "no") %>
-                    <label class="default-no" for="choose_no">
-                       <div class="choose-type">信件內容</div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>   
+              </div>   
+          </div>
         </div>
-      </div>
         
 
-      <div class="clearfix"></div>
+        <div class="clearfix"></div>
 
-      <article class='text-center'>
-        <div class="github-stargazers"></div>
-          
-        <section class="experiment" style="padding: 5px;">
-          <!-- <label for="time-interval">Time Interval (milliseconds):</label>
-          <input type="text" id="time-interval" value="5000"> -->
-
-          <!-- <select id="video-recorderType" style="font-size:22px;vertical-align: middle;margin-right: 5px;">
-              <option value="[Best Available Recorder]">[Best Available Recorder]</option>
-              <option value="MediaRecorder API">MediaRecorder API</option>
-              <option value="WebP encoding into WebM">WebP encoding into WebM</option>
-          </select> -->
-          <div class="video-btn">
-            <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-2">
-                <button id="start-recording" class='btn btn-default'>開始錄影</button>  
-              </div>
-              <div class="col-md-2">
-                <button id="stop-recording" disabled class='btn btn-default'>Stop</button>
-                <button id="pause-recording" disabled class='btn btn-default' style='display: none;'>暫停</button>
-                <button id="resume-recording" disabled class='btn btn-default' style='display: none;'>開始</button>
-              </div>
-              <div class="col-md-2">
-                <%= link_to '重新錄音' , new_will_audio_path(@will) , :class => 'btn btn-default btn-restart' %>
-                  
-              </div>
-              <button id="save-recording" disabled class='btn btn-default' style='display: none;'>Save</button>
-            </div> 
-          </div>
+        <article class='text-center'>
+          <div class="github-stargazers"></div>
             
+          <section class="experiment" style="padding: 5px;">
+            <!-- <label for="time-interval">Time Interval (milliseconds):</label>
+            <input type="text" id="time-interval" value="5000"> -->
+
+            <!-- <select id="video-recorderType" style="font-size:22px;vertical-align: middle;margin-right: 5px;">
+                <option value="[Best Available Recorder]">[Best Available Recorder]</option>
+                <option value="MediaRecorder API">MediaRecorder API</option>
+                <option value="WebP encoding into WebM">WebP encoding into WebM</option>
+            </select> -->
+            <div class="video-btn">
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-2">
+                  <button id="start-recording" class='btn btn-default'>開始錄影</button>  
+                </div>
+                <div class="col-md-2">
+                  <button id="stop-recording" disabled class='btn btn-default'>Stop</button>
+                  <button id="pause-recording" disabled class='btn btn-default' style='display: none;'>暫停</button>
+                  <button id="resume-recording" disabled class='btn btn-default' style='display: none;'>開始</button>
+                </div>
+                <div class="col-md-2">
+                  <%= link_to '重新錄音' , new_will_audio_path(@will) , :class => 'btn btn-default btn-restart' %>
+                    
+                </div>
+                <button id="save-recording" disabled class='btn btn-default' style='display: none;'>Save</button>
+              </div> 
+            </div>
+              
 
 
-          <!-- <label for="video-width">Video Width:</label>
-          <input type="text" id="video-width" value="320">
+            <!-- <label for="video-width">Video Width:</label>
+            <input type="text" id="video-width" value="320">
 
-          <label for="video-height">Video Height:</label>
-          <input type="text" id="video-height" value="240"> -->
+            <label for="video-height">Video Height:</label>
+            <input type="text" id="video-height" value="240"> -->
+          </section>
+        </article>
+        <div class="clearfix"></div>
+        <section class="experiment video">
+            <div id="videos-container"></div>
         </section>
-      </article>
-      <div class="clearfix"></div>
-      <section class="experiment video">
-          <div id="videos-container"></div>
-      </section>
 
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <%= f.submit '儲存' , :class => 'submit' %>
-            <% end %>
+        <div class="message-text">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= f.text_area :content , :class => 'form-control' , :rows => '5' %>  
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+              <%= f.submit '儲存' , :class => 'submit' %>
+            <% end %>
+          </div>
+        </div>
     </div>
   </div> 
 </div>
