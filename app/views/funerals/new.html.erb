@@ -1,13 +1,15 @@
-<div class="container text-center" id="<%= controller_name %>">
-	<div id="<%= action_name %>">
-		<div class="title">
-			<h1>設計生命畢業禮</h1>
+<div class="background">
+	<div class="container text-center" id="<%= controller_name %>">
+		<div id="<%= action_name %>">
+			<div class="title">
+				<h1>設計生命畢業禮</h1>
+			</div>
+			<%= form_for @funeral, url: will_funerals_path, html: {class: "text-center"} do |f| %>
+			<%= render :partial => 'funeral', :locals => {:f => f}  %>
+
+			<%= f.submit class: "submit" %>
+
+			<% end %>
 		</div>
-		<%= form_for @funeral, url: will_funerals_path, html: {class: "text-center"} do |f| %>
-		<%= render :partial => 'funeral', :locals => {:f => f}  %>
-
-		<%= f.submit class: "submit" %>
-
-		<% end %>
 	</div>
 </div>

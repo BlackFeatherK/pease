@@ -2,19 +2,19 @@ class WillsController < ApplicationController
 
   before_action :authenticate_user!
   before_action :find_user
-  before_action :find_will
+  before_action :include_will, only: [:index, :show, :update]
 
   def index
+    @will = @wills.find(current_user.will.id)
+    @digital_asset = @will.digital_asset
+    @properties = @will.properties
+    @stock_portfolios = @will.stock_portfolios
+    @accounts = @will.accounts
+    @motors = @will.motors
+    @jewelries = @will.jewelries
   end
 
   def show
-    @wills = Will.includes({:accounts => [:heirs]},
-                           {:properties => [:heirs]},
-                           {:stock_portfolios => [:heirs]},
-                           {:motors => [:heirs]},
-                           {:jewelries => [:heirs]},
-                           {:others => [:heirs]}
-                           )
     @will = @wills.find(current_user.will.id)
     @will.properties.build.heirs.build
     @will.stock_portfolios.build.heirs.build
@@ -25,13 +25,7 @@ class WillsController < ApplicationController
   end
 
   def update 
-    @wills = Will.includes({:accounts => [:heirs]},
-                           {:properties => [:heirs]},
-                           {:stock_portfolios => [:heirs]},
-                           {:motors => [:heirs]},
-                           {:jewelries => [:heirs]},
-                           {:others => [:heirs]}
-                           )
+
     @will = @wills.find(current_user.will.id)
     @will.update(params_will)
     @will.properties.build.heirs.build
@@ -80,6 +74,15 @@ class WillsController < ApplicationController
  
 
   private
+  def include_will 
+    @wills = Will.includes({:accounts => [:heirs]},
+                           {:properties => [:heirs]},
+                           {:stock_portfolios => [:heirs]},
+                           {:motors => [:heirs]},
+                           {:jewelries => [:heirs]},
+                           {:others => [:heirs]}, :medicals
+                           )
+  end
 
   def find_user
     @user = current_user

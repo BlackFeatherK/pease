@@ -2,11 +2,11 @@ class DigitalAssetsController < ApplicationController
 	before_action :find_digital_asset, only: [:show, :update]
 	before_action :find_will
 	def new
-		@digital_asset = @will.digital_assets.build
+		@digital_asset = @will.build_digital_asset
 	end
 
 	def create
-		@digital_asset = @will.digital_assets.build(param_digital_asset)
+		@digital_asset = @will.build_digital_asset(param_digital_asset)
 		if @digital_asset.save
 			redirect_to wills_path
 			flash[:notice] = "Digital Assets saved"
@@ -35,7 +35,7 @@ class DigitalAssetsController < ApplicationController
 	end
 
 	def find_digital_asset
-		@digital_asset = @will.digital_assets.find(params[:id])
+		@digital_asset = current_user.will.digital_asset
 	end
 
 	def param_digital_asset

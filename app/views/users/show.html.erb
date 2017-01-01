@@ -1,40 +1,42 @@
-<div class="container2">
-	<%= form_for @user, url: user_path(@user), method: :patch, html: {class: "form-group info "} do |f| %>
-		<h1>個人資料</h1>
+<div class="background">
+	<div class="info container text-center">
+		<div class="cover">
+		<%= form_for @user, url: user_path(@user), method: :patch, html: {class: "form-group"} do |f| %>
+			<h1>個人資料</h1>
 
-		<div class="form-group">
-			<%= f.label(:name, "請問您的姓名") %> <br>
-			<%= f.text_field :name, class: "form-control text-center", placeholder: "請輸入你的真實姓名"%>
+			<div class="form-group">
+				<%= f.label(:name, "請問您的姓名") %> <br>
+				<%= f.text_field :name, class: "text-center", placeholder: "請輸入你的真實姓名"%>
+			</div>
+			<div class="form-group">
+				<%= f.label(:birthday, "請問您的生日") %> <br>
+				<%= f.date_select :birthday, {order: [:month, :day, :year], start_year: 1950}, class: "date" %>
+			</div>
+			<div class="form-group">
+				<%= f.label(:gender, "請問您的性別") %> <br>
+				<div class= "gender-button">
+					<%= f.radio_button(:gender, "Male") %>
+					<label class="male-label" for="user_gender_male">
+						<div class="gender-type">男生</div>
+					</label>
+				</div>
+
+				<div class= "gender-button">
+					<%= f.radio_button(:gender, "Female") %>
+					<label class="female-label" for="user_gender_female">
+						<div class="gender-type">女生</div>	
+					</label>
+				</div>
+
+			</div>
+			<div class="form-group">
+				<%= f.submit "下一步", class: "submit"%>
+			</div>
+		<% end %>
 		</div>
-		<div class="form-group">
-			<%= f.label(:birthday, "請問您的生日") %> <br>
-			<%= f.date_select :birthday, {order: [:month, :day, :year], start_year: 1950}, class: "date" %>
-		</div>
-		<div class="form-group">
-			<%= f.label(:gender, "請問您的性別") %> <br>
-
-			<label class= "gender-button">
-				<%= f.radio_button(:gender, "Male") %>
-				<label class="male-label" for="user_gender_male">
-					<div class="gender-type">男生</div>
-				</label>
-			</label>
-
-			<label class= "gender-button">
-				<%= f.radio_button(:gender, "Female") %>
-				<label class="female-label" for="user_gender_female">
-					<div class="gender-type">女生</div>	
-				</label>
-			</label>
-
-		</div>
-
-		<div class="form-group">
-			<%= f.submit "下一步", class: "submit"%>
-		</div>
-	<% end %>
 	<!-- <video controls autoplay name="media">
 		<source src="<%# @user.will.audios.last.video.url %>" type="video/webm">
 	</video> -->
 
+	</div>
 </div>

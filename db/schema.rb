@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20161230112846) do
     t.boolean  "heir"
     t.string   "name"
     t.string   "email"
+    t.text     "content"
     t.string   "video_file_name"
     t.string   "video_content_type"
     t.integer  "video_file_size"

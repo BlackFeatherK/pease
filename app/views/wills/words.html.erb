@@ -59,7 +59,7 @@
                 <button type="button" class="border-radius close" data-dismiss="modal">暫緩</button>
               </div>
               <div class="col-md-6 col-sm-12 modal-btn">
-                <%= link_to '立即開始' , new_will_audio_path(@will) , :class => "border-radius save" ,  data: { turbolinks: 'false' }%>
+                <%= link_to '立即開始' , new_will_audio_path(current_user.will.id) , :class => "border-radius save" ,  data: { turbolinks: 'false' }%>
               </div>
             </div>
           </div>

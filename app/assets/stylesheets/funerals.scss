@@ -8,24 +8,47 @@ $secondary-color: #F8C957;
 $main-font: PingFangTC-Medium;
 
 .form-button {
-	width: 107px;
-	height: 107px;
+	width: 200px;
+	height: 200px;
 	border-radius: 5px;
 	border: 1px solid $border-primary-color;
 	position: relative;
 	background-position: 50% 40%;
+	margin-right: 10px;
+	.description {
+		font-size: 1.5em;
+		position: absolute;
+		top: 85%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: $main-color;
+		width: 90%;
+	}
 }
 
+.background {
+    background-color: #F9F9F9;
+	width: 100%;
+	margin-top: -55px;
+	padding-top: 20px;
+}
 
 #funerals {
-			width: 500px;
+	width: 900px;
+	background: #FFFFFF;
+	border: 1px solid #F2F2F2;
+	border-radius: 5px;
+	padding-bottom: 100px;
+	h3, h4 {
+		font-size: 2em;
+	}
 	#new, #show {
 		label {
 				color: $main-color;
 				font-family: $main-font;
 			}
 			select#funeral_religion {
-				width: 200px;
+				width: 500px;
 				height: 36px;
 				-webkit-appearance: none;
 		    	appearance: none;
@@ -43,6 +66,9 @@ $main-font: PingFangTC-Medium;
 			}
 
 			.preference-button {
+				width: 200px;
+				display: inline-block;
+				margin-right: 10px;
 				input {
 					visibility: hidden;
 					display: none;
@@ -50,24 +76,22 @@ $main-font: PingFangTC-Medium;
 
 				label {
 					@extend .form-button;
-					.description {
-						position: absolute;
-						top: 75%;
-						left: 30%;
-						color: $main-color;
-					}
 				}
 				label.preference-yes {
 					background:url("default_ok.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				label.preference-no {
 					background:url("default_no.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
+
 				}
 				label.preference-family {
 					background:url("default_family.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;					
 				}
 
 				// Hover effect 
@@ -77,20 +101,25 @@ $main-font: PingFangTC-Medium;
 				input[type=radio]:checked + label.preference-yes {
 					background:url("hover_ok.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				input[type=radio]:checked + label.preference-no {
 					background:url("hover_no.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				input[type=radio]:checked + label.preference-family {
 					background:url("hover_family.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 			}
 			// Funeral services button 
 			.service {
 				label {
 					@extend .form-button;
+					font-size: 1.5em;
+					padding-top: 160px;
 				}
 				input {
 					display: none;
@@ -98,14 +127,17 @@ $main-font: PingFangTC-Medium;
 				label[for="funeral_funeral_service_ids_1"] {
 					background:url("default_cemetery.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				label[for="funeral_funeral_service_ids_2"] {
 					background:url("default_funeral.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				label[for="funeral_funeral_service_ids_3"] {
 					background:url("default_memorial.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				// Hover effect 
 				input[type=checkbox]:checked + label {
@@ -114,14 +146,17 @@ $main-font: PingFangTC-Medium;
 				input[type=checkbox]:checked + label[for="funeral_funeral_service_ids_1"] {
 					background:url("hover_cemetery.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				input[type=checkbox]:checked + label[for="funeral_funeral_service_ids_2"] {
 					background:url("hover_funeral.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				input[type=checkbox]:checked + label[for="funeral_funeral_service_ids_3"] {
 					background:url("hover_memorial.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 			}
 
@@ -137,18 +172,24 @@ $main-font: PingFangTC-Medium;
 				label.preference-1 {
 					background:url("default_cremation.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				label.preference-2 {
 					background:url("default_ground_burial.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
+
 				}
 				label.preference-3 {
 					background:url("default_science.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				label.preference-4 {
 					background:url("default_family.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
+
 				}
 
 
@@ -159,18 +200,22 @@ $main-font: PingFangTC-Medium;
 				input[type=radio]:checked + label.preference-1 {
 					background:url("hover_cremation.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				input[type=radio]:checked + label.preference-2 {
 					background:url("hover_ground_burial.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				input[type=radio]:checked + label.preference-3 {
 					background:url("hover_science.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 				input[type=radio]:checked + label.preference-4 {
 					background:url("hover_family.png") no-repeat;
 					background-position: 50% 40%;
+					background-size: 100px;
 				}
 			}
 
@@ -186,18 +231,22 @@ $main-font: PingFangTC-Medium;
 					label.preference-1 {
 						background:url("default_tree.png") no-repeat;
 						background-position: 50% 40%;
+						background-size: 100px;
 					}
 					label.preference-2 {
 						background:url("default_sea.png") no-repeat;
 						background-position: 50% 40%;
+						background-size: 100px;
 					}
 					label.preference-3 {
 						background:url("default_tombstone.png") no-repeat;
 						background-position: 50% 40%;
+						background-size: 100px;
 					}
 					label.preference-4 {
 						background:url("default_family.png") no-repeat;
 						background-position: 50% 40%;
+						background-size: 100px;
 					}
 
 
@@ -208,18 +257,22 @@ $main-font: PingFangTC-Medium;
 					input[type=radio]:checked + label.preference-1 {
 						background:url("hover_tree.png") no-repeat;
 						background-position: 50% 40%;
+						background-size: 100px;
 					}
 					input[type=radio]:checked + label.preference-2 {
 						background:url("hover_sea.png") no-repeat;
 						background-position: 50% 40%;
+						background-size: 100px;
 					}
 					input[type=radio]:checked + label.preference-3 {
 						background:url("hover_tombstone.png") no-repeat;
 						background-position: 50% 40%;
+						background-size: 100px;
 					}
 					input[type=radio]:checked + label.preference-4 {
 						background:url("hover_family.png") no-repeat;
 						background-position: 50% 40%;
+						background-size: 100px;
 					}
 			}
 			.other {
@@ -233,9 +286,10 @@ $main-font: PingFangTC-Medium;
 			}
 			.funeral-service-description {
 				width: 100%;
-				height: 74px;
+				height: 120px;
+				padding: 5px;
 				font-family: PingFangTC-Regular;
-				font-size: 12px;
+				font-size: 1.5em;
 				color: #6C7C89;
 				letter-spacing: 0;
 				background: #F2F2F2;

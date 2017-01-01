@@ -1,10 +1,12 @@
-<div class="container text-center" id="<%= controller_name %>">
-	<div class="title">
-		<h1>數位帳號</h1>
+<div class="background">	
+	<div class="container text-center" id="<%= controller_name %>">
+		<div class="title">
+			<h1>數位帳號</h1>
+		</div>
+		<%= form_for @digital_asset, url: will_digital_asset_path do |f| %>
+			<%= render partial: 'digital_asset', :locals => {:f => f} %>
+			<%= f.submit "儲存", class: "submit" %>
+		<% end  %>
 	</div>
-	<%= form_for @digital_asset, url: will_digital_assets_path do |f| %>
-		<%= render partial: 'digital_asset', :locals => {:f => f} %>
-		<%= f.submit class: "" %>
-	<% end  %>
 </div>
 

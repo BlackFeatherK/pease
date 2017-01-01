@@ -16,7 +16,7 @@ Rails.application.routes.draw do
         resources :private_shares
         resources :properties
         resources :stock_portfolios
-        resources :digital_assets
+        resource :digital_asset
         resources :medicals
         resources :audios
         member do

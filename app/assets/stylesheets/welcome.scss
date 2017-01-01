@@ -10,93 +10,102 @@ h1, h2, h3, h4, h5 {
 	color: $main-color;
 	font-family: $main-font;
 }
-
-
-
 .info {
-	width: 500px;
-
-	label {
-		color: $main-color;
-		font-family: $main-font;
-	}
-	input {
-		border: 1px solid $border-primary-color;
-	}
-	select {
-		-webkit-appearance: none;
-    	appearance: none;
-		text-indent: 5px;
-		background-image:
-		    linear-gradient(45deg, transparent 50%, $border-primary-color 50%),
-		    linear-gradient(135deg, $border-primary-color 50%, transparent 50%);
-		background-position:
-		    calc(100% - 15px) calc(1em + 2px),
-		    calc(100% - 10px) calc(1em + 2px);
-		background-size:
-		    5px 5px,
-		    5px 5px;
-		background-repeat: no-repeat;
-	}
-
-	#user_birthday_2i, #user_birthday_3i, #user_birthday_1i {
-		text-align: center;
-		height: 36px;
-		width: 137px;
-		border: 1px solid $border-primary-color;
-		margin-left: 10px;
-	}
-	
-	.gender-button {
-		input {
-			visibility: hidden;
-		}
-		input[type=radio]:checked + label.male-label {
-			background:url("hover_male.png") no-repeat;
-			background-position: 50% 40%;
-	}
-		input[type=radio]:checked + label {
-			background:url("hover_female.png") no-repeat;
-			background-position: 50% 40%;
-		}
-		.gender-type {
-			position: absolute;
-			top: 75%;
-			left: 45%;
+	width: 900px;
+	.cover {
+		background: #FFFFFF;
+		border: 1px solid #F2F2F2;
+		border-radius: 5px;
+		label {
 			color: $main-color;
+			font-family: $main-font;
+			font-size: 1.5em;
 		}
-	}
+		input {
+			text-align: center;
+			height: 36px;
+			width: 60%;
+			border: 1px solid $border-primary-color;
+			border-radius: 5px;
+		}
+		select {
+			-webkit-appearance: none;
+	    	appearance: none;
+			text-indent: 5px;
+			background-image:
+			    linear-gradient(45deg, transparent 50%, $border-primary-color 50%),
+			    linear-gradient(135deg, $border-primary-color 50%, transparent 50%);
+			background-position:
+			    calc(100% - 15px) calc(1em + 2px),
+			    calc(100% - 10px) calc(1em + 2px);
+			background-size:
+			    5px 5px,
+			    5px 5px;
+			background-repeat: no-repeat;
+		}
 
-	input[type=radio]:checked + label {
-					border: 1px solid $secondary-color;
-				}
+		#user_birthday_2i, #user_birthday_3i, #user_birthday_1i {
+			text-align: center;
+			height: 36px;
+			width: 160px;
+			border: 1px solid $border-primary-color;
+			margin-left: 10px;
+		}
+		
+		.gender-button {
+			display: inline-block;
+			input {
+				visibility: hidden;
+				display: none;
+			}
+			input[type=radio]:checked + label.male-label {
+				background:url("hover_male.png") no-repeat;
+				background-position: 50% 40%;
+		}
+			input[type=radio]:checked + label {
+				background:url("hover_female.png") no-repeat;
+				background-position: 50% 40%;
+			}
+			.gender-type {
+				position: absolute;
+				top: 75%;
+				left: 50%;
+				transform: translateX(-50%);
+				color: $main-color;
+			}
+		}
 
-	label.male-label {
-		width: 211px;
-		height: 137px;
-		border-radius: 5px;
-		border: 1px solid $border-primary-color;
-		position: relative;
-		background: image-url("default_male.png") no-repeat;
-		background-position: 50% 40%;
-	}
+		input[type=radio]:checked + label {
+			border: 1px solid $secondary-color;
+		}
 
-	label.female-label {
-		width: 211px;
-		height: 137px;
-		border-radius: 5px;
-		border: 1px solid $border-primary-color;
-		position: relative;
-		background: image-url("default_female.png") no-repeat;
-		background-position: 50% 40%;
-	}
-	.submit {
-		width: 210px;
-		height: 36px;
-		background-color: $secondary-color;
-		border: none;
-		border-radius: 5px;
-		color: white;
+		label.male-label {
+			width: 211px;
+			height: 137px;
+			border-radius: 5px;
+			border: 1px solid $border-primary-color;
+			position: relative;
+			background: image-url("default_male.png") no-repeat;
+			background-position: 50% 40%;
+		}
+
+		label.female-label {
+			width: 211px;
+			height: 137px;
+			border-radius: 5px;
+			border: 1px solid $border-primary-color;
+			position: relative;
+			background: image-url("default_female.png") no-repeat;
+			background-position: 50% 40%;
+		}
+		.submit {
+			width: 210px;
+			height: 36px;
+			background-color: $secondary-color;
+			border: none;
+			border-radius: 5px;
+			color: white;
+		}
 	}
 }
 

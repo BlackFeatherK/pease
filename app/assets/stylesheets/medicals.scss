@@ -12,7 +12,11 @@
 }
 
 #medicals{
-	width: 500px;
+	width: 900px;
+	background: #FFFFFF;
+	border: 1px solid #F2F2F2;
+	border-radius: 5px;
+	padding-bottom: 100px;
 	.yes-no-question{
 		input {
 			visibility: hidden;
@@ -46,5 +50,13 @@
 			background:url("hover_no.png") no-repeat;
 			background-position: 50% 40%;
 		}
+	}
+	.submit {
+		width: 210px;
+		height: 36px;
+		background-color: $secondary-color;
+		border: none;
+		border-radius: 5px;
+		color: white;
 	}
 }
