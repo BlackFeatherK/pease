@@ -14,71 +14,64 @@ $(document).ready(function(){
   $('#choose_ok').click(function(){
     $('.wish').show();
     $('.wish-select').hide();
-    $('.wish-new').stop().slideDown(500);
+    $('.wish-new').stop().slideDown(1000);
     scorll();
   });
 
   $('#choose_no').click(function(){
-    $('.next').stop().slideUp(500);
-    $('.wish-select').stop().slideUp(500);
+    $('.next').stop().slideUp(1000);
+    $('.wish-select').stop().slideUp(1000);
     $('.wish').stop().slideUp();
     $('.wish-new').hide();
-
     scorll();
   });
 
   $('#wish_stock').click(function(){
-    $('.wish-select').stop().slideUp(500);
+    $('.wish-select').stop().slideUp(800);
     $('.next').hide();
-    $('.wish-stock').stop().slideDown(500, function(){
+    $('.wish-stock').stop().slideDown(800, function(){
       $('.next').show();
     });
-    scorll();
   });
 
   $('#wish_property').click(function(){
-    $('.wish-select').stop().slideUp(500);
+    $('.wish-select').stop().slideUp(800);
     $('.next').hide();
-    $('.wish-property').stop().slideDown(500, function(){
+    $('.wish-property').stop().slideDown(800, function(){
       $('.next').show();
     });
-    scorll();
   });
 
   $('#wish_account').click(function(){
-    $('.wish-select').stop().slideUp(500);
+    $('.wish-select').stop().slideUp(800);
     $('.next').hide();
-    $('.wish-account').stop().slideDown(500, function(){
+    $('.wish-account').stop().slideDown(800, function(){
       $('.next').show();
     });
-    scorll();
   });
 
   $('#wish_motor').click(function(){
-    $('.wish-select').stop().slideUp(500);
+    $('.wish-select').stop().slideUp(800);
     $('.next').hide();
-    $('.wish-motor').stop().slideDown(500, function(){
+    $('.wish-motor').stop().slideDown(800, function(){
       $('.next').show();
     });
-    scorll();
   });
 
   $('#wish_jewelry').click(function(){
-    $('.wish-select').stop().slideUp(500);
+    $('.wish-select').stop().slideUp(800);
     $('.next').hide();
-    $('.wish-jewelry').stop().slideDown(500, function(){
+    $('.wish-jewelry').stop().slideDown(800, function(){
       $('.next').show();
     });
-    scorll();
   });
 
   $('#wish_other').click(function(){
-    $('.wish-select').stop().slideUp(500);
+    $('.wish-select').stop().slideUp(800);
     $('.next').hide();
-    $('.wish-other').stop().slideDown(500, function(){
+    $('.wish-other').stop().slideDown(800, function(){
       $('.next').show();
     });
-    scorll();
   });
 
   $(document).on("click", "input[type=checkbox]", function () {

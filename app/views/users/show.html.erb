@@ -29,26 +29,12 @@
 
 		</div>
 
-		<%= f.file_field :audio %>
 		<div class="form-group">
 			<%= f.submit "下一步", class: "submit"%>
 		</div>
 	<% end %>
-	<video controls autoplay name="media">
-		<source src="<%= @user.audio %>" type="video/webm">
-	</video>
+	<!-- <video controls autoplay name="media">
+		<source src="<%# @user.will.audios.last.video.url %>" type="video/webm">
+	</video> -->
 
 </div>
-
-<script>
-
-
-	// $('.gender-button-female').click(function(){
-	// 	if ($(this).hasClass("collapsed-female")){
-	// 		$(this).addClass("selected-female").removeClass("collapsed-female");
-	// 		$('.gender-button-male').addClass("collapsed-male").removeClass("selected-male")
-	// 	}
-	// });
-
-	
-</script>

@@ -1,9 +1,10 @@
 class WillsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :find_user
+  before_action :find_will
 
   def index
-    @user = current_user
   end
 
   def show
@@ -39,13 +40,23 @@ class WillsController < ApplicationController
     @will.motors.build.heirs.build
     @will.jewelries.build.heirs.build
     @will.others.build.heirs.build
+    redirect_to suggestion_user_path(@user)
   end
 
   def words
   end
 
-  def video
-    
+  def audio 
+    @audio = @will.audios.build   
+  end
+
+  def save_audio
+    @audio = @will.audios.build(params.require(:audio).permit(:video))
+    if @audio.save
+      redirect_to words_will_path(@will)
+    else
+
+    end 
   end
 
   def preview
@@ -69,6 +80,14 @@ class WillsController < ApplicationController
  
 
   private
+
+  def find_user
+    @user = current_user
+  end
+
+  def find_will
+    @will = current_user.will
+  end
 
   def params_will
     params.require(:will).permit(

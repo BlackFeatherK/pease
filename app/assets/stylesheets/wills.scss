@@ -2,6 +2,9 @@ $border-primary-color: #D0D0D0;
 $default-color: #8D8D8D;
 $main-color: #364860;
 $secondary-color: #F8C957;
+$font-color: #6C7C89;
+$white-color: #F3F4F5;
+
 
 .clearfix {
   clear: both;
@@ -24,9 +27,163 @@ $secondary-color: #F8C957;
 
 
 #wills {
+  background-color: #F9F9F9;
+  margin-top: -55px;
+
+  #index {
+    
+    padding-top: 40px;
+    padding-bottom: 100px;
+
+    .container {
+      background-color: #fff;
+      padding-bottom: 40px;
+      border-radius: 5px;
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+
+    .chevron::before {
+      border-style: solid;
+      border-width: 1px 1px 0 0;
+      content: '';
+      display: inline-block;
+      height: 20px;
+      left: 0.15em;
+      position: relative;
+      top: 0.15em;
+      transform: rotate(-45deg);
+      vertical-align: top;
+      width: 20px;
+    }
+
+    .chevron.right:before {
+      left: 0;
+      transform: rotate(45deg);
+    }
+
+    .chevron.bottom:before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+
+    .chevron.left:before {
+      left: 0.25em;
+      transform: rotate(-135deg);
+    }
+
+
+    //user/show/X
+
+    
+
+    .user-list-bar {
+
+      border-bottom: 2px #F2F2F2 solid;
+
+      .list {
+        display: inline-block;
+        padding: 15px 10px 15px 20px;
+        cursor: pointer;
+        border-bottom: 5px solid transparent;
+
+        span {
+          padding-left: 15px;
+        }
+      }
+
+      .list:hover {
+        color: #F8C957;
+        border-bottom: 5px solid #F8C957;
+      }
+    }
+
+    .user-arrangement {
+      .choose {
+        margin: 20px 0;
+
+        .choose-btn {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          margin: 0 auto;
+          border: 1px #F2F2F2 solid;
+          border-radius: 5px;
+          padding: 30px 5px;
+          img {
+            max-width: 80%;
+            max-height: 80%;
+          }
+        }
+
+        .choose-focus {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 1px #F2F2F2 solid;
+          border-radius: 5px;
+          
+        }
+
+        .choose-focus-alternative {
+          @extend .choose-focus;
+          background: rgba(204, 204, 204, 0.4);
+          .circle {
+            right: 0;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border: 3px solid white;
+            position: absolute;
+            .already-finish {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              max-width: 80%;
+              max-height: 80%;
+          }
+          }
+        }
+
+        .choose-focus:hover {
+          background: rgba(248,201,87,0.40);
+          cursor:pointer
+        }
+      }
+      .legal-button {
+        margin-top: 20px;
+          background: #F8C957;
+          border-color: $secondary-color;
+          border-radius: 5px;
+          width: 200px;
+          font-family: PingFangTC-Regular;
+          font-size: 14px;
+          color: #364860;
+          letter-spacing: 1px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .user-arrangement .choose{
+            width: 20%;
+        }
+    }
+  }
   
   #show {
-    margin-bottom: 100px;
+    padding-top: 40px;
+    padding-bottom: 100px;
+
+    .container {
+      background-color: #fff;
+      padding-bottom: 40px;
+      border-radius: 5px;
+    }
     
     .person {
       
@@ -105,7 +262,6 @@ $secondary-color: #F8C957;
           color: $secondary-color;
         }
       }
-
     }
 
     .wish {
@@ -361,9 +517,14 @@ $secondary-color: #F8C957;
   }
 
 
-  .words {
-    margin-top: -55px;
-    background-color: #F9F9F9;
+  #words {
+    padding-top: 40px;
+    padding-bottom: 100px;
+    
+    .container {
+      background-color: #fff;
+      border-radius: 5px;
+    }
 
     .title {
     
@@ -447,7 +608,7 @@ $secondary-color: #F8C957;
           justify-content: center;
           align-items: center;
 
-          button {
+          .border-radius {
             padding: 5px;
             width: 80%;
             font-size: 16px;
@@ -467,29 +628,32 @@ $secondary-color: #F8C957;
             background-color: $secondary-color;
             color: #61717E;
           }
+
+          a {
+            text-align: center;
+          }
         }
       }
     }   
   }
 
-  #wills {
     
-    #preview {
-      p {
-        text-align: left;
-      }
-      .pdf {
-        width: 100px;
-        height: 40px;
-        background-color: $secondary-color;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        margin: 15px 0;
-        font-weight: bold;
-      }
+  #preview {
+    p {
+      text-align: left;
+    }
+    .pdf {
+      width: 100px;
+      height: 40px;
+      background-color: $secondary-color;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      margin: 15px 0;
+      font-weight: bold;
     }
   }
+
 }
 
   

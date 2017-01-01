@@ -18,12 +18,12 @@ Rails.application.routes.draw do
         resources :stock_portfolios
         resources :digital_assets
         resources :medicals
+        resources :audios
         member do
           get :preview
-        end
-
-        collection do 
-          get :video
+          get :audio
+          get :words
+          post :save_audio
         end
       end 
 
@@ -32,7 +32,6 @@ Rails.application.routes.draw do
           # get :slider
           get :suggestion
           get :question
-          post :save_audio
           post :save_question
         end
       end

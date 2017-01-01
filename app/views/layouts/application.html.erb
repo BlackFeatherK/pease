@@ -35,8 +35,8 @@
         <nav>
           <ul class="list-inline" class="text-capitalize">
             <% if current_user.try(:will) %>
-              <li><a href="">預立遺囑</a></li>
-              <li><%= link_to "預立遺言", preview_will_path(current_user.will.id)%></li>
+              <li><%= link_to '預立遺囑', preview_will_path(current_user.will.id) %></li>
+              <li><%= link_to '預立遺言' , words_will_path(current_user.will.id) %></li>
               <li><a href="">預約律師</a></li>
               <li><a href="">合作夥伴</a></li>
               <li><%= image_tag("AppointmentReminders000000100.png", :alt => "") %></li>
@@ -50,9 +50,9 @@
                 <% end %>
               </li>
             <% else %>
-              <li><a href="">生命規劃</a></li>
-              <li><a href="">預覽遺囑</a></li>
-              <li><a href="">個人總覽</a></li>
+              <li><a href="">預立遺囑</a></li>
+              <li><a href="">預立遺言</a></li>
+              <li><a href="">預約律師</a></li>
               <li><a href="">合作夥伴</a></li>
               <li><%= image_tag("AppointmentReminders000000100.png", :alt => "") %></li>
               <li>
@@ -89,7 +89,9 @@
           <ul class="list-inline">
             <% if current_user.try(:will) %>
               <li>
-                <a href=""><span class='glyphicon glyphicon-user'></span>個人資料</a>
+                <%= link_to wills_path do %>
+                  <span class='glyphicon glyphicon-user'></span>個人資料
+                <% end %>
               </li>
               <li>
                 <%= link_to suggestion_user_path(current_user) do %>
@@ -123,5 +125,38 @@
 
     <%= yield %>
 
+
+    <div id="footer">
+      <div class="container">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+          <div class="word-link">
+            <nav>
+              <ul class="list-inline" class="text-capitalize">
+                <li><a href="">© 2016 Pease</a></li>
+                <li><a href="">關於Pease</a></li>
+                <li><a href="">常見問題</a></li>
+                <li><a href="">團隊成員</a></li>
+                <li><a href="">加入我們</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="img-link">
+            <nav>
+              <ul class="list-inline" class="text-capitalize">
+                <li class='fb'><a href="https://www.facebook.com/Pease-320641804987691/?fref=ts"><%= image_tag("facebook.png", :alt => "facebook") %></a></li>
+                <li class='email'><a href="https://goo.gl/BtIGBV"><%= image_tag("email.png", :alt => "email") %></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+          
+          
+          
+      </div>
+    </div>
   </body>
 </html>

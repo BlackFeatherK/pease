@@ -6,6 +6,4 @@ class User < ApplicationRecord
 
   has_one :will , :dependent => :destroy
 
-  has_attached_file :audio
-  validates_attachment_content_type :audio, content_type: /.*/
 end

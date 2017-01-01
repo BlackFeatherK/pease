@@ -9,17 +9,14 @@ class UsersController < ApplicationController
 
 	def update
 		if @user.update(params_user)
-			@user.create_will
+			unless @user.will
+				@user.create_will
+			end
 			redirect_to question_user_path
 		else
 			render "show"
 			flash[:alert] = "Not updated"
 		end
-	end
-
-	def save_audio
-		@user = User.find(params[:id])
-    @user.update(params.require(:user).permit(:audio))
 	end
 
 	def slider

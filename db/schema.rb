@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161228033835) do
+ActiveRecord::Schema.define(version: 20161230112846) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "will_id"
@@ -19,6 +19,20 @@ ActiveRecord::Schema.define(version: 20161228033835) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["will_id"], name: "index_accounts_on_will_id"
+  end
+
+  create_table "audios", force: :cascade do |t|
+    t.integer  "will_id"
+    t.boolean  "heir"
+    t.string   "name"
+    t.string   "email"
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["will_id"], name: "index_audios_on_will_id"
   end
 
   create_table "digital_assets", force: :cascade do |t|
@@ -178,10 +192,6 @@ ActiveRecord::Schema.define(version: 20161228033835) do
     t.boolean  "afterlife_service"
     t.boolean  "digital"
     t.boolean  "medical"
-    t.string   "audio_file_name"
-    t.string   "audio_content_type"
-    t.integer  "audio_file_size"
-    t.datetime "audio_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

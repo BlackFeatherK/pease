@@ -8,13 +8,21 @@
 @import "slider";
 @import "medicals";
 @import "users";
+@import "audios";
 
 
 $border-primary-color: #D0D0D0;
 $default-color: #8D8D8D;
 $main-color: #6C7C89;
 $secondary-color: #F8C957;
+$white-color: #F3F4F5;
 
+
+
+
+a:hover {
+  text-decoration: none;
+}
 
 #logo {
   float: left;
@@ -38,7 +46,7 @@ $secondary-color: #F8C957;
   margin-bottom: -50px;
   position: fixed;
   width: 100%;
-  color: #fff;
+  color: $white-color;
   opacity: 0.85;
 
 
@@ -58,13 +66,13 @@ $secondary-color: #F8C957;
   }
 
   a {
-    color: #fff;
+    color: #F3F4F5;
     padding: 30px 10px;
   }
 
-  a:hover {                 
-    color: #ECB031;    
-    text-decoration: none;        
+  a:hover {
+    color: #ECB031;
+    text-decoration: none;
   }
 
   li {
@@ -93,6 +101,24 @@ $secondary-color: #F8C957;
 }
 
 .user {
+
+  position: relative;
+  top: -55px;
+  border-bottom: 1px #EEEEEE solid;
+  
+  h3 {
+    color: #fff;
+    text-shadow: 2px #000;
+  }
+
+  img {
+    float: left;
+    background-color: #fff;
+    margin-right :20px;
+    padding: 2px;
+    border-radius: 50%;
+  }
+
 
   .user_bar {
     position: relative;
@@ -143,7 +169,7 @@ $secondary-color: #F8C957;
 
         .notarization {
           background-color: $main-color;
-          color: #fff;
+          color: $white-color;
           padding: 8px 70px;
           float: right;
           margin-top: 5px;
@@ -171,6 +197,71 @@ $secondary-color: #F8C957;
       }  
     } 
   }
+}
+
+#footer {
+  opacity: 0.85;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #364860;
+
+  a {
+    color: $white-color;
+  }
+
+  a:hover {              
+    color: #ECB031;
+    text-decoration: none;
+  }
+
+  ul {
+    margin-bottom: 0;
+    li {
+      line-height: 50px;
+      cursor: pointer;
+    }
+  }
+
+    
+
+  .word-link {
+    li {
+      padding-right: 40px;
+    }
+  }
+
+  .img-link {
+
+    nav {
+      float: right;
+    }
+
+    ul {
+      margin-top: 3px;
+
+      li {
+        font-size: 20px;
+        color: #6C7C89;
+      }
+
+      li:hover {
+        color: #ECB031;
+      }
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+  }
+}
+
+#devise {
+  padding-bottom: 110px;
 }
 
   

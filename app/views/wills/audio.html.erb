@@ -1,48 +1,138 @@
-<article>
-  <div class="container text-center">
-    <div class="github-stargazers"></div>
+<div id="<%= controller_name %>">
+  <div id="<%= action_name %>">
+    <div class="container">
+          <%= form_for @audio , :url => save_audio_will_path(@will) do |f| %>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+            <div class="word-for">
+              <h2>送給愛的人們一段話</h2>
+              <p>你想留給誰最後一段話？</p>
+              <div class="row people">
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :heir , 'true' %>
+                    <label class="audio_heir_true" for="audio_heir_true">
+                      <div class="choose-type">有</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :heir , 'false' %>
+                    <label class="audio_heir_false" for="audio_heir_false">
+                       <div class="choose-type">沒有</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="person">
+                <div class="form-group">
+                  <%= f.label '姓名' %>
+                  <%= f.text_field :name , :class => 'form-control text-center' , placeholder: "請輸入您想留的人名字" %>
+                </div>
+                <div class="form-group">
+                  <%= f.label '連絡信箱' %>
+                  <%= f.text_field :name , :class => 'form-control text-center' , placeholder: "請輸入對方常用的信箱" %>
+                </div>
+              </div>
+
+
+              <div class="row audio-choose">
+                <p>你想留給他們什麼內容呢？</p>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= radio_button_tag(:choose, "ok") %>
+                    <label class="default-ok" for="choose_ok">
+                      <div class="choose-type">錄音</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= radio_button_tag(:choose, "no") %>
+                    <label class="default-no" for="choose_no">
+                       <div class="choose-type">信件內容</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>   
+        </div>
+      </div>
         
 
-<section class="experiment" style="padding: 5px;">
-    <label for="time-interval">Time Interval (milliseconds):</label>
-    <input type="text" id="time-interval" value="5000">
+      <div class="clearfix"></div>
 
-    <br>
-    <br> recorderType:
+      <article class='text-center'>
+        <div class="github-stargazers"></div>
+          
+        <section class="experiment" style="padding: 5px;">
+          <!-- <label for="time-interval">Time Interval (milliseconds):</label>
+          <input type="text" id="time-interval" value="5000"> -->
 
-    <select id="video-recorderType" style="font-size:22px;vertical-align: middle;margin-right: 5px;">
-        <option value="[Best Available Recorder]">[Best Available Recorder]</option>
-        <option value="MediaRecorder API">MediaRecorder API</option>
-        <option value="WebP encoding into WebM">WebP encoding into WebM</option>
-    </select>
+          <!-- <select id="video-recorderType" style="font-size:22px;vertical-align: middle;margin-right: 5px;">
+              <option value="[Best Available Recorder]">[Best Available Recorder]</option>
+              <option value="MediaRecorder API">MediaRecorder API</option>
+              <option value="WebP encoding into WebM">WebP encoding into WebM</option>
+          </select> -->
+          <div class="video-btn">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-2">
+                <button id="start-recording" class='btn btn-default'>開始錄影</button>  
+              </div>
+              <div class="col-md-2">
+                <button id="stop-recording" disabled class='btn btn-default'>Stop</button>
+                <button id="pause-recording" disabled class='btn btn-default' style='display: none;'>暫停</button>
+                <button id="resume-recording" disabled class='btn btn-default' style='display: none;'>開始</button>
+              </div>
+              <div class="col-md-2">
+                <%= link_to '重新錄音' , new_will_audio_path(@will) , :class => 'btn btn-default btn-restart' %>
+                  
+              </div>
+              <button id="save-recording" disabled class='btn btn-default'>Save</button>
+            </div> 
+          </div>
+            
 
-    <br>
-    <br>
 
-    <button id="start-recording">Start</button>
-    <button id="stop-recording" disabled>Stop</button>
+          <!-- <label for="video-width">Video Width:</label>
+          <input type="text" id="video-width" value="320">
 
-    <button id="pause-recording" disabled>Pause</button>
-    <button id="resume-recording" disabled>Resume</button>
+          <label for="video-height">Video Height:</label>
+          <input type="text" id="video-height" value="240"> -->
+        </section>
+      </article>
+      <div class="clearfix"></div>
+      <section class="experiment video">
+          <div id="videos-container"></div>
+      </section>
 
-    <button id="save-recording" disabled>Save</button>
-
-    <br>
-    <br>
-
-    <label for="video-width">Video Width:</label>
-    <input type="text" id="video-width" value="320">
-
-    <label for="video-height">Video Height:</label>
-    <input type="text" id="video-height" value="240">
-</section>
-
-<section class="experiment">
-    <div id="videos-container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <%= f.file_field :video %>
+            <%= f.submit '儲存' , :class => 'submit' %>
+        </div>
+      </div>
+          <% end %>
     </div>
-</section>
+  </div> 
 </div>
+
+        
+          
+   
+
+
 <script>
+
+  $('.submit').click(function(){
+    document.querySelector('#save-recording').click();
+  });
 
   function captureUserMedia(mediaConstraints, successCallback, errorCallback) {
       navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
@@ -74,26 +164,23 @@
   };
   document.querySelector('#save-recording').onclick = function() {
       this.disabled = true;
-      // mediaRecorder.stream.stop() = function(blob) {
-      //   var formData = new FormData();
-
-      //   formData.append('user[audio]' , blob);
-
-      //   var request = new XMLHttpRequest();
-      //   request.open('PATCH' , 'http://localhost:3000/api/users/<%= current_user.id %>')
-      //   request.send(formData);
-      // console.log(mediaRecorder.blobs[0]);
-      // };
       mediaRecorder.save();
-
+      
+      // document.querySelector('#pause-recording').disabled = true;
+      // document.querySelector('#start-recording').disabled = false;
+      // mediaRecorder.stop();
+      // mediaRecorder.stream.stop();
+      
+      
 
       // alert('Drop WebM file on Chrome or Firefox. Both can play entire file. VLC player or other players may not work.');
   };
+
   var mediaRecorder;
   function onMediaSuccess(stream) {
       var video = document.createElement('video');
-      var videoWidth = document.getElementById('video-width').value || 320;
-      var videoHeight = document.getElementById('video-height').value || 240;
+      var videoWidth = 1280; //document.getElementById('video-width').value || 320;
+      var videoHeight = 720;//document.getElementById('video-height').value || 240;
       video = mergeProps(video, {
           controls: true,
           muted: true,
@@ -106,15 +193,15 @@
       videosContainer.appendChild(document.createElement('hr'));
       mediaRecorder = new MediaStreamRecorder(stream);
       mediaRecorder.stream = stream;
-      var recorderType = document.getElementById('video-recorderType').value;
-      if (recorderType === 'MediaRecorder API') {
-          mediaRecorder.recorderType = MediaRecorderWrapper;
-      }
-      if (recorderType === 'WebP encoding into WebM') {
+      var recorderType = 'WebP encoding into WebM';
+      // if (recorderType === 'MediaRecorder API') {
+      //     mediaRecorder.recorderType = MediaRecorderWrapper;
+      // }
+      // if (recorderType === 'WebP encoding into WebM') {
           mediaRecorder.recorderType = WhammyRecorder;
-      }
+      // }
       // don't force any mimeType; use above "recorderType" instead.
-      // mediaRecorder.mimeType = 'video/webm'; // video/webm or video/mp4
+      mediaRecorder.mimeType = 'video/webm'; // video/webm or video/mp4
       mediaRecorder.videoWidth = videoWidth;
       mediaRecorder.videoHeight = videoHeight;
       mediaRecorder.ondataavailable = function(blob) {
@@ -124,10 +211,7 @@
           a.href = URL.createObjectURL(blob);
           videosContainer.appendChild(a);
           videosContainer.appendChild(document.createElement('hr'));
-
-      };
-      mediaRecorder.send = function(blob) {
-
+          $('#audio_video')[0].files[0] = blob;
       };
 
       var timeInterval = 600000;
@@ -160,42 +244,39 @@
   window.onbeforeunload = function() {
       document.querySelector('#start-recording').disabled = false;
   };
+</script>
 
 
-
-
-
-
-
+<script>
   // Last time updated: 2016-08-19 11:58:57 AM UTC
 
-// links:
-// Open-Sourced: https://github.com/streamproc/MediaStreamRecorder
-// https://cdn.WebRTC-Experiment.com/MediaStreamRecorder.js
-// https://www.WebRTC-Experiment.com/MediaStreamRecorder.js
-// npm install msr
+  // links:
+  // Open-Sourced: https://github.com/streamproc/MediaStreamRecorder
+  // https://cdn.WebRTC-Experiment.com/MediaStreamRecorder.js
+  // https://www.WebRTC-Experiment.com/MediaStreamRecorder.js
+  // npm install msr
 
-//------------------------------------
+  //------------------------------------
 
-// Browsers Support::
-// Chrome (all versions) [ audio/video separately ]
-// Firefox ( >= 29 ) [ audio/video in single webm/mp4 container or only audio in ogg ]
-// Opera (all versions) [ same as chrome ]
-// Android (Chrome) [ only video ]
-// Android (Opera) [ only video ]
-// Android (Firefox) [ only video ]
-// Microsoft Edge (Only Audio & Gif)
+  // Browsers Support::
+  // Chrome (all versions) [ audio/video separately ]
+  // Firefox ( >= 29 ) [ audio/video in single webm/mp4 container or only audio in ogg ]
+  // Opera (all versions) [ same as chrome ]
+  // Android (Chrome) [ only video ]
+  // Android (Opera) [ only video ]
+  // Android (Firefox) [ only video ]
+  // Microsoft Edge (Only Audio & Gif)
 
-//------------------------------------
-// Muaz Khan     - www.MuazKhan.com
-// MIT License   - www.WebRTC-Experiment.com/licence
-//------------------------------------
+  //------------------------------------
+  // Muaz Khan     - www.MuazKhan.com
+  // MIT License   - www.WebRTC-Experiment.com/licence
+  //------------------------------------
 
-// ______________________
-// MediaStreamRecorder.js
+  // ______________________
+  // MediaStreamRecorder.js
 
-function MediaStreamRecorder(mediaStream) {
-    if (!mediaStream) {
+  function MediaStreamRecorder(mediaStream) {
+      if (!mediaStream) {
         throw 'MediaStream is mandatory.';
     }
 
@@ -644,6 +725,7 @@ function dropFirstFrame(arr) {
  * @see {@link https://github.com/muaz-khan/RecordRTC|RecordRTC Source Code}
  */
 function invokeSaveAsDialog(file, fileName) {
+
     if (!file) {
         throw 'Blob object is required.';
     }
@@ -669,32 +751,40 @@ function invokeSaveAsDialog(file, fileName) {
     } else if (typeof navigator.msSaveBlob !== 'undefined') {
         return navigator.msSaveBlob(file, fileFullName);
     }
+ 
+    // var formData = new FormData();
 
-    var hyperlink = document.createElement('a');
-    hyperlink.href = URL.createObjectURL(file);
-    hyperlink.text = fileFullName
-    hyperlink.target = '_blank';
-    hyperlink.download = fileFullName;
+    // formData.append('audio[video]' , file);
+
+    // var request = new XMLHttpRequest();
+    // request.open('POST' , 'http://localhost:3000/wills/<%= current_user.will.id %>/save_audio')
+    // request.send(formData);
+
+    // var hyperlink = document.createElement('a');
+    // hyperlink.href = URL.createObjectURL(file);
+    // hyperlink.text = fileFullName
+    // hyperlink.target = '_blank';
+    // hyperlink.download = fileFullName;
 
 
-    if (!!navigator.mozGetUserMedia) {
-        hyperlink.onclick = function() {
-            (document.body || document.documentElement).removeChild(hyperlink);
-        };
-        (document.body || document.documentElement).appendChild(hyperlink);
-    }
+    // if (!!navigator.mozGetUserMedia) {
+    //     hyperlink.onclick = function() {
+    //         (document.body || document.documentElement).removeChild(hyperlink);
+    //     };
+    //     (document.body || document.documentElement).appendChild(hyperlink);
+    // }
 
-    var evt = new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true
-    });
+    // var evt = new MouseEvent('click', {
+    //     view: window,
+    //     bubbles: true,
+    //     cancelable: true
+    // });
 
-    hyperlink.dispatchEvent(evt);
+    // hyperlink.dispatchEvent(evt);
 
-    if (!navigator.mozGetUserMedia) {
-        URL.revokeObjectURL(hyperlink.href);
-    }
+    // if (!navigator.mozGetUserMedia) {
+    //     URL.revokeObjectURL(hyperlink.href);
+    // }
 }
 
 function bytesToSize(bytes) {
@@ -2417,3 +2507,4 @@ if (typeof define === 'function' && define.amd) {
 </script>
 
        
+  
