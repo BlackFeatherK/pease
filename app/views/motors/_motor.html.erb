@@ -1,7 +1,7 @@
 <%= f.nested_fields_for :motors do |motor| %>
   <div class="col-md-12 form-group">
-    <%= motor.label "哪一家銀行" %>
-    <%= motor.text_field :number , :class => 'form-control text-center' , placeholder: "請輸入銀行名稱" %>
+    <%= motor.label "車牌號碼" %>
+    <%= motor.text_field :number , :class => 'form-control text-center' , placeholder: "請輸入您的車牌號碼" %>
   </div>
   <div class="form-group col-md-12 form-heir">
     <%= label_tag "資產指定給誰" %> <br>

@@ -21,9 +21,7 @@ Rails.application.routes.draw do
         resources :audios
         member do
           get :preview
-          get :audio
           get :words
-          post :save_audio
         end
       end 
 
