@@ -519,7 +519,7 @@ $white-color: #F3F4F5;
 
   #words {
     padding-top: 40px;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     
     .container {
       border-radius: 5px;
@@ -528,12 +528,13 @@ $white-color: #F3F4F5;
     .title {
     
       h3 {
-        margin-top: 60px;
+        margin-top: 30px;
         color: #63717D;
       }
 
       p {
         color: $border-primary-color;
+        margin-bottom: 20px;
         font-size: 20px;
       }
       

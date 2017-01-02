@@ -12,10 +12,14 @@ class AudiosController < ApplicationController
     @audio = @will.audios.create
   end
 
+  def show
+    @audios = @will.audios
+  end
+
   def update
     @audio = @will.audios.find(params[:id])
     if @audio.update(params_audio)
-      redirect_to words_will_path(@will)
+      redirect_to will_audio_path(@will)
     else
       render :new
     end
