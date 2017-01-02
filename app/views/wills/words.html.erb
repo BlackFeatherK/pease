@@ -19,26 +19,26 @@
       <div class="people_image_paragraph">
         <div class="col-md-4">
           <div class="text-center person">
-            <%= image_tag("Avatar.png", :alt => "" , :class => 'img-circle'  ) %>
+            <%= image_tag("last_words_man1.png", :alt => "" , :class => 'img-circle'  ) %>
           </div>
           <div class="border-radius">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde vel reprehenderit ullam eligendi distinctio optio est, rerum cumque quam magnam expedita dignissimos nobis facilis tenetur repellat ipsam pariatur, dolor sit!</p>
+            <p>親愛的大家，謝謝你們曾經的陪伴讓我覺得很開心、也很幸福，我依然還存在你們的心中不曾消失，只要每當你們想起我，我一直都在不曾離去。</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="text-center person">
-            <%= image_tag("Avatar.png", :alt => "" , :class => 'img-circle' ) %>
+            <%= image_tag("last_words_man2.png", :alt => "" , :class => 'img-circle' ) %>
           </div>
           <div class="border-radius">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde vel reprehenderit ullam eligendi distinctio optio est, rerum cumque quam magnam expedita dignissimos nobis facilis tenetur repellat ipsam pariatur, dolor sit!</p>
+            <p>嘿！guys~記得每年都要想起我，每天都要開開心心，想想曾經我們一起瘋過的那段美好時光，別忘了我曾經與你們同在！</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="text-center person">
-            <%= image_tag("Avatar.png", :alt => "" , :class => 'img-circle' ) %>
+            <%= image_tag("last_words_man3.png", :alt => "" , :class => 'img-circle' ) %>
           </div>
           <div class="border-radius">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde vel reprehenderit ullam eligendi distinctio optio est, rerum cumque quam magnam expedita dignissimos nobis facilis tenetur repellat ipsam pariatur, dolor sit!</p>
+            <p>平常的我不太常表達想法，但我內心一直都很感激每位曾幫助過我的人、每位善良的人，我的人生有你們變得更加美好，要記得，連我的份一起好好過生活下去。</p>
           </div>
         </div>
       </div>
@@ -49,16 +49,17 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-body text-center">
-            <%= image_tag("hover_money.png", :alt => "" , :class => 'img-circle'  ) %>
+            <%= image_tag("hover_record.png", :alt => "" , :class => 'img-circle'  ) %>
             <h4>送給愛的人們一段話</h4>
             <p>請安心留下你想對某個人說的話，我們會在適合的時間點幫你送他</p> 
           </div>
           <div class="modal-footer">
             <div class="row">
-              <div class="col-md-6 col-sm-12 modal-btn">
+              <div class="col-md-2"></div>
+              <div class="col-md-4 col-sm-12 modal-btn">
                 <button type="button" class="border-radius close" data-dismiss="modal">暫緩</button>
               </div>
-              <div class="col-md-6 col-sm-12 modal-btn">
+              <div class="col-md-4 col-sm-12 modal-btn">
                 <%= link_to '立即開始' , new_will_audio_path(current_user.will.id) , :class => "border-radius save" ,  data: { turbolinks: 'false' }%>
               </div>
             </div>

@@ -12,10 +12,9 @@ $(document).ready(function(){
   $('.next').hide()
 
   $('#choose_ok').click(function(){
-    $('.wish').show();
+    $('.wish').slideDown(1000);
     $('.wish-select').hide();
     $('.wish-new').stop().slideDown(1000);
-    scorll();
   });
 
   $('#choose_no').click(function(){
@@ -23,7 +22,6 @@ $(document).ready(function(){
     $('.wish-select').stop().slideUp(1000);
     $('.wish').stop().slideUp();
     $('.wish-new').hide();
-    scorll();
   });
 
   $('#wish_stock').click(function(){
@@ -72,6 +70,10 @@ $(document).ready(function(){
     $('.wish-other').stop().slideDown(800, function(){
       $('.next').show();
     });
+  });
+
+  $(document).on('focus', '.heir-number', function(){
+    $(this).val('%');
   });
 
   $(document).on("click", "input[type=checkbox]", function () {

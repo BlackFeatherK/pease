@@ -5,39 +5,38 @@
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
-
-              <div class="word-for">
-                <h2>送給愛的人們一段話</h2>
-                <p>你想留給誰最後一段話？</p>
-                <div class="row people">
-                  <div class="col-md-6 col-sm-6">
-                    <div class="choose">
-                      <%= f.radio_button :heir , true %>
-                      <label class="audio_heir_true" for="audio_heir_true">
-                        <div class="choose-type">某個人</div>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                    <div class="choose">
-                      <%= f.radio_button :heir , false %>
-                      <label class="audio_heir_false" for="audio_heir_false">
-                         <div class="choose-type">所有人</div>
-                      </label>
-                    </div>
+            <div class="word-for">
+              <h2>送給愛的人們一段話</h2>
+              <p>你想留給誰最後一段話？</p>
+              <div class="row people">
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :heir , true %>
+                    <label class="audio_heir_true" for="audio_heir_true">
+                      <div class="choose-type">某個人</div>
+                    </label>
                   </div>
                 </div>
-
-                <div class="audio-person">
-                  <div class="form-group">
-                    <%= f.label '姓名' %>
-                    <%= f.text_field :name , :class => 'form-control text-center' , placeholder: "請輸入您想留的人名字" %>
-                  </div>
-                  <div class="form-group">
-                    <%= f.label '連絡信箱' %>
-                    <%= f.email_field :email , :class => 'form-control text-center' , placeholder: "請輸入對方常用的信箱" %>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :heir , false %>
+                    <label class="audio_heir_false" for="audio_heir_false">
+                       <div class="choose-type">所有人</div>
+                    </label>
                   </div>
                 </div>
+              </div>
+
+              <div class="audio-person">
+                <div class="form-group">
+                  <%= f.label '姓名' %>
+                  <%= f.text_field :name , :class => 'form-control text-center' , placeholder: "請輸入您想留的人名字" %>
+                </div>
+                <div class="form-group">
+                  <%= f.label '連絡信箱' %>
+                  <%= f.email_field :email , :class => 'form-control text-center' , placeholder: "請輸入對方常用的信箱" %>
+                </div>
+              </div>
 
 
                 <div class="row audio-choose">
@@ -125,7 +124,7 @@
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
-              <%= f.submit '儲存' , :class => 'submit' %>
+              <%= f.submit '儲存' , :class => 'submit audio-submit' %>
             <% end %>
           </div>
         </div>

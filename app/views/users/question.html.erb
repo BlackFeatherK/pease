@@ -1,115 +1,112 @@
 <div id="<%= controller_name %>">
   <div id="<%= action_name %>">
-    <div class="five_question container2 text-center">
-      <%= form_for @user , :url => save_question_user_path(@user) , :method => :post do |f| %>
-        <h2>個人資料</h2>
-        <div class="row tangible_asset">
-          <p>我擁有實體現金、車子或不動產等...有形資產</p>
-          <div class="container2">
-            <div class="col-md-6 col-sm-6">
-              <div class="choose">
-                <%= f.radio_button :tangible_asset , 'true' %>
-                <label class="user_tangible_asset_true" for="user_tangible_asset_true">
-                  <div class="choose-type">有</div>
-                </label>
+    <div class="container">
+      <div class="five_question text-center">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <%= form_for @user , :url => save_question_user_path(@user) , :method => :post do |f| %>
+              <h2>個人資料</h2>
+              <div class="row tangible_asset">
+                <p>我擁有實體現金、車子或不動產等...有形資產</p>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :tangible_asset , 'true' %>
+                    <label class="user_tangible_asset_true" for="user_tangible_asset_true">
+                      <div class="choose-type">有</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :tangible_asset , 'false' %>
+                    <label class="user_tangible_asset_false" for="user_tangible_asset_false">
+                       <div class="choose-type">沒有</div>
+                    </label>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="choose">
-                <%= f.radio_button :tangible_asset , 'false' %>
-                <label class="user_tangible_asset_false" for="user_tangible_asset_false">
-                   <div class="choose-type">沒有</div>
-                </label>
+              <div class="row intangible_asset">
+                <p>我目前持有公司的股份、智慧財產項目</p>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :intangible_asset , 'true' %>
+                    <label class="user_intangible_asset_true" for="user_intangible_asset_true">
+                      <div class="choose-type">有</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :intangible_asset , 'false' %>
+                    <label class="user_intangible_asset_false" for="user_intangible_asset_false">
+                       <div class="choose-type">沒有</div>
+                    </label>
+                  </div>
+                </div>
               </div>
-            </div>
+              <div class="row personal_item">
+                <p>我擁有一些特殊收藏或物品，希望可以事先指定要送給誰</p>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :personal_item , 'true' %>
+                    <label class="user_personal_item_true" for="user_personal_item_true">
+                      <div class="choose-type">有</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :personal_item , 'false' %>
+                    <label class="user_personal_item_false" for="user_personal_item_false">
+                       <div class="choose-type">沒有</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row afterlife_service">
+                <p>我希望在離開人世後，能辦一場屬於我自己風格的告別式</p>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :afterlife_service , 'true' %>
+                    <label class="user_afterlife_service_true" for="user_afterlife_service_true">
+                      <div class="choose-type">有</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :afterlife_service , 'false' %>
+                    <label class="user_afterlife_service_false" for="user_afterlife_service_false">
+                       <div class="choose-type">沒有</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row digital">
+                <p>我希望可以事先決定所有網路服務的帳號、資料要如何處理</p>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :digital , 'true' %>
+                    <label class="user_digital_true" for="user_digital_true">
+                      <div class="choose-type">有</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="choose">
+                    <%= f.radio_button :digital , 'false' %>
+                    <label class="user_digital_false" for="user_digital_false">
+                       <div class="choose-type">沒有</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <%= f.submit '下一步' , :class => 'submit question-submit' %>
+            <% end %>
           </div>
-        </div>
-        <div class="row intangible_asset">
-          <p>我目前持有公司的股份、智慧財產項目</p>
-          <div class="container2">
-            <div class="col-md-6 col-sm-6">
-              <div class="choose">
-                <%= f.radio_button :intangible_asset , 'true' %>
-                <label class="user_intangible_asset_true" for="user_intangible_asset_true">
-                  <div class="choose-type">有</div>
-                </label>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="choose">
-                <%= f.radio_button :intangible_asset , 'false' %>
-                <label class="user_intangible_asset_false" for="user_intangible_asset_false">
-                   <div class="choose-type">沒有</div>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row personal_item">
-          <p>我擁有一些特殊收藏或物品，希望可以事先指定要送給誰</p>
-          <div class="container2">
-            <div class="col-md-6 col-sm-6">
-              <div class="choose">
-                <%= f.radio_button :personal_item , 'true' %>
-                <label class="user_personal_item_true" for="user_personal_item_true">
-                  <div class="choose-type">有</div>
-                </label>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="choose">
-                <%= f.radio_button :personal_item , 'false' %>
-                <label class="user_personal_item_false" for="user_personal_item_false">
-                   <div class="choose-type">沒有</div>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row afterlife_service">
-          <p>我希望在離開人世後，能辦一場屬於我自己風格的告別式</p>
-          <div class="container2">
-            <div class="col-md-6 col-sm-6">
-              <div class="choose">
-                <%= f.radio_button :afterlife_service , 'true' %>
-                <label class="user_afterlife_service_true" for="user_afterlife_service_true">
-                  <div class="choose-type">有</div>
-                </label>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="choose">
-                <%= f.radio_button :afterlife_service , 'false' %>
-                <label class="user_afterlife_service_false" for="user_afterlife_service_false">
-                   <div class="choose-type">沒有</div>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row digital">
-          <p>我希望可以事先決定所有網路服務的帳號、資料要如何處理</p>
-          <div class="container2">
-            <div class="col-md-6 col-sm-6">
-              <div class="choose">
-                <%= f.radio_button :digital , 'true' %>
-                <label class="user_digital_true" for="user_digital_true">
-                  <div class="choose-type">有</div>
-                </label>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="choose">
-                <%= f.radio_button :digital , 'false' %>
-                <label class="user_digital_false" for="user_digital_false">
-                   <div class="choose-type">沒有</div>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <%= f.submit '下一步' , :class => 'submit question-submit' %>
-      <% end %>
+        </div> 
+      </div>
     </div>
   </div>
 </div>

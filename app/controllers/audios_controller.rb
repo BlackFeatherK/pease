@@ -4,10 +4,11 @@ class AudiosController < ApplicationController
 
   def new
     @will.audios.each do |audio|
-      audio.name == nil
-      audio.destroy
+      if audio.heir == true
+        audio.name == nil
+        audio.destroy
+      end
     end
-
     @audio = @will.audios.create
   end
 

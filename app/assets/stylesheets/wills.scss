@@ -522,7 +522,6 @@ $white-color: #F3F4F5;
     padding-bottom: 100px;
     
     .container {
-
       border-radius: 5px;
     }
 
@@ -541,7 +540,7 @@ $white-color: #F3F4F5;
     }
     
     .words_image {
-      background: image-url("writing-with-a-graphic-pen-picjumbo-com.png") no-repeat;
+      background: image-url("last_words_bg.png") no-repeat;
       background-size: cover;
       background-position: 50% 70%;
       padding: 100px 0;
@@ -573,6 +572,10 @@ $white-color: #F3F4F5;
 
     .people_image_paragraph {
 
+      img {
+        width: 140px;
+      }
+
       .person {
         
         margin-bottom: 20px;
@@ -587,7 +590,9 @@ $white-color: #F3F4F5;
         margin-bottom: 100px;
 
         p {
-          padding: 20px;
+          overflow-y: scroll;
+          height: 140px;
+          padding: 20px 15px;
         }
       }
     }
@@ -598,6 +603,7 @@ $white-color: #F3F4F5;
 
       .modal-body {
         img {
+          margin: 20px 0;
           width: 10rem;
           height: 10rem;
         }
@@ -614,7 +620,7 @@ $white-color: #F3F4F5;
 
           .border-radius {
             padding: 5px;
-            width: 80%;
+            width: 100%;
             font-size: 16px;
             font-weight: normal;
             line-height: 1.5;
@@ -630,6 +636,7 @@ $white-color: #F3F4F5;
 
           .save {
             background-color: $secondary-color;
+            border-color: $secondary-color;
             color: #61717E;
           }
 
