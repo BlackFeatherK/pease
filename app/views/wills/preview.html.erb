@@ -1,130 +1,134 @@
 <div id="<%= controller_name %>">
-	<div id="<%= action_name %>", class="container text-center">
-		<div class="">
-			<p>
-				本人 <%= @user.name %>, <%= @gender %>, 民國<%= @user.birthday%>生, 身分證號碼 [xxxx]， 茲依民國民法相關要求，特此遺囑如下
-			</p>
-			<% if @properties.present? || @jewelries.present? || @motors.present?%>	
-				<h4>
-					不動產部分
-				</h4>
-			<%end%>
-			<% if @properties.present? %>
-				<% @properties.each do |property| %>
+	<div id="<%= action_name %>">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
 					<p>
-						本人遺產中，位於 <%= property.address %>的物業, 由 <% property.heirs.each do |heir| %>
-							<%= heir.heir_type %><%= heir.name %>
+						本人 <%= @user.name %>, <%= @gender %>, 民國<%= @user.birthday%>生, 身分證號碼 [xxxx]， 茲依民國民法相關要求，特此遺囑如下
+					</p>
+					<% if @properties.present? || @jewelries.present? || @motors.present?%>	
+						<h3><%= image_tag("icon_line.png", :alt => "") %>不動產部分</h3>
+					<%end%>
+					<% if @properties.present? %>
+						<% @properties.each do |property| %>
+							<p>
+								本人遺產中，位於 <%= property.address %>的物業, 由 <% property.heirs.each do |heir| %>
+									<%= heir.heir_type %><%= heir.name %>
+								<% end %>
+								繼承。
+							</p>
 						<% end %>
-						繼承。
-					</p>
-				<% end %>
-			<% end %>
-
-			<% if @jewelries.present? %>
-				<% @jewelries.each do |jewelery| %>
-					<p>
-						本人遺產中， <%= jewelery.description %>的首飾, 由 <% jewelery.heirs.each do |heir| %>
-							<%= heir.heir_type %><%= heir.name %> 
-						<% end %>
-					繼承。
-					</p>
-				<% end %>
-			<% end %>
-
-			<% if @motors.present? %>
-				<% @motors.each do |motor| %>
-					<p>
-							本人遺產中， <%= motor.number %>, 由 <% motor.heirs.each do |heir| %>
-								<%= heir.heir_type %><%= heir.name %> 繼承。
-					<% end %>					
-					</p>
-				<% end %>
-			<% end %>
-			<% if @stock_portfolios || @accounts %>
-					<h4>動產部分</h4>
-			<% end %>	
-
-			<% if @stock_portfolios.present? %>
-
-				<% @stock_portfolios.each do |stock| %>
-					<p>
-						本人遺產中，於 <%= stock.bank %>的股票帳號,  由 <% stock.heirs.each do |heir| %>
-							<%= heir.heir_type %><%= heir.name %> 繼承。
 					<% end %>
 
-					</p>
-				<% end %>
-			<% end %>
-
-
-			<% if @accounts.present? %>
-				<% @accounts.each do |account| %>
-					<p>
-						本人遺產中，於 <%= account.bank %>銀行／證券行 的 <%= account.account_type %>帳號，包括本金和利息,  由 <% account.heirs.each do |heir| %>
-							<%= heir.heir_type %><%= heir.name %>繼承。
+					<% if @jewelries.present? %>
+						<% @jewelries.each do |jewelery| %>
+							<p>
+								本人遺產中， <%= jewelery.description %>的首飾, 由 <% jewelery.heirs.each do |heir| %>
+									<%= heir.heir_type %><%= heir.name %> 
+								<% end %>
+							繼承。
+							</p>
 						<% end %>
+					<% end %>
 
-					</p>
-				<% end %>
-			<% end %>
-		
+					<% if @motors.present? %>
+						<% @motors.each do |motor| %>
+							<p>
+									本人遺產中， <%= motor.number %>, 由 <% motor.heirs.each do |heir| %>
+										<%= heir.heir_type %><%= heir.name %> 繼承。
+							<% end %>					
+							</p>
+						<% end %>
+					<% end %>
+					<% if @stock_portfolios || @accounts %>
+							<h3><%= image_tag("icon_line.png", :alt => "") %>動產部分</h3>
+					<% end %>	
 
-			<% if @will.funerals.size != 0 %>
-				<div class="funeral">
-					<h4>葬禮部分</h4>
-					<p>
-					  <%= funeral_preference_text(@funeral) %>
-					</p>
-					<p>
-						<%= body_arrangement_preference(@funeral)%>
-					</p>
-					<p>
-						<%= burial_site(@funeral) %>
-					</p>
-					<p>
-						本人還有以下請求
-						 <%= @funeral.other_arrangement %>
-					</p>
+					<% if @stock_portfolios.present? %>
+
+						<% @stock_portfolios.each do |stock| %>
+							<p>
+								本人遺產中，於 <%= stock.bank %>的股票帳號,  由 <% stock.heirs.each do |heir| %>
+									<%= heir.heir_type %><%= heir.name %> 繼承。
+							<% end %>
+
+							</p>
+						<% end %>
+					<% end %>
+
+
+					<% if @accounts.present? %>
+						<% @accounts.each do |account| %>
+							<p>
+								本人遺產中，於 <%= account.bank %>銀行／證券行 的 <%= account.account_type %>帳號，包括本金和利息,  由 <% account.heirs.each do |heir| %>
+									<%= heir.heir_type %><%= heir.name %>繼承。
+								<% end %>
+
+							</p>
+						<% end %>
+					<% end %>
+				
+
+					<% if @will.funerals.size != 0 %>
+						<div class="funeral">
+							<h3><%= image_tag("icon_line.png", :alt => "") %>葬禮部分</h3>
+							<p>
+							  <%= funeral_preference_text(@funeral) %>
+							</p>
+							<p>
+								<%= body_arrangement_preference(@funeral)%>
+							</p>
+							<p>
+								<%= burial_site(@funeral) %>
+							</p>
+							<p>
+								本人還有以下請求
+								 <%= @funeral.other_arrangement %>
+							</p>
+						</div>
+					<% end %>
+					<div class="medical">	
+						<p>
+							<% if @medical.try(:futile_medical) %>
+								假若本人的病情已到達末期，而且根據主治醫師的意見更多醫療行為都無助於病患改善其病情，本人願意選擇安寧緩和醫療，放棄無效的醫療行為。			
+							<% end %>
+						</p>
+						<p>
+							<% if @medical.try(:organ_donation) %>
+							本人已簽署器官捐贈同意書並加註於健保IC卡內，希望於生命終結之時，可以捐贈可用器官予其他有需要的病人。
+							<% end %>
+						</p>
+					</div>
+					<div class="sample">
+						<p>	
+							本人名下的其他遺產於扣除所有遺贈、稅捐、 喪葬和規費後，全由繼承人平均繼承。
+							此遺囑可由本人以書面撤回。
+						</p>
+						<p>
+							本遺囑一式兩份，由本人保管一份，其餘由遺囑執行人保管，並據以辦理繼承相關事項。
+						</p>
+					</div>
+					<div class="signature">
+						<p>
+							立遺囑人: <%= @user.name %>
+						</p>
+						<p>
+							立遺囑人簽署： 
+						</p>
+						<p>
+							中華民國<%= Time.new.year %>年<%= Time.new.month %>月<%= Time.new.day %>日
+							<br>
+							※其他交代：器官捐贈、保險箱、遺囑存放處、身後奉獻、是否委託律師
+						</p>
+					</div>
+				
+					<div class="pdf text-center">
+						<%= link_to "下載預覽遺囑", preview_will_path(format: "pdf"), id: "pdf", :class => 'submit' %>
+					</div>
 				</div>
-			<% end %>
-			<div class="medical">	
-				<p>
-					<% if @medical.try(:futile_medical) %>
-						假若本人的病情已到達末期，而且根據主治醫師的意見更多醫療行為都無助於病患改善其病情，本人願意選擇安寧緩和醫療，放棄無效的醫療行為。			
-					<% end %>
-				</p>
-				<p>
-					<% if @medical.try(:organ_donation) %>
-					本人已簽署器官捐贈同意書並加註於健保IC卡內，希望於生命終結之時，可以捐贈可用器官予其他有需要的病人。
-					<% end %>
-				</p>
 			</div>
-			<div class="sample">
-				<p>	
-					本人名下的其他遺產於扣除所有遺贈、稅捐、 喪葬和規費後，全由繼承人平均繼承。
-					此遺囑可由本人以書面撤回。
-				</p>
-				<p>
-					本遺囑一式兩份，由本人保管一份，其餘由遺囑執行人保管，並據以辦理繼承相關事項。
-				</p>
-			</div>
-			<div class="signature" style="text-align: left">
-				<p>
-					立遺囑人: <%= @user.name %>
-				</p>
-				<p>
-					立遺囑人簽署： 
-				</p>
-				<p>
-					中華民國<%= Time.new.year %>年<%= Time.new.month %>月<%= Time.new.day %>日
-					<br>
-					※其他交代：器官捐贈、保險箱、遺囑存放處、身後奉獻、是否委託律師
-				</p>
-			</div>
-		
-			<div class="pdf text-center">
-				<%= link_to "下載預覽遺囑", preview_will_path(format: "pdf"), id: "pdf" %>
-			</div>
+					
 		</div>
 	</div>
 </div>
