@@ -29,6 +29,7 @@ $white-color: #F3F4F5;
 #wills {
   background-color: #F9F9F9;
   margin-top: -55px;
+  padding-top: 40px;
 
   #index {
     
@@ -651,8 +652,17 @@ $white-color: #F3F4F5;
 
     
   #preview {
+    width: 900px;
+    padding-bottom: 100px;
+    background-color: #fff;
+    padding-bottom: 40px;
+    border-radius: 5px;
+    h4 {
+      font-size: 2em;
+    }
     p {
       text-align: left;
+      font-size: 1.5em;
     }
     .pdf {
       width: 100px;
