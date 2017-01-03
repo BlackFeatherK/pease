@@ -37,7 +37,7 @@
             <% if current_user.try(:will) %>
               <li><%= link_to '預立遺囑', preview_will_path(current_user.will.id) %></li>
               <li><%= link_to '預立遺言' , words_will_path(current_user.will.id) %></li>
-              <li><a href="">預約律師</a></li>
+              <li><%= link_to "預約律師", lawyer_user_path(current_user) %></li>
               <li><a href="">合作夥伴</a></li>
               <li><%= image_tag("AppointmentReminders000000100.png", :alt => "") %></li>
               <li>

@@ -4,7 +4,13 @@ $main-color: #6C7C89;
 $secondary-color: #F8C957;
 
 #users {
-
+  #lawyer {
+    img {
+      max-width: 80%;
+      max-height: auto;
+    }
+    padding-bottom: 50px;
+  }
   #suggestion {
     margin-top: -55px;
     padding: 30px 0;

@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       resources :users do
         member do 
           # get :slider
+          get :lawyer
           get :suggestion
           get :question
           post :save_question
