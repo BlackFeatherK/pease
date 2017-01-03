@@ -15,7 +15,7 @@
 						本人 <%= @user.name %>, <%= @gender %>, 民國<%= @user.birthday%>生, 身分證號碼 [xxxx]， 茲依民國民法相關要求，特此遺囑如下
 					</p>
 					<% if @properties.present? || @jewelries.present? || @motors.present?%>	
-						<h3><%= image_tag("icon_line.png", :alt => "") %>不動產部分</h3>
+						<h3>不動產部分</h3>
 					<%end%>
 					<% if @properties.present? %>
 						<% @properties.each do |property| %>
@@ -49,7 +49,7 @@
 						<% end %>
 					<% end %>
 					<% if @stock_portfolios.present? || @accounts.present? %>
-							<h3><%= image_tag("icon_line.png", :alt => "") %>動產部分</h3>
+							<h3>動產部分</h3>
 					<% end %>	
 
 					<% if @stock_portfolios.present? %>
@@ -79,7 +79,7 @@
 
 					<% if @will.funerals.size != 0 %>
 						<div class="funeral">
-							<h3><%= image_tag("icon_line.png", :alt => "") %>葬禮部分</h3>
+							<h3>葬禮部分</h3>
 							<p>
 							  <%= funeral_preference_text(@funeral) %>
 							</p>
