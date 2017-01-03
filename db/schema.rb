@@ -193,6 +193,10 @@ ActiveRecord::Schema.define(version: 20161230112846) do
     t.boolean  "afterlife_service"
     t.boolean  "digital"
     t.boolean  "medical"
+    t.string   "audio_file_name"
+    t.string   "audio_content_type"
+    t.integer  "audio_file_size"
+    t.datetime "audio_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
