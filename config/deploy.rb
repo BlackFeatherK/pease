@@ -1,6 +1,6 @@
 `ssh-add` # 注意這是鍵盤左上角的「 `」不是單引號「 '」
 # config valid only for current version of Capistrano
-lock '3.6.1'
+lock '3.7.1'
 
 set :application, 'pease'
 
