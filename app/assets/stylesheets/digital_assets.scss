@@ -61,11 +61,11 @@ $font-color: #8D8D8D;
 			}
 		}
 		label.preference-yes {
-			background:url("default_ok.png") no-repeat;
+			background:image-url("default_ok.png") no-repeat;
 			background-position: 50% 40%;
 		}
 		label.preference-no {
-			background:url("default_no.png") no-repeat;
+			background:image-url("default_no.png") no-repeat;
 			background-position: 50% 40%;
 		}
 
@@ -75,11 +75,11 @@ $font-color: #8D8D8D;
 			border: 1px solid $secondary-color;
 		}
 		input[type=radio]:checked + label.preference-yes {
-			background:url("hover_ok.png") no-repeat;
+			background:image-url("hover_ok.png") no-repeat;
 			background-position: 50% 40%;
 		}
 		input[type=radio]:checked + label.preference-no {
-			background:url("hover_no.png") no-repeat;
+			background:image-url("hover_no.png") no-repeat;
 			background-position: 50% 40%;
 		}
 	}
@@ -107,15 +107,15 @@ $font-color: #8D8D8D;
 			}
 		}
 		label.preference-yes {
-			background:url("default_ok.png") no-repeat;
+			background:image-url("default_ok.png") no-repeat;
 			background-position: 50% 40%;
 		}
 		label.preference-no {
-			background:url("default_no.png") no-repeat;
+			background:image-url("default_no.png") no-repeat;
 			background-position: 50% 40%;
 		}
 		label.preference-family {
-			background:url("default_family.png") no-repeat;
+			background:image-url("default_family.png") no-repeat;
 			background-position: 50% 40%;
 		}
 
@@ -124,15 +124,15 @@ $font-color: #8D8D8D;
 			border: 1px solid $secondary-color;
 		}
 		input[type=radio]:checked + label.preference-yes {
-			background:url("hover_ok.png") no-repeat;
+			background:image-url("hover_ok.png") no-repeat;
 			background-position: 50% 40%;
 		}
 		input[type=radio]:checked + label.preference-no {
-			background:url("hover_no.png") no-repeat;
+			background:image-url("hover_no.png") no-repeat;
 			background-position: 50% 40%;
 		}
 		input[type=radio]:checked + label.preference-family {
-			background:url("hover_family.png") no-repeat;
+			background:image-url("hover_family.png") no-repeat;
 			background-position: 50% 40%;
 		}
 	}

@@ -64,11 +64,11 @@ h1, h2, h3, h4, h5 {
 				display: none;
 			}
 			input[type=radio]:checked + label.male-label {
-				background:url("hover_male.png") no-repeat;
+				background:image-url("hover_male.png") no-repeat;
 				background-position: 50% 40%;
 		}
 			input[type=radio]:checked + label {
-				background:url("hover_female.png") no-repeat;
+				background:image-url("hover_female.png") no-repeat;
 				background-position: 50% 40%;
 			}
 			.gender-type {

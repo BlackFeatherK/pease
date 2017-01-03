@@ -216,7 +216,7 @@ $white-color: #F3F4F5;
       .default-ok {
         width: 100%;
         height: 100%;
-        background-image: url("default_ok.png");
+        background-image: image-url("default_ok.png");
         background-repeat:  no-repeat;
         background-position: 50% 40%;
         color: $default-color;
@@ -234,7 +234,7 @@ $white-color: #F3F4F5;
       }
 
       input[type=radio]:checked + label.default-ok {
-        background:url("hover_ok.png") no-repeat;
+        background:image-url("hover_ok.png") no-repeat;
         background-position: 50% 40%;
 
         .choose-type {
@@ -245,7 +245,7 @@ $white-color: #F3F4F5;
       .default-no {
         width: 100%;
         height: 100%;
-        background-image: url("default_no.png");
+        background-image: image-url("default_no.png");
         background-repeat:  no-repeat;
         background-position: 50% 40%;
         color: $default-color;
@@ -256,7 +256,7 @@ $white-color: #F3F4F5;
       }
 
       input[type=radio]:checked + label.default-no {
-        background:url("hover_no.png") no-repeat;
+        background:image-url("hover_no.png") no-repeat;
         background-position: 50% 40%;
 
         .choose-type {
@@ -309,13 +309,13 @@ $white-color: #F3F4F5;
       }
 
       .property {
-        background-image: url("default_house.png");
+        background-image: image-url("default_house.png");
         background-repeat: no-repeat;
         background-position: 50% 40%;
       }
 
       input[type=radio]:checked + label.property {
-        background:url("hover_house.png") no-repeat;
+        background:image-url("hover_house.png") no-repeat;
         background-position: 50% 40%;
         color: $secondary-color;
       }
@@ -328,7 +328,7 @@ $white-color: #F3F4F5;
       }
 
       input[type=radio]:checked + label.stock {
-        background:url("hover_stock.png") no-repeat;
+        background:image-url("hover_stock.png") no-repeat;
         background-position: 50% 40%;
         color: $secondary-color;
       }
@@ -340,7 +340,7 @@ $white-color: #F3F4F5;
       }
 
       input[type=radio]:checked + label.account {
-        background:url("hover_money.png") no-repeat;
+        background:image-url("hover_money.png") no-repeat;
         background-position: 50% 40%;
         color: $secondary-color;
       }
@@ -352,7 +352,7 @@ $white-color: #F3F4F5;
       }
 
       input[type=radio]:checked + label.motor {
-        background:url("hover_car.png") no-repeat;
+        background:image-url("hover_car.png") no-repeat;
         background-position: 50% 40%;
         color: $secondary-color;
       }
@@ -364,7 +364,7 @@ $white-color: #F3F4F5;
       }
 
       input[type=radio]:checked + label.jewelry {
-        background:url("hover_jewelry.png") no-repeat;
+        background:image-url("hover_jewelry.png") no-repeat;
         background-position: 50% 40%;
         color: $secondary-color;
       }
@@ -376,7 +376,7 @@ $white-color: #F3F4F5;
       }
 
       input[type=radio]:checked + label.other {
-        background:url("hover_other.png") no-repeat;
+        background:image-url("hover_other.png") no-repeat;
         background-position: 50% 40%;
         color: $secondary-color;
       }

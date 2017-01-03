@@ -78,18 +78,18 @@ $main-font: PingFangTC-Medium;
 					@extend .form-button;
 				}
 				label.preference-yes {
-					background:url("default_ok.png") no-repeat;
+					background:image-url("default_ok.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				label.preference-no {
-					background:url("default_no.png") no-repeat;
+					background:image-url("default_no.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 
 				}
 				label.preference-family {
-					background:url("default_family.png") no-repeat;
+					background:image-url("default_family.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;					
 				}
@@ -99,17 +99,17 @@ $main-font: PingFangTC-Medium;
 					border: 1px solid $secondary-color;
 				}
 				input[type=radio]:checked + label.preference-yes {
-					background:url("hover_ok.png") no-repeat;
+					background:image-url("hover_ok.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				input[type=radio]:checked + label.preference-no {
-					background:url("hover_no.png") no-repeat;
+					background:image-url("hover_no.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				input[type=radio]:checked + label.preference-family {
-					background:url("hover_family.png") no-repeat;
+					background:image-url("hover_family.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
@@ -125,17 +125,17 @@ $main-font: PingFangTC-Medium;
 					display: none;
 				}
 				label[for="funeral_funeral_service_ids_1"] {
-					background:url("default_cemetery.png") no-repeat;
+					background:image-url("default_cemetery.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				label[for="funeral_funeral_service_ids_2"] {
-					background:url("default_funeral.png") no-repeat;
+					background:image-url("default_funeral.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				label[for="funeral_funeral_service_ids_3"] {
-					background:url("default_memorial.png") no-repeat;
+					background:image-url("default_memorial.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
@@ -144,17 +144,17 @@ $main-font: PingFangTC-Medium;
 					border: 1px solid $secondary-color;
 				}
 				input[type=checkbox]:checked + label[for="funeral_funeral_service_ids_1"] {
-					background:url("hover_cemetery.png") no-repeat;
+					background:image-url("hover_cemetery.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				input[type=checkbox]:checked + label[for="funeral_funeral_service_ids_2"] {
-					background:url("hover_funeral.png") no-repeat;
+					background:image-url("hover_funeral.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				input[type=checkbox]:checked + label[for="funeral_funeral_service_ids_3"] {
-					background:url("hover_memorial.png") no-repeat;
+					background:image-url("hover_memorial.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
@@ -170,23 +170,23 @@ $main-font: PingFangTC-Medium;
 				}
 
 				label.preference-1 {
-					background:url("default_cremation.png") no-repeat;
+					background:image-url("default_cremation.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				label.preference-2 {
-					background:url("default_ground_burial.png") no-repeat;
+					background:image-url("default_ground_burial.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 
 				}
 				label.preference-3 {
-					background:url("default_science.png") no-repeat;
+					background:image-url("default_science.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				label.preference-4 {
-					background:url("default_family.png") no-repeat;
+					background:image-url("default_family.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 
@@ -198,22 +198,22 @@ $main-font: PingFangTC-Medium;
 					border: 1px solid $secondary-color;
 				}
 				input[type=radio]:checked + label.preference-1 {
-					background:url("hover_cremation.png") no-repeat;
+					background:image-url("hover_cremation.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				input[type=radio]:checked + label.preference-2 {
-					background:url("hover_ground_burial.png") no-repeat;
+					background:image-url("hover_ground_burial.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				input[type=radio]:checked + label.preference-3 {
-					background:url("hover_science.png") no-repeat;
+					background:image-url("hover_science.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
 				input[type=radio]:checked + label.preference-4 {
-					background:url("hover_family.png") no-repeat;
+					background:image-url("hover_family.png") no-repeat;
 					background-position: 50% 40%;
 					background-size: 100px;
 				}
@@ -229,22 +229,22 @@ $main-font: PingFangTC-Medium;
 					}
 
 					label.preference-1 {
-						background:url("default_tree.png") no-repeat;
+						background:image-url("default_tree.png") no-repeat;
 						background-position: 50% 40%;
 						background-size: 100px;
 					}
 					label.preference-2 {
-						background:url("default_sea.png") no-repeat;
+						background:image-url("default_sea.png") no-repeat;
 						background-position: 50% 40%;
 						background-size: 100px;
 					}
 					label.preference-3 {
-						background:url("default_tombstone.png") no-repeat;
+						background:image-url("default_tombstone.png") no-repeat;
 						background-position: 50% 40%;
 						background-size: 100px;
 					}
 					label.preference-4 {
-						background:url("default_family.png") no-repeat;
+						background:image-url("default_family.png") no-repeat;
 						background-position: 50% 40%;
 						background-size: 100px;
 					}
@@ -255,22 +255,22 @@ $main-font: PingFangTC-Medium;
 						border: 1px solid $secondary-color;
 					}
 					input[type=radio]:checked + label.preference-1 {
-						background:url("hover_tree.png") no-repeat;
+						background:image-url("hover_tree.png") no-repeat;
 						background-position: 50% 40%;
 						background-size: 100px;
 					}
 					input[type=radio]:checked + label.preference-2 {
-						background:url("hover_sea.png") no-repeat;
+						background:image-url("hover_sea.png") no-repeat;
 						background-position: 50% 40%;
 						background-size: 100px;
 					}
 					input[type=radio]:checked + label.preference-3 {
-						background:url("hover_tombstone.png") no-repeat;
+						background:image-url("hover_tombstone.png") no-repeat;
 						background-position: 50% 40%;
 						background-size: 100px;
 					}
 					input[type=radio]:checked + label.preference-4 {
-						background:url("hover_family.png") no-repeat;
+						background:image-url("hover_family.png") no-repeat;
 						background-position: 50% 40%;
 						background-size: 100px;
 					}

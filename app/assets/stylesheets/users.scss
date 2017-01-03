@@ -69,28 +69,28 @@ $secondary-color: #F8C957;
       }
 
       .afterlife_services {
-        background-image: url("icon_funeral.png");
+        background-image: image-url("icon_funeral.png");
         background-repeat:  no-repeat;
         background-size: 50%;
         background-position: 50% 30%;
       }
 
       .medicals {
-        background-image: url("icon_treatment.png");
+        background-image: image-url("icon_treatment.png");
         background-repeat:  no-repeat;
         background-size: 50%;
         background-position: 50% 30%;
       }
 
       .tangible_assets {
-        background-image: url("icon_tangible_assets.png");
+        background-image: image-url("icon_tangible_assets.png");
         background-repeat:  no-repeat;
         background-size: 50%;
         background-position: 50% 30%;
       }
 
       .digitals {
-        background-image: url("icon_digital.png");
+        background-image: image-url("icon_digital.png");
         background-repeat:  no-repeat;
         background-size: 50%;
         background-position: 50% 30%;
@@ -144,7 +144,7 @@ $secondary-color: #F8C957;
     .user_tangible_asset_true {
       width: 100%;
       height: 100%;
-      background-image: url("default_ok.png");
+      background-image: image-url("default_ok.png");
       background-repeat:  no-repeat;
       background-position: 50% 40%;
       color: $default-color;
@@ -154,7 +154,7 @@ $secondary-color: #F8C957;
     }
 
     input[type=radio]:checked + label.user_tangible_asset_true {
-      background:url("hover_ok.png") no-repeat;
+      background:image-url("hover_ok.png") no-repeat;
       background-position: 50% 40%;
 
       .choose-type {
@@ -165,14 +165,14 @@ $secondary-color: #F8C957;
     .user_tangible_asset_false {
       width: 100%;
       height: 100%;
-      background-image: url("default_no.png");
+      background-image: image-url("default_no.png");
       background-repeat:  no-repeat;
       background-position: 50% 40%;
       color: $default-color;
     }
 
     input[type=radio]:checked + label.user_tangible_asset_false {
-      background:url("hover_no.png") no-repeat;
+      background:image-url("hover_no.png") no-repeat;
       background-position: 50% 40%;
 
       .choose-type {
@@ -183,7 +183,7 @@ $secondary-color: #F8C957;
     .user_intangible_asset_true {
       width: 100%;
       height: 100%;
-      background-image: url("default_ok.png");
+      background-image: image-url("default_ok.png");
       background-repeat:  no-repeat;
       background-position: 50% 40%;
       color: $default-color;
@@ -193,7 +193,7 @@ $secondary-color: #F8C957;
     }
 
     input[type=radio]:checked + label.user_intangible_asset_true {
-      background:url("hover_ok.png") no-repeat;
+      background:image-url("hover_ok.png") no-repeat;
       background-position: 50% 40%;
 
       .choose-type {
@@ -204,14 +204,14 @@ $secondary-color: #F8C957;
     .user_intangible_asset_false {
       width: 100%;
       height: 100%;
-      background-image: url("default_no.png");
+      background-image: image-url("default_no.png");
       background-repeat:  no-repeat;
       background-position: 50% 40%;
       color: $default-color;
     }
 
     input[type=radio]:checked + label.user_intangible_asset_false {
-      background:url("hover_no.png") no-repeat;
+      background:image-url("hover_no.png") no-repeat;
       background-position: 50% 40%;
 
       .choose-type {
@@ -222,7 +222,7 @@ $secondary-color: #F8C957;
     .user_personal_item_true {
       width: 100%;
       height: 100%;
-      background-image: url("default_ok.png");
+      background-image: image-url("default_ok.png");
       background-repeat:  no-repeat;
       background-position: 50% 40%;
       color: $default-color;
@@ -232,7 +232,7 @@ $secondary-color: #F8C957;
     }
 
     input[type=radio]:checked + label.user_personal_item_true {
-      background:url("hover_ok.png") no-repeat;
+      background:image-url("hover_ok.png") no-repeat;
       background-position: 50% 40%;
 
       .choose-type {
@@ -243,14 +243,14 @@ $secondary-color: #F8C957;
     .user_personal_item_false {
       width: 100%;
       height: 100%;
-      background-image: url("default_no.png");
+      background-image: image-url("default_no.png");
       background-repeat:  no-repeat;
       background-position: 50% 40%;
       color: $default-color;
     }
 
     input[type=radio]:checked + label.user_personal_item_false {
-      background:url("hover_no.png") no-repeat;
+      background:image-url("hover_no.png") no-repeat;
       background-position: 50% 40%;
 
       .choose-type {
@@ -262,7 +262,7 @@ $secondary-color: #F8C957;
     .user_afterlife_service_true {
       width: 100%;
       height: 100%;
-      background-image: url("default_ok.png");
+      background-image: image-url("default_ok.png");
       background-repeat:  no-repeat;
       background-position: 50% 40%;
       color: $default-color;
@@ -272,7 +272,7 @@ $secondary-color: #F8C957;
     }
 
     input[type=radio]:checked + label.user_afterlife_service_true {
-      background:url("hover_ok.png") no-repeat;
+      background:image-url("hover_ok.png") no-repeat;
       background-position: 50% 40%;
 
       .choose-type {
@@ -283,14 +283,14 @@ $secondary-color: #F8C957;
     .user_afterlife_service_false {
       width: 100%;
       height: 100%;
-      background-image: url("default_no.png");
+      background-image: image-url("default_no.png");
       background-repeat:  no-repeat;
       background-position: 50% 40%;
       color: $default-color;
     }
 
     input[type=radio]:checked + label.user_afterlife_service_false {
-      background:url("hover_no.png") no-repeat;
+      background:image-url("hover_no.png") no-repeat;
       background-position: 50% 40%;
 
       .choose-type {
@@ -302,7 +302,7 @@ $secondary-color: #F8C957;
     .user_digital_true {
       width: 100%;
       height: 100%;
-      background-image: url("default_ok.png");
+      background-image: image-url("default_ok.png");
       background-repeat:  no-repeat;
       background-position: 50% 40%;
       color: $default-color;
@@ -312,7 +312,7 @@ $secondary-color: #F8C957;
     }
 
     input[type=radio]:checked + label.user_digital_true {
-      background:url("hover_ok.png") no-repeat;
+      background:image-url("hover_ok.png") no-repeat;
       background-position: 50% 40%;
 
       .choose-type {
@@ -323,14 +323,14 @@ $secondary-color: #F8C957;
     .user_digital_false {
       width: 100%;
       height: 100%;
-      background-image: url("default_no.png");
+      background-image: image-url("default_no.png");
       background-repeat:  no-repeat;
       background-position: 50% 40%;
       color: $default-color;
     }
 
     input[type=radio]:checked + label.user_digital_false {
-      background:url("hover_no.png") no-repeat;
+      background:image-url("hover_no.png") no-repeat;
       background-position: 50% 40%;
 
       .choose-type {
