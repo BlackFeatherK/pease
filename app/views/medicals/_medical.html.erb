@@ -1,5 +1,7 @@
 <div class="form-group yes-no-question">
-		<h4>你不希望自己在生命盡頭時，承受無效醫療的痛苦？</h4>
+		<br>	
+		<h4>你希望自己在生命盡頭時，放棄無效醫療？</h4>
+		<p>(註：經醫生診斷不能夠治療的情況下，進行如CPR、電擊、插管等侵入性治療。)</p>
 		<br>
 		<%= f.radio_button :futile_medical, true%>
 		<label for="medical_futile_medical_true" class="preference-yes">
@@ -12,7 +14,7 @@
 	</div>
 
 <div class="form-group yes-no-question">
-	<h4>生命到盡頭時，你願意捐贈器官給需要的人？</h4>
+	<h4>生命到盡頭時，你願意捐贈器官？</h4>
 	<br>
 	<%= f.radio_button :organ_donation, true%>
 	<label for="medical_organ_donation_true" class="preference-yes">
