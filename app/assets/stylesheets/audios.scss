@@ -242,5 +242,13 @@
       padding-bottom: 40px;
       border-radius: 5px;
     }
+
+    .video {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
   }
 }
