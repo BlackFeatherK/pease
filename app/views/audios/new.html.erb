@@ -765,7 +765,7 @@ function invokeSaveAsDialog(file, fileName) {
     formData.append('audio[video]' , file);
 
     var request = new XMLHttpRequest();
-    request.open('PATCH' , 'http://localhost:3000/wills/<%= @will.id %>/audios/<%= @audio.id %>')
+    request.open('PATCH' , 'https://pease.ga/wills/<%= @will.id %>/audios/<%= @audio.id %>')
     request.send(formData);
 
     //$('#audio_video')[0].files[0] = blob;
