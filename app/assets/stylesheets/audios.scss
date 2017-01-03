@@ -238,6 +238,9 @@
     border-bottom: 70px;
 
     .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: #fff;
       padding-bottom: 40px;
       border-radius: 5px;
