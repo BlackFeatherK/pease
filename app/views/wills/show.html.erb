@@ -86,7 +86,7 @@
           <div class="col-md-6">
             <%= form_for @will , :url => will_path(@will) , :method => :patch , data: { turbolinks: 'false' } do |f| %>
               <div class="wish-select wish-property">
-                <%= render :partial => 'properties/property' , :locals => {:f => f} %>
+                <%= render :partial => 'property' , :locals => {:f => f} %>
                 <div class="col-md-12 form-group text-center wish-submit">
                   <%= f.add_nested_fields_link :properties do %>
                     <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
@@ -94,7 +94,7 @@
                 </div>
               </div>
               <div class="wish-select wish-stock">
-                <%= render :partial => 'stock_portfolios/stock_portfolio' , :locals => {:f => f} %>
+                <%= render :partial => 'stock_portfolio' , :locals => {:f => f} %>
                 <div class="col-md-12 form-group text-center wish-submit">
                   <%= f.add_nested_fields_link :stock_portfolios do %>
                     <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
@@ -102,7 +102,7 @@
                 </div>
               </div>
               <div class="wish-select wish-account">
-                <%= render :partial => 'accounts/account' , :locals => {:f => f} %>
+                <%= render :partial => 'account' , :locals => {:f => f} %>
                 <div class="col-md-12 form-group text-center wish-submit">
                   <%= f.add_nested_fields_link :accounts do %>
                     <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
@@ -110,7 +110,7 @@
                 </div>
               </div>
               <div class="wish-select wish-motor">
-                <%= render :partial => 'motors/motor' , :locals => {:f => f} %>
+                <%= render :partial => 'motor' , :locals => {:f => f} %>
                 <div class="col-md-12 form-group text-center wish-submit">
                   <%= f.add_nested_fields_link :motors do %>
                     <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
@@ -118,7 +118,7 @@
                 </div>
               </div>
               <div class="wish-select wish-jewelry">
-                <%= render :partial => 'jewelries/jewelry' , :locals => {:f => f} %>
+                <%= render :partial => 'jewelry' , :locals => {:f => f} %>
                 <div class="col-md-12 form-group text-center wish-submit">
                   <%= f.add_nested_fields_link :jewelries do %>
                     <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
@@ -126,7 +126,7 @@
                 </div>
               </div>
               <div class="wish-select wish-other">
-                <%= render :partial => 'others/other' , :locals => {:f => f} %>
+                <%= render :partial => 'other' , :locals => {:f => f} %>
                 <div class="col-md-12 form-group text-center wish-submit">
                   <%= f.add_nested_fields_link :others do %>
                     <label class="text-center border-radius wish-btn wish-new"><span class="glyphicon glyphicon-plus"></span>新增實體資產</label>
