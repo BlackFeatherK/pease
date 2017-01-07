@@ -2,6 +2,12 @@ class AudiosController < ApplicationController
 
   before_action :find_will
 
+  def index
+    @will = Will.includes(:audios).find(current_user.will.id)
+    @audios = @will.audios
+    @audios.reload
+  end
+
   def new
     @will.audios.each do |audio|
       if audio.heir == true
@@ -13,13 +19,12 @@ class AudiosController < ApplicationController
   end
 
   def show
-    @audios = @will.audios
+    @audio = @will.audios.find(params[:id])
   end
 
   def update
     @audio = @will.audios.find(params[:id])
     if @audio.update(params_audio)
-      redirect_to will_audio_path(@will)
     else
       render :new
     end

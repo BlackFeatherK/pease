@@ -1,11 +1,51 @@
 <div id="<%= controller_name %>">
   <div id="<%= action_name %>">
     <div class="container">
-      <div class="video">
-        <video controls autoplay width='1280' height="720" name="media">
-          <source src="<%= @audios.last.video.url %>" type="video/webm">
-        </video>
-      </div>
+      <%= form_for @audio , :url => will_audio_path(@will , @audio) , :method => :patch , :remote => true do |f| %>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <div class="word-for">
+              <div class="show-audio-person">
+                <div class="form-group">
+                  <%= f.label '姓名' %>
+                  <%= f.text_field :name , :class => 'form-control text-center' , placeholder: "請輸入您想留的人名字" %>
+                </div>
+                <div class="form-group">
+                  <%= f.label '連絡信箱' %>
+                  <%= f.email_field :email , :class => 'form-control text-center' , placeholder: "請輸入對方常用的信箱" %>
+                </div>
+              </div>
+            </div>   
+          </div>
+        </div>
+
+        <% if @audio.video %>
+          <div class="video">
+            <video controls autoplay name="media" width='1280' height='720'>    
+              <source src="<%= @audio.video.url %>" type="video/webm">    
+            </video>
+          </div>
+        <% else %>
+          <div class="show-message-text">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= f.text_area :content , :class => 'form-control' , :rows => '5' %>  
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+              <%= f.submit '更新' , :class => 'submit' %>
+            <% end %>
+          </div>
+        </div>
     </div>
-  </div>
+  </div> 
 </div>

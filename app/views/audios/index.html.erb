@@ -1,0 +1,28 @@
+<div id="<%= controller_name %>">
+  <div id="<%= action_name %>">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <table class="table table-striped">
+            <tr>
+              <th>給</th>
+            </tr>
+            
+            <% @audios.each do |audio| %>
+              <tr>
+                <% if audio.heir == true %>
+                  <th><%= link_to audio.name , will_audio_path(@will , audio.id) %></th>
+                <% else %>
+                  <th><%= link_to '所有人' , will_audio_path(@will , audio.id) %></th>
+                <% end %>
+              </tr>
+             <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  
