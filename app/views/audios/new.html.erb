@@ -92,7 +92,7 @@
                   <%= link_to '重新錄音' , new_will_audio_path(@will) , :class => 'btn btn-default btn-restart' %>
                     
                 </div>
-                <button id="save-recording" disabled class='btn btn-default' style='display: none;'>Save</button>
+                <button id="save-recording" disabled class='btn btn-default'>Save</button>
               </div> 
             </div>
               
@@ -139,9 +139,9 @@
 
 <script>
 
-  $('.submit').click(function(){
-    document.querySelector('#save-recording').click();
-  });
+  // $('.submit').click(function(){
+  //   document.querySelector('#save-recording').click();
+  // });
 
   function captureUserMedia(mediaConstraints, successCallback, errorCallback) {
       navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
@@ -220,6 +220,8 @@
           a.href = URL.createObjectURL(blob);
           videosContainer.appendChild(a);
           videosContainer.appendChild(document.createElement('hr'));
+          console.log(blob);
+          $('#audio_video')[0].files[0] = blob;
       };
 
       var timeInterval = 600000;
@@ -760,15 +762,16 @@ function invokeSaveAsDialog(file, fileName) {
         return navigator.msSaveBlob(file, fileFullName);
     }
  
-    var formData = new FormData();
+    // var formData = new FormData();
 
-    formData.append('audio[video]' , file);
+    // // formData.append('audio[name]' , $('#audio_name').val());
+    // formData.append('audio[video]' , file);
 
-    var request = new XMLHttpRequest();
-    request.open('PATCH' , 'https://pease.ga/wills/<%= @will.id %>/audios/<%= @audio.id %>')
-    request.send(formData);
+    // var request = new XMLHttpRequest();
+    // request.open('PATCH' , 'http://localhost:3000/wills/<%= @will.id %>/audios/<%= @audio.id %>')
+    // request.send(formData);
 
-    //$('#audio_video')[0].files[0] = blob;
+    // $('#audio_video')[0].files[0] = file;
 
     // var hyperlink = document.createElement('a');
     // hyperlink.href = URL.createObjectURL(file);
