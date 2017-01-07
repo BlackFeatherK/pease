@@ -4,7 +4,7 @@ class AudiosController < ApplicationController
 
   def index
     @will.audios.each do |audio|
-      if audio.heir == true && audio.name == nil
+      if audio.heir == true && audio.name == ''
         audio.destroy
       end
     end
