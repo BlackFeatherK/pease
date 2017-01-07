@@ -3,18 +3,16 @@ class AudiosController < ApplicationController
   before_action :find_will
 
   def index
-    @will = Will.includes(:audios).find(current_user.will.id)
-    @audios = @will.audios
-    @audios.reload
-  end
-
-  def new
     @will.audios.each do |audio|
-      if audio.heir == true
-        audio.name == nil
+      if audio.heir == true && audio.name == nil
         audio.destroy
       end
     end
+    @will = Will.includes(:audios).find(current_user.will.id)
+    @audios = @will.audios
+  end
+
+  def new
     @audio = @will.audios.create
   end
 
