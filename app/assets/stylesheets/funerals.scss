@@ -6,6 +6,7 @@ $border-primary-color: #D0D0D0;
 $main-color: #364860;
 $secondary-color: #F8C957;
 $main-font: PingFangTC-Medium;
+$btn-font-color: #364860;
 
 .form-button {
 	width: 200px;
@@ -306,7 +307,7 @@ $main-font: PingFangTC-Medium;
 	      background-color: $secondary-color;
 	      border: none;
 	      border-radius: 5px;
-	      color: white;
+	      color: $btn-font-color;
 	      margin: 40px 0 60px 0;
 	      font-weight: bold;
 			}

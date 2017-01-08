@@ -2,6 +2,7 @@ $border-primary-color: #D0D0D0;
 $default-color: #8D8D8D;
 $main-color: #6C7C89;
 $secondary-color: #F8C957;
+$btn-font-color: #364860;
 
 #users {
   background-color: #F9F9F9;
@@ -365,7 +366,7 @@ $secondary-color: #F8C957;
         background-color: $secondary-color;
         border: none;
         border-radius: 5px;
-        color: white;
+        color: $btn-font-color;
         margin: 15px 0;
         font-weight: bold;
       }

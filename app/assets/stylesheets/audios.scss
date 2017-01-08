@@ -1,3 +1,5 @@
+$btn-font-color: #364860;
+
 #audios {
   background-color: #F9F9F9;
   margin-top: -55px;
@@ -18,7 +20,7 @@
       background-color: $secondary-color;
       border: none;
       border-radius: 5px;
-      color: white;
+      color: $btn-font-color;
       margin: 40px 0 60px 0;
       font-weight: bold;
     }
@@ -293,7 +295,7 @@
       background-color: $secondary-color;
       border: none;
       border-radius: 5px;
-      color: white;
+      color: $btn-font-color;
       margin: 40px 0 60px 0;
       font-weight: bold;
     }

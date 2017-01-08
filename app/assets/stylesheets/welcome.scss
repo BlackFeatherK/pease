@@ -5,6 +5,7 @@ $border-primary-color: #D0D0D0;
 $main-color: #364860;
 $secondary-color: #F8C957;
 $main-font: PingFangTC-Medium;
+$btn-font-color: #364860;
 
 h1, h2, h3, h4, h5 {
 	color: $main-color;
@@ -109,7 +110,7 @@ h1, h2, h3, h4, h5 {
       background-color: $secondary-color;
       border: none;
       border-radius: 5px;
-      color: white;
+      color: $btn-font-color;
       margin: 40px 0 60px 0;
       font-weight: bold;
 		}

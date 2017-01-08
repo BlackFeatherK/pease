@@ -4,6 +4,7 @@ $main-color: #364860;
 $secondary-color: #F8C957;
 $font-color: #6C7C89;
 $white-color: #F3F4F5;
+$btn-font-color: #364860;
 
 
 .clearfix {
@@ -482,7 +483,7 @@ $white-color: #F3F4F5;
           background-color: $secondary-color;
           border: none;
           border-radius: 5px;
-          color: white;
+          color: $btn-font-color;
           margin: 15px 0;
           font-weight: bold;
         }
@@ -693,12 +694,11 @@ $white-color: #F3F4F5;
     }
 
     .submit {
-
       padding: 7px 50px;
       background-color: $secondary-color;
       border: none;
       border-radius: 5px;
-      color: white;
+      color: $btn-font-color;
       margin: 15px 0;
       font-weight: bold;
     }

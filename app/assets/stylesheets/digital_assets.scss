@@ -6,6 +6,8 @@ $main-color: #364860;
 $secondary-color: #F8C957;
 $main-font: PingFangTC-Medium;
 $font-color: #8D8D8D;
+$btn-font-color: #364860;
+
 .background {
     background-color: #F9F9F9;
 	width: 100%;
@@ -171,7 +173,7 @@ $font-color: #8D8D8D;
     background-color: $secondary-color;
     border: none;
     border-radius: 5px;
-    color: white;
+    color: $btn-font-color;
     margin: 40px 0 60px 0;
     font-weight: bold;
 	}
