@@ -144,7 +144,7 @@
   $('.submit').click(function(){
     setTimeout(function() {
       window.location.replace('https://pease.ga/wills/<%= current_user.will.id %>/audios');
-    }, 500);
+    }, 2500);
   });
 
   function captureUserMedia(mediaConstraints, successCallback, errorCallback) {
@@ -771,7 +771,7 @@ function invokeSaveAsDialog(file, fileName) {
 
     setTimeout(function() {
       window.location.replace('https://pease.ga/wills/<%= current_user.will.id %>/audios');
-    }, 500);
+    }, 2500);
  
     // var hyperlink = document.createElement('a');
     // hyperlink.href = URL.createObjectURL(file);

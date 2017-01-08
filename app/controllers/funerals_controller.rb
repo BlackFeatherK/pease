@@ -4,7 +4,6 @@ class FuneralsController < ApplicationController
 	before_action :find_funeral, only: [:edit, :show, :update] 
 	
 	def show
-
 	end
 
 	def new
