@@ -20,7 +20,7 @@
           </div>
         </div>
 
-        <% if @audio.video %>
+        <% unless @audio.content %>
           <div class="video">
             <video controls autoplay name="media" width='1280' height='720'>    
               <source src="<%= @audio.video.url %>" type="video/webm">    

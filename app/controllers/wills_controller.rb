@@ -54,8 +54,8 @@ class WillsController < ApplicationController
     @accounts = @will.accounts
     @stock_portfolios = @will.stock_portfolios
     @jewelries = @will.jewelries
-    @funeral = @will.funerals.first
-    @medical = @will.medicals.first 
+    @funeral = @will.funeral
+    @medical = @will.medical
 
     respond_to do |format|
       format.html

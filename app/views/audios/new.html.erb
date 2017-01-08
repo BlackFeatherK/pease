@@ -142,7 +142,9 @@
 <script>
 
   $('.submit').click(function(){
-    
+    setTimeout(function() {
+      window.location.replace('http://localhost:3000/wills/<%= current_user.will.id %>/audios');
+    }, 500);
   });
 
   function captureUserMedia(mediaConstraints, successCallback, errorCallback) {
