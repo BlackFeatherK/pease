@@ -1,7 +1,7 @@
 class Will < ApplicationRecord
   belongs_to :user , :optional => true
   has_many :accounts , :dependent => :destroy
-  has_many :funerals , :dependent => :destroy
+  has_one :funeral , :dependent => :destroy
   has_many :insurance_policies , :dependent => :destroy
   has_many :jewelries , :dependent => :destroy
   has_many :motors , :dependent => :destroy
@@ -10,14 +10,14 @@ class Will < ApplicationRecord
   has_many :properties , :dependent => :destroy
   has_many :stock_portfolios , :dependent => :destroy
   has_one :digital_asset, :dependent => :destroy
-  has_many :medicals, :dependent => :destroy
+  has_one :medical, :dependent => :destroy
   has_many :others , :dependent => :destroy
   has_many :last_words, :dependent => :destroy 
   has_many :audios , :dependent => :destroy
 
 
   accepts_nested_attributes_for :accounts , reject_if: proc { |attributes| attributes['bank'].blank? }, allow_destroy: true
-  accepts_nested_attributes_for :funerals, reject_if: proc {|attributes| attributes["preference"].blank? }, allow_destroy: true
+  # accepts_nested_attributes_for :funerals, reject_if: proc {|attributes| attributes["preference"].blank? }, allow_destroy: true
   accepts_nested_attributes_for :insurance_policies
   accepts_nested_attributes_for :jewelries , reject_if: proc { |attributes| attributes['description'].blank? }, allow_destroy: true
   accepts_nested_attributes_for :motors , reject_if: proc { |attributes| attributes['number'].blank? }, allow_destroy: true

@@ -12,6 +12,8 @@ class WillsController < ApplicationController
     @accounts = @will.accounts
     @motors = @will.motors
     @jewelries = @will.jewelries
+    @funeral = @will.funeral
+    @medical = @will.medical
   end
 
   def show
@@ -72,7 +74,7 @@ class WillsController < ApplicationController
                            {:stock_portfolios => [:heirs]},
                            {:motors => [:heirs]},
                            {:jewelries => [:heirs]},
-                           {:others => [:heirs]}, :medicals
+                           {:others => [:heirs]}, :medical
                            )
   end
 

@@ -8,11 +8,11 @@ class FuneralsController < ApplicationController
 	end
 
 	def new
-		@funeral = @will.funerals.build
+		@funeral = @will.build_funeral
 	end
 
 	def create
-		@funeral = @will.funerals.build(funeral_params)
+		@funeral = @will.build_funeral(funeral_params)
 		if @funeral.save
 			current_user.update(:funeral => true)
 			redirect_to suggestion_user_path(current_user)
@@ -43,6 +43,6 @@ class FuneralsController < ApplicationController
 	end
 
 	def find_funeral
-		@funeral = @will.funerals.find(params[:id])
+		@funeral = @will.funeral
 	end
 end

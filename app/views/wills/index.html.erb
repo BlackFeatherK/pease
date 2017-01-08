@@ -19,16 +19,19 @@
           <div class="choose col-md-3 col-sm-12">
             
             <div class="choose-btn">
-              <%= image_tag("icon_tangible_assets.png", :alt => "" , :class => "preview" ) %>
-              <p>我的有形資產</p>
-              <div class="choose-focus"> 
-              </div>
+                <%= image_tag("icon_tangible_assets.png", :alt => "" , :class => "preview" ) %>
+                <p>我的有形資產</p>
+                <%= link_to will_path(@will), data: { turbolinks: false } do %>
+                  <div class="choose-focus"></div>
+                <% end %>
               <% if @properties.present? || @accounts.present? || @stock_portfolios.present? || @motors.present? || @jewelries.present? %>
-                  <div class="choose-focus-alternative"> 
-                    <div class="circle">
-                      <%= image_tag("hover_ok_white.png", :alt => "" , :class => "already-finish" ) %>
+                  <%= link_to will_path(@will), data: { turbolinks: false } do %>
+                    <div class="choose-focus-alternative"> 
+                      <div class="circle">
+                        <%= image_tag("hover_ok_white.png", :alt => "" , :class => "already-finish" ) %>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
               <% end %> 
             </div>
           </div>
@@ -79,26 +82,23 @@
               <%= image_tag("icon_transfer_digital.png", :alt => "" , :class => "preview" ) %>
               <p>數位資產轉讓</p>
               <div class="choose-focus"></div>
-              <% if @will.digital_asset.present? %>
-                  <div class="choose-focus-alternative"> 
-                    <div class="circle">
-                      <%= image_tag("hover_ok_white.png", :alt => "" , :class => "already-finish" ) %>
-                    </div>
-                  </div>
-              <% end %> 
             </div>
           </div>
           <div class="choose col-md-3 col-sm-12">
             <div class="choose-btn">
               <%= image_tag("icon_funeral.png", :alt => "" , :class => "preview" ) %>
               <p>身後事安排</p>
-              <div class="choose-focus"></div>
-              <% if @will.funerals.present? %>
+              <%= link_to will_funeral_path(@will , @funeral), data: { turbolinks: false } do %>
+                <div class="choose-focus"></div>
+              <% end %>
+              <% if @will.funeral.present? %>
+                <%= link_to will_funeral_path(@will , @funeral), data: { turbolinks: false } do %>
                   <div class="choose-focus-alternative"> 
                     <div class="circle">
                       <%= image_tag("hover_ok_white.png", :alt => "" , :class => "already-finish" ) %>
                     </div>
                   </div>
+                <% end %>
               <% end %> 
             </div>
           </div>
@@ -106,8 +106,18 @@
             <div class="choose-btn">
               <%= image_tag("icon_digital.png", :alt => "" , :class => "preview" ) %>
               <p>數位帳號</p>
-              <p></p>
-              <div class="choose-focus"></div>
+              <%= link_to will_digital_asset_path(@will , @digital), data: { turbolinks: false } do %>
+                <div class="choose-focus"></div>
+              <% end %>
+              <% if @will.digital_asset.present? %>
+                <%= link_to will_digital_asset_path(@will , @digital), data: { turbolinks: false } do %>
+                  <div class="choose-focus-alternative"> 
+                    <div class="circle">
+                      <%= image_tag("hover_ok_white.png", :alt => "" , :class => "already-finish" ) %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %> 
             </div>
           </div>
           <div class="choose col-md-3 col-sm-12">
@@ -133,15 +143,18 @@
           </div>
           <div class="choose col-md-3 col-sm-12">
             <div class="choose-btn">
-              <%= image_tag("icon_treatment.png", :alt => "" , :class => "preview" ) %>
-              <p>安寧緩和醫療</p>
-              <div class="choose-focus"></div>
-              <% if @will.medicals.present? %>
+              <%= link_to will_medical_path(@will , @medical), data: { turbolinks: false } do %>
+                <%= image_tag("icon_treatment.png", :alt => "" , :class => "preview" ) %>
+                <p>安寧緩和醫療</p>
+              <% end %>
+              <% if @will.medical.present? %>
+                <%= link_to will_medical_path(@will , @medical), data: { turbolinks: false } do %>
                   <div class="choose-focus-alternative"> 
                     <div class="circle">
                       <%= image_tag("hover_ok_white.png", :alt => "" , :class => "already-finish" ) %>
                     </div>
                   </div>
+                <% end %>
               <% end %> 
             </div>
           </div>

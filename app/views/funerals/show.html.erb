@@ -6,7 +6,13 @@
 		</div>
 		<%= form_for @funeral, url: will_funeral_path(@will, @funeral), method: :patch, html: {class: "text-center"} do |f| %>
 			<%= render :partial => 'funeral', :locals => {:f => f}  %>
-			<%= f.submit class: "submit" %>
+			
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <%= f.submit '儲存' , class: "submit" %>    
+        </div>
+      </div>
 		<% end %>
 	</div>
 </div>

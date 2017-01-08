@@ -3,12 +3,12 @@ class MedicalsController < ApplicationController
 	before_action :find_medical, only: [:show, :update]
 
 	def new
-		@medical = @will.medicals.build
+		@medical = @will.build_medical
 	end
 
 
 	def create
-		@medical = @will.medicals.build(params_medical)
+		@medical = @will.build_medical(params_medical)
 		if @medical.save
 			current_user.update(:medical => true)
 			redirect_to suggestion_user_path(current_user)
@@ -42,7 +42,7 @@ class MedicalsController < ApplicationController
 	end
 
 	def find_medical
-		@medical = @will.medicals.find(params[:id])
+		@medical = @will.medical
 	end
 
 
