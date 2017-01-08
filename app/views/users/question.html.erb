@@ -5,14 +5,14 @@
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
-            <%= form_for @user , :url => save_question_user_path(@user) , :method => :post do |f| %>
+            <%= form_for @will , :url => save_question_user_path(@will) , :method => :post do |f| %>
               <h2>個人資料</h2>
               <div class="row tangible_asset">
                 <p>我擁有實體現金、車子或不動產等...有形資產</p>
                 <div class="col-md-6 col-sm-6">
                   <div class="choose">
                     <%= f.radio_button :tangible_asset , 'true' %>
-                    <label class="user_tangible_asset_true" for="user_tangible_asset_true">
+                    <label class="will_tangible_asset_true" for="will_tangible_asset_true">
                       <div class="choose-type">有</div>
                     </label>
                   </div>
@@ -20,7 +20,7 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="choose">
                     <%= f.radio_button :tangible_asset , 'false' %>
-                    <label class="user_tangible_asset_false" for="user_tangible_asset_false">
+                    <label class="will_tangible_asset_false" for="will_tangible_asset_false">
                        <div class="choose-type">沒有</div>
                     </label>
                   </div>
@@ -31,7 +31,7 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="choose">
                     <%= f.radio_button :intangible_asset , 'true' %>
-                    <label class="user_intangible_asset_true" for="user_intangible_asset_true">
+                    <label class="will_intangible_asset_true" for="will_intangible_asset_true">
                       <div class="choose-type">有</div>
                     </label>
                   </div>
@@ -39,7 +39,7 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="choose">
                     <%= f.radio_button :intangible_asset , 'false' %>
-                    <label class="user_intangible_asset_false" for="user_intangible_asset_false">
+                    <label class="will_intangible_asset_false" for="will_intangible_asset_false">
                        <div class="choose-type">沒有</div>
                     </label>
                   </div>
@@ -50,7 +50,7 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="choose">
                     <%= f.radio_button :personal_item , 'true' %>
-                    <label class="user_personal_item_true" for="user_personal_item_true">
+                    <label class="will_personal_item_true" for="will_personal_item_true">
                       <div class="choose-type">有</div>
                     </label>
                   </div>
@@ -58,7 +58,7 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="choose">
                     <%= f.radio_button :personal_item , 'false' %>
-                    <label class="user_personal_item_false" for="user_personal_item_false">
+                    <label class="will_personal_item_false" for="will_personal_item_false">
                        <div class="choose-type">沒有</div>
                     </label>
                   </div>
@@ -69,7 +69,7 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="choose">
                     <%= f.radio_button :afterlife_service , 'true' %>
-                    <label class="user_afterlife_service_true" for="user_afterlife_service_true">
+                    <label class="will_afterlife_service_true" for="will_afterlife_service_true">
                       <div class="choose-type">有</div>
                     </label>
                   </div>
@@ -77,7 +77,7 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="choose">
                     <%= f.radio_button :afterlife_service , 'false' %>
-                    <label class="user_afterlife_service_false" for="user_afterlife_service_false">
+                    <label class="will_afterlife_service_false" for="will_afterlife_service_false">
                        <div class="choose-type">沒有</div>
                     </label>
                   </div>
@@ -88,7 +88,7 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="choose">
                     <%= f.radio_button :digital , 'true' %>
-                    <label class="user_digital_true" for="user_digital_true">
+                    <label class="will_digital_true" for="will_digital_true">
                       <div class="choose-type">有</div>
                     </label>
                   </div>
@@ -96,7 +96,7 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="choose">
                     <%= f.radio_button :digital , 'false' %>
-                    <label class="user_digital_false" for="user_digital_false">
+                    <label class="will_digital_false" for="will_digital_false">
                        <div class="choose-type">沒有</div>
                     </label>
                   </div>

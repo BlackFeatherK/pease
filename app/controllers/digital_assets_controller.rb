@@ -8,6 +8,7 @@ class DigitalAssetsController < ApplicationController
 	def create
 		@digital_asset = @will.build_digital_asset(param_digital_asset)
 		if @digital_asset.save
+			current_user.update(:digital => true)
 			redirect_to wills_path
 			flash[:notice] = "Digital Assets saved"
 		else

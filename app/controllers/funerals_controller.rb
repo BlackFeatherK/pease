@@ -14,6 +14,7 @@ class FuneralsController < ApplicationController
 	def create
 		@funeral = @will.funerals.build(funeral_params)
 		if @funeral.save
+			current_user.update(:funeral => true)
 			redirect_to suggestion_user_path(current_user)
 			flash[:notice] = 'successful'
 		else 

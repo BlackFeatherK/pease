@@ -27,13 +27,11 @@ class WillsController < ApplicationController
   def update 
 
     @will = @wills.find(current_user.will.id)
-    @will.update(params_will)
-    @will.properties.build.heirs.build
-    @will.stock_portfolios.build.heirs.build
-    @will.accounts.build.heirs.build
-    @will.motors.build.heirs.build
-    @will.jewelries.build.heirs.build
-    @will.others.build.heirs.build
+    if @will.update(params_will)
+      current_user.update(:tangible_asset => true)
+    else
+      render :back
+    end
     redirect_to suggestion_user_path(@user)
   end
 

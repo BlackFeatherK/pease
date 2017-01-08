@@ -5,7 +5,13 @@
 		</div>
 		<%= form_for @medical, url: will_medicals_path do |f| %>
 			<%= render partial: 'medical', :locals => {:f => f} %>
-			<%= f.submit "儲存", class: "submit" %>
+
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <%= f.submit "儲存", class: "submit" %>    
+        </div>
+      </div>
 		<% end  %>
 	</div>
 </div>

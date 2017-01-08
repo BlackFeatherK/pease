@@ -5,10 +5,14 @@
 				<h1>設計生命畢業禮</h1>
 			</div>
 			<%= form_for @funeral, url: will_funerals_path, html: {class: "text-center"} do |f| %>
-			<%= render :partial => 'funeral', :locals => {:f => f}  %>
+				<%= render :partial => 'funeral', :locals => {:f => f}  %>
 
-			<%= f.submit class: "submit" %>
-
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<%= f.submit '儲存' , class: "submit" %>		
+					</div>
+				</div>
 			<% end %>
 		</div>
 	</div>

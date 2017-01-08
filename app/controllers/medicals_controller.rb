@@ -10,6 +10,7 @@ class MedicalsController < ApplicationController
 	def create
 		@medical = @will.medicals.build(params_medical)
 		if @medical.save
+			current_user.update(:medical => true)
 			redirect_to suggestion_user_path(current_user)
 			flash[:notice] = "Successful"
 		else

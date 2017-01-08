@@ -4,6 +4,9 @@ $main-color: #6C7C89;
 $secondary-color: #F8C957;
 
 #users {
+  background-color: #F9F9F9;
+  margin-top: -55px;
+
   #lawyer {
     img {
       max-width: 80%;
@@ -11,6 +14,7 @@ $secondary-color: #F8C957;
     }
     padding-bottom: 50px;
   }
+
   #suggestion {
     margin-top: -55px;
     padding: 30px 0;
@@ -105,256 +109,269 @@ $secondary-color: #F8C957;
   }
 
 
-  .five_question {
-    margin-bottom: 350px;
 
-    .unprint {
-      display: none;
+
+  #question {
+    padding-top: 40px;
+    padding-bottom: 70px;
+
+    .container {
+      background-color: #fff;
+      padding-bottom: 20px;
+      border-radius: 5px;
     }
 
-    h2 {
-      margin: 40px 0;
-    }
+    .five_question {
 
-    .row {
-      margin-bottom: 40px;
-    }
+      .unprint {
+        display: none;
+      }
 
-    p {
-      font-size: 20px;
-    }
+      h2 {
+        margin: 40px 0;
+      }
 
-    input[type=radio] {
-      visibility: hidden;
-      position: absolute;
-    }
+      .row {
+        margin-bottom: 40px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+
+      input[type=radio] {
+        visibility: hidden;
+        position: absolute;
+      }
+      
+      .choose {
+        height: 200px;
+        border: 1px solid $border-primary-color;
+        border-radius: 5px;
+        position: relative;
+        &:hover{
+          border: 1px solid #F8C957;
+        }
+      }
+
+      .choose-type{
+        left: 50%;
+        bottom: 10%;
+        transform: translateX(-50%);
+        position: absolute;
+        color: $default-color;
+      }
+
+      .will_tangible_asset_true {
+        width: 100%;
+        height: 100%;
+        background-image: image-url("default_ok.png");
+        background-repeat:  no-repeat;
+        background-position: 50% 40%;
+        color: $default-color;
+        border-color: $border-primary-color;
+        z-index: 100;
+
+      }
+
+      input[type=radio]:checked + label.will_tangible_asset_true {
+        background:image-url("hover_ok.png") no-repeat;
+        background-position: 50% 40%;
+
+        .choose-type {
+          color: $secondary-color;
+        }
+      }
+
+      .will_tangible_asset_false {
+        width: 100%;
+        height: 100%;
+        background-image: image-url("default_no.png");
+        background-repeat:  no-repeat;
+        background-position: 50% 40%;
+        color: $default-color;
+      }
+
+      input[type=radio]:checked + label.will_tangible_asset_false {
+        background:image-url("hover_no.png") no-repeat;
+        background-position: 50% 40%;
+
+        .choose-type {
+          color: $secondary-color;
+        }
+      }
+
+      .will_intangible_asset_true {
+        width: 100%;
+        height: 100%;
+        background-image: image-url("default_ok.png");
+        background-repeat:  no-repeat;
+        background-position: 50% 40%;
+        color: $default-color;
+        border-color: $border-primary-color;
+        z-index: 100;
+
+      }
+
+      input[type=radio]:checked + label.will_intangible_asset_true {
+        background:image-url("hover_ok.png") no-repeat;
+        background-position: 50% 40%;
+
+        .choose-type {
+          color: $secondary-color;
+        }
+      }
+
+      .will_intangible_asset_false {
+        width: 100%;
+        height: 100%;
+        background-image: image-url("default_no.png");
+        background-repeat:  no-repeat;
+        background-position: 50% 40%;
+        color: $default-color;
+      }
+
+      input[type=radio]:checked + label.will_intangible_asset_false {
+        background:image-url("hover_no.png") no-repeat;
+        background-position: 50% 40%;
+
+        .choose-type {
+          color: $secondary-color;
+        }
+      }
+
+      .will_personal_item_true {
+        width: 100%;
+        height: 100%;
+        background-image: image-url("default_ok.png");
+        background-repeat:  no-repeat;
+        background-position: 50% 40%;
+        color: $default-color;
+        border-color: $border-primary-color;
+        z-index: 100;
+
+      }
+
+      input[type=radio]:checked + label.will_personal_item_true {
+        background:image-url("hover_ok.png") no-repeat;
+        background-position: 50% 40%;
+
+        .choose-type {
+          color: $secondary-color;
+        }
+      }
+
+      .will_personal_item_false {
+        width: 100%;
+        height: 100%;
+        background-image: image-url("default_no.png");
+        background-repeat:  no-repeat;
+        background-position: 50% 40%;
+        color: $default-color;
+      }
+
+      input[type=radio]:checked + label.will_personal_item_false {
+        background:image-url("hover_no.png") no-repeat;
+        background-position: 50% 40%;
+
+        .choose-type {
+          color: $secondary-color;
+        }
+      }
+
+
+      .will_afterlife_service_true {
+        width: 100%;
+        height: 100%;
+        background-image: image-url("default_ok.png");
+        background-repeat:  no-repeat;
+        background-position: 50% 40%;
+        color: $default-color;
+        border-color: $border-primary-color;
+        z-index: 100;
+
+      }
+
+      input[type=radio]:checked + label.will_afterlife_service_true {
+        background:image-url("hover_ok.png") no-repeat;
+        background-position: 50% 40%;
+
+        .choose-type {
+          color: $secondary-color;
+        }
+      }
+
+      .will_afterlife_service_false {
+        width: 100%;
+        height: 100%;
+        background-image: image-url("default_no.png");
+        background-repeat:  no-repeat;
+        background-position: 50% 40%;
+        color: $default-color;
+      }
+
+      input[type=radio]:checked + label.will_afterlife_service_false {
+        background:image-url("hover_no.png") no-repeat;
+        background-position: 50% 40%;
+
+        .choose-type {
+          color: $secondary-color;
+        }
+      }
+
+
+      .will_digital_true {
+        width: 100%;
+        height: 100%;
+        background-image: image-url("default_ok.png");
+        background-repeat:  no-repeat;
+        background-position: 50% 40%;
+        color: $default-color;
+        border-color: $border-primary-color;
+        z-index: 100;
+
+      }
+
+      input[type=radio]:checked + label.will_digital_true {
+        background:image-url("hover_ok.png") no-repeat;
+        background-position: 50% 40%;
+
+        .choose-type {
+          color: $secondary-color;
+        }
+      }
+
+      .will_digital_false {
+        width: 100%;
+        height: 100%;
+        background-image: image-url("default_no.png");
+        background-repeat:  no-repeat;
+        background-position: 50% 40%;
+        color: $default-color;
+      }
+
+      input[type=radio]:checked + label.will_digital_false {
+        background:image-url("hover_no.png") no-repeat;
+        background-position: 50% 40%;
+
+        .choose-type {
+          color: $secondary-color;
+        }
+      }
+
+      .submit {
+        width: 100%;
+        height: 40px;
+        background-color: $secondary-color;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        margin: 15px 0;
+        font-weight: bold;
+      }
     
-    .choose {
-      height: 200px;
-      border: 1px solid $border-primary-color;
-      border-radius: 5px;
-      position: relative;
-      &:hover{
-        border: 1px solid #F8C957;
-      }
     }
 
-    .choose-type{
-      left: 50%;
-      bottom: 10%;
-      transform: translateX(-50%);
-      position: absolute;
-      color: $default-color;
-    }
-
-    .user_tangible_asset_true {
-      width: 100%;
-      height: 100%;
-      background-image: image-url("default_ok.png");
-      background-repeat:  no-repeat;
-      background-position: 50% 40%;
-      color: $default-color;
-      border-color: $border-primary-color;
-      z-index: 100;
-
-    }
-
-    input[type=radio]:checked + label.user_tangible_asset_true {
-      background:image-url("hover_ok.png") no-repeat;
-      background-position: 50% 40%;
-
-      .choose-type {
-        color: $secondary-color;
-      }
-    }
-
-    .user_tangible_asset_false {
-      width: 100%;
-      height: 100%;
-      background-image: image-url("default_no.png");
-      background-repeat:  no-repeat;
-      background-position: 50% 40%;
-      color: $default-color;
-    }
-
-    input[type=radio]:checked + label.user_tangible_asset_false {
-      background:image-url("hover_no.png") no-repeat;
-      background-position: 50% 40%;
-
-      .choose-type {
-        color: $secondary-color;
-      }
-    }
-
-    .user_intangible_asset_true {
-      width: 100%;
-      height: 100%;
-      background-image: image-url("default_ok.png");
-      background-repeat:  no-repeat;
-      background-position: 50% 40%;
-      color: $default-color;
-      border-color: $border-primary-color;
-      z-index: 100;
-
-    }
-
-    input[type=radio]:checked + label.user_intangible_asset_true {
-      background:image-url("hover_ok.png") no-repeat;
-      background-position: 50% 40%;
-
-      .choose-type {
-        color: $secondary-color;
-      }
-    }
-
-    .user_intangible_asset_false {
-      width: 100%;
-      height: 100%;
-      background-image: image-url("default_no.png");
-      background-repeat:  no-repeat;
-      background-position: 50% 40%;
-      color: $default-color;
-    }
-
-    input[type=radio]:checked + label.user_intangible_asset_false {
-      background:image-url("hover_no.png") no-repeat;
-      background-position: 50% 40%;
-
-      .choose-type {
-        color: $secondary-color;
-      }
-    }
-
-    .user_personal_item_true {
-      width: 100%;
-      height: 100%;
-      background-image: image-url("default_ok.png");
-      background-repeat:  no-repeat;
-      background-position: 50% 40%;
-      color: $default-color;
-      border-color: $border-primary-color;
-      z-index: 100;
-
-    }
-
-    input[type=radio]:checked + label.user_personal_item_true {
-      background:image-url("hover_ok.png") no-repeat;
-      background-position: 50% 40%;
-
-      .choose-type {
-        color: $secondary-color;
-      }
-    }
-
-    .user_personal_item_false {
-      width: 100%;
-      height: 100%;
-      background-image: image-url("default_no.png");
-      background-repeat:  no-repeat;
-      background-position: 50% 40%;
-      color: $default-color;
-    }
-
-    input[type=radio]:checked + label.user_personal_item_false {
-      background:image-url("hover_no.png") no-repeat;
-      background-position: 50% 40%;
-
-      .choose-type {
-        color: $secondary-color;
-      }
-    }
-
-
-    .user_afterlife_service_true {
-      width: 100%;
-      height: 100%;
-      background-image: image-url("default_ok.png");
-      background-repeat:  no-repeat;
-      background-position: 50% 40%;
-      color: $default-color;
-      border-color: $border-primary-color;
-      z-index: 100;
-
-    }
-
-    input[type=radio]:checked + label.user_afterlife_service_true {
-      background:image-url("hover_ok.png") no-repeat;
-      background-position: 50% 40%;
-
-      .choose-type {
-        color: $secondary-color;
-      }
-    }
-
-    .user_afterlife_service_false {
-      width: 100%;
-      height: 100%;
-      background-image: image-url("default_no.png");
-      background-repeat:  no-repeat;
-      background-position: 50% 40%;
-      color: $default-color;
-    }
-
-    input[type=radio]:checked + label.user_afterlife_service_false {
-      background:image-url("hover_no.png") no-repeat;
-      background-position: 50% 40%;
-
-      .choose-type {
-        color: $secondary-color;
-      }
-    }
-
-
-    .user_digital_true {
-      width: 100%;
-      height: 100%;
-      background-image: image-url("default_ok.png");
-      background-repeat:  no-repeat;
-      background-position: 50% 40%;
-      color: $default-color;
-      border-color: $border-primary-color;
-      z-index: 100;
-
-    }
-
-    input[type=radio]:checked + label.user_digital_true {
-      background:image-url("hover_ok.png") no-repeat;
-      background-position: 50% 40%;
-
-      .choose-type {
-        color: $secondary-color;
-      }
-    }
-
-    .user_digital_false {
-      width: 100%;
-      height: 100%;
-      background-image: image-url("default_no.png");
-      background-repeat:  no-repeat;
-      background-position: 50% 40%;
-      color: $default-color;
-    }
-
-    input[type=radio]:checked + label.user_digital_false {
-      background:image-url("hover_no.png") no-repeat;
-      background-position: 50% 40%;
-
-      .choose-type {
-        color: $secondary-color;
-      }
-    }
-
-    .submit {
-      width: 100%;
-      height: 40px;
-      background-color: $secondary-color;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-  
   }
 
 }

@@ -19,15 +19,14 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def slider
+	def question
+		@will = @user.will
 	end
 
 	def save_question
-		if @user.update(params_user)
-			flash[:notice] = "Success"
+		if @user.will.update(params_will)
 			redirect_to suggestion_user_path
 		else
-			flash[:alert] = "Not updated"
 			render :back
 		end
 	end
@@ -56,5 +55,9 @@ class UsersController < ApplicationController
 
 	def params_user
 		params.require(:user).permit(:gender, :birthday, :name, :tangible_asset, :intangible_asset, :personal_item, :afterlife_service, :digital , :audio)
+	end
+
+	def params_will
+		params.require(:will).permit(:tangible_asset, :intangible_asset, :personal_item, :afterlife_service, :digital, :medical)
 	end
 end
