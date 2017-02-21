@@ -126,7 +126,6 @@
           <div class="col-md-6">
               <%= f.submit '儲存' , :class => 'submit audio-submit' %>
               <button id="save-recording" disabled class='btn btn-default submit js-submit'>儲存</button>
-              <a id='redirect_to' href="https://pease.ga/wills/<%= current_user.will.id %>/audios"></a>
             <% end %>
           </div>
         </div>
@@ -140,12 +139,6 @@
 
 
 <script>
-
-  $('.submit').click(function(){
-    setTimeout(function() {
-      window.location.replace('https://pease.ga/wills/<%= current_user.will.id %>/audios');
-    }, 2500);
-  });
 
   function captureUserMedia(mediaConstraints, successCallback, errorCallback) {
       navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
@@ -766,11 +759,11 @@ function invokeSaveAsDialog(file, fileName) {
     formData.append('audio[video]' , file);
 
     var request = new XMLHttpRequest();
-    request.open('PATCH' , 'https://pease.ga/wills/<%= @will.id %>/audios/<%= @audio.id %>')
+    request.open('PATCH' , 'http://pease.ga/wills/<%= @will.id %>/audios/<%= @audio.id %>')
     request.send(formData);
 
     setTimeout(function() {
-      window.location.replace('https://pease.ga/wills/<%= current_user.will.id %>/audios');
+      window.location.replace('http://pease.ga/wills/<%= current_user.will.id %>/audios');
     }, 2500);
  
     // var hyperlink = document.createElement('a');
