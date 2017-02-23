@@ -6,14 +6,6 @@ class WillsController < ApplicationController
 
   def index
     @will = @wills.find(current_user.will.id)
-    @digital_asset = @will.digital_asset
-    @properties = @will.properties
-    @stock_portfolios = @will.stock_portfolios
-    @accounts = @will.accounts
-    @motors = @will.motors
-    @jewelries = @will.jewelries
-    @funeral = @will.funeral
-    @medical = @will.medical
   end
 
   def show
