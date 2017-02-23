@@ -5,11 +5,10 @@ class WillsController < ApplicationController
   before_action :include_will, only: [:index, :show, :update]
 
   def index
-    @will = @wills.find(current_user.will.id)
+
   end
 
   def show
-    @will = @wills.find(current_user.will.id)
     @will.properties.build.heirs.build
     @will.stock_portfolios.build.heirs.build
     @will.accounts.build.heirs.build
@@ -18,9 +17,7 @@ class WillsController < ApplicationController
     @will.others.build.heirs.build
   end
 
-  def update 
-
-    @will = @wills.find(current_user.will.id)
+  def update
     if @will.update(params_will)
       current_user.update(:tangible_asset => true)
     else
@@ -61,13 +58,13 @@ class WillsController < ApplicationController
 
   private
   def include_will 
-    @wills = Will.includes({:accounts => [:heirs]},
+    @will = Will.includes({:accounts => [:heirs]},
                            {:properties => [:heirs]},
                            {:stock_portfolios => [:heirs]},
                            {:motors => [:heirs]},
                            {:jewelries => [:heirs]},
                            {:others => [:heirs]}, :medical
-                           )
+                           ).find(current_user.will.id)
   end
 
   def find_user
