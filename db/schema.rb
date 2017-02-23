@@ -82,15 +82,11 @@ ActiveRecord::Schema.define(version: 20161230112846) do
     t.string   "name"
     t.string   "email"
     t.integer  "proportion"
-    t.integer  "account_id"
-    t.integer  "jewelry_id"
-    t.integer  "motor_id"
-    t.integer  "other_id"
-    t.integer  "property_id"
-    t.integer  "stock_portfolio_id"
-    t.integer  "digital_asset_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "heirtable_type"
+    t.integer  "heirtable_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["heirtable_type", "heirtable_id"], name: "index_heirs_on_heirtable_type_and_heirtable_id"
   end
 
   create_table "insurance_policies", force: :cascade do |t|

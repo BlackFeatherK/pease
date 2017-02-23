@@ -59,12 +59,13 @@ class WillsController < ApplicationController
   private
   def include_will 
     @will = Will.includes({:accounts => [:heirs]},
-                           {:properties => [:heirs]},
-                           {:stock_portfolios => [:heirs]},
-                           {:motors => [:heirs]},
-                           {:jewelries => [:heirs]},
-                           {:others => [:heirs]}, :medical
-                           ).find(current_user.will.id)
+                          {:properties => [:heirs]},
+                          {:stock_portfolios => [:heirs]},
+                          {:motors => [:heirs]},
+                          {:jewelries => [:heirs]},
+                          {:others => [:heirs]},
+                           :medical
+                          ).find(current_user.will.id)
   end
 
   def find_user

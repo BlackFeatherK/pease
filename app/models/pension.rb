@@ -1,4 +1,4 @@
 class Pension < ApplicationRecord
   belongs_to :will 
-  has_many :heirs , :dependent => :destroy
+  has_many :heirs , as: :heirtable, :dependent => :destroy
 end
