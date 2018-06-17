@@ -5,7 +5,7 @@ lock '3.7.1'
 set :application, 'pease'
 
 set :repo_url, 'git@github.com:BlackFeatherK/pease.git'
-set :deploy_to, '/home/deploy/pease'
+set :deploy_to, '/home/shangweilin7/pease'
 set :keep_releases, 5
 
 append :linked_files, 'config/database.yml', 'config/secrets.yml'
